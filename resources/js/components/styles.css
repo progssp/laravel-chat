@@ -1,0 +1,42 @@
+.list_style{
+    list-style-type: none;
+    margin:0;
+    padding:14px;
+    background-color: wheat;
+    height:300px;
+    width:300px;
+    overflow-y: scroll;
+}
+.list_style li{
+    display: table;
+    width:100%;
+    height: auto;
+    padding:10px 5px;
+    margin: 2px;
+    background-color: rgb(198, 250, 182);
+}
+
+.user_list, .chat_list{
+    background-color:transparent;
+    height:500px;
+    overflow-y:scroll;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
