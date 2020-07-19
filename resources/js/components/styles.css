@@ -1,0 +1,44 @@
+.msg_style_for_sender{
+  width:auto;
+  height:auto;
+  padding:14px 0;
+  margin:10px;
+  background-color: rgb(2, 133, 173);
+  color: #f1f1f1;
+  float: left;
+}
+.msg_style_for_rec{
+  width:autp;
+  height:auto;
+  padding:5px 0;
+  margin:10px;
+  background-color: #f1f1f1;
+  color: rgb(2, 133, 173);
+  float: right;
+}
+
+.user_list, .chat_list{
+    background-color:transparent;
+    height:500px;
+    width: 100%;
+    overflow-y:scroll;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
