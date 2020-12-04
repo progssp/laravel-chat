@@ -40,3 +40,20 @@
   ::-webkit-scrollbar-thumb:hover {
     background: #555;
   }
+  /* for react-emoji-picker */
+  /* .card-footer-emoji {
+    position: absolute;
+    top: 40%;
+    left: 3%;
+  } */
+  .card-footer-emoji {
+    position: absolute;
+    top: 20%;
+    /* bottom: 40; */
+    left: 3%;
+  }
+  .inputimage {
+    background:#FFFFFF no-repeat 4px 4px;
+    padding:4px 4px 4px 22px;
+    height:18px;
+  }

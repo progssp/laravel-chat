@@ -86,6 +86,36 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./node_modules/@joeattardi/emoji-button/dist/index.js":
+/*!*************************************************************!*\
+  !*** ./node_modules/@joeattardi/emoji-button/dist/index.js ***!
+  \*************************************************************/
+/*! exports provided: EmojiButton */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* WEBPACK VAR INJECTION */(function(global, setImmediate) {/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EmojiButton", function() { return rn; });
+/*! *****************************************************************************
+Copyright (c) Microsoft Corporation.
+
+Permission to use, copy, modify, and/or distribute this software for any
+purpose with or without fee is hereby granted.
+
+THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
+REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
+LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+PERFORMANCE OF THIS SOFTWARE.
+***************************************************************************** */
+function e(e,o,n,i){return new(n||(n=Promise))((function(a,r){function t(e){try{m(i.next(e))}catch(e){r(e)}}function s(e){try{m(i.throw(e))}catch(e){r(e)}}function m(e){var o;e.done?a(e.value):(o=e.value,o instanceof n?o:new n((function(e){e(o)}))).then(t,s)}m((i=i.apply(e,o||[])).next())}))}!function(e,o){void 0===o&&(o={});var n=o.insertAt;if(e&&"undefined"!=typeof document){var i=document.head||document.getElementsByTagName("head")[0],a=document.createElement("style");a.type="text/css","top"===n&&i.firstChild?i.insertBefore(a,i.firstChild):i.appendChild(a),a.styleSheet?a.styleSheet.cssText=e:a.appendChild(document.createTextNode(e))}}('@keyframes show {\n  0% {\n    opacity: 0;\n    transform: scale3d(0.8, 0.8, 0.8);\n  }\n\n  50% {\n    transform: scale3d(1.05, 1.05, 1.05);\n  }\n\n  100% {\n    transform: scale3d(1, 1, 1);\n  }\n}\n\n@keyframes hide {\n  0% {\n    opacity: 1;\n    transform: scale3d(1, 1, 1);\n  }\n\n  100% {\n    opacity: 0;\n    transform: scale3d(0.8, 0.8, 0.8);\n  }\n}\n\n@keyframes grow {\n  0% {\n    opacity: 0;\n    transform: scale3d(0.8, 0.8, 0.8); \n  }\n\n  100% { \n    opacity: 1;\n    transform: scale3d(1, 1, 1); \n  }\n}\n\n@keyframes shrink {\n  0% { \n    opacity: 1;\n    transform: scale3d(1, 1, 1);\n  }\n\n  100% { \n    opacity: 0;\n    transform: scale3d(0.8, 0.8, 0.8); \n  }\n}\n\n@keyframes fade-in {\n  0% { opacity: 0; }\n  100% { opacity: 1; }\n}\n\n@keyframes fade-out {\n  0% { opacity: 1; }\n  100% { opacity: 0; }\n}\n\n.emoji-picker {\n  --animation-duration: 0.2s;\n  --animation-easing: ease-in-out;\n\n  --emoji-size: 1.8em;\n  --emoji-size-multiplier: 1.5;\n  --emoji-preview-size: 2em;\n  --emoji-per-row: 8;\n  --row-count: 6;\n\n  --content-height: calc((var(--emoji-size) * var(--emoji-size-multiplier)) * var(--row-count) + var(--category-name-size) + var(--category-button-height) + 0.5em);\n\n  --category-name-size: 0.85em;\n\n  --category-button-height: 2em;\n  --category-button-size: 1.1em;\n  --category-border-bottom-size: 4px;\n\n  --focus-indicator-color: #999999;\n\n  --search-height: 2em;\n\n  --blue-color: #4F81E5;\n\n  --border-color: #CCCCCC;\n  --background-color: #FFFFFF;\n  --text-color: #000000;\n  --secondary-text-color: #666666;\n  --hover-color: #E8F4F9;\n  --search-focus-border-color: var(--blue-color);\n  --search-icon-color: #CCCCCC;\n  --overlay-background-color: rgba(0, 0, 0, 0.8);\n  --popup-background-color: #FFFFFF;\n  --category-button-color: #666666;\n  --category-button-active-color: var(--blue-color);\n\n  --dark-border-color: #666666;\n  --dark-background-color: #333333;\n  --dark-text-color: #FFFFFF;\n  --dark-secondary-text-color: #999999;\n  --dark-hover-color: #666666;\n  --dark-search-background-color: #666666;\n  --dark-search-border-color: #999999;\n  --dark-search-placeholder-color: #999999;\n  --dark-search-focus-border-color: #DBE5F9;\n  --dark-popup-background-color: #333333;\n  --dark-category-button-color: #FFFFFF;\n\n  --font: Arial, Helvetica, sans-serif;\n  --font-size: 16px;\n}\n\n.emoji-picker {\n  font-size: var(--font-size);\n  border: 1px solid var(--border-color);\n  border-radius: 5px;\n  background: var(--background-color);\n  width: calc(var(--emoji-per-row) * var(--emoji-size) * var(--emoji-size-multiplier) + 1em + 1.5rem);\n  font-family: var(--font);\n  overflow: hidden;\n  animation: show var(--animation-duration) var(--animation-easing);\n}\n\n.emoji-picker * {\n  font-family: var(--font);\n  box-sizing: content-box;\n}\n\n.emoji-picker__overlay {\n  background: rgba(0, 0, 0, 0.75);\n  z-index: 1000;\n  position: fixed;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n}\n\n.emoji-picker.hiding {\n  animation: hide var(--animation-duration) var(--animation-easing);\n}\n\n.emoji-picker.dark {\n  background: var(--dark-background-color);\n  color: var(--dark-text-color);\n  border-color: var(--dark-border-color);\n}\n\n.emoji-picker__content {\n  padding: 0.5em;\n  height: var(--content-height);\n  position: relative;\n}\n\n.emoji-picker__preview {\n  height: var(--emoji-preview-size);\n  padding: 0.5em;\n  border-top: 1px solid var(--border-color);\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n}\n\n.emoji-picker.dark .emoji-picker__preview {\n  border-top-color: var(--dark-border-color);\n}\n\n.emoji-picker__preview-emoji {\n  font-size: var(--emoji-preview-size);\n  margin-right: 0.25em;\n  font-family: "Segoe UI Emoji", "Segoe UI Symbol", "Segoe UI", "Apple Color Emoji", "Twemoji Mozilla", "Noto Color Emoji", "EmojiOne Color", "Android Emoji";\n}\n\n.emoji-picker__preview-emoji img.emoji {\n  height: 1em;\n  width: 1em;\n  margin: 0 .05em 0 .1em;\n  vertical-align: -0.1em;\n}\n\n.emoji-picker__preview-name {\n  color: var(--text-color);\n  font-size: 0.85em;\n  overflow-wrap: break-word;\n  word-break: break-all;\n}\n\n.emoji-picker.dark .emoji-picker__preview-name {\n  color: var(--dark-text-color);\n}\n\n.emoji-picker__container {\n  display: grid;\n  justify-content: center;\n  grid-template-columns: repeat(var(--emoji-per-row), calc(var(--emoji-size) * var(--emoji-size-multiplier)));\n  grid-auto-rows: calc(var(--emoji-size) * var(--emoji-size-multiplier));\n}\n\n.emoji-picker__container.search-results {\n  height: var(--content-height);\n  overflow-y: auto;\n}\n\n.emoji-picker__custom-emoji {\n  width: 1em;\n  height: 1em;\n}\n\n.emoji-picker__emoji {\n  background: transparent;\n  border: none;\n  cursor: pointer;\n  overflow: hidden;\n  font-size: var(--emoji-size);\n  width: 1.5em;\n  height: 1.5em;\n  padding: 0;\n  margin: 0;\n  outline: none;\n  font-family: "Segoe UI Emoji", "Segoe UI Symbol", "Segoe UI", "Apple Color Emoji", "Twemoji Mozilla", "Noto Color Emoji", "EmojiOne Color", "Android Emoji";\n  display: inline-flex;\n  align-items: center;\n  justify-content: center;\n}\n\n.emoji-picker__emoji img.emoji {\n  height: 1em;\n  width: 1em;\n  margin: 0 .05em 0 .1em;\n  vertical-align: -0.1em;\n}\n\n.emoji-picker__emoji:focus, .emoji-picker__emoji:hover {\n  background: var(--hover-color);\n}\n\n.emoji-picker__emoji:focus {\n  outline: 1px dotted var(--focus-indicator-color);\n}\n\n.emoji-picker.dark .emoji-picker__emoji:focus, .emoji-picker.dark .emoji-picker__emoji:hover {\n  background: var(--dark-hover-color);\n}\n\n.emoji-picker__plugin-container {\n  margin: 0.5em;\n  display: flex;\n  flex-direction: row;\n}\n\n.emoji-picker__search-container {\n  margin: 0.5em;\n  position: relative;\n  height: var(--search-height);\n  display: flex;\n}\n\n.emoji-picker__search {\n  box-sizing: border-box;\n  width: 100%;\n  border-radius: 3px;\n  border: 1px solid var(--border-color);\n  padding-right: 2em;\n  padding: 0.5em 2.25em 0.5em 0.5em;\n  font-size: 0.85em;\n  outline: none;\n}\n\n.emoji-picker.dark .emoji-picker__search {\n  background: var(--dark-search-background-color);\n  color: var(--dark-text-color);\n  border-color: var(--dark-search-border-color);\n}\n\n.emoji-picker.dark .emoji-picker__search::placeholder {\n  color: var(--dark-search-placeholder-color);\n}\n\n.emoji-picker__search:focus {\n  border: 1px solid var(--search-focus-border-color);\n}\n\n.emoji-picker.dark .emoji-picker__search:focus {\n  border-color: var(--dark-search-focus-border-color);\n}\n\n.emoji-picker__search-icon {\n  position: absolute;\n  color: var(--search-icon-color);\n  width: 1em;\n  height: 1em;\n  right: 0.75em;\n  top: calc(50% - 0.5em);\n}\n\n.emoji-picker__search-icon img {\n  width: 1em;\n  height: 1em;\n}\n\n.emoji-picker__search-not-found {\n  color: var(--secondary-text-color);\n  text-align: center;\n  height: 100%;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n}\n\n.emoji-picker__search-not-found h2 {\n  color: var(--secondary-text-color);\n}\n\n.emoji-picker.dark .emoji-picker__search-not-found {\n  color: var(--dark-secondary-text-color);\n}\n\n.emoji-picker.dark .emoji-picker__search-not-found h2 {\n  color: var(--dark-secondary-text-color);\n}\n\n.emoji-picker__search-not-found-icon {\n  font-size: 3em;\n}\n\n.emoji-picker__search-not-found-icon img {\n  width: 1em;\n  height: 1em;\n}\n\n.emoji-picker__search-not-found h2 {\n  margin: 0.5em 0;\n  font-size: 1em;\n}\n\n.emoji-picker__variant-overlay {\n  background: var(--overlay-background-color);\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  border-radius: 5px;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  animation: fade-in var(--animation-duration) var(--animation-easing);\n}\n\n.emoji-picker__variant-overlay.hiding {\n  animation: fade-out var(--animation-duration) var(--animation-easing);\n}\n\n.emoji-picker__variant-popup {\n  background: var(--popup-background-color);\n  margin: 0.5em;\n  padding: 0.5em;\n  text-align: center;\n  border-radius: 5px;\n  animation: grow var(--animation-duration) var(--animation-easing);\n  user-select: none;\n}\n\n.emoji-picker__variant-overlay.hiding .emoji-picker__variant-popup {\n  animation: shrink var(--animation-duration) var(--animation-easing);\n}\n\n.emoji-picker.dark .emoji-picker__variant-popup {\n  background: var(--dark-popup-background-color);\n}\n\n.emoji-picker__emojis {\n  overflow-y: auto;\n  position: relative;\n  height: calc((var(--emoji-size) * var(--emoji-size-multiplier)) * var(--row-count) + var(--category-name-size));\n}\n\n.emoji-picker__emojis.hiding {\n  animation: fade-out 0.05s var(--animation-easing);\n}\n\n.emoji-picker__emojis h2.emoji-picker__category-name {\n  font-size: 0.85em;\n  color: var(--secondary-text-color);\n  text-transform: uppercase;\n  margin: 0.25em 0;\n  text-align: left;\n}\n\n.emoji-picker.dark h2.emoji-picker__category-name {\n  color: var(--dark-secondary-text-color);\n}\n\n.emoji-picker__category-buttons {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-around;\n  height: var(--category-button-height);\n  margin-bottom: 0.5em;\n}\n\nbutton.emoji-picker__category-button {\n  flex-grow: 1;\n  background: transparent;\n  padding: 0;\n  border: none;\n  cursor: pointer;\n  font-size: var(--category-button-size);\n  vertical-align: middle;\n  color: var(--category-button-color);\n  border-bottom: var(--category-border-bottom-size) solid transparent;\n  outline: none;\n}\n\nbutton.emoji-picker__category-button img {\n  width: var(--category-button-size);\n  height: var(--category-button-size);\n}\n\n.emoji-picker.keyboard button.emoji-picker__category-button:focus {\n  outline: 1px dotted var(--focus-indicator-color);\n}\n\n.emoji-picker.dark button.emoji-picker__category-button.active {\n  color: var(--category-button-active-color);\n}\n\n.emoji-picker.dark button.emoji-picker__category-button {\n  color: var(--dark-category-button-color);\n}\n\nbutton.emoji-picker__category-button.active {\n  color: var(--category-button-active-color);\n  border-bottom: var(--category-border-bottom-size) solid var(--category-button-active-color);\n}\n\n@media (prefers-color-scheme: dark) {\n  .emoji-picker.auto {\n    background: var(--dark-background-color);\n    color: var(--dark-text-color);\n    border-color: var(--dark-border-color);\n  }\n\n  .emoji-picker.auto .emoji-picker__preview {\n    border-top-color: var(--dark-border-color);\n  }\n\n  .emoji-picker.auto .emoji-picker__preview-name {\n    color: var(--dark-text-color);\n  }\n\n  .emoji-picker.auto button.emoji-picker__category-button {\n    color: var(--dark-category-button-color);\n  }\n\n  .emoji-picker.auto button.emoji-picker__category-button.active {\n    color: var(--category-button-active-color);\n  }\n\n  .emoji-picker.auto .emoji-picker__emoji:focus, .emoji-picker.auto .emoji-picker__emoji:hover {\n    background: var(--dark-hover-color);\n  }\n\n  .emoji-picker.auto .emoji-picker__search {\n    background: var(--dark-search-background-color);\n    color: var(--dark-text-color);\n    border-color: var(--dark-search-border-color);\n  }\n \n  .emoji-picker.auto h2.emoji-picker__category-name {\n    color: var(--dark-secondary-text-color);\n  }\n\n  .emoji-picker.auto .emoji-picker__search::placeholder {\n    color: var(--dark-search-placeholder-color);\n  }\n\n  .emoji-picker.auto .emoji-picker__search:focus {\n    border-color: var(--dark-search-focus-border-color);\n  }\n\n  .emoji-picker.auto .emoji-picker__search-not-found {\n    color: var(--dark-secondary-text-color);\n  }\n\n  .emoji-picker.auto .emoji-picker__search-not-found h2 {\n    color: var(--dark-secondary-text-color);\n  }\n\n  .emoji-picker.auto .emoji-picker__variant-popup {\n    background: var(--dark-popup-background-color);\n  }\n}');var o=["input","select","textarea","a[href]","button","[tabindex]","audio[controls]","video[controls]",'[contenteditable]:not([contenteditable="false"])'],n=o.join(","),i="undefined"==typeof Element?function(){}:Element.prototype.matches||Element.prototype.msMatchesSelector||Element.prototype.webkitMatchesSelector;function a(e,o){o=o||{};var a,t,s,d=[],g=[],u=e.querySelectorAll(n);for(o.includeContainer&&i.call(e,n)&&(u=Array.prototype.slice.apply(u)).unshift(e),a=0;a<u.length;a++)r(t=u[a])&&(0===(s=m(t))?d.push(t):g.push({documentOrder:a,tabIndex:s,node:t}));return g.sort(c).map((function(e){return e.node})).concat(d)}function r(e){return!(!t(e)||function(e){return function(e){return d(e)&&"radio"===e.type}(e)&&!function(e){if(!e.name)return!0;var o=function(e){for(var o=0;o<e.length;o++)if(e[o].checked)return e[o]}(e.ownerDocument.querySelectorAll('input[type="radio"][name="'+e.name+'"]'));return!o||o===e}(e)}(e)||m(e)<0)}function t(e){return!(e.disabled||function(e){return d(e)&&"hidden"===e.type}(e)||function(e){return null===e.offsetParent||"hidden"===getComputedStyle(e).visibility}(e))}a.isTabbable=function(e){if(!e)throw new Error("No node provided");return!1!==i.call(e,n)&&r(e)},a.isFocusable=function(e){if(!e)throw new Error("No node provided");return!1!==i.call(e,s)&&t(e)};var s=o.concat("iframe").join(",");function m(e){var o=parseInt(e.getAttribute("tabindex"),10);return isNaN(o)?function(e){return"true"===e.contentEditable}(e)?0:e.tabIndex:o}function c(e,o){return e.tabIndex===o.tabIndex?e.documentOrder-o.documentOrder:e.tabIndex-o.tabIndex}function d(e){return"INPUT"===e.tagName}var g,u=a,l=function(){for(var e={},o=0;o<arguments.length;o++){var n=arguments[o];for(var i in n)v.call(n,i)&&(e[i]=n[i])}return e},v=Object.prototype.hasOwnProperty;var f,y=(f=[],{activateTrap:function(e){if(f.length>0){var o=f[f.length-1];o!==e&&o.pause()}var n=f.indexOf(e);-1===n||f.splice(n,1),f.push(e)},deactivateTrap:function(e){var o=f.indexOf(e);-1!==o&&f.splice(o,1),f.length>0&&f[f.length-1].unpause()}});function j(e){return setTimeout(e,0)}var h=function(e,o){var n=document,i="string"==typeof e?n.querySelector(e):e,a=l({returnFocusOnDeactivate:!0,escapeDeactivates:!0},o),r={firstTabbableNode:null,lastTabbableNode:null,nodeFocusedBeforeActivation:null,mostRecentlyFocusedNode:null,active:!1,paused:!1},t={activate:function(e){if(r.active)return;w(),r.active=!0,r.paused=!1,r.nodeFocusedBeforeActivation=n.activeElement;var o=e&&e.onActivate?e.onActivate:a.onActivate;o&&o();return m(),t},deactivate:s,pause:function(){if(r.paused||!r.active)return;r.paused=!0,c()},unpause:function(){if(!r.paused||!r.active)return;r.paused=!1,w(),m()}};return t;function s(e){if(r.active){clearTimeout(g),c(),r.active=!1,r.paused=!1,y.deactivateTrap(t);var o=e&&void 0!==e.onDeactivate?e.onDeactivate:a.onDeactivate;return o&&o(),(e&&void 0!==e.returnFocus?e.returnFocus:a.returnFocusOnDeactivate)&&j((function(){var e;k((e=r.nodeFocusedBeforeActivation,d("setReturnFocus")||e))})),t}}function m(){if(r.active)return y.activateTrap(t),g=j((function(){k(v())})),n.addEventListener("focusin",h,!0),n.addEventListener("mousedown",f,{capture:!0,passive:!1}),n.addEventListener("touchstart",f,{capture:!0,passive:!1}),n.addEventListener("click",b,{capture:!0,passive:!1}),n.addEventListener("keydown",p,{capture:!0,passive:!1}),t}function c(){if(r.active)return n.removeEventListener("focusin",h,!0),n.removeEventListener("mousedown",f,!0),n.removeEventListener("touchstart",f,!0),n.removeEventListener("click",b,!0),n.removeEventListener("keydown",p,!0),t}function d(e){var o=a[e],i=o;if(!o)return null;if("string"==typeof o&&!(i=n.querySelector(o)))throw new Error("`"+e+"` refers to no known node");if("function"==typeof o&&!(i=o()))throw new Error("`"+e+"` did not return a node");return i}function v(){var e;if(!(e=null!==d("initialFocus")?d("initialFocus"):i.contains(n.activeElement)?n.activeElement:r.firstTabbableNode||d("fallbackFocus")))throw new Error("Your focus-trap needs to have at least one focusable element");return e}function f(e){i.contains(e.target)||(a.clickOutsideDeactivates?s({returnFocus:!u.isFocusable(e.target)}):a.allowOutsideClick&&a.allowOutsideClick(e)||e.preventDefault())}function h(e){i.contains(e.target)||e.target instanceof Document||(e.stopImmediatePropagation(),k(r.mostRecentlyFocusedNode||v()))}function p(e){if(!1!==a.escapeDeactivates&&function(e){return"Escape"===e.key||"Esc"===e.key||27===e.keyCode}(e))return e.preventDefault(),void s();(function(e){return"Tab"===e.key||9===e.keyCode})(e)&&function(e){if(w(),e.shiftKey&&e.target===r.firstTabbableNode)return e.preventDefault(),void k(r.lastTabbableNode);if(!e.shiftKey&&e.target===r.lastTabbableNode)e.preventDefault(),k(r.firstTabbableNode)}(e)}function b(e){a.clickOutsideDeactivates||i.contains(e.target)||a.allowOutsideClick&&a.allowOutsideClick(e)||(e.preventDefault(),e.stopImmediatePropagation())}function w(){var e=u(i);r.firstTabbableNode=e[0]||v(),r.lastTabbableNode=e[e.length-1]||v()}function k(e){e!==n.activeElement&&(e&&e.focus?(e.focus(),r.mostRecentlyFocusedNode=e,function(e){return e.tagName&&"input"===e.tagName.toLowerCase()&&"function"==typeof e.select}(e)&&e.select()):k(v()))}};function p(){}p.prototype={on:function(e,o,n){var i=this.e||(this.e={});return(i[e]||(i[e]=[])).push({fn:o,ctx:n}),this},once:function(e,o,n){var i=this;function a(){i.off(e,a),o.apply(n,arguments)}return a._=o,this.on(e,a,n)},emit:function(e){for(var o=[].slice.call(arguments,1),n=((this.e||(this.e={}))[e]||[]).slice(),i=0,a=n.length;i<a;i++)n[i].fn.apply(n[i].ctx,o);return this},off:function(e,o){var n=this.e||(this.e={}),i=n[e],a=[];if(i&&o)for(var r=0,t=i.length;r<t;r++)i[r].fn!==o&&i[r].fn._!==o&&a.push(i[r]);return a.length?n[e]=a:delete n[e],this}};var b=p;function w(e){var o=e.getBoundingClientRect();return{width:o.width,height:o.height,top:o.top,right:o.right,bottom:o.bottom,left:o.left,x:o.left,y:o.top}}function k(e){if("[object Window]"!==e.toString()){var o=e.ownerDocument;return o?o.defaultView:window}return e}function x(e){var o=k(e);return{scrollLeft:o.pageXOffset,scrollTop:o.pageYOffset}}function C(e){return e instanceof k(e).Element||e instanceof Element}function E(e){return e instanceof k(e).HTMLElement||e instanceof HTMLElement}function _(e){return e?(e.nodeName||"").toLowerCase():null}function z(e){return(C(e)?e.ownerDocument:e.document).documentElement}function I(e){return w(z(e)).left+x(e).scrollLeft}function O(e){return k(e).getComputedStyle(e)}function S(e){var o=O(e),n=o.overflow,i=o.overflowX,a=o.overflowY;return/auto|scroll|overlay|hidden/.test(n+a+i)}function P(e,o,n){void 0===n&&(n=!1);var i,a,r=z(o),t=w(e),s={scrollLeft:0,scrollTop:0},m={x:0,y:0};return n||(("body"!==_(o)||S(r))&&(s=(i=o)!==k(i)&&E(i)?{scrollLeft:(a=i).scrollLeft,scrollTop:a.scrollTop}:x(i)),E(o)?((m=w(o)).x+=o.clientLeft,m.y+=o.clientTop):r&&(m.x=I(r))),{x:t.left+s.scrollLeft-m.x,y:t.top+s.scrollTop-m.y,width:t.width,height:t.height}}function M(e){return{x:e.offsetLeft,y:e.offsetTop,width:e.offsetWidth,height:e.offsetHeight}}function A(e){return"html"===_(e)?e:e.assignedSlot||e.parentNode||e.host||z(e)}function L(e){return["html","body","#document"].indexOf(_(e))>=0?e.ownerDocument.body:E(e)&&S(e)?e:L(A(e))}function T(e,o){void 0===o&&(o=[]);var n=L(e),i="body"===_(n),a=k(n),r=i?[a].concat(a.visualViewport||[],S(n)?n:[]):n,t=o.concat(r);return i?t:t.concat(T(A(r)))}function N(e){return["table","td","th"].indexOf(_(e))>=0}function F(e){return E(e)&&"fixed"!==O(e).position?e.offsetParent:null}function B(e){for(var o=k(e),n=F(e);n&&N(n);)n=F(n);return n&&"body"===_(n)&&"static"===O(n).position?o:n||o}p.TinyEmitter=b;var D="top",R="bottom",q="right",V="left",H=[D,R,q,V],U=H.reduce((function(e,o){return e.concat([o+"-start",o+"-end"])}),[]),W=[].concat(H,["auto"]).reduce((function(e,o){return e.concat([o,o+"-start",o+"-end"])}),[]),K=["beforeRead","read","afterRead","beforeMain","main","afterMain","beforeWrite","write","afterWrite"];function J(e){var o=new Map,n=new Set,i=[];function a(e){n.add(e.name),[].concat(e.requires||[],e.requiresIfExists||[]).forEach((function(e){if(!n.has(e)){var i=o.get(e);i&&a(i)}})),i.push(e)}return e.forEach((function(e){o.set(e.name,e)})),e.forEach((function(e){n.has(e.name)||a(e)})),i}function G(e){return e.split("-")[0]}var X={placement:"bottom",modifiers:[],strategy:"absolute"};function Y(){for(var e=arguments.length,o=new Array(e),n=0;n<e;n++)o[n]=arguments[n];return!o.some((function(e){return!(e&&"function"==typeof e.getBoundingClientRect)}))}function $(e){void 0===e&&(e={});var o=e,n=o.defaultModifiers,i=void 0===n?[]:n,a=o.defaultOptions,r=void 0===a?X:a;return function(e,o,n){void 0===n&&(n=r);var a,t,s={placement:"bottom",orderedModifiers:[],options:Object.assign({},X,{},r),modifiersData:{},elements:{reference:e,popper:o},attributes:{},styles:{}},m=[],c=!1,d={state:s,setOptions:function(n){g(),s.options=Object.assign({},r,{},s.options,{},n),s.scrollParents={reference:C(e)?T(e):e.contextElement?T(e.contextElement):[],popper:T(o)};var a,t,c=function(e){var o=J(e);return K.reduce((function(e,n){return e.concat(o.filter((function(e){return e.phase===n})))}),[])}((a=[].concat(i,s.options.modifiers),t=a.reduce((function(e,o){var n=e[o.name];return e[o.name]=n?Object.assign({},n,{},o,{options:Object.assign({},n.options,{},o.options),data:Object.assign({},n.data,{},o.data)}):o,e}),{}),Object.keys(t).map((function(e){return t[e]}))));return s.orderedModifiers=c.filter((function(e){return e.enabled})),s.orderedModifiers.forEach((function(e){var o=e.name,n=e.options,i=void 0===n?{}:n,a=e.effect;if("function"==typeof a){var r=a({state:s,name:o,instance:d,options:i}),t=function(){};m.push(r||t)}})),d.update()},forceUpdate:function(){if(!c){var e=s.elements,o=e.reference,n=e.popper;if(Y(o,n)){s.rects={reference:P(o,B(n),"fixed"===s.options.strategy),popper:M(n)},s.reset=!1,s.placement=s.options.placement,s.orderedModifiers.forEach((function(e){return s.modifiersData[e.name]=Object.assign({},e.data)}));for(var i=0;i<s.orderedModifiers.length;i++)if(!0!==s.reset){var a=s.orderedModifiers[i],r=a.fn,t=a.options,m=void 0===t?{}:t,g=a.name;"function"==typeof r&&(s=r({state:s,options:m,name:g,instance:d})||s)}else s.reset=!1,i=-1}}},update:(a=function(){return new Promise((function(e){d.forceUpdate(),e(s)}))},function(){return t||(t=new Promise((function(e){Promise.resolve().then((function(){t=void 0,e(a())}))}))),t}),destroy:function(){g(),c=!0}};if(!Y(e,o))return d;function g(){m.forEach((function(e){return e()})),m=[]}return d.setOptions(n).then((function(e){!c&&n.onFirstUpdate&&n.onFirstUpdate(e)})),d}}var Z={passive:!0};function Q(e){return e.split("-")[1]}function ee(e){return["top","bottom"].indexOf(e)>=0?"x":"y"}function oe(e){var o,n=e.reference,i=e.element,a=e.placement,r=a?G(a):null,t=a?Q(a):null,s=n.x+n.width/2-i.width/2,m=n.y+n.height/2-i.height/2;switch(r){case D:o={x:s,y:n.y-i.height};break;case R:o={x:s,y:n.y+n.height};break;case q:o={x:n.x+n.width,y:m};break;case V:o={x:n.x-i.width,y:m};break;default:o={x:n.x,y:n.y}}var c=r?ee(r):null;if(null!=c){var d="y"===c?"height":"width";switch(t){case"start":o[c]=Math.floor(o[c])-Math.floor(n[d]/2-i[d]/2);break;case"end":o[c]=Math.floor(o[c])+Math.ceil(n[d]/2-i[d]/2)}}return o}var ne={top:"auto",right:"auto",bottom:"auto",left:"auto"};function ie(e){var o,n=e.popper,i=e.popperRect,a=e.placement,r=e.offsets,t=e.position,s=e.gpuAcceleration,m=e.adaptive,c=function(e){var o=e.x,n=e.y,i=window.devicePixelRatio||1;return{x:Math.round(o*i)/i||0,y:Math.round(n*i)/i||0}}(r),d=c.x,g=c.y,u=r.hasOwnProperty("x"),l=r.hasOwnProperty("y"),v=V,f=D,y=window;if(m){var j=B(n);j===k(n)&&(j=z(n)),a===D&&(f=R,g-=j.clientHeight-i.height,g*=s?1:-1),a===V&&(v=q,d-=j.clientWidth-i.width,d*=s?1:-1)}var h,p=Object.assign({position:t},m&&ne);return s?Object.assign({},p,((h={})[f]=l?"0":"",h[v]=u?"0":"",h.transform=(y.devicePixelRatio||1)<2?"translate("+d+"px, "+g+"px)":"translate3d("+d+"px, "+g+"px, 0)",h)):Object.assign({},p,((o={})[f]=l?g+"px":"",o[v]=u?d+"px":"",o.transform="",o))}var ae={left:"right",right:"left",bottom:"top",top:"bottom"};function re(e){return e.replace(/left|right|bottom|top/g,(function(e){return ae[e]}))}var te={start:"end",end:"start"};function se(e){return e.replace(/start|end/g,(function(e){return te[e]}))}function me(e){return parseFloat(e)||0}function ce(e){var o=k(e),n=function(e){var o=E(e)?O(e):{};return{top:me(o.borderTopWidth),right:me(o.borderRightWidth),bottom:me(o.borderBottomWidth),left:me(o.borderLeftWidth)}}(e),i="html"===_(e),a=I(e),r=e.clientWidth+n.right,t=e.clientHeight+n.bottom;return i&&o.innerHeight-e.clientHeight>50&&(t=o.innerHeight-n.bottom),{top:i?0:e.clientTop,right:e.clientLeft>n.left?n.right:i?o.innerWidth-r-a:e.offsetWidth-r,bottom:i?o.innerHeight-t:e.offsetHeight-t,left:i?a:e.clientLeft}}function de(e,o){var n=Boolean(o.getRootNode&&o.getRootNode().host);if(e.contains(o))return!0;if(n){var i=o;do{if(i&&e.isSameNode(i))return!0;i=i.parentNode||i.host}while(i)}return!1}function ge(e){return Object.assign({},e,{left:e.x,top:e.y,right:e.x+e.width,bottom:e.y+e.height})}function ue(e,o){return"viewport"===o?ge(function(e){var o=k(e),n=o.visualViewport,i=o.innerWidth,a=o.innerHeight;return n&&/iPhone|iPod|iPad/.test(navigator.platform)&&(i=n.width,a=n.height),{width:i,height:a,x:0,y:0}}(e)):E(o)?w(o):ge(function(e){var o=k(e),n=x(e),i=P(z(e),o);return i.height=Math.max(i.height,o.innerHeight),i.width=Math.max(i.width,o.innerWidth),i.x=-n.scrollLeft,i.y=-n.scrollTop,i}(z(e)))}function le(e,o,n){var i="clippingParents"===o?function(e){var o=T(e),n=["absolute","fixed"].indexOf(O(e).position)>=0&&E(e)?B(e):e;return C(n)?o.filter((function(e){return C(e)&&de(e,n)})):[]}(e):[].concat(o),a=[].concat(i,[n]),r=a[0],t=a.reduce((function(o,n){var i=ue(e,n),a=ce(E(n)?n:z(e));return o.top=Math.max(i.top+a.top,o.top),o.right=Math.min(i.right-a.right,o.right),o.bottom=Math.min(i.bottom-a.bottom,o.bottom),o.left=Math.max(i.left+a.left,o.left),o}),ue(e,r));return t.width=t.right-t.left,t.height=t.bottom-t.top,t.x=t.left,t.y=t.top,t}function ve(e){return Object.assign({},{top:0,right:0,bottom:0,left:0},{},e)}function fe(e,o){return o.reduce((function(o,n){return o[n]=e,o}),{})}function ye(e,o){void 0===o&&(o={});var n=o,i=n.placement,a=void 0===i?e.placement:i,r=n.boundary,t=void 0===r?"clippingParents":r,s=n.rootBoundary,m=void 0===s?"viewport":s,c=n.elementContext,d=void 0===c?"popper":c,g=n.altBoundary,u=void 0!==g&&g,l=n.padding,v=void 0===l?0:l,f=ve("number"!=typeof v?v:fe(v,H)),y="popper"===d?"reference":"popper",j=e.elements.reference,h=e.rects.popper,p=e.elements[u?y:d],b=le(C(p)?p:p.contextElement||z(e.elements.popper),t,m),k=w(j),x=oe({reference:k,element:h,strategy:"absolute",placement:a}),E=ge(Object.assign({},h,{},x)),_="popper"===d?E:k,I={top:b.top-_.top+f.top,bottom:_.bottom-b.bottom+f.bottom,left:b.left-_.left+f.left,right:_.right-b.right+f.right},O=e.modifiersData.offset;if("popper"===d&&O){var S=O[a];Object.keys(I).forEach((function(e){var o=[q,R].indexOf(e)>=0?1:-1,n=[D,R].indexOf(e)>=0?"y":"x";I[e]+=S[n]*o}))}return I}function je(e,o){void 0===o&&(o={});var n=o,i=n.placement,a=n.boundary,r=n.rootBoundary,t=n.padding,s=n.flipVariations,m=n.allowedAutoPlacements,c=void 0===m?W:m,d=Q(i),g=(d?s?U:U.filter((function(e){return Q(e)===d})):H).filter((function(e){return c.indexOf(e)>=0})).reduce((function(o,n){return o[n]=ye(e,{placement:n,boundary:a,rootBoundary:r,padding:t})[G(n)],o}),{});return Object.keys(g).sort((function(e,o){return g[e]-g[o]}))}function he(e,o,n){return Math.max(e,Math.min(o,n))}function pe(e,o,n){return void 0===n&&(n={x:0,y:0}),{top:e.top-o.height-n.y,right:e.right-o.width+n.x,bottom:e.bottom-o.height+n.y,left:e.left-o.width-n.x}}function be(e){return[D,q,R,V].some((function(o){return e[o]>=0}))}var we=$({defaultModifiers:[{name:"eventListeners",enabled:!0,phase:"write",fn:function(){},effect:function(e){var o=e.state,n=e.instance,i=e.options,a=i.scroll,r=void 0===a||a,t=i.resize,s=void 0===t||t,m=k(o.elements.popper),c=[].concat(o.scrollParents.reference,o.scrollParents.popper);return r&&c.forEach((function(e){e.addEventListener("scroll",n.update,Z)})),s&&m.addEventListener("resize",n.update,Z),function(){r&&c.forEach((function(e){e.removeEventListener("scroll",n.update,Z)})),s&&m.removeEventListener("resize",n.update,Z)}},data:{}},{name:"popperOffsets",enabled:!0,phase:"read",fn:function(e){var o=e.state,n=e.name;o.modifiersData[n]=oe({reference:o.rects.reference,element:o.rects.popper,strategy:"absolute",placement:o.placement})},data:{}},{name:"computeStyles",enabled:!0,phase:"beforeWrite",fn:function(e){var o=e.state,n=e.options,i=n.gpuAcceleration,a=void 0===i||i,r=n.adaptive,t=void 0===r||r,s={placement:G(o.placement),popper:o.elements.popper,popperRect:o.rects.popper,gpuAcceleration:a};null!=o.modifiersData.popperOffsets&&(o.styles.popper=Object.assign({},o.styles.popper,{},ie(Object.assign({},s,{offsets:o.modifiersData.popperOffsets,position:o.options.strategy,adaptive:t})))),null!=o.modifiersData.arrow&&(o.styles.arrow=Object.assign({},o.styles.arrow,{},ie(Object.assign({},s,{offsets:o.modifiersData.arrow,position:"absolute",adaptive:!1})))),o.attributes.popper=Object.assign({},o.attributes.popper,{"data-popper-placement":o.placement})},data:{}},{name:"applyStyles",enabled:!0,phase:"write",fn:function(e){var o=e.state;Object.keys(o.elements).forEach((function(e){var n=o.styles[e]||{},i=o.attributes[e]||{},a=o.elements[e];E(a)&&_(a)&&(Object.assign(a.style,n),Object.keys(i).forEach((function(e){var o=i[e];!1===o?a.removeAttribute(e):a.setAttribute(e,!0===o?"":o)})))}))},effect:function(e){var o=e.state,n={popper:{position:o.options.strategy,left:"0",top:"0",margin:"0"},arrow:{position:"absolute"},reference:{}};return Object.assign(o.elements.popper.style,n.popper),o.elements.arrow&&Object.assign(o.elements.arrow.style,n.arrow),function(){Object.keys(o.elements).forEach((function(e){var i=o.elements[e],a=o.attributes[e]||{},r=Object.keys(o.styles.hasOwnProperty(e)?o.styles[e]:n[e]).reduce((function(e,o){return e[o]="",e}),{});E(i)&&_(i)&&(Object.assign(i.style,r),Object.keys(a).forEach((function(e){i.removeAttribute(e)})))}))}},requires:["computeStyles"]},{name:"offset",enabled:!0,phase:"main",requires:["popperOffsets"],fn:function(e){var o=e.state,n=e.options,i=e.name,a=n.offset,r=void 0===a?[0,0]:a,t=W.reduce((function(e,n){return e[n]=function(e,o,n){var i=G(e),a=[V,D].indexOf(i)>=0?-1:1,r="function"==typeof n?n(Object.assign({},o,{placement:e})):n,t=r[0],s=r[1];return t=t||0,s=(s||0)*a,[V,q].indexOf(i)>=0?{x:s,y:t}:{x:t,y:s}}(n,o.rects,r),e}),{}),s=t[o.placement],m=s.x,c=s.y;null!=o.modifiersData.popperOffsets&&(o.modifiersData.popperOffsets.x+=m,o.modifiersData.popperOffsets.y+=c),o.modifiersData[i]=t}},{name:"flip",enabled:!0,phase:"main",fn:function(e){var o=e.state,n=e.options,i=e.name;if(!o.modifiersData[i]._skip){for(var a=n.mainAxis,r=void 0===a||a,t=n.altAxis,s=void 0===t||t,m=n.fallbackPlacements,c=n.padding,d=n.boundary,g=n.rootBoundary,u=n.altBoundary,l=n.flipVariations,v=void 0===l||l,f=n.allowedAutoPlacements,y=o.options.placement,j=G(y),h=m||(j===y||!v?[re(y)]:function(e){if("auto"===G(e))return[];var o=re(e);return[se(e),o,se(o)]}(y)),p=[y].concat(h).reduce((function(e,n){return e.concat("auto"===G(n)?je(o,{placement:n,boundary:d,rootBoundary:g,padding:c,flipVariations:v,allowedAutoPlacements:f}):n)}),[]),b=o.rects.reference,w=o.rects.popper,k=new Map,x=!0,C=p[0],E=0;E<p.length;E++){var _=p[E],z=G(_),I="start"===Q(_),O=[D,R].indexOf(z)>=0,S=O?"width":"height",P=ye(o,{placement:_,boundary:d,rootBoundary:g,altBoundary:u,padding:c}),M=O?I?q:V:I?R:D;b[S]>w[S]&&(M=re(M));var A=re(M),L=[];if(r&&L.push(P[z]<=0),s&&L.push(P[M]<=0,P[A]<=0),L.every((function(e){return e}))){C=_,x=!1;break}k.set(_,L)}if(x)for(var T=function(e){var o=p.find((function(o){var n=k.get(o);if(n)return n.slice(0,e).every((function(e){return e}))}));if(o)return C=o,"break"},N=v?3:1;N>0;N--){if("break"===T(N))break}o.placement!==C&&(o.modifiersData[i]._skip=!0,o.placement=C,o.reset=!0)}},requiresIfExists:["offset"],data:{_skip:!1}},{name:"preventOverflow",enabled:!0,phase:"main",fn:function(e){var o=e.state,n=e.options,i=e.name,a=n.mainAxis,r=void 0===a||a,t=n.altAxis,s=void 0!==t&&t,m=n.boundary,c=n.rootBoundary,d=n.altBoundary,g=n.padding,u=n.tether,l=void 0===u||u,v=n.tetherOffset,f=void 0===v?0:v,y=ye(o,{boundary:m,rootBoundary:c,padding:g,altBoundary:d}),j=G(o.placement),h=Q(o.placement),p=!h,b=ee(j),w="x"===b?"y":"x",k=o.modifiersData.popperOffsets,x=o.rects.reference,C=o.rects.popper,E="function"==typeof f?f(Object.assign({},o.rects,{placement:o.placement})):f,_={x:0,y:0};if(k){if(r){var z="y"===b?D:V,I="y"===b?R:q,O="y"===b?"height":"width",S=k[b],P=k[b]+y[z],A=k[b]-y[I],L=l?-C[O]/2:0,T="start"===h?x[O]:C[O],N="start"===h?-C[O]:-x[O],F=o.elements.arrow,H=l&&F?M(F):{width:0,height:0},U=o.modifiersData["arrow#persistent"]?o.modifiersData["arrow#persistent"].padding:{top:0,right:0,bottom:0,left:0},W=U[z],K=U[I],J=he(0,x[O],H[O]),X=p?x[O]/2-L-J-W-E:T-J-W-E,Y=p?-x[O]/2+L+J+K+E:N+J+K+E,$=o.elements.arrow&&B(o.elements.arrow),Z=$?"y"===b?$.clientTop||0:$.clientLeft||0:0,oe=o.modifiersData.offset?o.modifiersData.offset[o.placement][b]:0,ne=k[b]+X-oe-Z,ie=k[b]+Y-oe,ae=he(l?Math.min(P,ne):P,S,l?Math.max(A,ie):A);k[b]=ae,_[b]=ae-S}if(s){var re="x"===b?D:V,te="x"===b?R:q,se=k[w],me=he(se+y[re],se,se-y[te]);k[w]=me,_[w]=me-se}o.modifiersData[i]=_}},requiresIfExists:["offset"]},{name:"arrow",enabled:!0,phase:"main",fn:function(e){var o,n=e.state,i=e.name,a=n.elements.arrow,r=n.modifiersData.popperOffsets,t=G(n.placement),s=ee(t),m=[V,q].indexOf(t)>=0?"height":"width";if(a&&r){var c=n.modifiersData[i+"#persistent"].padding,d=M(a),g="y"===s?D:V,u="y"===s?R:q,l=n.rects.reference[m]+n.rects.reference[s]-r[s]-n.rects.popper[m],v=r[s]-n.rects.reference[s],f=B(a),y=f?"y"===s?f.clientHeight||0:f.clientWidth||0:0,j=l/2-v/2,h=c[g],p=y-d[m]-c[u],b=y/2-d[m]/2+j,w=he(h,b,p),k=s;n.modifiersData[i]=((o={})[k]=w,o.centerOffset=w-b,o)}},effect:function(e){var o=e.state,n=e.options,i=e.name,a=n.element,r=void 0===a?"[data-popper-arrow]":a,t=n.padding,s=void 0===t?0:t;null!=r&&("string"!=typeof r||(r=o.elements.popper.querySelector(r)))&&de(o.elements.popper,r)&&(o.elements.arrow=r,o.modifiersData[i+"#persistent"]={padding:ve("number"!=typeof s?s:fe(s,H))})},requires:["popperOffsets"],requiresIfExists:["preventOverflow"]},{name:"hide",enabled:!0,phase:"main",requiresIfExists:["preventOverflow"],fn:function(e){var o=e.state,n=e.name,i=o.rects.reference,a=o.rects.popper,r=o.modifiersData.preventOverflow,t=ye(o,{elementContext:"reference"}),s=ye(o,{altBoundary:!0}),m=pe(t,i),c=pe(s,a,r),d=be(m),g=be(c);o.modifiersData[n]={referenceClippingOffsets:m,popperEscapeOffsets:c,isReferenceHidden:d,hasPopperEscaped:g},o.attributes.popper=Object.assign({},o.attributes.popper,{"data-popper-reference-hidden":d,"data-popper-escaped":g})}}]}),ke=function(){var e={base:"https://twemoji.maxcdn.com/v/13.0.0/",ext:".png",size:"72x72",className:"emoji",convert:{fromCodePoint:function(e){var o="string"==typeof e?parseInt(e,16):e;if(o<65536)return s(o);return s(55296+((o-=65536)>>10),56320+(1023&o))},toCodePoint:j},onerror:function(){this.parentNode&&this.parentNode.replaceChild(m(this.alt,!1),this)},parse:function(o,n){n&&"function"!=typeof n||(n={callback:n});return("string"==typeof o?l:u)(o,{callback:n.callback||c,attributes:"function"==typeof n.attributes?n.attributes:f,base:"string"==typeof n.base?n.base:e.base,ext:n.ext||e.ext,size:n.folder||(i=n.size||e.size,"number"==typeof i?i+"x"+i:i),className:n.className||e.className,onerror:n.onerror||e.onerror});var i},replace:y,test:function(e){n.lastIndex=0;var o=n.test(e);return n.lastIndex=0,o}},o={"&":"&amp;","<":"&lt;",">":"&gt;","'":"&#39;",'"':"&quot;"},n=/(?:\ud83d\udc68\ud83c\udffb\u200d\ud83e\udd1d\u200d\ud83d\udc68\ud83c[\udffc-\udfff]|\ud83d\udc68\ud83c\udffc\u200d\ud83e\udd1d\u200d\ud83d\udc68\ud83c[\udffb\udffd-\udfff]|\ud83d\udc68\ud83c\udffd\u200d\ud83e\udd1d\u200d\ud83d\udc68\ud83c[\udffb\udffc\udffe\udfff]|\ud83d\udc68\ud83c\udffe\u200d\ud83e\udd1d\u200d\ud83d\udc68\ud83c[\udffb-\udffd\udfff]|\ud83d\udc68\ud83c\udfff\u200d\ud83e\udd1d\u200d\ud83d\udc68\ud83c[\udffb-\udffe]|\ud83d\udc69\ud83c\udffb\u200d\ud83e\udd1d\u200d\ud83d\udc68\ud83c[\udffc-\udfff]|\ud83d\udc69\ud83c\udffb\u200d\ud83e\udd1d\u200d\ud83d\udc69\ud83c[\udffc-\udfff]|\ud83d\udc69\ud83c\udffc\u200d\ud83e\udd1d\u200d\ud83d\udc68\ud83c[\udffb\udffd-\udfff]|\ud83d\udc69\ud83c\udffc\u200d\ud83e\udd1d\u200d\ud83d\udc69\ud83c[\udffb\udffd-\udfff]|\ud83d\udc69\ud83c\udffd\u200d\ud83e\udd1d\u200d\ud83d\udc68\ud83c[\udffb\udffc\udffe\udfff]|\ud83d\udc69\ud83c\udffd\u200d\ud83e\udd1d\u200d\ud83d\udc69\ud83c[\udffb\udffc\udffe\udfff]|\ud83d\udc69\ud83c\udffe\u200d\ud83e\udd1d\u200d\ud83d\udc68\ud83c[\udffb-\udffd\udfff]|\ud83d\udc69\ud83c\udffe\u200d\ud83e\udd1d\u200d\ud83d\udc69\ud83c[\udffb-\udffd\udfff]|\ud83d\udc69\ud83c\udfff\u200d\ud83e\udd1d\u200d\ud83d\udc68\ud83c[\udffb-\udffe]|\ud83d\udc69\ud83c\udfff\u200d\ud83e\udd1d\u200d\ud83d\udc69\ud83c[\udffb-\udffe]|\ud83e\uddd1\ud83c\udffb\u200d\ud83e\udd1d\u200d\ud83e\uddd1\ud83c[\udffb-\udfff]|\ud83e\uddd1\ud83c\udffc\u200d\ud83e\udd1d\u200d\ud83e\uddd1\ud83c[\udffb-\udfff]|\ud83e\uddd1\ud83c\udffd\u200d\ud83e\udd1d\u200d\ud83e\uddd1\ud83c[\udffb-\udfff]|\ud83e\uddd1\ud83c\udffe\u200d\ud83e\udd1d\u200d\ud83e\uddd1\ud83c[\udffb-\udfff]|\ud83e\uddd1\ud83c\udfff\u200d\ud83e\udd1d\u200d\ud83e\uddd1\ud83c[\udffb-\udfff]|\ud83e\uddd1\u200d\ud83e\udd1d\u200d\ud83e\uddd1|\ud83d\udc6b\ud83c[\udffb-\udfff]|\ud83d\udc6c\ud83c[\udffb-\udfff]|\ud83d\udc6d\ud83c[\udffb-\udfff]|\ud83d[\udc6b-\udc6d])|(?:\ud83d[\udc68\udc69]|\ud83e\uddd1)(?:\ud83c[\udffb-\udfff])?\u200d(?:\u2695\ufe0f|\u2696\ufe0f|\u2708\ufe0f|\ud83c[\udf3e\udf73\udf7c\udf84\udf93\udfa4\udfa8\udfeb\udfed]|\ud83d[\udcbb\udcbc\udd27\udd2c\ude80\ude92]|\ud83e[\uddaf-\uddb3\uddbc\uddbd])|(?:\ud83c[\udfcb\udfcc]|\ud83d[\udd74\udd75]|\u26f9)((?:\ud83c[\udffb-\udfff]|\ufe0f)\u200d[\u2640\u2642]\ufe0f)|(?:\ud83c[\udfc3\udfc4\udfca]|\ud83d[\udc6e\udc70\udc71\udc73\udc77\udc81\udc82\udc86\udc87\ude45-\ude47\ude4b\ude4d\ude4e\udea3\udeb4-\udeb6]|\ud83e[\udd26\udd35\udd37-\udd39\udd3d\udd3e\uddb8\uddb9\uddcd-\uddcf\uddd6-\udddd])(?:\ud83c[\udffb-\udfff])?\u200d[\u2640\u2642]\ufe0f|(?:\ud83d\udc68\u200d\u2764\ufe0f\u200d\ud83d\udc8b\u200d\ud83d\udc68|\ud83d\udc68\u200d\ud83d\udc68\u200d\ud83d\udc66\u200d\ud83d\udc66|\ud83d\udc68\u200d\ud83d\udc68\u200d\ud83d\udc67\u200d\ud83d[\udc66\udc67]|\ud83d\udc68\u200d\ud83d\udc69\u200d\ud83d\udc66\u200d\ud83d\udc66|\ud83d\udc68\u200d\ud83d\udc69\u200d\ud83d\udc67\u200d\ud83d[\udc66\udc67]|\ud83d\udc69\u200d\u2764\ufe0f\u200d\ud83d\udc8b\u200d\ud83d[\udc68\udc69]|\ud83d\udc69\u200d\ud83d\udc69\u200d\ud83d\udc66\u200d\ud83d\udc66|\ud83d\udc69\u200d\ud83d\udc69\u200d\ud83d\udc67\u200d\ud83d[\udc66\udc67]|\ud83d\udc68\u200d\u2764\ufe0f\u200d\ud83d\udc68|\ud83d\udc68\u200d\ud83d\udc66\u200d\ud83d\udc66|\ud83d\udc68\u200d\ud83d\udc67\u200d\ud83d[\udc66\udc67]|\ud83d\udc68\u200d\ud83d\udc68\u200d\ud83d[\udc66\udc67]|\ud83d\udc68\u200d\ud83d\udc69\u200d\ud83d[\udc66\udc67]|\ud83d\udc69\u200d\u2764\ufe0f\u200d\ud83d[\udc68\udc69]|\ud83d\udc69\u200d\ud83d\udc66\u200d\ud83d\udc66|\ud83d\udc69\u200d\ud83d\udc67\u200d\ud83d[\udc66\udc67]|\ud83d\udc69\u200d\ud83d\udc69\u200d\ud83d[\udc66\udc67]|\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f|\ud83c\udff3\ufe0f\u200d\ud83c\udf08|\ud83c\udff4\u200d\u2620\ufe0f|\ud83d\udc15\u200d\ud83e\uddba|\ud83d\udc3b\u200d\u2744\ufe0f|\ud83d\udc41\u200d\ud83d\udde8|\ud83d\udc68\u200d\ud83d[\udc66\udc67]|\ud83d\udc69\u200d\ud83d[\udc66\udc67]|\ud83d\udc6f\u200d\u2640\ufe0f|\ud83d\udc6f\u200d\u2642\ufe0f|\ud83e\udd3c\u200d\u2640\ufe0f|\ud83e\udd3c\u200d\u2642\ufe0f|\ud83e\uddde\u200d\u2640\ufe0f|\ud83e\uddde\u200d\u2642\ufe0f|\ud83e\udddf\u200d\u2640\ufe0f|\ud83e\udddf\u200d\u2642\ufe0f|\ud83d\udc08\u200d\u2b1b)|[#*0-9]\ufe0f?\u20e3|(?:[©®\u2122\u265f]\ufe0f)|(?:\ud83c[\udc04\udd70\udd71\udd7e\udd7f\ude02\ude1a\ude2f\ude37\udf21\udf24-\udf2c\udf36\udf7d\udf96\udf97\udf99-\udf9b\udf9e\udf9f\udfcd\udfce\udfd4-\udfdf\udff3\udff5\udff7]|\ud83d[\udc3f\udc41\udcfd\udd49\udd4a\udd6f\udd70\udd73\udd76-\udd79\udd87\udd8a-\udd8d\udda5\udda8\uddb1\uddb2\uddbc\uddc2-\uddc4\uddd1-\uddd3\udddc-\uddde\udde1\udde3\udde8\uddef\uddf3\uddfa\udecb\udecd-\udecf\udee0-\udee5\udee9\udef0\udef3]|[\u203c\u2049\u2139\u2194-\u2199\u21a9\u21aa\u231a\u231b\u2328\u23cf\u23ed-\u23ef\u23f1\u23f2\u23f8-\u23fa\u24c2\u25aa\u25ab\u25b6\u25c0\u25fb-\u25fe\u2600-\u2604\u260e\u2611\u2614\u2615\u2618\u2620\u2622\u2623\u2626\u262a\u262e\u262f\u2638-\u263a\u2640\u2642\u2648-\u2653\u2660\u2663\u2665\u2666\u2668\u267b\u267f\u2692-\u2697\u2699\u269b\u269c\u26a0\u26a1\u26a7\u26aa\u26ab\u26b0\u26b1\u26bd\u26be\u26c4\u26c5\u26c8\u26cf\u26d1\u26d3\u26d4\u26e9\u26ea\u26f0-\u26f5\u26f8\u26fa\u26fd\u2702\u2708\u2709\u270f\u2712\u2714\u2716\u271d\u2721\u2733\u2734\u2744\u2747\u2757\u2763\u2764\u27a1\u2934\u2935\u2b05-\u2b07\u2b1b\u2b1c\u2b50\u2b55\u3030\u303d\u3297\u3299])(?:\ufe0f|(?!\ufe0e))|(?:(?:\ud83c[\udfcb\udfcc]|\ud83d[\udd74\udd75\udd90]|[\u261d\u26f7\u26f9\u270c\u270d])(?:\ufe0f|(?!\ufe0e))|(?:\ud83c[\udf85\udfc2-\udfc4\udfc7\udfca]|\ud83d[\udc42\udc43\udc46-\udc50\udc66-\udc69\udc6e\udc70-\udc78\udc7c\udc81-\udc83\udc85-\udc87\udcaa\udd7a\udd95\udd96\ude45-\ude47\ude4b-\ude4f\udea3\udeb4-\udeb6\udec0\udecc]|\ud83e[\udd0c\udd0f\udd18-\udd1c\udd1e\udd1f\udd26\udd30-\udd39\udd3d\udd3e\udd77\uddb5\uddb6\uddb8\uddb9\uddbb\uddcd-\uddcf\uddd1-\udddd]|[\u270a\u270b]))(?:\ud83c[\udffb-\udfff])?|(?:\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f|\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc73\udb40\udc63\udb40\udc74\udb40\udc7f|\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc77\udb40\udc6c\udb40\udc73\udb40\udc7f|\ud83c\udde6\ud83c[\udde8-\uddec\uddee\uddf1\uddf2\uddf4\uddf6-\uddfa\uddfc\uddfd\uddff]|\ud83c\udde7\ud83c[\udde6\udde7\udde9-\uddef\uddf1-\uddf4\uddf6-\uddf9\uddfb\uddfc\uddfe\uddff]|\ud83c\udde8\ud83c[\udde6\udde8\udde9\uddeb-\uddee\uddf0-\uddf5\uddf7\uddfa-\uddff]|\ud83c\udde9\ud83c[\uddea\uddec\uddef\uddf0\uddf2\uddf4\uddff]|\ud83c\uddea\ud83c[\udde6\udde8\uddea\uddec\udded\uddf7-\uddfa]|\ud83c\uddeb\ud83c[\uddee-\uddf0\uddf2\uddf4\uddf7]|\ud83c\uddec\ud83c[\udde6\udde7\udde9-\uddee\uddf1-\uddf3\uddf5-\uddfa\uddfc\uddfe]|\ud83c\udded\ud83c[\uddf0\uddf2\uddf3\uddf7\uddf9\uddfa]|\ud83c\uddee\ud83c[\udde8-\uddea\uddf1-\uddf4\uddf6-\uddf9]|\ud83c\uddef\ud83c[\uddea\uddf2\uddf4\uddf5]|\ud83c\uddf0\ud83c[\uddea\uddec-\uddee\uddf2\uddf3\uddf5\uddf7\uddfc\uddfe\uddff]|\ud83c\uddf1\ud83c[\udde6-\udde8\uddee\uddf0\uddf7-\uddfb\uddfe]|\ud83c\uddf2\ud83c[\udde6\udde8-\udded\uddf0-\uddff]|\ud83c\uddf3\ud83c[\udde6\udde8\uddea-\uddec\uddee\uddf1\uddf4\uddf5\uddf7\uddfa\uddff]|\ud83c\uddf4\ud83c\uddf2|\ud83c\uddf5\ud83c[\udde6\uddea-\udded\uddf0-\uddf3\uddf7-\uddf9\uddfc\uddfe]|\ud83c\uddf6\ud83c\udde6|\ud83c\uddf7\ud83c[\uddea\uddf4\uddf8\uddfa\uddfc]|\ud83c\uddf8\ud83c[\udde6-\uddea\uddec-\uddf4\uddf7-\uddf9\uddfb\uddfd-\uddff]|\ud83c\uddf9\ud83c[\udde6\udde8\udde9\uddeb-\udded\uddef-\uddf4\uddf7\uddf9\uddfb\uddfc\uddff]|\ud83c\uddfa\ud83c[\udde6\uddec\uddf2\uddf3\uddf8\uddfe\uddff]|\ud83c\uddfb\ud83c[\udde6\udde8\uddea\uddec\uddee\uddf3\uddfa]|\ud83c\uddfc\ud83c[\uddeb\uddf8]|\ud83c\uddfd\ud83c\uddf0|\ud83c\uddfe\ud83c[\uddea\uddf9]|\ud83c\uddff\ud83c[\udde6\uddf2\uddfc]|\ud83c[\udccf\udd8e\udd91-\udd9a\udde6-\uddff\ude01\ude32-\ude36\ude38-\ude3a\ude50\ude51\udf00-\udf20\udf2d-\udf35\udf37-\udf7c\udf7e-\udf84\udf86-\udf93\udfa0-\udfc1\udfc5\udfc6\udfc8\udfc9\udfcf-\udfd3\udfe0-\udff0\udff4\udff8-\udfff]|\ud83d[\udc00-\udc3e\udc40\udc44\udc45\udc51-\udc65\udc6a\udc6f\udc79-\udc7b\udc7d-\udc80\udc84\udc88-\udca9\udcab-\udcfc\udcff-\udd3d\udd4b-\udd4e\udd50-\udd67\udda4\uddfb-\ude44\ude48-\ude4a\ude80-\udea2\udea4-\udeb3\udeb7-\udebf\udec1-\udec5\uded0-\uded2\uded5-\uded7\udeeb\udeec\udef4-\udefc\udfe0-\udfeb]|\ud83e[\udd0d\udd0e\udd10-\udd17\udd1d\udd20-\udd25\udd27-\udd2f\udd3a\udd3c\udd3f-\udd45\udd47-\udd76\udd78\udd7a-\uddb4\uddb7\uddba\uddbc-\uddcb\uddd0\uddde-\uddff\ude70-\ude74\ude78-\ude7a\ude80-\ude86\ude90-\udea8\udeb0-\udeb6\udec0-\udec2\uded0-\uded6]|[\u23e9-\u23ec\u23f0\u23f3\u267e\u26ce\u2705\u2728\u274c\u274e\u2753-\u2755\u2795-\u2797\u27b0\u27bf\ue50a])|\ufe0f/g,i=/\uFE0F/g,a=String.fromCharCode(8205),r=/[&<>'"]/g,t=/^(?:iframe|noframes|noscript|script|select|style|textarea)$/,s=String.fromCharCode;return e;function m(e,o){return document.createTextNode(o?e.replace(i,""):e)}function c(e,o){return"".concat(o.base,o.size,"/",e,o.ext)}function d(e,o){for(var n,i,a=e.childNodes,r=a.length;r--;)3===(i=(n=a[r]).nodeType)?o.push(n):1!==i||"ownerSVGElement"in n||t.test(n.nodeName.toLowerCase())||d(n,o);return o}function g(e){return j(e.indexOf(a)<0?e.replace(i,""):e)}function u(e,o){for(var i,a,r,t,s,c,u,l,v,f,y,j,h,p=d(e,[]),b=p.length;b--;){for(r=!1,t=document.createDocumentFragment(),c=(s=p[b]).nodeValue,l=0;u=n.exec(c);){if((v=u.index)!==l&&t.appendChild(m(c.slice(l,v),!0)),j=g(y=u[0]),l=v+y.length,h=o.callback(j,o),j&&h){for(a in(f=new Image).onerror=o.onerror,f.setAttribute("draggable","false"),i=o.attributes(y,j))i.hasOwnProperty(a)&&0!==a.indexOf("on")&&!f.hasAttribute(a)&&f.setAttribute(a,i[a]);f.className=o.className,f.alt=y,f.src=h,r=!0,t.appendChild(f)}f||t.appendChild(m(y,!1)),f=null}r&&(l<c.length&&t.appendChild(m(c.slice(l),!0)),s.parentNode.replaceChild(t,s))}return e}function l(e,o){return y(e,(function(e){var n,i,a=e,t=g(e),s=o.callback(t,o);if(t&&s){for(i in a="<img ".concat('class="',o.className,'" ','draggable="false" ','alt="',e,'"',' src="',s,'"'),n=o.attributes(e,t))n.hasOwnProperty(i)&&0!==i.indexOf("on")&&-1===a.indexOf(" "+i+"=")&&(a=a.concat(" ",i,'="',n[i].replace(r,v),'"'));a=a.concat("/>")}return a}))}function v(e){return o[e]}function f(){return null}function y(e,o){return String(e).replace(n,o)}function j(e,o){for(var n=[],i=0,a=0,r=0;r<e.length;)i=e.charCodeAt(r++),a?(n.push((65536+(a-55296<<10)+(i-56320)).toString(16)),a=0):55296<=i&&i<=56319?a=i:n.push(i.toString(16));return n.join(o||"-")}}(),xe={categories:["smileys","people","animals","food","travel","activities","objects","symbols","flags"],emoji:[{emoji:"😀",category:0,name:"grinning face",version:"1.0"},{emoji:"😃",category:0,name:"grinning face with big eyes",version:"1.0"},{emoji:"😄",category:0,name:"grinning face with smiling eyes",version:"1.0"},{emoji:"😁",category:0,name:"beaming face with smiling eyes",version:"1.0"},{emoji:"😆",category:0,name:"grinning squinting face",version:"1.0"},{emoji:"😅",category:0,name:"grinning face with sweat",version:"1.0"},{emoji:"🤣",category:0,name:"rolling on the floor laughing",version:"3.0"},{emoji:"😂",category:0,name:"face with tears of joy",version:"1.0"},{emoji:"🙂",category:0,name:"slightly smiling face",version:"1.0"},{emoji:"🙃",category:0,name:"upside-down face",version:"1.0"},{emoji:"😉",category:0,name:"winking face",version:"1.0"},{emoji:"😊",category:0,name:"smiling face with smiling eyes",version:"1.0"},{emoji:"😇",category:0,name:"smiling face with halo",version:"1.0"},{emoji:"🥰",category:0,name:"smiling face with hearts",version:"11.0"},{emoji:"😍",category:0,name:"smiling face with heart-eyes",version:"1.0"},{emoji:"🤩",category:0,name:"star-struck",version:"5.0"},{emoji:"😘",category:0,name:"face blowing a kiss",version:"1.0"},{emoji:"😗",category:0,name:"kissing face",version:"1.0"},{emoji:"☺️",category:0,name:"smiling face",version:"1.0"},{emoji:"😚",category:0,name:"kissing face with closed eyes",version:"1.0"},{emoji:"😙",category:0,name:"kissing face with smiling eyes",version:"1.0"},{emoji:"🥲",category:0,name:"smiling face with tear",version:"13.0"},{emoji:"😋",category:0,name:"face savoring food",version:"1.0"},{emoji:"😛",category:0,name:"face with tongue",version:"1.0"},{emoji:"😜",category:0,name:"winking face with tongue",version:"1.0"},{emoji:"🤪",category:0,name:"zany face",version:"5.0"},{emoji:"😝",category:0,name:"squinting face with tongue",version:"1.0"},{emoji:"🤑",category:0,name:"money-mouth face",version:"1.0"},{emoji:"🤗",category:0,name:"hugging face",version:"1.0"},{emoji:"🤭",category:0,name:"face with hand over mouth",version:"5.0"},{emoji:"🤫",category:0,name:"shushing face",version:"5.0"},{emoji:"🤔",category:0,name:"thinking face",version:"1.0"},{emoji:"🤐",category:0,name:"zipper-mouth face",version:"1.0"},{emoji:"🤨",category:0,name:"face with raised eyebrow",version:"5.0"},{emoji:"😐",category:0,name:"neutral face",version:"1.0"},{emoji:"😑",category:0,name:"expressionless face",version:"1.0"},{emoji:"😶",category:0,name:"face without mouth",version:"1.0"},{emoji:"😏",category:0,name:"smirking face",version:"1.0"},{emoji:"😒",category:0,name:"unamused face",version:"1.0"},{emoji:"🙄",category:0,name:"face with rolling eyes",version:"1.0"},{emoji:"😬",category:0,name:"grimacing face",version:"1.0"},{emoji:"🤥",category:0,name:"lying face",version:"3.0"},{emoji:"😌",category:0,name:"relieved face",version:"1.0"},{emoji:"😔",category:0,name:"pensive face",version:"1.0"},{emoji:"😪",category:0,name:"sleepy face",version:"1.0"},{emoji:"🤤",category:0,name:"drooling face",version:"3.0"},{emoji:"😴",category:0,name:"sleeping face",version:"1.0"},{emoji:"😷",category:0,name:"face with medical mask",version:"1.0"},{emoji:"🤒",category:0,name:"face with thermometer",version:"1.0"},{emoji:"🤕",category:0,name:"face with head-bandage",version:"1.0"},{emoji:"🤢",category:0,name:"nauseated face",version:"3.0"},{emoji:"🤮",category:0,name:"face vomiting",version:"5.0"},{emoji:"🤧",category:0,name:"sneezing face",version:"3.0"},{emoji:"🥵",category:0,name:"hot face",version:"11.0"},{emoji:"🥶",category:0,name:"cold face",version:"11.0"},{emoji:"🥴",category:0,name:"woozy face",version:"11.0"},{emoji:"😵",category:0,name:"dizzy face",version:"1.0"},{emoji:"🤯",category:0,name:"exploding head",version:"5.0"},{emoji:"🤠",category:0,name:"cowboy hat face",version:"3.0"},{emoji:"🥳",category:0,name:"partying face",version:"11.0"},{emoji:"🥸",category:0,name:"disguised face",version:"13.0"},{emoji:"😎",category:0,name:"smiling face with sunglasses",version:"1.0"},{emoji:"🤓",category:0,name:"nerd face",version:"1.0"},{emoji:"🧐",category:0,name:"face with monocle",version:"5.0"},{emoji:"😕",category:0,name:"confused face",version:"1.0"},{emoji:"😟",category:0,name:"worried face",version:"1.0"},{emoji:"🙁",category:0,name:"slightly frowning face",version:"1.0"},{emoji:"☹️",category:0,name:"frowning face",version:"1.0"},{emoji:"😮",category:0,name:"face with open mouth",version:"1.0"},{emoji:"😯",category:0,name:"hushed face",version:"1.0"},{emoji:"😲",category:0,name:"astonished face",version:"1.0"},{emoji:"😳",category:0,name:"flushed face",version:"1.0"},{emoji:"🥺",category:0,name:"pleading face",version:"11.0"},{emoji:"😦",category:0,name:"frowning face with open mouth",version:"1.0"},{emoji:"😧",category:0,name:"anguished face",version:"1.0"},{emoji:"😨",category:0,name:"fearful face",version:"1.0"},{emoji:"😰",category:0,name:"anxious face with sweat",version:"1.0"},{emoji:"😥",category:0,name:"sad but relieved face",version:"1.0"},{emoji:"😢",category:0,name:"crying face",version:"1.0"},{emoji:"😭",category:0,name:"loudly crying face",version:"1.0"},{emoji:"😱",category:0,name:"face screaming in fear",version:"1.0"},{emoji:"😖",category:0,name:"confounded face",version:"1.0"},{emoji:"😣",category:0,name:"persevering face",version:"1.0"},{emoji:"😞",category:0,name:"disappointed face",version:"1.0"},{emoji:"😓",category:0,name:"downcast face with sweat",version:"1.0"},{emoji:"😩",category:0,name:"weary face",version:"1.0"},{emoji:"😫",category:0,name:"tired face",version:"1.0"},{emoji:"🥱",category:0,name:"yawning face",version:"12.0"},{emoji:"😤",category:0,name:"face with steam from nose",version:"1.0"},{emoji:"😡",category:0,name:"pouting face",version:"1.0"},{emoji:"😠",category:0,name:"angry face",version:"1.0"},{emoji:"🤬",category:0,name:"face with symbols on mouth",version:"5.0"},{emoji:"😈",category:0,name:"smiling face with horns",version:"1.0"},{emoji:"👿",category:0,name:"angry face with horns",version:"1.0"},{emoji:"💀",category:0,name:"skull",version:"1.0"},{emoji:"☠️",category:0,name:"skull and crossbones",version:"1.0"},{emoji:"💩",category:0,name:"pile of poo",version:"1.0"},{emoji:"🤡",category:0,name:"clown face",version:"3.0"},{emoji:"👹",category:0,name:"ogre",version:"1.0"},{emoji:"👺",category:0,name:"goblin",version:"1.0"},{emoji:"👻",category:0,name:"ghost",version:"1.0"},{emoji:"👽",category:0,name:"alien",version:"1.0"},{emoji:"👾",category:0,name:"alien monster",version:"1.0"},{emoji:"🤖",category:0,name:"robot",version:"1.0"},{emoji:"😺",category:0,name:"grinning cat",version:"1.0"},{emoji:"😸",category:0,name:"grinning cat with smiling eyes",version:"1.0"},{emoji:"😹",category:0,name:"cat with tears of joy",version:"1.0"},{emoji:"😻",category:0,name:"smiling cat with heart-eyes",version:"1.0"},{emoji:"😼",category:0,name:"cat with wry smile",version:"1.0"},{emoji:"😽",category:0,name:"kissing cat",version:"1.0"},{emoji:"🙀",category:0,name:"weary cat",version:"1.0"},{emoji:"😿",category:0,name:"crying cat",version:"1.0"},{emoji:"😾",category:0,name:"pouting cat",version:"1.0"},{emoji:"🙈",category:0,name:"see-no-evil monkey",version:"1.0"},{emoji:"🙉",category:0,name:"hear-no-evil monkey",version:"1.0"},{emoji:"🙊",category:0,name:"speak-no-evil monkey",version:"1.0"},{emoji:"💋",category:0,name:"kiss mark",version:"1.0"},{emoji:"💌",category:0,name:"love letter",version:"1.0"},{emoji:"💘",category:0,name:"heart with arrow",version:"1.0"},{emoji:"💝",category:0,name:"heart with ribbon",version:"1.0"},{emoji:"💖",category:0,name:"sparkling heart",version:"1.0"},{emoji:"💗",category:0,name:"growing heart",version:"1.0"},{emoji:"💓",category:0,name:"beating heart",version:"1.0"},{emoji:"💞",category:0,name:"revolving hearts",version:"1.0"},{emoji:"💕",category:0,name:"two hearts",version:"1.0"},{emoji:"💟",category:0,name:"heart decoration",version:"1.0"},{emoji:"❣️",category:0,name:"heart exclamation",version:"1.0"},{emoji:"💔",category:0,name:"broken heart",version:"1.0"},{emoji:"❤️",category:0,name:"red heart",version:"1.0"},{emoji:"🧡",category:0,name:"orange heart",version:"5.0"},{emoji:"💛",category:0,name:"yellow heart",version:"1.0"},{emoji:"💚",category:0,name:"green heart",version:"1.0"},{emoji:"💙",category:0,name:"blue heart",version:"1.0"},{emoji:"💜",category:0,name:"purple heart",version:"1.0"},{emoji:"🤎",category:0,name:"brown heart",version:"12.0"},{emoji:"🖤",category:0,name:"black heart",version:"3.0"},{emoji:"🤍",category:0,name:"white heart",version:"12.0"},{emoji:"💯",category:0,name:"hundred points",version:"1.0"},{emoji:"💢",category:0,name:"anger symbol",version:"1.0"},{emoji:"💥",category:0,name:"collision",version:"1.0"},{emoji:"💫",category:0,name:"dizzy",version:"1.0"},{emoji:"💦",category:0,name:"sweat droplets",version:"1.0"},{emoji:"💨",category:0,name:"dashing away",version:"1.0"},{emoji:"🕳️",category:0,name:"hole",version:"1.0"},{emoji:"💣",category:0,name:"bomb",version:"1.0"},{emoji:"💬",category:0,name:"speech balloon",version:"1.0"},{emoji:"👁️‍🗨️",category:0,name:"eye in speech bubble",version:"2.0"},{emoji:"🗨️",category:0,name:"left speech bubble",version:"2.0"},{emoji:"🗯️",category:0,name:"right anger bubble",version:"1.0"},{emoji:"💭",category:0,name:"thought balloon",version:"1.0"},{emoji:"💤",category:0,name:"zzz",version:"1.0"},{emoji:"👋",category:1,name:"waving hand",variations:["👋🏻","👋🏼","👋🏽","👋🏾","👋🏿"],version:"1.0"},{emoji:"🤚",category:1,name:"raised back of hand",variations:["🤚🏻","🤚🏼","🤚🏽","🤚🏾","🤚🏿"],version:"3.0"},{emoji:"🖐️",category:1,name:"hand with fingers splayed",variations:["🖐🏻","🖐🏼","🖐🏽","🖐🏾","🖐🏿"],version:"1.0"},{emoji:"✋",category:1,name:"raised hand",variations:["✋🏻","✋🏼","✋🏽","✋🏾","✋🏿"],version:"1.0"},{emoji:"🖖",category:1,name:"vulcan salute",variations:["🖖🏻","🖖🏼","🖖🏽","🖖🏾","🖖🏿"],version:"1.0"},{emoji:"👌",category:1,name:"OK hand",variations:["👌🏻","👌🏼","👌🏽","👌🏾","👌🏿"],version:"1.0"},{emoji:"🤌",category:1,name:"pinched fingers",variations:["🤌🏻","🤌🏼","🤌🏽","🤌🏾","🤌🏿"],version:"13.0"},{emoji:"🤏",category:1,name:"pinching hand",variations:["🤏🏻","🤏🏼","🤏🏽","🤏🏾","🤏🏿"],version:"12.0"},{emoji:"✌️",category:1,name:"victory hand",variations:["✌🏻","✌🏼","✌🏽","✌🏾","✌🏿"],version:"1.0"},{emoji:"🤞",category:1,name:"crossed fingers",variations:["🤞🏻","🤞🏼","🤞🏽","🤞🏾","🤞🏿"],version:"3.0"},{emoji:"🤟",category:1,name:"love-you gesture",variations:["🤟🏻","🤟🏼","🤟🏽","🤟🏾","🤟🏿"],version:"5.0"},{emoji:"🤘",category:1,name:"sign of the horns",variations:["🤘🏻","🤘🏼","🤘🏽","🤘🏾","🤘🏿"],version:"1.0"},{emoji:"🤙",category:1,name:"call me hand",variations:["🤙🏻","🤙🏼","🤙🏽","🤙🏾","🤙🏿"],version:"3.0"},{emoji:"👈",category:1,name:"backhand index pointing left",variations:["👈🏻","👈🏼","👈🏽","👈🏾","👈🏿"],version:"1.0"},{emoji:"👉",category:1,name:"backhand index pointing right",variations:["👉🏻","👉🏼","👉🏽","👉🏾","👉🏿"],version:"1.0"},{emoji:"👆",category:1,name:"backhand index pointing up",variations:["👆🏻","👆🏼","👆🏽","👆🏾","👆🏿"],version:"1.0"},{emoji:"🖕",category:1,name:"middle finger",variations:["🖕🏻","🖕🏼","🖕🏽","🖕🏾","🖕🏿"],version:"1.0"},{emoji:"👇",category:1,name:"backhand index pointing down",variations:["👇🏻","👇🏼","👇🏽","👇🏾","👇🏿"],version:"1.0"},{emoji:"☝️",category:1,name:"index pointing up",variations:["☝🏻","☝🏼","☝🏽","☝🏾","☝🏿"],version:"1.0"},{emoji:"👍",category:1,name:"thumbs up",variations:["👍🏻","👍🏼","👍🏽","👍🏾","👍🏿"],version:"1.0"},{emoji:"👎",category:1,name:"thumbs down",variations:["👎🏻","👎🏼","👎🏽","👎🏾","👎🏿"],version:"1.0"},{emoji:"✊",category:1,name:"raised fist",variations:["✊🏻","✊🏼","✊🏽","✊🏾","✊🏿"],version:"1.0"},{emoji:"👊",category:1,name:"oncoming fist",variations:["👊🏻","👊🏼","👊🏽","👊🏾","👊🏿"],version:"1.0"},{emoji:"🤛",category:1,name:"left-facing fist",variations:["🤛🏻","🤛🏼","🤛🏽","🤛🏾","🤛🏿"],version:"3.0"},{emoji:"🤜",category:1,name:"right-facing fist",variations:["🤜🏻","🤜🏼","🤜🏽","🤜🏾","🤜🏿"],version:"3.0"},{emoji:"👏",category:1,name:"clapping hands",variations:["👏🏻","👏🏼","👏🏽","👏🏾","👏🏿"],version:"1.0"},{emoji:"🙌",category:1,name:"raising hands",variations:["🙌🏻","🙌🏼","🙌🏽","🙌🏾","🙌🏿"],version:"1.0"},{emoji:"👐",category:1,name:"open hands",variations:["👐🏻","👐🏼","👐🏽","👐🏾","👐🏿"],version:"1.0"},{emoji:"🤲",category:1,name:"palms up together",variations:["🤲🏻","🤲🏼","🤲🏽","🤲🏾","🤲🏿"],version:"5.0"},{emoji:"🤝",category:1,name:"handshake",version:"3.0"},{emoji:"🙏",category:1,name:"folded hands",variations:["🙏🏻","🙏🏼","🙏🏽","🙏🏾","🙏🏿"],version:"1.0"},{emoji:"✍️",category:1,name:"writing hand",variations:["✍🏻","✍🏼","✍🏽","✍🏾","✍🏿"],version:"1.0"},{emoji:"💅",category:1,name:"nail polish",variations:["💅🏻","💅🏼","💅🏽","💅🏾","💅🏿"],version:"1.0"},{emoji:"🤳",category:1,name:"selfie",variations:["🤳🏻","🤳🏼","🤳🏽","🤳🏾","🤳🏿"],version:"3.0"},{emoji:"💪",category:1,name:"flexed biceps",variations:["💪🏻","💪🏼","💪🏽","💪🏾","💪🏿"],version:"1.0"},{emoji:"🦾",category:1,name:"mechanical arm",version:"12.0"},{emoji:"🦿",category:1,name:"mechanical leg",version:"12.0"},{emoji:"🦵",category:1,name:"leg",variations:["🦵🏻","🦵🏼","🦵🏽","🦵🏾","🦵🏿"],version:"11.0"},{emoji:"🦶",category:1,name:"foot",variations:["🦶🏻","🦶🏼","🦶🏽","🦶🏾","🦶🏿"],version:"11.0"},{emoji:"👂",category:1,name:"ear",variations:["👂🏻","👂🏼","👂🏽","👂🏾","👂🏿"],version:"1.0"},{emoji:"🦻",category:1,name:"ear with hearing aid",variations:["🦻🏻","🦻🏼","🦻🏽","🦻🏾","🦻🏿"],version:"12.0"},{emoji:"👃",category:1,name:"nose",variations:["👃🏻","👃🏼","👃🏽","👃🏾","👃🏿"],version:"1.0"},{emoji:"🧠",category:1,name:"brain",version:"5.0"},{emoji:"🫀",category:1,name:"anatomical heart",version:"13.0"},{emoji:"🫁",category:1,name:"lungs",version:"13.0"},{emoji:"🦷",category:1,name:"tooth",version:"11.0"},{emoji:"🦴",category:1,name:"bone",version:"11.0"},{emoji:"👀",category:1,name:"eyes",version:"1.0"},{emoji:"👁️",category:1,name:"eye",version:"1.0"},{emoji:"👅",category:1,name:"tongue",version:"1.0"},{emoji:"👄",category:1,name:"mouth",version:"1.0"},{emoji:"👶",category:1,name:"baby",variations:["👶🏻","👶🏼","👶🏽","👶🏾","👶🏿"],version:"1.0"},{emoji:"🧒",category:1,name:"child",variations:["🧒🏻","🧒🏼","🧒🏽","🧒🏾","🧒🏿"],version:"5.0"},{emoji:"👦",category:1,name:"boy",variations:["👦🏻","👦🏼","👦🏽","👦🏾","👦🏿"],version:"1.0"},{emoji:"👧",category:1,name:"girl",variations:["👧🏻","👧🏼","👧🏽","👧🏾","👧🏿"],version:"1.0"},{emoji:"🧑",category:1,name:"person",variations:["🧑🏻","🧑🏼","🧑🏽","🧑🏾","🧑🏿"],version:"5.0"},{emoji:"👱",category:1,name:"person with blond hair",variations:["👱🏻","👱🏼","👱🏽","👱🏾","👱🏿"],version:"1.0"},{emoji:"👨",category:1,name:"man",variations:["👨🏻","👨🏼","👨🏽","👨🏾","👨🏿"],version:"1.0"},{emoji:"🧔",category:1,name:"man with beard",variations:["🧔🏻","🧔🏼","🧔🏽","🧔🏾","🧔🏿"],version:"5.0"},{emoji:"👨‍🦰",category:1,name:"man with red hair",variations:["👨🏻‍🦰","👨🏼‍🦰","👨🏽‍🦰","👨🏾‍🦰","👨🏿‍🦰"],version:"11.0"},{emoji:"👨‍🦱",category:1,name:"man with curly hair",variations:["👨🏻‍🦱","👨🏼‍🦱","👨🏽‍🦱","👨🏾‍🦱","👨🏿‍🦱"],version:"11.0"},{emoji:"👨‍🦳",category:1,name:"man with white hair",variations:["👨🏻‍🦳","👨🏼‍🦳","👨🏽‍🦳","👨🏾‍🦳","👨🏿‍🦳"],version:"11.0"},{emoji:"👨‍🦲",category:1,name:"man with no hair",variations:["👨🏻‍🦲","👨🏼‍🦲","👨🏽‍🦲","👨🏾‍🦲","👨🏿‍🦲"],version:"11.0"},{emoji:"👩",category:1,name:"woman",variations:["👩🏻","👩🏼","👩🏽","👩🏾","👩🏿"],version:"1.0"},{emoji:"👩‍🦰",category:1,name:"woman with red hair",variations:["👩🏻‍🦰","👩🏼‍🦰","👩🏽‍🦰","👩🏾‍🦰","👩🏿‍🦰"],version:"11.0"},{emoji:"🧑‍🦰",category:1,name:"person with red hair",variations:["🧑🏻‍🦰","🧑🏼‍🦰","🧑🏽‍🦰","🧑🏾‍🦰","🧑🏿‍🦰"],version:"12.1"},{emoji:"👩‍🦱",category:1,name:"woman with curly hair",variations:["👩🏻‍🦱","👩🏼‍🦱","👩🏽‍🦱","👩🏾‍🦱","👩🏿‍🦱"],version:"11.0"},{emoji:"🧑‍🦱",category:1,name:"person with curly hair",variations:["🧑🏻‍🦱","🧑🏼‍🦱","🧑🏽‍🦱","🧑🏾‍🦱","🧑🏿‍🦱"],version:"12.1"},{emoji:"👩‍🦳",category:1,name:"woman with white hair",variations:["👩🏻‍🦳","👩🏼‍🦳","👩🏽‍🦳","👩🏾‍🦳","👩🏿‍🦳"],version:"11.0"},{emoji:"🧑‍🦳",category:1,name:"person with white hair",variations:["🧑🏻‍🦳","🧑🏼‍🦳","🧑🏽‍🦳","🧑🏾‍🦳","🧑🏿‍🦳"],version:"12.1"},{emoji:"👩‍🦲",category:1,name:"woman with no hair",variations:["👩🏻‍🦲","👩🏼‍🦲","👩🏽‍🦲","👩🏾‍🦲","👩🏿‍🦲"],version:"11.0"},{emoji:"🧑‍🦲",category:1,name:"person with no hair",variations:["🧑🏻‍🦲","🧑🏼‍🦲","🧑🏽‍🦲","🧑🏾‍🦲","🧑🏿‍🦲"],version:"12.1"},{emoji:"👱‍♀️",category:1,name:"woman with blond hair",variations:["👱🏻‍♀️","👱🏼‍♀️","👱🏽‍♀️","👱🏾‍♀️","👱🏿‍♀️"],version:"4.0"},{emoji:"👱‍♂️",category:1,name:"man with blond hair",variations:["👱🏻‍♂️","👱🏼‍♂️","👱🏽‍♂️","👱🏾‍♂️","👱🏿‍♂️"],version:"4.0"},{emoji:"🧓",category:1,name:"older person",variations:["🧓🏻","🧓🏼","🧓🏽","🧓🏾","🧓🏿"],version:"5.0"},{emoji:"👴",category:1,name:"old man",variations:["👴🏻","👴🏼","👴🏽","👴🏾","👴🏿"],version:"1.0"},{emoji:"👵",category:1,name:"old woman",variations:["👵🏻","👵🏼","👵🏽","👵🏾","👵🏿"],version:"1.0"},{emoji:"🙍",category:1,name:"person frowning",variations:["🙍🏻","🙍🏼","🙍🏽","🙍🏾","🙍🏿"],version:"1.0"},{emoji:"🙍‍♂️",category:1,name:"man frowning",variations:["🙍🏻‍♂️","🙍🏼‍♂️","🙍🏽‍♂️","🙍🏾‍♂️","🙍🏿‍♂️"],version:"4.0"},{emoji:"🙍‍♀️",category:1,name:"woman frowning",variations:["🙍🏻‍♀️","🙍🏼‍♀️","🙍🏽‍♀️","🙍🏾‍♀️","🙍🏿‍♀️"],version:"4.0"},{emoji:"🙎",category:1,name:"person pouting",variations:["🙎🏻","🙎🏼","🙎🏽","🙎🏾","🙎🏿"],version:"1.0"},{emoji:"🙎‍♂️",category:1,name:"man pouting",variations:["🙎🏻‍♂️","🙎🏼‍♂️","🙎🏽‍♂️","🙎🏾‍♂️","🙎🏿‍♂️"],version:"4.0"},{emoji:"🙎‍♀️",category:1,name:"woman pouting",variations:["🙎🏻‍♀️","🙎🏼‍♀️","🙎🏽‍♀️","🙎🏾‍♀️","🙎🏿‍♀️"],version:"4.0"},{emoji:"🙅",category:1,name:"person gesturing NO",variations:["🙅🏻","🙅🏼","🙅🏽","🙅🏾","🙅🏿"],version:"1.0"},{emoji:"🙅‍♂️",category:1,name:"man gesturing NO",variations:["🙅🏻‍♂️","🙅🏼‍♂️","🙅🏽‍♂️","🙅🏾‍♂️","🙅🏿‍♂️"],version:"4.0"},{emoji:"🙅‍♀️",category:1,name:"woman gesturing NO",variations:["🙅🏻‍♀️","🙅🏼‍♀️","🙅🏽‍♀️","🙅🏾‍♀️","🙅🏿‍♀️"],version:"4.0"},{emoji:"🙆",category:1,name:"person gesturing OK",variations:["🙆🏻","🙆🏼","🙆🏽","🙆🏾","🙆🏿"],version:"1.0"},{emoji:"🙆‍♂️",category:1,name:"man gesturing OK",variations:["🙆🏻‍♂️","🙆🏼‍♂️","🙆🏽‍♂️","🙆🏾‍♂️","🙆🏿‍♂️"],version:"4.0"},{emoji:"🙆‍♀️",category:1,name:"woman gesturing OK",variations:["🙆🏻‍♀️","🙆🏼‍♀️","🙆🏽‍♀️","🙆🏾‍♀️","🙆🏿‍♀️"],version:"4.0"},{emoji:"💁",category:1,name:"person tipping hand",variations:["💁🏻","💁🏼","💁🏽","💁🏾","💁🏿"],version:"1.0"},{emoji:"💁‍♂️",category:1,name:"man tipping hand",variations:["💁🏻‍♂️","💁🏼‍♂️","💁🏽‍♂️","💁🏾‍♂️","💁🏿‍♂️"],version:"4.0"},{emoji:"💁‍♀️",category:1,name:"woman tipping hand",variations:["💁🏻‍♀️","💁🏼‍♀️","💁🏽‍♀️","💁🏾‍♀️","💁🏿‍♀️"],version:"4.0"},{emoji:"🙋",category:1,name:"person raising hand",variations:["🙋🏻","🙋🏼","🙋🏽","🙋🏾","🙋🏿"],version:"1.0"},{emoji:"🙋‍♂️",category:1,name:"man raising hand",variations:["🙋🏻‍♂️","🙋🏼‍♂️","🙋🏽‍♂️","🙋🏾‍♂️","🙋🏿‍♂️"],version:"4.0"},{emoji:"🙋‍♀️",category:1,name:"woman raising hand",variations:["🙋🏻‍♀️","🙋🏼‍♀️","🙋🏽‍♀️","🙋🏾‍♀️","🙋🏿‍♀️"],version:"4.0"},{emoji:"🧏",category:1,name:"deaf person",variations:["🧏🏻","🧏🏼","🧏🏽","🧏🏾","🧏🏿"],version:"12.0"},{emoji:"🧏‍♂️",category:1,name:"deaf man",variations:["🧏🏻‍♂️","🧏🏼‍♂️","🧏🏽‍♂️","🧏🏾‍♂️","🧏🏿‍♂️"],version:"12.0"},{emoji:"🧏‍♀️",category:1,name:"deaf woman",variations:["🧏🏻‍♀️","🧏🏼‍♀️","🧏🏽‍♀️","🧏🏾‍♀️","🧏🏿‍♀️"],version:"12.0"},{emoji:"🙇",category:1,name:"person bowing",variations:["🙇🏻","🙇🏼","🙇🏽","🙇🏾","🙇🏿"],version:"1.0"},{emoji:"🙇‍♂️",category:1,name:"man bowing",variations:["🙇🏻‍♂️","🙇🏼‍♂️","🙇🏽‍♂️","🙇🏾‍♂️","🙇🏿‍♂️"],version:"4.0"},{emoji:"🙇‍♀️",category:1,name:"woman bowing",variations:["🙇🏻‍♀️","🙇🏼‍♀️","🙇🏽‍♀️","🙇🏾‍♀️","🙇🏿‍♀️"],version:"4.0"},{emoji:"🤦",category:1,name:"person facepalming",variations:["🤦🏻","🤦🏼","🤦🏽","🤦🏾","🤦🏿"],version:"3.0"},{emoji:"🤦‍♂️",category:1,name:"man facepalming",variations:["🤦🏻‍♂️","🤦🏼‍♂️","🤦🏽‍♂️","🤦🏾‍♂️","🤦🏿‍♂️"],version:"4.0"},{emoji:"🤦‍♀️",category:1,name:"woman facepalming",variations:["🤦🏻‍♀️","🤦🏼‍♀️","🤦🏽‍♀️","🤦🏾‍♀️","🤦🏿‍♀️"],version:"4.0"},{emoji:"🤷",category:1,name:"person shrugging",variations:["🤷🏻","🤷🏼","🤷🏽","🤷🏾","🤷🏿"],version:"3.0"},{emoji:"🤷‍♂️",category:1,name:"man shrugging",variations:["🤷🏻‍♂️","🤷🏼‍♂️","🤷🏽‍♂️","🤷🏾‍♂️","🤷🏿‍♂️"],version:"4.0"},{emoji:"🤷‍♀️",category:1,name:"woman shrugging",variations:["🤷🏻‍♀️","🤷🏼‍♀️","🤷🏽‍♀️","🤷🏾‍♀️","🤷🏿‍♀️"],version:"4.0"},{emoji:"🧑‍⚕️",category:1,name:"health worker",variations:["🧑🏻‍⚕️","🧑🏼‍⚕️","🧑🏽‍⚕️","🧑🏾‍⚕️","🧑🏿‍⚕️"],version:"12.1"},{emoji:"👨‍⚕️",category:1,name:"man health worker",variations:["👨🏻‍⚕️","👨🏼‍⚕️","👨🏽‍⚕️","👨🏾‍⚕️","👨🏿‍⚕️"],version:"4.0"},{emoji:"👩‍⚕️",category:1,name:"woman health worker",variations:["👩🏻‍⚕️","👩🏼‍⚕️","👩🏽‍⚕️","👩🏾‍⚕️","👩🏿‍⚕️"],version:"4.0"},{emoji:"🧑‍🎓",category:1,name:"student",variations:["🧑🏻‍🎓","🧑🏼‍🎓","🧑🏽‍🎓","🧑🏾‍🎓","🧑🏿‍🎓"],version:"12.1"},{emoji:"👨‍🎓",category:1,name:"man student",variations:["👨🏻‍🎓","👨🏼‍🎓","👨🏽‍🎓","👨🏾‍🎓","👨🏿‍🎓"],version:"4.0"},{emoji:"👩‍🎓",category:1,name:"woman student",variations:["👩🏻‍🎓","👩🏼‍🎓","👩🏽‍🎓","👩🏾‍🎓","👩🏿‍🎓"],version:"4.0"},{emoji:"🧑‍🏫",category:1,name:"teacher",variations:["🧑🏻‍🏫","🧑🏼‍🏫","🧑🏽‍🏫","🧑🏾‍🏫","🧑🏿‍🏫"],version:"12.1"},{emoji:"👨‍🏫",category:1,name:"man teacher",variations:["👨🏻‍🏫","👨🏼‍🏫","👨🏽‍🏫","👨🏾‍🏫","👨🏿‍🏫"],version:"4.0"},{emoji:"👩‍🏫",category:1,name:"woman teacher",variations:["👩🏻‍🏫","👩🏼‍🏫","👩🏽‍🏫","👩🏾‍🏫","👩🏿‍🏫"],version:"4.0"},{emoji:"🧑‍⚖️",category:1,name:"judge",variations:["🧑🏻‍⚖️","🧑🏼‍⚖️","🧑🏽‍⚖️","🧑🏾‍⚖️","🧑🏿‍⚖️"],version:"12.1"},{emoji:"👨‍⚖️",category:1,name:"man judge",variations:["👨🏻‍⚖️","👨🏼‍⚖️","👨🏽‍⚖️","👨🏾‍⚖️","👨🏿‍⚖️"],version:"4.0"},{emoji:"👩‍⚖️",category:1,name:"woman judge",variations:["👩🏻‍⚖️","👩🏼‍⚖️","👩🏽‍⚖️","👩🏾‍⚖️","👩🏿‍⚖️"],version:"4.0"},{emoji:"🧑‍🌾",category:1,name:"farmer",variations:["🧑🏻‍🌾","🧑🏼‍🌾","🧑🏽‍🌾","🧑🏾‍🌾","🧑🏿‍🌾"],version:"12.1"},{emoji:"👨‍🌾",category:1,name:"man farmer",variations:["👨🏻‍🌾","👨🏼‍🌾","👨🏽‍🌾","👨🏾‍🌾","👨🏿‍🌾"],version:"4.0"},{emoji:"👩‍🌾",category:1,name:"woman farmer",variations:["👩🏻‍🌾","👩🏼‍🌾","👩🏽‍🌾","👩🏾‍🌾","👩🏿‍🌾"],version:"4.0"},{emoji:"🧑‍🍳",category:1,name:"cook",variations:["🧑🏻‍🍳","🧑🏼‍🍳","🧑🏽‍🍳","🧑🏾‍🍳","🧑🏿‍🍳"],version:"12.1"},{emoji:"👨‍🍳",category:1,name:"man cook",variations:["👨🏻‍🍳","👨🏼‍🍳","👨🏽‍🍳","👨🏾‍🍳","👨🏿‍🍳"],version:"4.0"},{emoji:"👩‍🍳",category:1,name:"woman cook",variations:["👩🏻‍🍳","👩🏼‍🍳","👩🏽‍🍳","👩🏾‍🍳","👩🏿‍🍳"],version:"4.0"},{emoji:"🧑‍🔧",category:1,name:"mechanic",variations:["🧑🏻‍🔧","🧑🏼‍🔧","🧑🏽‍🔧","🧑🏾‍🔧","🧑🏿‍🔧"],version:"12.1"},{emoji:"👨‍🔧",category:1,name:"man mechanic",variations:["👨🏻‍🔧","👨🏼‍🔧","👨🏽‍🔧","👨🏾‍🔧","👨🏿‍🔧"],version:"4.0"},{emoji:"👩‍🔧",category:1,name:"woman mechanic",variations:["👩🏻‍🔧","👩🏼‍🔧","👩🏽‍🔧","👩🏾‍🔧","👩🏿‍🔧"],version:"4.0"},{emoji:"🧑‍🏭",category:1,name:"factory worker",variations:["🧑🏻‍🏭","🧑🏼‍🏭","🧑🏽‍🏭","🧑🏾‍🏭","🧑🏿‍🏭"],version:"12.1"},{emoji:"👨‍🏭",category:1,name:"man factory worker",variations:["👨🏻‍🏭","👨🏼‍🏭","👨🏽‍🏭","👨🏾‍🏭","👨🏿‍🏭"],version:"4.0"},{emoji:"👩‍🏭",category:1,name:"woman factory worker",variations:["👩🏻‍🏭","👩🏼‍🏭","👩🏽‍🏭","👩🏾‍🏭","👩🏿‍🏭"],version:"4.0"},{emoji:"🧑‍💼",category:1,name:"office worker",variations:["🧑🏻‍💼","🧑🏼‍💼","🧑🏽‍💼","🧑🏾‍💼","🧑🏿‍💼"],version:"12.1"},{emoji:"👨‍💼",category:1,name:"man office worker",variations:["👨🏻‍💼","👨🏼‍💼","👨🏽‍💼","👨🏾‍💼","👨🏿‍💼"],version:"4.0"},{emoji:"👩‍💼",category:1,name:"woman office worker",variations:["👩🏻‍💼","👩🏼‍💼","👩🏽‍💼","👩🏾‍💼","👩🏿‍💼"],version:"4.0"},{emoji:"🧑‍🔬",category:1,name:"scientist",variations:["🧑🏻‍🔬","🧑🏼‍🔬","🧑🏽‍🔬","🧑🏾‍🔬","🧑🏿‍🔬"],version:"12.1"},{emoji:"👨‍🔬",category:1,name:"man scientist",variations:["👨🏻‍🔬","👨🏼‍🔬","👨🏽‍🔬","👨🏾‍🔬","👨🏿‍🔬"],version:"4.0"},{emoji:"👩‍🔬",category:1,name:"woman scientist",variations:["👩🏻‍🔬","👩🏼‍🔬","👩🏽‍🔬","👩🏾‍🔬","👩🏿‍🔬"],version:"4.0"},{emoji:"🧑‍💻",category:1,name:"technologist",variations:["🧑🏻‍💻","🧑🏼‍💻","🧑🏽‍💻","🧑🏾‍💻","🧑🏿‍💻"],version:"12.1"},{emoji:"👨‍💻",category:1,name:"man technologist",variations:["👨🏻‍💻","👨🏼‍💻","👨🏽‍💻","👨🏾‍💻","👨🏿‍💻"],version:"4.0"},{emoji:"👩‍💻",category:1,name:"woman technologist",variations:["👩🏻‍💻","👩🏼‍💻","👩🏽‍💻","👩🏾‍💻","👩🏿‍💻"],version:"4.0"},{emoji:"🧑‍🎤",category:1,name:"singer",variations:["🧑🏻‍🎤","🧑🏼‍🎤","🧑🏽‍🎤","🧑🏾‍🎤","🧑🏿‍🎤"],version:"12.1"},{emoji:"👨‍🎤",category:1,name:"man singer",variations:["👨🏻‍🎤","👨🏼‍🎤","👨🏽‍🎤","👨🏾‍🎤","👨🏿‍🎤"],version:"4.0"},{emoji:"👩‍🎤",category:1,name:"woman singer",variations:["👩🏻‍🎤","👩🏼‍🎤","👩🏽‍🎤","👩🏾‍🎤","👩🏿‍🎤"],version:"4.0"},{emoji:"🧑‍🎨",category:1,name:"artist",variations:["🧑🏻‍🎨","🧑🏼‍🎨","🧑🏽‍🎨","🧑🏾‍🎨","🧑🏿‍🎨"],version:"12.1"},{emoji:"👨‍🎨",category:1,name:"man artist",variations:["👨🏻‍🎨","👨🏼‍🎨","👨🏽‍🎨","👨🏾‍🎨","👨🏿‍🎨"],version:"4.0"},{emoji:"👩‍🎨",category:1,name:"woman artist",variations:["👩🏻‍🎨","👩🏼‍🎨","👩🏽‍🎨","👩🏾‍🎨","👩🏿‍🎨"],version:"4.0"},{emoji:"🧑‍✈️",category:1,name:"pilot",variations:["🧑🏻‍✈️","🧑🏼‍✈️","🧑🏽‍✈️","🧑🏾‍✈️","🧑🏿‍✈️"],version:"12.1"},{emoji:"👨‍✈️",category:1,name:"man pilot",variations:["👨🏻‍✈️","👨🏼‍✈️","👨🏽‍✈️","👨🏾‍✈️","👨🏿‍✈️"],version:"4.0"},{emoji:"👩‍✈️",category:1,name:"woman pilot",variations:["👩🏻‍✈️","👩🏼‍✈️","👩🏽‍✈️","👩🏾‍✈️","👩🏿‍✈️"],version:"4.0"},{emoji:"🧑‍🚀",category:1,name:"astronaut",variations:["🧑🏻‍🚀","🧑🏼‍🚀","🧑🏽‍🚀","🧑🏾‍🚀","🧑🏿‍🚀"],version:"12.1"},{emoji:"👨‍🚀",category:1,name:"man astronaut",variations:["👨🏻‍🚀","👨🏼‍🚀","👨🏽‍🚀","👨🏾‍🚀","👨🏿‍🚀"],version:"4.0"},{emoji:"👩‍🚀",category:1,name:"woman astronaut",variations:["👩🏻‍🚀","👩🏼‍🚀","👩🏽‍🚀","👩🏾‍🚀","👩🏿‍🚀"],version:"4.0"},{emoji:"🧑‍🚒",category:1,name:"firefighter",variations:["🧑🏻‍🚒","🧑🏼‍🚒","🧑🏽‍🚒","🧑🏾‍🚒","🧑🏿‍🚒"],version:"12.1"},{emoji:"👨‍🚒",category:1,name:"man firefighter",variations:["👨🏻‍🚒","👨🏼‍🚒","👨🏽‍🚒","👨🏾‍🚒","👨🏿‍🚒"],version:"4.0"},{emoji:"👩‍🚒",category:1,name:"woman firefighter",variations:["👩🏻‍🚒","👩🏼‍🚒","👩🏽‍🚒","👩🏾‍🚒","👩🏿‍🚒"],version:"4.0"},{emoji:"👮",category:1,name:"police officer",variations:["👮🏻","👮🏼","👮🏽","👮🏾","👮🏿"],version:"1.0"},{emoji:"👮‍♂️",category:1,name:"man police officer",variations:["👮🏻‍♂️","👮🏼‍♂️","👮🏽‍♂️","👮🏾‍♂️","👮🏿‍♂️"],version:"4.0"},{emoji:"👮‍♀️",category:1,name:"woman police officer",variations:["👮🏻‍♀️","👮🏼‍♀️","👮🏽‍♀️","👮🏾‍♀️","👮🏿‍♀️"],version:"4.0"},{emoji:"🕵️",category:1,name:"detective",variations:["🕵🏻","🕵🏼","🕵🏽","🕵🏾","🕵🏿"],version:"1.0"},{emoji:"🕵️‍♂️",category:1,name:"man detective",variations:["🕵🏻‍♂️","🕵🏼‍♂️","🕵🏽‍♂️","🕵🏾‍♂️","🕵🏿‍♂️"],version:"4.0"},{emoji:"🕵️‍♀️",category:1,name:"woman detective",variations:["🕵🏻‍♀️","🕵🏼‍♀️","🕵🏽‍♀️","🕵🏾‍♀️","🕵🏿‍♀️"],version:"4.0"},{emoji:"💂",category:1,name:"guard",variations:["💂🏻","💂🏼","💂🏽","💂🏾","💂🏿"],version:"1.0"},{emoji:"💂‍♂️",category:1,name:"man guard",variations:["💂🏻‍♂️","💂🏼‍♂️","💂🏽‍♂️","💂🏾‍♂️","💂🏿‍♂️"],version:"4.0"},{emoji:"💂‍♀️",category:1,name:"woman guard",variations:["💂🏻‍♀️","💂🏼‍♀️","💂🏽‍♀️","💂🏾‍♀️","💂🏿‍♀️"],version:"4.0"},{emoji:"🥷",category:1,name:"ninja",variations:["🥷🏻","🥷🏼","🥷🏽","🥷🏾","🥷🏿"],version:"13.0"},{emoji:"👷",category:1,name:"construction worker",variations:["👷🏻","👷🏼","👷🏽","👷🏾","👷🏿"],version:"1.0"},{emoji:"👷‍♂️",category:1,name:"man construction worker",variations:["👷🏻‍♂️","👷🏼‍♂️","👷🏽‍♂️","👷🏾‍♂️","👷🏿‍♂️"],version:"4.0"},{emoji:"👷‍♀️",category:1,name:"woman construction worker",variations:["👷🏻‍♀️","👷🏼‍♀️","👷🏽‍♀️","👷🏾‍♀️","👷🏿‍♀️"],version:"4.0"},{emoji:"🤴",category:1,name:"prince",variations:["🤴🏻","🤴🏼","🤴🏽","🤴🏾","🤴🏿"],version:"3.0"},{emoji:"👸",category:1,name:"princess",variations:["👸🏻","👸🏼","👸🏽","👸🏾","👸🏿"],version:"1.0"},{emoji:"👳",category:1,name:"person wearing turban",variations:["👳🏻","👳🏼","👳🏽","👳🏾","👳🏿"],version:"1.0"},{emoji:"👳‍♂️",category:1,name:"man wearing turban",variations:["👳🏻‍♂️","👳🏼‍♂️","👳🏽‍♂️","👳🏾‍♂️","👳🏿‍♂️"],version:"4.0"},{emoji:"👳‍♀️",category:1,name:"woman wearing turban",variations:["👳🏻‍♀️","👳🏼‍♀️","👳🏽‍♀️","👳🏾‍♀️","👳🏿‍♀️"],version:"4.0"},{emoji:"👲",category:1,name:"person with skullcap",variations:["👲🏻","👲🏼","👲🏽","👲🏾","👲🏿"],version:"1.0"},{emoji:"🧕",category:1,name:"woman with headscarf",variations:["🧕🏻","🧕🏼","🧕🏽","🧕🏾","🧕🏿"],version:"5.0"},{emoji:"🤵",category:1,name:"person in tuxedo",variations:["🤵🏻","🤵🏼","🤵🏽","🤵🏾","🤵🏿"],version:"3.0"},{emoji:"🤵‍♂️",category:1,name:"man in tuxedo",variations:["🤵🏻‍♂️","🤵🏼‍♂️","🤵🏽‍♂️","🤵🏾‍♂️","🤵🏿‍♂️"],version:"13.0"},{emoji:"🤵‍♀️",category:1,name:"woman in tuxedo",variations:["🤵🏻‍♀️","🤵🏼‍♀️","🤵🏽‍♀️","🤵🏾‍♀️","🤵🏿‍♀️"],version:"13.0"},{emoji:"👰",category:1,name:"person with veil",variations:["👰🏻","👰🏼","👰🏽","👰🏾","👰🏿"],version:"1.0"},{emoji:"👰‍♂️",category:1,name:"man with veil",variations:["👰🏻‍♂️","👰🏼‍♂️","👰🏽‍♂️","👰🏾‍♂️","👰🏿‍♂️"],version:"13.0"},{emoji:"👰‍♀️",category:1,name:"woman with veil",variations:["👰🏻‍♀️","👰🏼‍♀️","👰🏽‍♀️","👰🏾‍♀️","👰🏿‍♀️"],version:"13.0"},{emoji:"🤰",category:1,name:"pregnant woman",variations:["🤰🏻","🤰🏼","🤰🏽","🤰🏾","🤰🏿"],version:"3.0"},{emoji:"🤱",category:1,name:"breast-feeding",variations:["🤱🏻","🤱🏼","🤱🏽","🤱🏾","🤱🏿"],version:"5.0"},{emoji:"👩‍🍼",category:1,name:"woman feeding baby",variations:["👩🏻‍🍼","👩🏼‍🍼","👩🏽‍🍼","👩🏾‍🍼","👩🏿‍🍼"],version:"13.0"},{emoji:"👨‍🍼",category:1,name:"man feeding baby",variations:["👨🏻‍🍼","👨🏼‍🍼","👨🏽‍🍼","👨🏾‍🍼","👨🏿‍🍼"],version:"13.0"},{emoji:"🧑‍🍼",category:1,name:"person feeding baby",variations:["🧑🏻‍🍼","🧑🏼‍🍼","🧑🏽‍🍼","🧑🏾‍🍼","🧑🏿‍🍼"],version:"13.0"},{emoji:"👼",category:1,name:"baby angel",variations:["👼🏻","👼🏼","👼🏽","👼🏾","👼🏿"],version:"1.0"},{emoji:"🎅",category:1,name:"Santa Claus",variations:["🎅🏻","🎅🏼","🎅🏽","🎅🏾","🎅🏿"],version:"1.0"},{emoji:"🤶",category:1,name:"Mrs. Claus",variations:["🤶🏻","🤶🏼","🤶🏽","🤶🏾","🤶🏿"],version:"3.0"},{emoji:"🧑‍🎄",category:1,name:"mx claus",variations:["🧑🏻‍🎄","🧑🏼‍🎄","🧑🏽‍🎄","🧑🏾‍🎄","🧑🏿‍🎄"],version:"13.0"},{emoji:"🦸",category:1,name:"superhero",variations:["🦸🏻","🦸🏼","🦸🏽","🦸🏾","🦸🏿"],version:"11.0"},{emoji:"🦸‍♂️",category:1,name:"man superhero",variations:["🦸🏻‍♂️","🦸🏼‍♂️","🦸🏽‍♂️","🦸🏾‍♂️","🦸🏿‍♂️"],version:"11.0"},{emoji:"🦸‍♀️",category:1,name:"woman superhero",variations:["🦸🏻‍♀️","🦸🏼‍♀️","🦸🏽‍♀️","🦸🏾‍♀️","🦸🏿‍♀️"],version:"11.0"},{emoji:"🦹",category:1,name:"supervillain",variations:["🦹🏻","🦹🏼","🦹🏽","🦹🏾","🦹🏿"],version:"11.0"},{emoji:"🦹‍♂️",category:1,name:"man supervillain",variations:["🦹🏻‍♂️","🦹🏼‍♂️","🦹🏽‍♂️","🦹🏾‍♂️","🦹🏿‍♂️"],version:"11.0"},{emoji:"🦹‍♀️",category:1,name:"woman supervillain",variations:["🦹🏻‍♀️","🦹🏼‍♀️","🦹🏽‍♀️","🦹🏾‍♀️","🦹🏿‍♀️"],version:"11.0"},{emoji:"🧙",category:1,name:"mage",variations:["🧙🏻","🧙🏼","🧙🏽","🧙🏾","🧙🏿"],version:"5.0"},{emoji:"🧙‍♂️",category:1,name:"man mage",variations:["🧙🏻‍♂️","🧙🏼‍♂️","🧙🏽‍♂️","🧙🏾‍♂️","🧙🏿‍♂️"],version:"5.0"},{emoji:"🧙‍♀️",category:1,name:"woman mage",variations:["🧙🏻‍♀️","🧙🏼‍♀️","🧙🏽‍♀️","🧙🏾‍♀️","🧙🏿‍♀️"],version:"5.0"},{emoji:"🧚",category:1,name:"fairy",variations:["🧚🏻","🧚🏼","🧚🏽","🧚🏾","🧚🏿"],version:"5.0"},{emoji:"🧚‍♂️",category:1,name:"man fairy",variations:["🧚🏻‍♂️","🧚🏼‍♂️","🧚🏽‍♂️","🧚🏾‍♂️","🧚🏿‍♂️"],version:"5.0"},{emoji:"🧚‍♀️",category:1,name:"woman fairy",variations:["🧚🏻‍♀️","🧚🏼‍♀️","🧚🏽‍♀️","🧚🏾‍♀️","🧚🏿‍♀️"],version:"5.0"},{emoji:"🧛",category:1,name:"vampire",variations:["🧛🏻","🧛🏼","🧛🏽","🧛🏾","🧛🏿"],version:"5.0"},{emoji:"🧛‍♂️",category:1,name:"man vampire",variations:["🧛🏻‍♂️","🧛🏼‍♂️","🧛🏽‍♂️","🧛🏾‍♂️","🧛🏿‍♂️"],version:"5.0"},{emoji:"🧛‍♀️",category:1,name:"woman vampire",variations:["🧛🏻‍♀️","🧛🏼‍♀️","🧛🏽‍♀️","🧛🏾‍♀️","🧛🏿‍♀️"],version:"5.0"},{emoji:"🧜",category:1,name:"merperson",variations:["🧜🏻","🧜🏼","🧜🏽","🧜🏾","🧜🏿"],version:"5.0"},{emoji:"🧜‍♂️",category:1,name:"merman",variations:["🧜🏻‍♂️","🧜🏼‍♂️","🧜🏽‍♂️","🧜🏾‍♂️","🧜🏿‍♂️"],version:"5.0"},{emoji:"🧜‍♀️",category:1,name:"mermaid",variations:["🧜🏻‍♀️","🧜🏼‍♀️","🧜🏽‍♀️","🧜🏾‍♀️","🧜🏿‍♀️"],version:"5.0"},{emoji:"🧝",category:1,name:"elf",variations:["🧝🏻","🧝🏼","🧝🏽","🧝🏾","🧝🏿"],version:"5.0"},{emoji:"🧝‍♂️",category:1,name:"man elf",variations:["🧝🏻‍♂️","🧝🏼‍♂️","🧝🏽‍♂️","🧝🏾‍♂️","🧝🏿‍♂️"],version:"5.0"},{emoji:"🧝‍♀️",category:1,name:"woman elf",variations:["🧝🏻‍♀️","🧝🏼‍♀️","🧝🏽‍♀️","🧝🏾‍♀️","🧝🏿‍♀️"],version:"5.0"},{emoji:"🧞",category:1,name:"genie",version:"5.0"},{emoji:"🧞‍♂️",category:1,name:"man genie",version:"5.0"},{emoji:"🧞‍♀️",category:1,name:"woman genie",version:"5.0"},{emoji:"🧟",category:1,name:"zombie",version:"5.0"},{emoji:"🧟‍♂️",category:1,name:"man zombie",version:"5.0"},{emoji:"🧟‍♀️",category:1,name:"woman zombie",version:"5.0"},{emoji:"💆",category:1,name:"person getting massage",variations:["💆🏻","💆🏼","💆🏽","💆🏾","💆🏿"],version:"1.0"},{emoji:"💆‍♂️",category:1,name:"man getting massage",variations:["💆🏻‍♂️","💆🏼‍♂️","💆🏽‍♂️","💆🏾‍♂️","💆🏿‍♂️"],version:"4.0"},{emoji:"💆‍♀️",category:1,name:"woman getting massage",variations:["💆🏻‍♀️","💆🏼‍♀️","💆🏽‍♀️","💆🏾‍♀️","💆🏿‍♀️"],version:"4.0"},{emoji:"💇",category:1,name:"person getting haircut",variations:["💇🏻","💇🏼","💇🏽","💇🏾","💇🏿"],version:"1.0"},{emoji:"💇‍♂️",category:1,name:"man getting haircut",variations:["💇🏻‍♂️","💇🏼‍♂️","💇🏽‍♂️","💇🏾‍♂️","💇🏿‍♂️"],version:"4.0"},{emoji:"💇‍♀️",category:1,name:"woman getting haircut",variations:["💇🏻‍♀️","💇🏼‍♀️","💇🏽‍♀️","💇🏾‍♀️","💇🏿‍♀️"],version:"4.0"},{emoji:"🚶",category:1,name:"person walking",variations:["🚶🏻","🚶🏼","🚶🏽","🚶🏾","🚶🏿"],version:"1.0"},{emoji:"🚶‍♂️",category:1,name:"man walking",variations:["🚶🏻‍♂️","🚶🏼‍♂️","🚶🏽‍♂️","🚶🏾‍♂️","🚶🏿‍♂️"],version:"4.0"},{emoji:"🚶‍♀️",category:1,name:"woman walking",variations:["🚶🏻‍♀️","🚶🏼‍♀️","🚶🏽‍♀️","🚶🏾‍♀️","🚶🏿‍♀️"],version:"4.0"},{emoji:"🧍",category:1,name:"person standing",variations:["🧍🏻","🧍🏼","🧍🏽","🧍🏾","🧍🏿"],version:"12.0"},{emoji:"🧍‍♂️",category:1,name:"man standing",variations:["🧍🏻‍♂️","🧍🏼‍♂️","🧍🏽‍♂️","🧍🏾‍♂️","🧍🏿‍♂️"],version:"12.0"},{emoji:"🧍‍♀️",category:1,name:"woman standing",variations:["🧍🏻‍♀️","🧍🏼‍♀️","🧍🏽‍♀️","🧍🏾‍♀️","🧍🏿‍♀️"],version:"12.0"},{emoji:"🧎",category:1,name:"person kneeling",variations:["🧎🏻","🧎🏼","🧎🏽","🧎🏾","🧎🏿"],version:"12.0"},{emoji:"🧎‍♂️",category:1,name:"man kneeling",variations:["🧎🏻‍♂️","🧎🏼‍♂️","🧎🏽‍♂️","🧎🏾‍♂️","🧎🏿‍♂️"],version:"12.0"},{emoji:"🧎‍♀️",category:1,name:"woman kneeling",variations:["🧎🏻‍♀️","🧎🏼‍♀️","🧎🏽‍♀️","🧎🏾‍♀️","🧎🏿‍♀️"],version:"12.0"},{emoji:"🧑‍🦯",category:1,name:"person with white cane",variations:["🧑🏻‍🦯","🧑🏼‍🦯","🧑🏽‍🦯","🧑🏾‍🦯","🧑🏿‍🦯"],version:"12.1"},{emoji:"👨‍🦯",category:1,name:"man with white cane",variations:["👨🏻‍🦯","👨🏼‍🦯","👨🏽‍🦯","👨🏾‍🦯","👨🏿‍🦯"],version:"12.0"},{emoji:"👩‍🦯",category:1,name:"woman with white cane",variations:["👩🏻‍🦯","👩🏼‍🦯","👩🏽‍🦯","👩🏾‍🦯","👩🏿‍🦯"],version:"12.0"},{emoji:"🧑‍🦼",category:1,name:"person in motorized wheelchair",variations:["🧑🏻‍🦼","🧑🏼‍🦼","🧑🏽‍🦼","🧑🏾‍🦼","🧑🏿‍🦼"],version:"12.1"},{emoji:"👨‍🦼",category:1,name:"man in motorized wheelchair",variations:["👨🏻‍🦼","👨🏼‍🦼","👨🏽‍🦼","👨🏾‍🦼","👨🏿‍🦼"],version:"12.0"},{emoji:"👩‍🦼",category:1,name:"woman in motorized wheelchair",variations:["👩🏻‍🦼","👩🏼‍🦼","👩🏽‍🦼","👩🏾‍🦼","👩🏿‍🦼"],version:"12.0"},{emoji:"🧑‍🦽",category:1,name:"person in manual wheelchair",variations:["🧑🏻‍🦽","🧑🏼‍🦽","🧑🏽‍🦽","🧑🏾‍🦽","🧑🏿‍🦽"],version:"12.1"},{emoji:"👨‍🦽",category:1,name:"man in manual wheelchair",variations:["👨🏻‍🦽","👨🏼‍🦽","👨🏽‍🦽","👨🏾‍🦽","👨🏿‍🦽"],version:"12.0"},{emoji:"👩‍🦽",category:1,name:"woman in manual wheelchair",variations:["👩🏻‍🦽","👩🏼‍🦽","👩🏽‍🦽","👩🏾‍🦽","👩🏿‍🦽"],version:"12.0"},{emoji:"🏃",category:1,name:"person running",variations:["🏃🏻","🏃🏼","🏃🏽","🏃🏾","🏃🏿"],version:"1.0"},{emoji:"🏃‍♂️",category:1,name:"man running",variations:["🏃🏻‍♂️","🏃🏼‍♂️","🏃🏽‍♂️","🏃🏾‍♂️","🏃🏿‍♂️"],version:"4.0"},{emoji:"🏃‍♀️",category:1,name:"woman running",variations:["🏃🏻‍♀️","🏃🏼‍♀️","🏃🏽‍♀️","🏃🏾‍♀️","🏃🏿‍♀️"],version:"4.0"},{emoji:"💃",category:1,name:"woman dancing",variations:["💃🏻","💃🏼","💃🏽","💃🏾","💃🏿"],version:"1.0"},{emoji:"🕺",category:1,name:"man dancing",variations:["🕺🏻","🕺🏼","🕺🏽","🕺🏾","🕺🏿"],version:"3.0"},{emoji:"🕴️",category:1,name:"person in suit levitating",variations:["🕴🏻","🕴🏼","🕴🏽","🕴🏾","🕴🏿"],version:"1.0"},{emoji:"👯",category:1,name:"people with bunny ears",version:"1.0"},{emoji:"👯‍♂️",category:1,name:"men with bunny ears",version:"4.0"},{emoji:"👯‍♀️",category:1,name:"women with bunny ears",version:"4.0"},{emoji:"🧖",category:1,name:"person in steamy room",variations:["🧖🏻","🧖🏼","🧖🏽","🧖🏾","🧖🏿"],version:"5.0"},{emoji:"🧖‍♂️",category:1,name:"man in steamy room",variations:["🧖🏻‍♂️","🧖🏼‍♂️","🧖🏽‍♂️","🧖🏾‍♂️","🧖🏿‍♂️"],version:"5.0"},{emoji:"🧖‍♀️",category:1,name:"woman in steamy room",variations:["🧖🏻‍♀️","🧖🏼‍♀️","🧖🏽‍♀️","🧖🏾‍♀️","🧖🏿‍♀️"],version:"5.0"},{emoji:"🧗",category:1,name:"person climbing",variations:["🧗🏻","🧗🏼","🧗🏽","🧗🏾","🧗🏿"],version:"5.0"},{emoji:"🧗‍♂️",category:1,name:"man climbing",variations:["🧗🏻‍♂️","🧗🏼‍♂️","🧗🏽‍♂️","🧗🏾‍♂️","🧗🏿‍♂️"],version:"5.0"},{emoji:"🧗‍♀️",category:1,name:"woman climbing",variations:["🧗🏻‍♀️","🧗🏼‍♀️","🧗🏽‍♀️","🧗🏾‍♀️","🧗🏿‍♀️"],version:"5.0"},{emoji:"🤺",category:1,name:"person fencing",version:"3.0"},{emoji:"🏇",category:1,name:"horse racing",variations:["🏇🏻","🏇🏼","🏇🏽","🏇🏾","🏇🏿"],version:"1.0"},{emoji:"⛷️",category:1,name:"skier",version:"1.0"},{emoji:"🏂",category:1,name:"snowboarder",variations:["🏂🏻","🏂🏼","🏂🏽","🏂🏾","🏂🏿"],version:"1.0"},{emoji:"🏌️",category:1,name:"person golfing",variations:["🏌🏻","🏌🏼","🏌🏽","🏌🏾","🏌🏿"],version:"1.0"},{emoji:"🏌️‍♂️",category:1,name:"man golfing",variations:["🏌🏻‍♂️","🏌🏼‍♂️","🏌🏽‍♂️","🏌🏾‍♂️","🏌🏿‍♂️"],version:"4.0"},{emoji:"🏌️‍♀️",category:1,name:"woman golfing",variations:["🏌🏻‍♀️","🏌🏼‍♀️","🏌🏽‍♀️","🏌🏾‍♀️","🏌🏿‍♀️"],version:"4.0"},{emoji:"🏄",category:1,name:"person surfing",variations:["🏄🏻","🏄🏼","🏄🏽","🏄🏾","🏄🏿"],version:"1.0"},{emoji:"🏄‍♂️",category:1,name:"man surfing",variations:["🏄🏻‍♂️","🏄🏼‍♂️","🏄🏽‍♂️","🏄🏾‍♂️","🏄🏿‍♂️"],version:"4.0"},{emoji:"🏄‍♀️",category:1,name:"woman surfing",variations:["🏄🏻‍♀️","🏄🏼‍♀️","🏄🏽‍♀️","🏄🏾‍♀️","🏄🏿‍♀️"],version:"4.0"},{emoji:"🚣",category:1,name:"person rowing boat",variations:["🚣🏻","🚣🏼","🚣🏽","🚣🏾","🚣🏿"],version:"1.0"},{emoji:"🚣‍♂️",category:1,name:"man rowing boat",variations:["🚣🏻‍♂️","🚣🏼‍♂️","🚣🏽‍♂️","🚣🏾‍♂️","🚣🏿‍♂️"],version:"4.0"},{emoji:"🚣‍♀️",category:1,name:"woman rowing boat",variations:["🚣🏻‍♀️","🚣🏼‍♀️","🚣🏽‍♀️","🚣🏾‍♀️","🚣🏿‍♀️"],version:"4.0"},{emoji:"🏊",category:1,name:"person swimming",variations:["🏊🏻","🏊🏼","🏊🏽","🏊🏾","🏊🏿"],version:"1.0"},{emoji:"🏊‍♂️",category:1,name:"man swimming",variations:["🏊🏻‍♂️","🏊🏼‍♂️","🏊🏽‍♂️","🏊🏾‍♂️","🏊🏿‍♂️"],version:"4.0"},{emoji:"🏊‍♀️",category:1,name:"woman swimming",variations:["🏊🏻‍♀️","🏊🏼‍♀️","🏊🏽‍♀️","🏊🏾‍♀️","🏊🏿‍♀️"],version:"4.0"},{emoji:"⛹️",category:1,name:"person bouncing ball",variations:["⛹🏻","⛹🏼","⛹🏽","⛹🏾","⛹🏿"],version:"1.0"},{emoji:"⛹️‍♂️",category:1,name:"man bouncing ball",variations:["⛹🏻‍♂️","⛹🏼‍♂️","⛹🏽‍♂️","⛹🏾‍♂️","⛹🏿‍♂️"],version:"4.0"},{emoji:"⛹️‍♀️",category:1,name:"woman bouncing ball",variations:["⛹🏻‍♀️","⛹🏼‍♀️","⛹🏽‍♀️","⛹🏾‍♀️","⛹🏿‍♀️"],version:"4.0"},{emoji:"🏋️",category:1,name:"person lifting weights",variations:["🏋🏻","🏋🏼","🏋🏽","🏋🏾","🏋🏿"],version:"1.0"},{emoji:"🏋️‍♂️",category:1,name:"man lifting weights",variations:["🏋🏻‍♂️","🏋🏼‍♂️","🏋🏽‍♂️","🏋🏾‍♂️","🏋🏿‍♂️"],version:"4.0"},{emoji:"🏋️‍♀️",category:1,name:"woman lifting weights",variations:["🏋🏻‍♀️","🏋🏼‍♀️","🏋🏽‍♀️","🏋🏾‍♀️","🏋🏿‍♀️"],version:"4.0"},{emoji:"🚴",category:1,name:"person biking",variations:["🚴🏻","🚴🏼","🚴🏽","🚴🏾","🚴🏿"],version:"1.0"},{emoji:"🚴‍♂️",category:1,name:"man biking",variations:["🚴🏻‍♂️","🚴🏼‍♂️","🚴🏽‍♂️","🚴🏾‍♂️","🚴🏿‍♂️"],version:"4.0"},{emoji:"🚴‍♀️",category:1,name:"woman biking",variations:["🚴🏻‍♀️","🚴🏼‍♀️","🚴🏽‍♀️","🚴🏾‍♀️","🚴🏿‍♀️"],version:"4.0"},{emoji:"🚵",category:1,name:"person mountain biking",variations:["🚵🏻","🚵🏼","🚵🏽","🚵🏾","🚵🏿"],version:"1.0"},{emoji:"🚵‍♂️",category:1,name:"man mountain biking",variations:["🚵🏻‍♂️","🚵🏼‍♂️","🚵🏽‍♂️","🚵🏾‍♂️","🚵🏿‍♂️"],version:"4.0"},{emoji:"🚵‍♀️",category:1,name:"woman mountain biking",variations:["🚵🏻‍♀️","🚵🏼‍♀️","🚵🏽‍♀️","🚵🏾‍♀️","🚵🏿‍♀️"],version:"4.0"},{emoji:"🤸",category:1,name:"person cartwheeling",variations:["🤸🏻","🤸🏼","🤸🏽","🤸🏾","🤸🏿"],version:"3.0"},{emoji:"🤸‍♂️",category:1,name:"man cartwheeling",variations:["🤸🏻‍♂️","🤸🏼‍♂️","🤸🏽‍♂️","🤸🏾‍♂️","🤸🏿‍♂️"],version:"4.0"},{emoji:"🤸‍♀️",category:1,name:"woman cartwheeling",variations:["🤸🏻‍♀️","🤸🏼‍♀️","🤸🏽‍♀️","🤸🏾‍♀️","🤸🏿‍♀️"],version:"4.0"},{emoji:"🤼",category:1,name:"people wrestling",version:"3.0"},{emoji:"🤼‍♂️",category:1,name:"men wrestling",version:"4.0"},{emoji:"🤼‍♀️",category:1,name:"women wrestling",version:"4.0"},{emoji:"🤽",category:1,name:"person playing water polo",variations:["🤽🏻","🤽🏼","🤽🏽","🤽🏾","🤽🏿"],version:"3.0"},{emoji:"🤽‍♂️",category:1,name:"man playing water polo",variations:["🤽🏻‍♂️","🤽🏼‍♂️","🤽🏽‍♂️","🤽🏾‍♂️","🤽🏿‍♂️"],version:"4.0"},{emoji:"🤽‍♀️",category:1,name:"woman playing water polo",variations:["🤽🏻‍♀️","🤽🏼‍♀️","🤽🏽‍♀️","🤽🏾‍♀️","🤽🏿‍♀️"],version:"4.0"},{emoji:"🤾",category:1,name:"person playing handball",variations:["🤾🏻","🤾🏼","🤾🏽","🤾🏾","🤾🏿"],version:"3.0"},{emoji:"🤾‍♂️",category:1,name:"man playing handball",variations:["🤾🏻‍♂️","🤾🏼‍♂️","🤾🏽‍♂️","🤾🏾‍♂️","🤾🏿‍♂️"],version:"4.0"},{emoji:"🤾‍♀️",category:1,name:"woman playing handball",variations:["🤾🏻‍♀️","🤾🏼‍♀️","🤾🏽‍♀️","🤾🏾‍♀️","🤾🏿‍♀️"],version:"4.0"},{emoji:"🤹",category:1,name:"person juggling",variations:["🤹🏻","🤹🏼","🤹🏽","🤹🏾","🤹🏿"],version:"3.0"},{emoji:"🤹‍♂️",category:1,name:"man juggling",variations:["🤹🏻‍♂️","🤹🏼‍♂️","🤹🏽‍♂️","🤹🏾‍♂️","🤹🏿‍♂️"],version:"4.0"},{emoji:"🤹‍♀️",category:1,name:"woman juggling",variations:["🤹🏻‍♀️","🤹🏼‍♀️","🤹🏽‍♀️","🤹🏾‍♀️","🤹🏿‍♀️"],version:"4.0"},{emoji:"🧘",category:1,name:"person in lotus position",variations:["🧘🏻","🧘🏼","🧘🏽","🧘🏾","🧘🏿"],version:"5.0"},{emoji:"🧘‍♂️",category:1,name:"man in lotus position",variations:["🧘🏻‍♂️","🧘🏼‍♂️","🧘🏽‍♂️","🧘🏾‍♂️","🧘🏿‍♂️"],version:"5.0"},{emoji:"🧘‍♀️",category:1,name:"woman in lotus position",variations:["🧘🏻‍♀️","🧘🏼‍♀️","🧘🏽‍♀️","🧘🏾‍♀️","🧘🏿‍♀️"],version:"5.0"},{emoji:"🛀",category:1,name:"person taking bath",variations:["🛀🏻","🛀🏼","🛀🏽","🛀🏾","🛀🏿"],version:"1.0"},{emoji:"🛌",category:1,name:"person in bed",variations:["🛌🏻","🛌🏼","🛌🏽","🛌🏾","🛌🏿"],version:"1.0"},{emoji:"🧑‍🤝‍🧑",category:1,name:"people holding hands",variations:["🧑🏻‍🤝‍🧑🏻","🧑🏻‍🤝‍🧑🏼","🧑🏻‍🤝‍🧑🏽","🧑🏻‍🤝‍🧑🏾","🧑🏻‍🤝‍🧑🏿","🧑🏼‍🤝‍🧑🏻","🧑🏼‍🤝‍🧑🏼","🧑🏼‍🤝‍🧑🏽","🧑🏼‍🤝‍🧑🏾","🧑🏼‍🤝‍🧑🏿","🧑🏽‍🤝‍🧑🏻","🧑🏽‍🤝‍🧑🏼","🧑🏽‍🤝‍🧑🏽","🧑🏽‍🤝‍🧑🏾","🧑🏽‍🤝‍🧑🏿","🧑🏾‍🤝‍🧑🏻","🧑🏾‍🤝‍🧑🏼","🧑🏾‍🤝‍🧑🏽","🧑🏾‍🤝‍🧑🏾","🧑🏾‍🤝‍🧑🏿","🧑🏿‍🤝‍🧑🏻","🧑🏿‍🤝‍🧑🏼","🧑🏿‍🤝‍🧑🏽","🧑🏿‍🤝‍🧑🏾","🧑🏿‍🤝‍🧑🏿"],version:"12.0"},{emoji:"👭",category:1,name:"women holding hands",variations:["👭🏻","👩🏻‍🤝‍👩🏼","👩🏻‍🤝‍👩🏽","👩🏻‍🤝‍👩🏾","👩🏻‍🤝‍👩🏿","👩🏼‍🤝‍👩🏻","👭🏼","👩🏼‍🤝‍👩🏽","👩🏼‍🤝‍👩🏾","👩🏼‍🤝‍👩🏿","👩🏽‍🤝‍👩🏻","👩🏽‍🤝‍👩🏼","👭🏽","👩🏽‍🤝‍👩🏾","👩🏽‍🤝‍👩🏿","👩🏾‍🤝‍👩🏻","👩🏾‍🤝‍👩🏼","👩🏾‍🤝‍👩🏽","👭🏾","👩🏾‍🤝‍👩🏿","👩🏿‍🤝‍👩🏻","👩🏿‍🤝‍👩🏼","👩🏿‍🤝‍👩🏽","👩🏿‍🤝‍👩🏾","👭🏿"],version:"1.0"},{emoji:"👫",category:1,name:"woman and man holding hands",variations:["👫🏻","👩🏻‍🤝‍👨🏼","👩🏻‍🤝‍👨🏽","👩🏻‍🤝‍👨🏾","👩🏻‍🤝‍👨🏿","👩🏼‍🤝‍👨🏻","👫🏼","👩🏼‍🤝‍👨🏽","👩🏼‍🤝‍👨🏾","👩🏼‍🤝‍👨🏿","👩🏽‍🤝‍👨🏻","👩🏽‍🤝‍👨🏼","👫🏽","👩🏽‍🤝‍👨🏾","👩🏽‍🤝‍👨🏿","👩🏾‍🤝‍👨🏻","👩🏾‍🤝‍👨🏼","👩🏾‍🤝‍👨🏽","👫🏾","👩🏾‍🤝‍👨🏿","👩🏿‍🤝‍👨🏻","👩🏿‍🤝‍👨🏼","👩🏿‍🤝‍👨🏽","👩🏿‍🤝‍👨🏾","👫🏿"],version:"1.0"},{emoji:"👬",category:1,name:"men holding hands",variations:["👬🏻","👨🏻‍🤝‍👨🏼","👨🏻‍🤝‍👨🏽","👨🏻‍🤝‍👨🏾","👨🏻‍🤝‍👨🏿","👨🏼‍🤝‍👨🏻","👬🏼","👨🏼‍🤝‍👨🏽","👨🏼‍🤝‍👨🏾","👨🏼‍🤝‍👨🏿","👨🏽‍🤝‍👨🏻","👨🏽‍🤝‍👨🏼","👬🏽","👨🏽‍🤝‍👨🏾","👨🏽‍🤝‍👨🏿","👨🏾‍🤝‍👨🏻","👨🏾‍🤝‍👨🏼","👨🏾‍🤝‍👨🏽","👬🏾","👨🏾‍🤝‍👨🏿","👨🏿‍🤝‍👨🏻","👨🏿‍🤝‍👨🏼","👨🏿‍🤝‍👨🏽","👨🏿‍🤝‍👨🏾","👬🏿"],version:"1.0"},{emoji:"💏",category:1,name:"kiss",variations:["👩‍❤️‍💋‍👨","👨‍❤️‍💋‍👨","👩‍❤️‍💋‍👩"],version:"1.0"},{emoji:"💑",category:1,name:"couple with heart",variations:["👩‍❤️‍👨","👨‍❤️‍👨","👩‍❤️‍👩"],version:"1.0"},{emoji:"👪",category:1,name:"family",version:"1.0"},{emoji:"👨‍👩‍👦",category:1,name:"family: man, woman, boy",version:"2.0"},{emoji:"👨‍👩‍👧",category:1,name:"family: man, woman, girl",version:"2.0"},{emoji:"👨‍👩‍👧‍👦",category:1,name:"family: man, woman, girl, boy",version:"2.0"},{emoji:"👨‍👩‍👦‍👦",category:1,name:"family: man, woman, boy, boy",version:"2.0"},{emoji:"👨‍👩‍👧‍👧",category:1,name:"family: man, woman, girl, girl",version:"2.0"},{emoji:"👨‍👨‍👦",category:1,name:"family: man, man, boy",version:"2.0"},{emoji:"👨‍👨‍👧",category:1,name:"family: man, man, girl",version:"2.0"},{emoji:"👨‍👨‍👧‍👦",category:1,name:"family: man, man, girl, boy",version:"2.0"},{emoji:"👨‍👨‍👦‍👦",category:1,name:"family: man, man, boy, boy",version:"2.0"},{emoji:"👨‍👨‍👧‍👧",category:1,name:"family: man, man, girl, girl",version:"2.0"},{emoji:"👩‍👩‍👦",category:1,name:"family: woman, woman, boy",version:"2.0"},{emoji:"👩‍👩‍👧",category:1,name:"family: woman, woman, girl",version:"2.0"},{emoji:"👩‍👩‍👧‍👦",category:1,name:"family: woman, woman, girl, boy",version:"2.0"},{emoji:"👩‍👩‍👦‍👦",category:1,name:"family: woman, woman, boy, boy",version:"2.0"},{emoji:"👩‍👩‍👧‍👧",category:1,name:"family: woman, woman, girl, girl",version:"2.0"},{emoji:"👨‍👦",category:1,name:"family: man, boy",version:"4.0"},{emoji:"👨‍👦‍👦",category:1,name:"family: man, boy, boy",version:"4.0"},{emoji:"👨‍👧",category:1,name:"family: man, girl",version:"4.0"},{emoji:"👨‍👧‍👦",category:1,name:"family: man, girl, boy",version:"4.0"},{emoji:"👨‍👧‍👧",category:1,name:"family: man, girl, girl",version:"4.0"},{emoji:"👩‍👦",category:1,name:"family: woman, boy",version:"4.0"},{emoji:"👩‍👦‍👦",category:1,name:"family: woman, boy, boy",version:"4.0"},{emoji:"👩‍👧",category:1,name:"family: woman, girl",version:"4.0"},{emoji:"👩‍👧‍👦",category:1,name:"family: woman, girl, boy",version:"4.0"},{emoji:"👩‍👧‍👧",category:1,name:"family: woman, girl, girl",version:"4.0"},{emoji:"🗣️",category:1,name:"speaking head",version:"1.0"},{emoji:"👤",category:1,name:"bust in silhouette",version:"1.0"},{emoji:"👥",category:1,name:"busts in silhouette",version:"1.0"},{emoji:"🫂",category:1,name:"people hugging",version:"13.0"},{emoji:"👣",category:1,name:"footprints",version:"1.0"},{emoji:"🐵",category:2,name:"monkey face",version:"1.0"},{emoji:"🐒",category:2,name:"monkey",version:"1.0"},{emoji:"🦍",category:2,name:"gorilla",version:"3.0"},{emoji:"🦧",category:2,name:"orangutan",version:"12.0"},{emoji:"🐶",category:2,name:"dog face",version:"1.0"},{emoji:"🐕",category:2,name:"dog",version:"1.0"},{emoji:"🦮",category:2,name:"guide dog",version:"12.0"},{emoji:"🐕‍🦺",category:2,name:"service dog",version:"12.0"},{emoji:"🐩",category:2,name:"poodle",version:"1.0"},{emoji:"🐺",category:2,name:"wolf",version:"1.0"},{emoji:"🦊",category:2,name:"fox",version:"3.0"},{emoji:"🦝",category:2,name:"raccoon",version:"11.0"},{emoji:"🐱",category:2,name:"cat face",version:"1.0"},{emoji:"🐈",category:2,name:"cat",version:"1.0"},{emoji:"🐈‍⬛",category:2,name:"black cat",version:"13.0"},{emoji:"🦁",category:2,name:"lion",version:"1.0"},{emoji:"🐯",category:2,name:"tiger face",version:"1.0"},{emoji:"🐅",category:2,name:"tiger",version:"1.0"},{emoji:"🐆",category:2,name:"leopard",version:"1.0"},{emoji:"🐴",category:2,name:"horse face",version:"1.0"},{emoji:"🐎",category:2,name:"horse",version:"1.0"},{emoji:"🦄",category:2,name:"unicorn",version:"1.0"},{emoji:"🦓",category:2,name:"zebra",version:"5.0"},{emoji:"🦌",category:2,name:"deer",version:"3.0"},{emoji:"🦬",category:2,name:"bison",version:"13.0"},{emoji:"🐮",category:2,name:"cow face",version:"1.0"},{emoji:"🐂",category:2,name:"ox",version:"1.0"},{emoji:"🐃",category:2,name:"water buffalo",version:"1.0"},{emoji:"🐄",category:2,name:"cow",version:"1.0"},{emoji:"🐷",category:2,name:"pig face",version:"1.0"},{emoji:"🐖",category:2,name:"pig",version:"1.0"},{emoji:"🐗",category:2,name:"boar",version:"1.0"},{emoji:"🐽",category:2,name:"pig nose",version:"1.0"},{emoji:"🐏",category:2,name:"ram",version:"1.0"},{emoji:"🐑",category:2,name:"ewe",version:"1.0"},{emoji:"🐐",category:2,name:"goat",version:"1.0"},{emoji:"🐪",category:2,name:"camel",version:"1.0"},{emoji:"🐫",category:2,name:"two-hump camel",version:"1.0"},{emoji:"🦙",category:2,name:"llama",version:"11.0"},{emoji:"🦒",category:2,name:"giraffe",version:"5.0"},{emoji:"🐘",category:2,name:"elephant",version:"1.0"},{emoji:"🦣",category:2,name:"mammoth",version:"13.0"},{emoji:"🦏",category:2,name:"rhinoceros",version:"3.0"},{emoji:"🦛",category:2,name:"hippopotamus",version:"11.0"},{emoji:"🐭",category:2,name:"mouse face",version:"1.0"},{emoji:"🐁",category:2,name:"mouse",version:"1.0"},{emoji:"🐀",category:2,name:"rat",version:"1.0"},{emoji:"🐹",category:2,name:"hamster",version:"1.0"},{emoji:"🐰",category:2,name:"rabbit face",version:"1.0"},{emoji:"🐇",category:2,name:"rabbit",version:"1.0"},{emoji:"🐿️",category:2,name:"chipmunk",version:"1.0"},{emoji:"🦫",category:2,name:"beaver",version:"13.0"},{emoji:"🦔",category:2,name:"hedgehog",version:"5.0"},{emoji:"🦇",category:2,name:"bat",version:"3.0"},{emoji:"🐻",category:2,name:"bear",version:"1.0"},{emoji:"🐻‍❄️",category:2,name:"polar bear",version:"13.0"},{emoji:"🐨",category:2,name:"koala",version:"1.0"},{emoji:"🐼",category:2,name:"panda",version:"1.0"},{emoji:"🦥",category:2,name:"sloth",version:"12.0"},{emoji:"🦦",category:2,name:"otter",version:"12.0"},{emoji:"🦨",category:2,name:"skunk",version:"12.0"},{emoji:"🦘",category:2,name:"kangaroo",version:"11.0"},{emoji:"🦡",category:2,name:"badger",version:"11.0"},{emoji:"🐾",category:2,name:"paw prints",version:"1.0"},{emoji:"🦃",category:2,name:"turkey",version:"1.0"},{emoji:"🐔",category:2,name:"chicken",version:"1.0"},{emoji:"🐓",category:2,name:"rooster",version:"1.0"},{emoji:"🐣",category:2,name:"hatching chick",version:"1.0"},{emoji:"🐤",category:2,name:"baby chick",version:"1.0"},{emoji:"🐥",category:2,name:"front-facing baby chick",version:"1.0"},{emoji:"🐦",category:2,name:"bird",version:"1.0"},{emoji:"🐧",category:2,name:"penguin",version:"1.0"},{emoji:"🕊️",category:2,name:"dove",version:"1.0"},{emoji:"🦅",category:2,name:"eagle",version:"3.0"},{emoji:"🦆",category:2,name:"duck",version:"3.0"},{emoji:"🦢",category:2,name:"swan",version:"11.0"},{emoji:"🦉",category:2,name:"owl",version:"3.0"},{emoji:"🦤",category:2,name:"dodo",version:"13.0"},{emoji:"🪶",category:2,name:"feather",version:"13.0"},{emoji:"🦩",category:2,name:"flamingo",version:"12.0"},{emoji:"🦚",category:2,name:"peacock",version:"11.0"},{emoji:"🦜",category:2,name:"parrot",version:"11.0"},{emoji:"🐸",category:2,name:"frog",version:"1.0"},{emoji:"🐊",category:2,name:"crocodile",version:"1.0"},{emoji:"🐢",category:2,name:"turtle",version:"1.0"},{emoji:"🦎",category:2,name:"lizard",version:"3.0"},{emoji:"🐍",category:2,name:"snake",version:"1.0"},{emoji:"🐲",category:2,name:"dragon face",version:"1.0"},{emoji:"🐉",category:2,name:"dragon",version:"1.0"},{emoji:"🦕",category:2,name:"sauropod",version:"5.0"},{emoji:"🦖",category:2,name:"T-Rex",version:"5.0"},{emoji:"🐳",category:2,name:"spouting whale",version:"1.0"},{emoji:"🐋",category:2,name:"whale",version:"1.0"},{emoji:"🐬",category:2,name:"dolphin",version:"1.0"},{emoji:"🦭",category:2,name:"seal",version:"13.0"},{emoji:"🐟",category:2,name:"fish",version:"1.0"},{emoji:"🐠",category:2,name:"tropical fish",version:"1.0"},{emoji:"🐡",category:2,name:"blowfish",version:"1.0"},{emoji:"🦈",category:2,name:"shark",version:"3.0"},{emoji:"🐙",category:2,name:"octopus",version:"1.0"},{emoji:"🐚",category:2,name:"spiral shell",version:"1.0"},{emoji:"🐌",category:2,name:"snail",version:"1.0"},{emoji:"🦋",category:2,name:"butterfly",version:"3.0"},{emoji:"🐛",category:2,name:"bug",version:"1.0"},{emoji:"🐜",category:2,name:"ant",version:"1.0"},{emoji:"🐝",category:2,name:"honeybee",version:"1.0"},{emoji:"🪲",category:2,name:"beetle",version:"13.0"},{emoji:"🐞",category:2,name:"lady beetle",version:"1.0"},{emoji:"🦗",category:2,name:"cricket",version:"5.0"},{emoji:"🪳",category:2,name:"cockroach",version:"13.0"},{emoji:"🕷️",category:2,name:"spider",version:"1.0"},{emoji:"🕸️",category:2,name:"spider web",version:"1.0"},{emoji:"🦂",category:2,name:"scorpion",version:"1.0"},{emoji:"🦟",category:2,name:"mosquito",version:"11.0"},{emoji:"🪰",category:2,name:"fly",version:"13.0"},{emoji:"🪱",category:2,name:"worm",version:"13.0"},{emoji:"🦠",category:2,name:"microbe",version:"11.0"},{emoji:"💐",category:2,name:"bouquet",version:"1.0"},{emoji:"🌸",category:2,name:"cherry blossom",version:"1.0"},{emoji:"💮",category:2,name:"white flower",version:"1.0"},{emoji:"🏵️",category:2,name:"rosette",version:"1.0"},{emoji:"🌹",category:2,name:"rose",version:"1.0"},{emoji:"🥀",category:2,name:"wilted flower",version:"3.0"},{emoji:"🌺",category:2,name:"hibiscus",version:"1.0"},{emoji:"🌻",category:2,name:"sunflower",version:"1.0"},{emoji:"🌼",category:2,name:"blossom",version:"1.0"},{emoji:"🌷",category:2,name:"tulip",version:"1.0"},{emoji:"🌱",category:2,name:"seedling",version:"1.0"},{emoji:"🪴",category:2,name:"potted plant",version:"13.0"},{emoji:"🌲",category:2,name:"evergreen tree",version:"1.0"},{emoji:"🌳",category:2,name:"deciduous tree",version:"1.0"},{emoji:"🌴",category:2,name:"palm tree",version:"1.0"},{emoji:"🌵",category:2,name:"cactus",version:"1.0"},{emoji:"🌾",category:2,name:"sheaf of rice",version:"1.0"},{emoji:"🌿",category:2,name:"herb",version:"1.0"},{emoji:"☘️",category:2,name:"shamrock",version:"1.0"},{emoji:"🍀",category:2,name:"four leaf clover",version:"1.0"},{emoji:"🍁",category:2,name:"maple leaf",version:"1.0"},{emoji:"🍂",category:2,name:"fallen leaf",version:"1.0"},{emoji:"🍃",category:2,name:"leaf fluttering in wind",version:"1.0"},{emoji:"🍇",category:3,name:"grapes",version:"1.0"},{emoji:"🍈",category:3,name:"melon",version:"1.0"},{emoji:"🍉",category:3,name:"watermelon",version:"1.0"},{emoji:"🍊",category:3,name:"tangerine",version:"1.0"},{emoji:"🍋",category:3,name:"lemon",version:"1.0"},{emoji:"🍌",category:3,name:"banana",version:"1.0"},{emoji:"🍍",category:3,name:"pineapple",version:"1.0"},{emoji:"🥭",category:3,name:"mango",version:"11.0"},{emoji:"🍎",category:3,name:"red apple",version:"1.0"},{emoji:"🍏",category:3,name:"green apple",version:"1.0"},{emoji:"🍐",category:3,name:"pear",version:"1.0"},{emoji:"🍑",category:3,name:"peach",version:"1.0"},{emoji:"🍒",category:3,name:"cherries",version:"1.0"},{emoji:"🍓",category:3,name:"strawberry",version:"1.0"},{emoji:"🫐",category:3,name:"blueberries",version:"13.0"},{emoji:"🥝",category:3,name:"kiwi fruit",version:"3.0"},{emoji:"🍅",category:3,name:"tomato",version:"1.0"},{emoji:"🫒",category:3,name:"olive",version:"13.0"},{emoji:"🥥",category:3,name:"coconut",version:"5.0"},{emoji:"🥑",category:3,name:"avocado",version:"3.0"},{emoji:"🍆",category:3,name:"eggplant",version:"1.0"},{emoji:"🥔",category:3,name:"potato",version:"3.0"},{emoji:"🥕",category:3,name:"carrot",version:"3.0"},{emoji:"🌽",category:3,name:"ear of corn",version:"1.0"},{emoji:"🌶️",category:3,name:"hot pepper",version:"1.0"},{emoji:"🫑",category:3,name:"bell pepper",version:"13.0"},{emoji:"🥒",category:3,name:"cucumber",version:"3.0"},{emoji:"🥬",category:3,name:"leafy green",version:"11.0"},{emoji:"🥦",category:3,name:"broccoli",version:"5.0"},{emoji:"🧄",category:3,name:"garlic",version:"12.0"},{emoji:"🧅",category:3,name:"onion",version:"12.0"},{emoji:"🍄",category:3,name:"mushroom",version:"1.0"},{emoji:"🥜",category:3,name:"peanuts",version:"3.0"},{emoji:"🌰",category:3,name:"chestnut",version:"1.0"},{emoji:"🍞",category:3,name:"bread",version:"1.0"},{emoji:"🥐",category:3,name:"croissant",version:"3.0"},{emoji:"🥖",category:3,name:"baguette bread",version:"3.0"},{emoji:"🫓",category:3,name:"flatbread",version:"13.0"},{emoji:"🥨",category:3,name:"pretzel",version:"5.0"},{emoji:"🥯",category:3,name:"bagel",version:"11.0"},{emoji:"🥞",category:3,name:"pancakes",version:"3.0"},{emoji:"🧇",category:3,name:"waffle",version:"12.0"},{emoji:"🧀",category:3,name:"cheese wedge",version:"1.0"},{emoji:"🍖",category:3,name:"meat on bone",version:"1.0"},{emoji:"🍗",category:3,name:"poultry leg",version:"1.0"},{emoji:"🥩",category:3,name:"cut of meat",version:"5.0"},{emoji:"🥓",category:3,name:"bacon",version:"3.0"},{emoji:"🍔",category:3,name:"hamburger",version:"1.0"},{emoji:"🍟",category:3,name:"french fries",version:"1.0"},{emoji:"🍕",category:3,name:"pizza",version:"1.0"},{emoji:"🌭",category:3,name:"hot dog",version:"1.0"},{emoji:"🥪",category:3,name:"sandwich",version:"5.0"},{emoji:"🌮",category:3,name:"taco",version:"1.0"},{emoji:"🌯",category:3,name:"burrito",version:"1.0"},{emoji:"🫔",category:3,name:"tamale",version:"13.0"},{emoji:"🥙",category:3,name:"stuffed flatbread",version:"3.0"},{emoji:"🧆",category:3,name:"falafel",version:"12.0"},{emoji:"🥚",category:3,name:"egg",version:"3.0"},{emoji:"🍳",category:3,name:"cooking",version:"1.0"},{emoji:"🥘",category:3,name:"shallow pan of food",version:"3.0"},{emoji:"🍲",category:3,name:"pot of food",version:"1.0"},{emoji:"🫕",category:3,name:"fondue",version:"13.0"},{emoji:"🥣",category:3,name:"bowl with spoon",version:"5.0"},{emoji:"🥗",category:3,name:"green salad",version:"3.0"},{emoji:"🍿",category:3,name:"popcorn",version:"1.0"},{emoji:"🧈",category:3,name:"butter",version:"12.0"},{emoji:"🧂",category:3,name:"salt",version:"11.0"},{emoji:"🥫",category:3,name:"canned food",version:"5.0"},{emoji:"🍱",category:3,name:"bento box",version:"1.0"},{emoji:"🍘",category:3,name:"rice cracker",version:"1.0"},{emoji:"🍙",category:3,name:"rice ball",version:"1.0"},{emoji:"🍚",category:3,name:"cooked rice",version:"1.0"},{emoji:"🍛",category:3,name:"curry rice",version:"1.0"},{emoji:"🍜",category:3,name:"steaming bowl",version:"1.0"},{emoji:"🍝",category:3,name:"spaghetti",version:"1.0"},{emoji:"🍠",category:3,name:"roasted sweet potato",version:"1.0"},{emoji:"🍢",category:3,name:"oden",version:"1.0"},{emoji:"🍣",category:3,name:"sushi",version:"1.0"},{emoji:"🍤",category:3,name:"fried shrimp",version:"1.0"},{emoji:"🍥",category:3,name:"fish cake with swirl",version:"1.0"},{emoji:"🥮",category:3,name:"moon cake",version:"11.0"},{emoji:"🍡",category:3,name:"dango",version:"1.0"},{emoji:"🥟",category:3,name:"dumpling",version:"5.0"},{emoji:"🥠",category:3,name:"fortune cookie",version:"5.0"},{emoji:"🥡",category:3,name:"takeout box",version:"5.0"},{emoji:"🦀",category:3,name:"crab",version:"1.0"},{emoji:"🦞",category:3,name:"lobster",version:"11.0"},{emoji:"🦐",category:3,name:"shrimp",version:"3.0"},{emoji:"🦑",category:3,name:"squid",version:"3.0"},{emoji:"🦪",category:3,name:"oyster",version:"12.0"},{emoji:"🍦",category:3,name:"soft ice cream",version:"1.0"},{emoji:"🍧",category:3,name:"shaved ice",version:"1.0"},{emoji:"🍨",category:3,name:"ice cream",version:"1.0"},{emoji:"🍩",category:3,name:"doughnut",version:"1.0"},{emoji:"🍪",category:3,name:"cookie",version:"1.0"},{emoji:"🎂",category:3,name:"birthday cake",version:"1.0"},{emoji:"🍰",category:3,name:"shortcake",version:"1.0"},{emoji:"🧁",category:3,name:"cupcake",version:"11.0"},{emoji:"🥧",category:3,name:"pie",version:"5.0"},{emoji:"🍫",category:3,name:"chocolate bar",version:"1.0"},{emoji:"🍬",category:3,name:"candy",version:"1.0"},{emoji:"🍭",category:3,name:"lollipop",version:"1.0"},{emoji:"🍮",category:3,name:"custard",version:"1.0"},{emoji:"🍯",category:3,name:"honey pot",version:"1.0"},{emoji:"🍼",category:3,name:"baby bottle",version:"1.0"},{emoji:"🥛",category:3,name:"glass of milk",version:"3.0"},{emoji:"☕",category:3,name:"hot beverage",version:"1.0"},{emoji:"🫖",category:3,name:"teapot",version:"13.0"},{emoji:"🍵",category:3,name:"teacup without handle",version:"1.0"},{emoji:"🍶",category:3,name:"sake",version:"1.0"},{emoji:"🍾",category:3,name:"bottle with popping cork",version:"1.0"},{emoji:"🍷",category:3,name:"wine glass",version:"1.0"},{emoji:"🍸",category:3,name:"cocktail glass",version:"1.0"},{emoji:"🍹",category:3,name:"tropical drink",version:"1.0"},{emoji:"🍺",category:3,name:"beer mug",version:"1.0"},{emoji:"🍻",category:3,name:"clinking beer mugs",version:"1.0"},{emoji:"🥂",category:3,name:"clinking glasses",version:"3.0"},{emoji:"🥃",category:3,name:"tumbler glass",version:"3.0"},{emoji:"🥤",category:3,name:"cup with straw",version:"5.0"},{emoji:"🧋",category:3,name:"bubble tea",version:"13.0"},{emoji:"🧃",category:3,name:"beverage box",version:"12.0"},{emoji:"🧉",category:3,name:"mate",version:"12.0"},{emoji:"🧊",category:3,name:"ice",version:"12.0"},{emoji:"🥢",category:3,name:"chopsticks",version:"5.0"},{emoji:"🍽️",category:3,name:"fork and knife with plate",version:"1.0"},{emoji:"🍴",category:3,name:"fork and knife",version:"1.0"},{emoji:"🥄",category:3,name:"spoon",version:"3.0"},{emoji:"🔪",category:3,name:"kitchen knife",version:"1.0"},{emoji:"🏺",category:3,name:"amphora",version:"1.0"},{emoji:"🌍",category:4,name:"globe showing Europe-Africa",version:"1.0"},{emoji:"🌎",category:4,name:"globe showing Americas",version:"1.0"},{emoji:"🌏",category:4,name:"globe showing Asia-Australia",version:"1.0"},{emoji:"🌐",category:4,name:"globe with meridians",version:"1.0"},{emoji:"🗺️",category:4,name:"world map",version:"1.0"},{emoji:"🗾",category:4,name:"map of Japan",version:"1.0"},{emoji:"🧭",category:4,name:"compass",version:"11.0"},{emoji:"🏔️",category:4,name:"snow-capped mountain",version:"1.0"},{emoji:"⛰️",category:4,name:"mountain",version:"1.0"},{emoji:"🌋",category:4,name:"volcano",version:"1.0"},{emoji:"🗻",category:4,name:"mount fuji",version:"1.0"},{emoji:"🏕️",category:4,name:"camping",version:"1.0"},{emoji:"🏖️",category:4,name:"beach with umbrella",version:"1.0"},{emoji:"🏜️",category:4,name:"desert",version:"1.0"},{emoji:"🏝️",category:4,name:"desert island",version:"1.0"},{emoji:"🏞️",category:4,name:"national park",version:"1.0"},{emoji:"🏟️",category:4,name:"stadium",version:"1.0"},{emoji:"🏛️",category:4,name:"classical building",version:"1.0"},{emoji:"🏗️",category:4,name:"building construction",version:"1.0"},{emoji:"🧱",category:4,name:"brick",version:"11.0"},{emoji:"🪨",category:4,name:"rock",version:"13.0"},{emoji:"🪵",category:4,name:"wood",version:"13.0"},{emoji:"🛖",category:4,name:"hut",version:"13.0"},{emoji:"🏘️",category:4,name:"houses",version:"1.0"},{emoji:"🏚️",category:4,name:"derelict house",version:"1.0"},{emoji:"🏠",category:4,name:"house",version:"1.0"},{emoji:"🏡",category:4,name:"house with garden",version:"1.0"},{emoji:"🏢",category:4,name:"office building",version:"1.0"},{emoji:"🏣",category:4,name:"Japanese post office",version:"1.0"},{emoji:"🏤",category:4,name:"post office",version:"1.0"},{emoji:"🏥",category:4,name:"hospital",version:"1.0"},{emoji:"🏦",category:4,name:"bank",version:"1.0"},{emoji:"🏨",category:4,name:"hotel",version:"1.0"},{emoji:"🏩",category:4,name:"love hotel",version:"1.0"},{emoji:"🏪",category:4,name:"convenience store",version:"1.0"},{emoji:"🏫",category:4,name:"school",version:"1.0"},{emoji:"🏬",category:4,name:"department store",version:"1.0"},{emoji:"🏭",category:4,name:"factory",version:"1.0"},{emoji:"🏯",category:4,name:"Japanese castle",version:"1.0"},{emoji:"🏰",category:4,name:"castle",version:"1.0"},{emoji:"💒",category:4,name:"wedding",version:"1.0"},{emoji:"🗼",category:4,name:"Tokyo tower",version:"1.0"},{emoji:"🗽",category:4,name:"Statue of Liberty",version:"1.0"},{emoji:"⛪",category:4,name:"church",version:"1.0"},{emoji:"🕌",category:4,name:"mosque",version:"1.0"},{emoji:"🛕",category:4,name:"hindu temple",version:"12.0"},{emoji:"🕍",category:4,name:"synagogue",version:"1.0"},{emoji:"⛩️",category:4,name:"shinto shrine",version:"1.0"},{emoji:"🕋",category:4,name:"kaaba",version:"1.0"},{emoji:"⛲",category:4,name:"fountain",version:"1.0"},{emoji:"⛺",category:4,name:"tent",version:"1.0"},{emoji:"🌁",category:4,name:"foggy",version:"1.0"},{emoji:"🌃",category:4,name:"night with stars",version:"1.0"},{emoji:"🏙️",category:4,name:"cityscape",version:"1.0"},{emoji:"🌄",category:4,name:"sunrise over mountains",version:"1.0"},{emoji:"🌅",category:4,name:"sunrise",version:"1.0"},{emoji:"🌆",category:4,name:"cityscape at dusk",version:"1.0"},{emoji:"🌇",category:4,name:"sunset",version:"1.0"},{emoji:"🌉",category:4,name:"bridge at night",version:"1.0"},{emoji:"♨️",category:4,name:"hot springs",version:"1.0"},{emoji:"🎠",category:4,name:"carousel horse",version:"1.0"},{emoji:"🎡",category:4,name:"ferris wheel",version:"1.0"},{emoji:"🎢",category:4,name:"roller coaster",version:"1.0"},{emoji:"💈",category:4,name:"barber pole",version:"1.0"},{emoji:"🎪",category:4,name:"circus tent",version:"1.0"},{emoji:"🚂",category:4,name:"locomotive",version:"1.0"},{emoji:"🚃",category:4,name:"railway car",version:"1.0"},{emoji:"🚄",category:4,name:"high-speed train",version:"1.0"},{emoji:"🚅",category:4,name:"bullet train",version:"1.0"},{emoji:"🚆",category:4,name:"train",version:"1.0"},{emoji:"🚇",category:4,name:"metro",version:"1.0"},{emoji:"🚈",category:4,name:"light rail",version:"1.0"},{emoji:"🚉",category:4,name:"station",version:"1.0"},{emoji:"🚊",category:4,name:"tram",version:"1.0"},{emoji:"🚝",category:4,name:"monorail",version:"1.0"},{emoji:"🚞",category:4,name:"mountain railway",version:"1.0"},{emoji:"🚋",category:4,name:"tram car",version:"1.0"},{emoji:"🚌",category:4,name:"bus",version:"1.0"},{emoji:"🚍",category:4,name:"oncoming bus",version:"1.0"},{emoji:"🚎",category:4,name:"trolleybus",version:"1.0"},{emoji:"🚐",category:4,name:"minibus",version:"1.0"},{emoji:"🚑",category:4,name:"ambulance",version:"1.0"},{emoji:"🚒",category:4,name:"fire engine",version:"1.0"},{emoji:"🚓",category:4,name:"police car",version:"1.0"},{emoji:"🚔",category:4,name:"oncoming police car",version:"1.0"},{emoji:"🚕",category:4,name:"taxi",version:"1.0"},{emoji:"🚖",category:4,name:"oncoming taxi",version:"1.0"},{emoji:"🚗",category:4,name:"automobile",version:"1.0"},{emoji:"🚘",category:4,name:"oncoming automobile",version:"1.0"},{emoji:"🚙",category:4,name:"sport utility vehicle",version:"1.0"},{emoji:"🛻",category:4,name:"pickup truck",version:"13.0"},{emoji:"🚚",category:4,name:"delivery truck",version:"1.0"},{emoji:"🚛",category:4,name:"articulated lorry",version:"1.0"},{emoji:"🚜",category:4,name:"tractor",version:"1.0"},{emoji:"🏎️",category:4,name:"racing car",version:"1.0"},{emoji:"🏍️",category:4,name:"motorcycle",version:"1.0"},{emoji:"🛵",category:4,name:"motor scooter",version:"3.0"},{emoji:"🦽",category:4,name:"manual wheelchair",version:"12.0"},{emoji:"🦼",category:4,name:"motorized wheelchair",version:"12.0"},{emoji:"🛺",category:4,name:"auto rickshaw",version:"12.0"},{emoji:"🚲",category:4,name:"bicycle",version:"1.0"},{emoji:"🛴",category:4,name:"kick scooter",version:"3.0"},{emoji:"🛹",category:4,name:"skateboard",version:"11.0"},{emoji:"🛼",category:4,name:"roller skate",version:"13.0"},{emoji:"🚏",category:4,name:"bus stop",version:"1.0"},{emoji:"🛣️",category:4,name:"motorway",version:"1.0"},{emoji:"🛤️",category:4,name:"railway track",version:"1.0"},{emoji:"🛢️",category:4,name:"oil drum",version:"1.0"},{emoji:"⛽",category:4,name:"fuel pump",version:"1.0"},{emoji:"🚨",category:4,name:"police car light",version:"1.0"},{emoji:"🚥",category:4,name:"horizontal traffic light",version:"1.0"},{emoji:"🚦",category:4,name:"vertical traffic light",version:"1.0"},{emoji:"🛑",category:4,name:"stop sign",version:"3.0"},{emoji:"🚧",category:4,name:"construction",version:"1.0"},{emoji:"⚓",category:4,name:"anchor",version:"1.0"},{emoji:"⛵",category:4,name:"sailboat",version:"1.0"},{emoji:"🛶",category:4,name:"canoe",version:"3.0"},{emoji:"🚤",category:4,name:"speedboat",version:"1.0"},{emoji:"🛳️",category:4,name:"passenger ship",version:"1.0"},{emoji:"⛴️",category:4,name:"ferry",version:"1.0"},{emoji:"🛥️",category:4,name:"motor boat",version:"1.0"},{emoji:"🚢",category:4,name:"ship",version:"1.0"},{emoji:"✈️",category:4,name:"airplane",version:"1.0"},{emoji:"🛩️",category:4,name:"small airplane",version:"1.0"},{emoji:"🛫",category:4,name:"airplane departure",version:"1.0"},{emoji:"🛬",category:4,name:"airplane arrival",version:"1.0"},{emoji:"🪂",category:4,name:"parachute",version:"12.0"},{emoji:"💺",category:4,name:"seat",version:"1.0"},{emoji:"🚁",category:4,name:"helicopter",version:"1.0"},{emoji:"🚟",category:4,name:"suspension railway",version:"1.0"},{emoji:"🚠",category:4,name:"mountain cableway",version:"1.0"},{emoji:"🚡",category:4,name:"aerial tramway",version:"1.0"},{emoji:"🛰️",category:4,name:"satellite",version:"1.0"},{emoji:"🚀",category:4,name:"rocket",version:"1.0"},{emoji:"🛸",category:4,name:"flying saucer",version:"5.0"},{emoji:"🛎️",category:4,name:"bellhop bell",version:"1.0"},{emoji:"🧳",category:4,name:"luggage",version:"11.0"},{emoji:"⌛",category:4,name:"hourglass done",version:"1.0"},{emoji:"⏳",category:4,name:"hourglass not done",version:"1.0"},{emoji:"⌚",category:4,name:"watch",version:"1.0"},{emoji:"⏰",category:4,name:"alarm clock",version:"1.0"},{emoji:"⏱️",category:4,name:"stopwatch",version:"1.0"},{emoji:"⏲️",category:4,name:"timer clock",version:"1.0"},{emoji:"🕰️",category:4,name:"mantelpiece clock",version:"1.0"},{emoji:"🕛",category:4,name:"twelve o’clock",version:"1.0"},{emoji:"🕧",category:4,name:"twelve-thirty",version:"1.0"},{emoji:"🕐",category:4,name:"one o’clock",version:"1.0"},{emoji:"🕜",category:4,name:"one-thirty",version:"1.0"},{emoji:"🕑",category:4,name:"two o’clock",version:"1.0"},{emoji:"🕝",category:4,name:"two-thirty",version:"1.0"},{emoji:"🕒",category:4,name:"three o’clock",version:"1.0"},{emoji:"🕞",category:4,name:"three-thirty",version:"1.0"},{emoji:"🕓",category:4,name:"four o’clock",version:"1.0"},{emoji:"🕟",category:4,name:"four-thirty",version:"1.0"},{emoji:"🕔",category:4,name:"five o’clock",version:"1.0"},{emoji:"🕠",category:4,name:"five-thirty",version:"1.0"},{emoji:"🕕",category:4,name:"six o’clock",version:"1.0"},{emoji:"🕡",category:4,name:"six-thirty",version:"1.0"},{emoji:"🕖",category:4,name:"seven o’clock",version:"1.0"},{emoji:"🕢",category:4,name:"seven-thirty",version:"1.0"},{emoji:"🕗",category:4,name:"eight o’clock",version:"1.0"},{emoji:"🕣",category:4,name:"eight-thirty",version:"1.0"},{emoji:"🕘",category:4,name:"nine o’clock",version:"1.0"},{emoji:"🕤",category:4,name:"nine-thirty",version:"1.0"},{emoji:"🕙",category:4,name:"ten o’clock",version:"1.0"},{emoji:"🕥",category:4,name:"ten-thirty",version:"1.0"},{emoji:"🕚",category:4,name:"eleven o’clock",version:"1.0"},{emoji:"🕦",category:4,name:"eleven-thirty",version:"1.0"},{emoji:"🌑",category:4,name:"new moon",version:"1.0"},{emoji:"🌒",category:4,name:"waxing crescent moon",version:"1.0"},{emoji:"🌓",category:4,name:"first quarter moon",version:"1.0"},{emoji:"🌔",category:4,name:"waxing gibbous moon",version:"1.0"},{emoji:"🌕",category:4,name:"full moon",version:"1.0"},{emoji:"🌖",category:4,name:"waning gibbous moon",version:"1.0"},{emoji:"🌗",category:4,name:"last quarter moon",version:"1.0"},{emoji:"🌘",category:4,name:"waning crescent moon",version:"1.0"},{emoji:"🌙",category:4,name:"crescent moon",version:"1.0"},{emoji:"🌚",category:4,name:"new moon face",version:"1.0"},{emoji:"🌛",category:4,name:"first quarter moon face",version:"1.0"},{emoji:"🌜",category:4,name:"last quarter moon face",version:"1.0"},{emoji:"🌡️",category:4,name:"thermometer",version:"1.0"},{emoji:"☀️",category:4,name:"sun",version:"1.0"},{emoji:"🌝",category:4,name:"full moon face",version:"1.0"},{emoji:"🌞",category:4,name:"sun with face",version:"1.0"},{emoji:"🪐",category:4,name:"ringed planet",version:"12.0"},{emoji:"⭐",category:4,name:"star",version:"1.0"},{emoji:"🌟",category:4,name:"glowing star",version:"1.0"},{emoji:"🌠",category:4,name:"shooting star",version:"1.0"},{emoji:"🌌",category:4,name:"milky way",version:"1.0"},{emoji:"☁️",category:4,name:"cloud",version:"1.0"},{emoji:"⛅",category:4,name:"sun behind cloud",version:"1.0"},{emoji:"⛈️",category:4,name:"cloud with lightning and rain",version:"1.0"},{emoji:"🌤️",category:4,name:"sun behind small cloud",version:"1.0"},{emoji:"🌥️",category:4,name:"sun behind large cloud",version:"1.0"},{emoji:"🌦️",category:4,name:"sun behind rain cloud",version:"1.0"},{emoji:"🌧️",category:4,name:"cloud with rain",version:"1.0"},{emoji:"🌨️",category:4,name:"cloud with snow",version:"1.0"},{emoji:"🌩️",category:4,name:"cloud with lightning",version:"1.0"},{emoji:"🌪️",category:4,name:"tornado",version:"1.0"},{emoji:"🌫️",category:4,name:"fog",version:"1.0"},{emoji:"🌬️",category:4,name:"wind face",version:"1.0"},{emoji:"🌀",category:4,name:"cyclone",version:"1.0"},{emoji:"🌈",category:4,name:"rainbow",version:"1.0"},{emoji:"🌂",category:4,name:"closed umbrella",version:"1.0"},{emoji:"☂️",category:4,name:"umbrella",version:"1.0"},{emoji:"☔",category:4,name:"umbrella with rain drops",version:"1.0"},{emoji:"⛱️",category:4,name:"umbrella on ground",version:"1.0"},{emoji:"⚡",category:4,name:"high voltage",version:"1.0"},{emoji:"❄️",category:4,name:"snowflake",version:"1.0"},{emoji:"☃️",category:4,name:"snowman",version:"1.0"},{emoji:"⛄",category:4,name:"snowman without snow",version:"1.0"},{emoji:"☄️",category:4,name:"comet",version:"1.0"},{emoji:"🔥",category:4,name:"fire",version:"1.0"},{emoji:"💧",category:4,name:"droplet",version:"1.0"},{emoji:"🌊",category:4,name:"water wave",version:"1.0"},{emoji:"🎃",category:5,name:"jack-o-lantern",version:"1.0"},{emoji:"🎄",category:5,name:"Christmas tree",version:"1.0"},{emoji:"🎆",category:5,name:"fireworks",version:"1.0"},{emoji:"🎇",category:5,name:"sparkler",version:"1.0"},{emoji:"🧨",category:5,name:"firecracker",version:"11.0"},{emoji:"✨",category:5,name:"sparkles",version:"1.0"},{emoji:"🎈",category:5,name:"balloon",version:"1.0"},{emoji:"🎉",category:5,name:"party popper",version:"1.0"},{emoji:"🎊",category:5,name:"confetti ball",version:"1.0"},{emoji:"🎋",category:5,name:"tanabata tree",version:"1.0"},{emoji:"🎍",category:5,name:"pine decoration",version:"1.0"},{emoji:"🎎",category:5,name:"Japanese dolls",version:"1.0"},{emoji:"🎏",category:5,name:"carp streamer",version:"1.0"},{emoji:"🎐",category:5,name:"wind chime",version:"1.0"},{emoji:"🎑",category:5,name:"moon viewing ceremony",version:"1.0"},{emoji:"🧧",category:5,name:"red envelope",version:"11.0"},{emoji:"🎀",category:5,name:"ribbon",version:"1.0"},{emoji:"🎁",category:5,name:"wrapped gift",version:"1.0"},{emoji:"🎗️",category:5,name:"reminder ribbon",version:"1.0"},{emoji:"🎟️",category:5,name:"admission tickets",version:"1.0"},{emoji:"🎫",category:5,name:"ticket",version:"1.0"},{emoji:"🎖️",category:5,name:"military medal",version:"1.0"},{emoji:"🏆",category:5,name:"trophy",version:"1.0"},{emoji:"🏅",category:5,name:"sports medal",version:"1.0"},{emoji:"🥇",category:5,name:"1st place medal",version:"3.0"},{emoji:"🥈",category:5,name:"2nd place medal",version:"3.0"},{emoji:"🥉",category:5,name:"3rd place medal",version:"3.0"},{emoji:"⚽",category:5,name:"soccer ball",version:"1.0"},{emoji:"⚾",category:5,name:"baseball",version:"1.0"},{emoji:"🥎",category:5,name:"softball",version:"11.0"},{emoji:"🏀",category:5,name:"basketball",version:"1.0"},{emoji:"🏐",category:5,name:"volleyball",version:"1.0"},{emoji:"🏈",category:5,name:"american football",version:"1.0"},{emoji:"🏉",category:5,name:"rugby football",version:"1.0"},{emoji:"🎾",category:5,name:"tennis",version:"1.0"},{emoji:"🥏",category:5,name:"flying disc",version:"11.0"},{emoji:"🎳",category:5,name:"bowling",version:"1.0"},{emoji:"🏏",category:5,name:"cricket game",version:"1.0"},{emoji:"🏑",category:5,name:"field hockey",version:"1.0"},{emoji:"🏒",category:5,name:"ice hockey",version:"1.0"},{emoji:"🥍",category:5,name:"lacrosse",version:"11.0"},{emoji:"🏓",category:5,name:"ping pong",version:"1.0"},{emoji:"🏸",category:5,name:"badminton",version:"1.0"},{emoji:"🥊",category:5,name:"boxing glove",version:"3.0"},{emoji:"🥋",category:5,name:"martial arts uniform",version:"3.0"},{emoji:"🥅",category:5,name:"goal net",version:"3.0"},{emoji:"⛳",category:5,name:"flag in hole",version:"1.0"},{emoji:"⛸️",category:5,name:"ice skate",version:"1.0"},{emoji:"🎣",category:5,name:"fishing pole",version:"1.0"},{emoji:"🤿",category:5,name:"diving mask",version:"12.0"},{emoji:"🎽",category:5,name:"running shirt",version:"1.0"},{emoji:"🎿",category:5,name:"skis",version:"1.0"},{emoji:"🛷",category:5,name:"sled",version:"5.0"},{emoji:"🥌",category:5,name:"curling stone",version:"5.0"},{emoji:"🎯",category:5,name:"direct hit",version:"1.0"},{emoji:"🪀",category:5,name:"yo-yo",version:"12.0"},{emoji:"🪁",category:5,name:"kite",version:"12.0"},{emoji:"🎱",category:5,name:"pool 8 ball",version:"1.0"},{emoji:"🔮",category:5,name:"crystal ball",version:"1.0"},{emoji:"🪄",category:5,name:"magic wand",version:"13.0"},{emoji:"🧿",category:5,name:"nazar amulet",version:"11.0"},{emoji:"🎮",category:5,name:"video game",version:"1.0"},{emoji:"🕹️",category:5,name:"joystick",version:"1.0"},{emoji:"🎰",category:5,name:"slot machine",version:"1.0"},{emoji:"🎲",category:5,name:"game die",version:"1.0"},{emoji:"🧩",category:5,name:"puzzle piece",version:"11.0"},{emoji:"🧸",category:5,name:"teddy bear",version:"11.0"},{emoji:"🪅",category:5,name:"piñata",version:"13.0"},{emoji:"🪆",category:5,name:"nesting dolls",version:"13.0"},{emoji:"♠️",category:5,name:"spade suit",version:"1.0"},{emoji:"♥️",category:5,name:"heart suit",version:"1.0"},{emoji:"♦️",category:5,name:"diamond suit",version:"1.0"},{emoji:"♣️",category:5,name:"club suit",version:"1.0"},{emoji:"♟️",category:5,name:"chess pawn",version:"11.0"},{emoji:"🃏",category:5,name:"joker",version:"1.0"},{emoji:"🀄",category:5,name:"mahjong red dragon",version:"1.0"},{emoji:"🎴",category:5,name:"flower playing cards",version:"1.0"},{emoji:"🎭",category:5,name:"performing arts",version:"1.0"},{emoji:"🖼️",category:5,name:"framed picture",version:"1.0"},{emoji:"🎨",category:5,name:"artist palette",version:"1.0"},{emoji:"🧵",category:5,name:"thread",version:"11.0"},{emoji:"🪡",category:5,name:"sewing needle",version:"13.0"},{emoji:"🧶",category:5,name:"yarn",version:"11.0"},{emoji:"🪢",category:5,name:"knot",version:"13.0"},{emoji:"👓",category:6,name:"glasses",version:"1.0"},{emoji:"🕶️",category:6,name:"sunglasses",version:"1.0"},{emoji:"🥽",category:6,name:"goggles",version:"11.0"},{emoji:"🥼",category:6,name:"lab coat",version:"11.0"},{emoji:"🦺",category:6,name:"safety vest",version:"12.0"},{emoji:"👔",category:6,name:"necktie",version:"1.0"},{emoji:"👕",category:6,name:"t-shirt",version:"1.0"},{emoji:"👖",category:6,name:"jeans",version:"1.0"},{emoji:"🧣",category:6,name:"scarf",version:"5.0"},{emoji:"🧤",category:6,name:"gloves",version:"5.0"},{emoji:"🧥",category:6,name:"coat",version:"5.0"},{emoji:"🧦",category:6,name:"socks",version:"5.0"},{emoji:"👗",category:6,name:"dress",version:"1.0"},{emoji:"👘",category:6,name:"kimono",version:"1.0"},{emoji:"🥻",category:6,name:"sari",version:"12.0"},{emoji:"🩱",category:6,name:"one-piece swimsuit",version:"12.0"},{emoji:"🩲",category:6,name:"briefs",version:"12.0"},{emoji:"🩳",category:6,name:"shorts",version:"12.0"},{emoji:"👙",category:6,name:"bikini",version:"1.0"},{emoji:"👚",category:6,name:"woman’s clothes",version:"1.0"},{emoji:"👛",category:6,name:"purse",version:"1.0"},{emoji:"👜",category:6,name:"handbag",version:"1.0"},{emoji:"👝",category:6,name:"clutch bag",version:"1.0"},{emoji:"🛍️",category:6,name:"shopping bags",version:"1.0"},{emoji:"🎒",category:6,name:"backpack",version:"1.0"},{emoji:"🩴",category:6,name:"thong sandal",version:"13.0"},{emoji:"👞",category:6,name:"man’s shoe",version:"1.0"},{emoji:"👟",category:6,name:"running shoe",version:"1.0"},{emoji:"🥾",category:6,name:"hiking boot",version:"11.0"},{emoji:"🥿",category:6,name:"flat shoe",version:"11.0"},{emoji:"👠",category:6,name:"high-heeled shoe",version:"1.0"},{emoji:"👡",category:6,name:"woman’s sandal",version:"1.0"},{emoji:"🩰",category:6,name:"ballet shoes",version:"12.0"},{emoji:"👢",category:6,name:"woman’s boot",version:"1.0"},{emoji:"👑",category:6,name:"crown",version:"1.0"},{emoji:"👒",category:6,name:"woman’s hat",version:"1.0"},{emoji:"🎩",category:6,name:"top hat",version:"1.0"},{emoji:"🎓",category:6,name:"graduation cap",version:"1.0"},{emoji:"🧢",category:6,name:"billed cap",version:"5.0"},{emoji:"🪖",category:6,name:"military helmet",version:"13.0"},{emoji:"⛑️",category:6,name:"rescue worker’s helmet",version:"1.0"},{emoji:"📿",category:6,name:"prayer beads",version:"1.0"},{emoji:"💄",category:6,name:"lipstick",version:"1.0"},{emoji:"💍",category:6,name:"ring",version:"1.0"},{emoji:"💎",category:6,name:"gem stone",version:"1.0"},{emoji:"🔇",category:6,name:"muted speaker",version:"1.0"},{emoji:"🔈",category:6,name:"speaker low volume",version:"1.0"},{emoji:"🔉",category:6,name:"speaker medium volume",version:"1.0"},{emoji:"🔊",category:6,name:"speaker high volume",version:"1.0"},{emoji:"📢",category:6,name:"loudspeaker",version:"1.0"},{emoji:"📣",category:6,name:"megaphone",version:"1.0"},{emoji:"📯",category:6,name:"postal horn",version:"1.0"},{emoji:"🔔",category:6,name:"bell",version:"1.0"},{emoji:"🔕",category:6,name:"bell with slash",version:"1.0"},{emoji:"🎼",category:6,name:"musical score",version:"1.0"},{emoji:"🎵",category:6,name:"musical note",version:"1.0"},{emoji:"🎶",category:6,name:"musical notes",version:"1.0"},{emoji:"🎙️",category:6,name:"studio microphone",version:"1.0"},{emoji:"🎚️",category:6,name:"level slider",version:"1.0"},{emoji:"🎛️",category:6,name:"control knobs",version:"1.0"},{emoji:"🎤",category:6,name:"microphone",version:"1.0"},{emoji:"🎧",category:6,name:"headphone",version:"1.0"},{emoji:"📻",category:6,name:"radio",version:"1.0"},{emoji:"🎷",category:6,name:"saxophone",version:"1.0"},{emoji:"🪗",category:6,name:"accordion",version:"13.0"},{emoji:"🎸",category:6,name:"guitar",version:"1.0"},{emoji:"🎹",category:6,name:"musical keyboard",version:"1.0"},{emoji:"🎺",category:6,name:"trumpet",version:"1.0"},{emoji:"🎻",category:6,name:"violin",version:"1.0"},{emoji:"🪕",category:6,name:"banjo",version:"12.0"},{emoji:"🥁",category:6,name:"drum",version:"3.0"},{emoji:"🪘",category:6,name:"long drum",version:"13.0"},{emoji:"📱",category:6,name:"mobile phone",version:"1.0"},{emoji:"📲",category:6,name:"mobile phone with arrow",version:"1.0"},{emoji:"☎️",category:6,name:"telephone",version:"1.0"},{emoji:"📞",category:6,name:"telephone receiver",version:"1.0"},{emoji:"📟",category:6,name:"pager",version:"1.0"},{emoji:"📠",category:6,name:"fax machine",version:"1.0"},{emoji:"🔋",category:6,name:"battery",version:"1.0"},{emoji:"🔌",category:6,name:"electric plug",version:"1.0"},{emoji:"💻",category:6,name:"laptop",version:"1.0"},{emoji:"🖥️",category:6,name:"desktop computer",version:"1.0"},{emoji:"🖨️",category:6,name:"printer",version:"1.0"},{emoji:"⌨️",category:6,name:"keyboard",version:"1.0"},{emoji:"🖱️",category:6,name:"computer mouse",version:"1.0"},{emoji:"🖲️",category:6,name:"trackball",version:"1.0"},{emoji:"💽",category:6,name:"computer disk",version:"1.0"},{emoji:"💾",category:6,name:"floppy disk",version:"1.0"},{emoji:"💿",category:6,name:"optical disk",version:"1.0"},{emoji:"📀",category:6,name:"dvd",version:"1.0"},{emoji:"🧮",category:6,name:"abacus",version:"11.0"},{emoji:"🎥",category:6,name:"movie camera",version:"1.0"},{emoji:"🎞️",category:6,name:"film frames",version:"1.0"},{emoji:"📽️",category:6,name:"film projector",version:"1.0"},{emoji:"🎬",category:6,name:"clapper board",version:"1.0"},{emoji:"📺",category:6,name:"television",version:"1.0"},{emoji:"📷",category:6,name:"camera",version:"1.0"},{emoji:"📸",category:6,name:"camera with flash",version:"1.0"},{emoji:"📹",category:6,name:"video camera",version:"1.0"},{emoji:"📼",category:6,name:"videocassette",version:"1.0"},{emoji:"🔍",category:6,name:"magnifying glass tilted left",version:"1.0"},{emoji:"🔎",category:6,name:"magnifying glass tilted right",version:"1.0"},{emoji:"🕯️",category:6,name:"candle",version:"1.0"},{emoji:"💡",category:6,name:"light bulb",version:"1.0"},{emoji:"🔦",category:6,name:"flashlight",version:"1.0"},{emoji:"🏮",category:6,name:"red paper lantern",version:"1.0"},{emoji:"🪔",category:6,name:"diya lamp",version:"12.0"},{emoji:"📔",category:6,name:"notebook with decorative cover",version:"1.0"},{emoji:"📕",category:6,name:"closed book",version:"1.0"},{emoji:"📖",category:6,name:"open book",version:"1.0"},{emoji:"📗",category:6,name:"green book",version:"1.0"},{emoji:"📘",category:6,name:"blue book",version:"1.0"},{emoji:"📙",category:6,name:"orange book",version:"1.0"},{emoji:"📚",category:6,name:"books",version:"1.0"},{emoji:"📓",category:6,name:"notebook",version:"1.0"},{emoji:"📒",category:6,name:"ledger",version:"1.0"},{emoji:"📃",category:6,name:"page with curl",version:"1.0"},{emoji:"📜",category:6,name:"scroll",version:"1.0"},{emoji:"📄",category:6,name:"page facing up",version:"1.0"},{emoji:"📰",category:6,name:"newspaper",version:"1.0"},{emoji:"🗞️",category:6,name:"rolled-up newspaper",version:"1.0"},{emoji:"📑",category:6,name:"bookmark tabs",version:"1.0"},{emoji:"🔖",category:6,name:"bookmark",version:"1.0"},{emoji:"🏷️",category:6,name:"label",version:"1.0"},{emoji:"💰",category:6,name:"money bag",version:"1.0"},{emoji:"🪙",category:6,name:"coin",version:"13.0"},{emoji:"💴",category:6,name:"yen banknote",version:"1.0"},{emoji:"💵",category:6,name:"dollar banknote",version:"1.0"},{emoji:"💶",category:6,name:"euro banknote",version:"1.0"},{emoji:"💷",category:6,name:"pound banknote",version:"1.0"},{emoji:"💸",category:6,name:"money with wings",version:"1.0"},{emoji:"💳",category:6,name:"credit card",version:"1.0"},{emoji:"🧾",category:6,name:"receipt",version:"11.0"},{emoji:"💹",category:6,name:"chart increasing with yen",version:"1.0"},{emoji:"✉️",category:6,name:"envelope",version:"1.0"},{emoji:"📧",category:6,name:"e-mail",version:"1.0"},{emoji:"📨",category:6,name:"incoming envelope",version:"1.0"},{emoji:"📩",category:6,name:"envelope with arrow",version:"1.0"},{emoji:"📤",category:6,name:"outbox tray",version:"1.0"},{emoji:"📥",category:6,name:"inbox tray",version:"1.0"},{emoji:"📦",category:6,name:"package",version:"1.0"},{emoji:"📫",category:6,name:"closed mailbox with raised flag",version:"1.0"},{emoji:"📪",category:6,name:"closed mailbox with lowered flag",version:"1.0"},{emoji:"📬",category:6,name:"open mailbox with raised flag",version:"1.0"},{emoji:"📭",category:6,name:"open mailbox with lowered flag",version:"1.0"},{emoji:"📮",category:6,name:"postbox",version:"1.0"},{emoji:"🗳️",category:6,name:"ballot box with ballot",version:"1.0"},{emoji:"✏️",category:6,name:"pencil",version:"1.0"},{emoji:"✒️",category:6,name:"black nib",version:"1.0"},{emoji:"🖋️",category:6,name:"fountain pen",version:"1.0"},{emoji:"🖊️",category:6,name:"pen",version:"1.0"},{emoji:"🖌️",category:6,name:"paintbrush",version:"1.0"},{emoji:"🖍️",category:6,name:"crayon",version:"1.0"},{emoji:"📝",category:6,name:"memo",version:"1.0"},{emoji:"💼",category:6,name:"briefcase",version:"1.0"},{emoji:"📁",category:6,name:"file folder",version:"1.0"},{emoji:"📂",category:6,name:"open file folder",version:"1.0"},{emoji:"🗂️",category:6,name:"card index dividers",version:"1.0"},{emoji:"📅",category:6,name:"calendar",version:"1.0"},{emoji:"📆",category:6,name:"tear-off calendar",version:"1.0"},{emoji:"🗒️",category:6,name:"spiral notepad",version:"1.0"},{emoji:"🗓️",category:6,name:"spiral calendar",version:"1.0"},{emoji:"📇",category:6,name:"card index",version:"1.0"},{emoji:"📈",category:6,name:"chart increasing",version:"1.0"},{emoji:"📉",category:6,name:"chart decreasing",version:"1.0"},{emoji:"📊",category:6,name:"bar chart",version:"1.0"},{emoji:"📋",category:6,name:"clipboard",version:"1.0"},{emoji:"📌",category:6,name:"pushpin",version:"1.0"},{emoji:"📍",category:6,name:"round pushpin",version:"1.0"},{emoji:"📎",category:6,name:"paperclip",version:"1.0"},{emoji:"🖇️",category:6,name:"linked paperclips",version:"1.0"},{emoji:"📏",category:6,name:"straight ruler",version:"1.0"},{emoji:"📐",category:6,name:"triangular ruler",version:"1.0"},{emoji:"✂️",category:6,name:"scissors",version:"1.0"},{emoji:"🗃️",category:6,name:"card file box",version:"1.0"},{emoji:"🗄️",category:6,name:"file cabinet",version:"1.0"},{emoji:"🗑️",category:6,name:"wastebasket",version:"1.0"},{emoji:"🔒",category:6,name:"locked",version:"1.0"},{emoji:"🔓",category:6,name:"unlocked",version:"1.0"},{emoji:"🔏",category:6,name:"locked with pen",version:"1.0"},{emoji:"🔐",category:6,name:"locked with key",version:"1.0"},{emoji:"🔑",category:6,name:"key",version:"1.0"},{emoji:"🗝️",category:6,name:"old key",version:"1.0"},{emoji:"🔨",category:6,name:"hammer",version:"1.0"},{emoji:"🪓",category:6,name:"axe",version:"12.0"},{emoji:"⛏️",category:6,name:"pick",version:"1.0"},{emoji:"⚒️",category:6,name:"hammer and pick",version:"1.0"},{emoji:"🛠️",category:6,name:"hammer and wrench",version:"1.0"},{emoji:"🗡️",category:6,name:"dagger",version:"1.0"},{emoji:"⚔️",category:6,name:"crossed swords",version:"1.0"},{emoji:"🔫",category:6,name:"pistol",version:"1.0"},{emoji:"🪃",category:6,name:"boomerang",version:"13.0"},{emoji:"🏹",category:6,name:"bow and arrow",version:"1.0"},{emoji:"🛡️",category:6,name:"shield",version:"1.0"},{emoji:"🪚",category:6,name:"carpentry saw",version:"13.0"},{emoji:"🔧",category:6,name:"wrench",version:"1.0"},{emoji:"🪛",category:6,name:"screwdriver",version:"13.0"},{emoji:"🔩",category:6,name:"nut and bolt",version:"1.0"},{emoji:"⚙️",category:6,name:"gear",version:"1.0"},{emoji:"🗜️",category:6,name:"clamp",version:"1.0"},{emoji:"⚖️",category:6,name:"balance scale",version:"1.0"},{emoji:"🦯",category:6,name:"white cane",version:"12.0"},{emoji:"🔗",category:6,name:"link",version:"1.0"},{emoji:"⛓️",category:6,name:"chains",version:"1.0"},{emoji:"🪝",category:6,name:"hook",version:"13.0"},{emoji:"🧰",category:6,name:"toolbox",version:"11.0"},{emoji:"🧲",category:6,name:"magnet",version:"11.0"},{emoji:"🪜",category:6,name:"ladder",version:"13.0"},{emoji:"⚗️",category:6,name:"alembic",version:"1.0"},{emoji:"🧪",category:6,name:"test tube",version:"11.0"},{emoji:"🧫",category:6,name:"petri dish",version:"11.0"},{emoji:"🧬",category:6,name:"dna",version:"11.0"},{emoji:"🔬",category:6,name:"microscope",version:"1.0"},{emoji:"🔭",category:6,name:"telescope",version:"1.0"},{emoji:"📡",category:6,name:"satellite antenna",version:"1.0"},{emoji:"💉",category:6,name:"syringe",version:"1.0"},{emoji:"🩸",category:6,name:"drop of blood",version:"12.0"},{emoji:"💊",category:6,name:"pill",version:"1.0"},{emoji:"🩹",category:6,name:"adhesive bandage",version:"12.0"},{emoji:"🩺",category:6,name:"stethoscope",version:"12.0"},{emoji:"🚪",category:6,name:"door",version:"1.0"},{emoji:"🛗",category:6,name:"elevator",version:"13.0"},{emoji:"🪞",category:6,name:"mirror",version:"13.0"},{emoji:"🪟",category:6,name:"window",version:"13.0"},{emoji:"🛏️",category:6,name:"bed",version:"1.0"},{emoji:"🛋️",category:6,name:"couch and lamp",version:"1.0"},{emoji:"🪑",category:6,name:"chair",version:"12.0"},{emoji:"🚽",category:6,name:"toilet",version:"1.0"},{emoji:"🪠",category:6,name:"plunger",version:"13.0"},{emoji:"🚿",category:6,name:"shower",version:"1.0"},{emoji:"🛁",category:6,name:"bathtub",version:"1.0"},{emoji:"🪤",category:6,name:"mouse trap",version:"13.0"},{emoji:"🪒",category:6,name:"razor",version:"12.0"},{emoji:"🧴",category:6,name:"lotion bottle",version:"11.0"},{emoji:"🧷",category:6,name:"safety pin",version:"11.0"},{emoji:"🧹",category:6,name:"broom",version:"11.0"},{emoji:"🧺",category:6,name:"basket",version:"11.0"},{emoji:"🧻",category:6,name:"roll of paper",version:"11.0"},{emoji:"🪣",category:6,name:"bucket",version:"13.0"},{emoji:"🧼",category:6,name:"soap",version:"11.0"},{emoji:"🪥",category:6,name:"toothbrush",version:"13.0"},{emoji:"🧽",category:6,name:"sponge",version:"11.0"},{emoji:"🧯",category:6,name:"fire extinguisher",version:"11.0"},{emoji:"🛒",category:6,name:"shopping cart",version:"3.0"},{emoji:"🚬",category:6,name:"cigarette",version:"1.0"},{emoji:"⚰️",category:6,name:"coffin",version:"1.0"},{emoji:"🪦",category:6,name:"headstone",version:"13.0"},{emoji:"⚱️",category:6,name:"funeral urn",version:"1.0"},{emoji:"🗿",category:6,name:"moai",version:"1.0"},{emoji:"🪧",category:6,name:"placard",version:"13.0"},{emoji:"🏧",category:7,name:"ATM sign",version:"1.0"},{emoji:"🚮",category:7,name:"litter in bin sign",version:"1.0"},{emoji:"🚰",category:7,name:"potable water",version:"1.0"},{emoji:"♿",category:7,name:"wheelchair symbol",version:"1.0"},{emoji:"🚹",category:7,name:"men’s room",version:"1.0"},{emoji:"🚺",category:7,name:"women’s room",version:"1.0"},{emoji:"🚻",category:7,name:"restroom",version:"1.0"},{emoji:"🚼",category:7,name:"baby symbol",version:"1.0"},{emoji:"🚾",category:7,name:"water closet",version:"1.0"},{emoji:"🛂",category:7,name:"passport control",version:"1.0"},{emoji:"🛃",category:7,name:"customs",version:"1.0"},{emoji:"🛄",category:7,name:"baggage claim",version:"1.0"},{emoji:"🛅",category:7,name:"left luggage",version:"1.0"},{emoji:"⚠️",category:7,name:"warning",version:"1.0"},{emoji:"🚸",category:7,name:"children crossing",version:"1.0"},{emoji:"⛔",category:7,name:"no entry",version:"1.0"},{emoji:"🚫",category:7,name:"prohibited",version:"1.0"},{emoji:"🚳",category:7,name:"no bicycles",version:"1.0"},{emoji:"🚭",category:7,name:"no smoking",version:"1.0"},{emoji:"🚯",category:7,name:"no littering",version:"1.0"},{emoji:"🚱",category:7,name:"non-potable water",version:"1.0"},{emoji:"🚷",category:7,name:"no pedestrians",version:"1.0"},{emoji:"📵",category:7,name:"no mobile phones",version:"1.0"},{emoji:"🔞",category:7,name:"no one under eighteen",version:"1.0"},{emoji:"☢️",category:7,name:"radioactive",version:"1.0"},{emoji:"☣️",category:7,name:"biohazard",version:"1.0"},{emoji:"⬆️",category:7,name:"up arrow",version:"1.0"},{emoji:"↗️",category:7,name:"up-right arrow",version:"1.0"},{emoji:"➡️",category:7,name:"right arrow",version:"1.0"},{emoji:"↘️",category:7,name:"down-right arrow",version:"1.0"},{emoji:"⬇️",category:7,name:"down arrow",version:"1.0"},{emoji:"↙️",category:7,name:"down-left arrow",version:"1.0"},{emoji:"⬅️",category:7,name:"left arrow",version:"1.0"},{emoji:"↖️",category:7,name:"up-left arrow",version:"1.0"},{emoji:"↕️",category:7,name:"up-down arrow",version:"1.0"},{emoji:"↔️",category:7,name:"left-right arrow",version:"1.0"},{emoji:"↩️",category:7,name:"right arrow curving left",version:"1.0"},{emoji:"↪️",category:7,name:"left arrow curving right",version:"1.0"},{emoji:"⤴️",category:7,name:"right arrow curving up",version:"1.0"},{emoji:"⤵️",category:7,name:"right arrow curving down",version:"1.0"},{emoji:"🔃",category:7,name:"clockwise vertical arrows",version:"1.0"},{emoji:"🔄",category:7,name:"counterclockwise arrows button",version:"1.0"},{emoji:"🔙",category:7,name:"BACK arrow",version:"1.0"},{emoji:"🔚",category:7,name:"END arrow",version:"1.0"},{emoji:"🔛",category:7,name:"ON! arrow",version:"1.0"},{emoji:"🔜",category:7,name:"SOON arrow",version:"1.0"},{emoji:"🔝",category:7,name:"TOP arrow",version:"1.0"},{emoji:"🛐",category:7,name:"place of worship",version:"1.0"},{emoji:"⚛️",category:7,name:"atom symbol",version:"1.0"},{emoji:"🕉️",category:7,name:"om",version:"1.0"},{emoji:"✡️",category:7,name:"star of David",version:"1.0"},{emoji:"☸️",category:7,name:"wheel of dharma",version:"1.0"},{emoji:"☯️",category:7,name:"yin yang",version:"1.0"},{emoji:"✝️",category:7,name:"latin cross",version:"1.0"},{emoji:"☦️",category:7,name:"orthodox cross",version:"1.0"},{emoji:"☪️",category:7,name:"star and crescent",version:"1.0"},{emoji:"☮️",category:7,name:"peace symbol",version:"1.0"},{emoji:"🕎",category:7,name:"menorah",version:"1.0"},{emoji:"🔯",category:7,name:"dotted six-pointed star",version:"1.0"},{emoji:"♈",category:7,name:"Aries",version:"1.0"},{emoji:"♉",category:7,name:"Taurus",version:"1.0"},{emoji:"♊",category:7,name:"Gemini",version:"1.0"},{emoji:"♋",category:7,name:"Cancer",version:"1.0"},{emoji:"♌",category:7,name:"Leo",version:"1.0"},{emoji:"♍",category:7,name:"Virgo",version:"1.0"},{emoji:"♎",category:7,name:"Libra",version:"1.0"},{emoji:"♏",category:7,name:"Scorpio",version:"1.0"},{emoji:"♐",category:7,name:"Sagittarius",version:"1.0"},{emoji:"♑",category:7,name:"Capricorn",version:"1.0"},{emoji:"♒",category:7,name:"Aquarius",version:"1.0"},{emoji:"♓",category:7,name:"Pisces",version:"1.0"},{emoji:"⛎",category:7,name:"Ophiuchus",version:"1.0"},{emoji:"🔀",category:7,name:"shuffle tracks button",version:"1.0"},{emoji:"🔁",category:7,name:"repeat button",version:"1.0"},{emoji:"🔂",category:7,name:"repeat single button",version:"1.0"},{emoji:"▶️",category:7,name:"play button",version:"1.0"},{emoji:"⏩",category:7,name:"fast-forward button",version:"1.0"},{emoji:"⏭️",category:7,name:"next track button",version:"1.0"},{emoji:"⏯️",category:7,name:"play or pause button",version:"1.0"},{emoji:"◀️",category:7,name:"reverse button",version:"1.0"},{emoji:"⏪",category:7,name:"fast reverse button",version:"1.0"},{emoji:"⏮️",category:7,name:"last track button",version:"1.0"},{emoji:"🔼",category:7,name:"upwards button",version:"1.0"},{emoji:"⏫",category:7,name:"fast up button",version:"1.0"},{emoji:"🔽",category:7,name:"downwards button",version:"1.0"},{emoji:"⏬",category:7,name:"fast down button",version:"1.0"},{emoji:"⏸️",category:7,name:"pause button",version:"1.0"},{emoji:"⏹️",category:7,name:"stop button",version:"1.0"},{emoji:"⏺️",category:7,name:"record button",version:"1.0"},{emoji:"⏏️",category:7,name:"eject button",version:"1.0"},{emoji:"🎦",category:7,name:"cinema",version:"1.0"},{emoji:"🔅",category:7,name:"dim button",version:"1.0"},{emoji:"🔆",category:7,name:"bright button",version:"1.0"},{emoji:"📶",category:7,name:"antenna bars",version:"1.0"},{emoji:"📳",category:7,name:"vibration mode",version:"1.0"},{emoji:"📴",category:7,name:"mobile phone off",version:"1.0"},{emoji:"♀️",category:7,name:"female sign",version:"4.0"},{emoji:"♂️",category:7,name:"male sign",version:"4.0"},{emoji:"⚧️",category:7,name:"transgender symbol",version:"13.0"},{emoji:"✖️",category:7,name:"multiply",version:"1.0"},{emoji:"➕",category:7,name:"plus",version:"1.0"},{emoji:"➖",category:7,name:"minus",version:"1.0"},{emoji:"➗",category:7,name:"divide",version:"1.0"},{emoji:"♾️",category:7,name:"infinity",version:"11.0"},{emoji:"‼️",category:7,name:"double exclamation mark",version:"1.0"},{emoji:"⁉️",category:7,name:"exclamation question mark",version:"1.0"},{emoji:"❓",category:7,name:"question mark",version:"1.0"},{emoji:"❔",category:7,name:"white question mark",version:"1.0"},{emoji:"❕",category:7,name:"white exclamation mark",version:"1.0"},{emoji:"❗",category:7,name:"exclamation mark",version:"1.0"},{emoji:"〰️",category:7,name:"wavy dash",version:"1.0"},{emoji:"💱",category:7,name:"currency exchange",version:"1.0"},{emoji:"💲",category:7,name:"heavy dollar sign",version:"1.0"},{emoji:"⚕️",category:7,name:"medical symbol",version:"4.0"},{emoji:"♻️",category:7,name:"recycling symbol",version:"1.0"},{emoji:"⚜️",category:7,name:"fleur-de-lis",version:"1.0"},{emoji:"🔱",category:7,name:"trident emblem",version:"1.0"},{emoji:"📛",category:7,name:"name badge",version:"1.0"},{emoji:"🔰",category:7,name:"Japanese symbol for beginner",version:"1.0"},{emoji:"⭕",category:7,name:"hollow red circle",version:"1.0"},{emoji:"✅",category:7,name:"check mark button",version:"1.0"},{emoji:"☑️",category:7,name:"check box with check",version:"1.0"},{emoji:"✔️",category:7,name:"check mark",version:"1.0"},{emoji:"❌",category:7,name:"cross mark",version:"1.0"},{emoji:"❎",category:7,name:"cross mark button",version:"1.0"},{emoji:"➰",category:7,name:"curly loop",version:"1.0"},{emoji:"➿",category:7,name:"double curly loop",version:"1.0"},{emoji:"〽️",category:7,name:"part alternation mark",version:"1.0"},{emoji:"✳️",category:7,name:"eight-spoked asterisk",version:"1.0"},{emoji:"✴️",category:7,name:"eight-pointed star",version:"1.0"},{emoji:"❇️",category:7,name:"sparkle",version:"1.0"},{emoji:"©️",category:7,name:"copyright",version:"1.0"},{emoji:"®️",category:7,name:"registered",version:"1.0"},{emoji:"™️",category:7,name:"trade mark",version:"1.0"},{emoji:"#️⃣",category:7,name:"keycap: #",version:"1.0"},{emoji:"*️⃣",category:7,name:"keycap: *",version:"2.0"},{emoji:"0️⃣",category:7,name:"keycap: 0",version:"1.0"},{emoji:"1️⃣",category:7,name:"keycap: 1",version:"1.0"},{emoji:"2️⃣",category:7,name:"keycap: 2",version:"1.0"},{emoji:"3️⃣",category:7,name:"keycap: 3",version:"1.0"},{emoji:"4️⃣",category:7,name:"keycap: 4",version:"1.0"},{emoji:"5️⃣",category:7,name:"keycap: 5",version:"1.0"},{emoji:"6️⃣",category:7,name:"keycap: 6",version:"1.0"},{emoji:"7️⃣",category:7,name:"keycap: 7",version:"1.0"},{emoji:"8️⃣",category:7,name:"keycap: 8",version:"1.0"},{emoji:"9️⃣",category:7,name:"keycap: 9",version:"1.0"},{emoji:"🔟",category:7,name:"keycap: 10",version:"1.0"},{emoji:"🔠",category:7,name:"input latin uppercase",version:"1.0"},{emoji:"🔡",category:7,name:"input latin lowercase",version:"1.0"},{emoji:"🔢",category:7,name:"input numbers",version:"1.0"},{emoji:"🔣",category:7,name:"input symbols",version:"1.0"},{emoji:"🔤",category:7,name:"input latin letters",version:"1.0"},{emoji:"🅰️",category:7,name:"A button (blood type)",version:"1.0"},{emoji:"🆎",category:7,name:"AB button (blood type)",version:"1.0"},{emoji:"🅱️",category:7,name:"B button (blood type)",version:"1.0"},{emoji:"🆑",category:7,name:"CL button",version:"1.0"},{emoji:"🆒",category:7,name:"COOL button",version:"1.0"},{emoji:"🆓",category:7,name:"FREE button",version:"1.0"},{emoji:"ℹ️",category:7,name:"information",version:"1.0"},{emoji:"🆔",category:7,name:"ID button",version:"1.0"},{emoji:"Ⓜ️",category:7,name:"circled M",version:"1.0"},{emoji:"🆕",category:7,name:"NEW button",version:"1.0"},{emoji:"🆖",category:7,name:"NG button",version:"1.0"},{emoji:"🅾️",category:7,name:"O button (blood type)",version:"1.0"},{emoji:"🆗",category:7,name:"OK button",version:"1.0"},{emoji:"🅿️",category:7,name:"P button",version:"1.0"},{emoji:"🆘",category:7,name:"SOS button",version:"1.0"},{emoji:"🆙",category:7,name:"UP! button",version:"1.0"},{emoji:"🆚",category:7,name:"VS button",version:"1.0"},{emoji:"🈁",category:7,name:"Japanese “here” button",version:"1.0"},{emoji:"🈂️",category:7,name:"Japanese “service charge” button",version:"1.0"},{emoji:"🈷️",category:7,name:"Japanese “monthly amount” button",version:"1.0"},{emoji:"🈶",category:7,name:"Japanese “not free of charge” button",version:"1.0"},{emoji:"🈯",category:7,name:"Japanese “reserved” button",version:"1.0"},{emoji:"🉐",category:7,name:"Japanese “bargain” button",version:"1.0"},{emoji:"🈹",category:7,name:"Japanese “discount” button",version:"1.0"},{emoji:"🈚",category:7,name:"Japanese “free of charge” button",version:"1.0"},{emoji:"🈲",category:7,name:"Japanese “prohibited” button",version:"1.0"},{emoji:"🉑",category:7,name:"Japanese “acceptable” button",version:"1.0"},{emoji:"🈸",category:7,name:"Japanese “application” button",version:"1.0"},{emoji:"🈴",category:7,name:"Japanese “passing grade” button",version:"1.0"},{emoji:"🈳",category:7,name:"Japanese “vacancy” button",version:"1.0"},{emoji:"㊗️",category:7,name:"Japanese “congratulations” button",version:"1.0"},{emoji:"㊙️",category:7,name:"Japanese “secret” button",version:"1.0"},{emoji:"🈺",category:7,name:"Japanese “open for business” button",version:"1.0"},{emoji:"🈵",category:7,name:"Japanese “no vacancy” button",version:"1.0"},{emoji:"🔴",category:7,name:"red circle",version:"1.0"},{emoji:"🟠",category:7,name:"orange circle",version:"12.0"},{emoji:"🟡",category:7,name:"yellow circle",version:"12.0"},{emoji:"🟢",category:7,name:"green circle",version:"12.0"},{emoji:"🔵",category:7,name:"blue circle",version:"1.0"},{emoji:"🟣",category:7,name:"purple circle",version:"12.0"},{emoji:"🟤",category:7,name:"brown circle",version:"12.0"},{emoji:"⚫",category:7,name:"black circle",version:"1.0"},{emoji:"⚪",category:7,name:"white circle",version:"1.0"},{emoji:"🟥",category:7,name:"red square",version:"12.0"},{emoji:"🟧",category:7,name:"orange square",version:"12.0"},{emoji:"🟨",category:7,name:"yellow square",version:"12.0"},{emoji:"🟩",category:7,name:"green square",version:"12.0"},{emoji:"🟦",category:7,name:"blue square",version:"12.0"},{emoji:"🟪",category:7,name:"purple square",version:"12.0"},{emoji:"🟫",category:7,name:"brown square",version:"12.0"},{emoji:"⬛",category:7,name:"black large square",version:"1.0"},{emoji:"⬜",category:7,name:"white large square",version:"1.0"},{emoji:"◼️",category:7,name:"black medium square",version:"1.0"},{emoji:"◻️",category:7,name:"white medium square",version:"1.0"},{emoji:"◾",category:7,name:"black medium-small square",version:"1.0"},{emoji:"◽",category:7,name:"white medium-small square",version:"1.0"},{emoji:"▪️",category:7,name:"black small square",version:"1.0"},{emoji:"▫️",category:7,name:"white small square",version:"1.0"},{emoji:"🔶",category:7,name:"large orange diamond",version:"1.0"},{emoji:"🔷",category:7,name:"large blue diamond",version:"1.0"},{emoji:"🔸",category:7,name:"small orange diamond",version:"1.0"},{emoji:"🔹",category:7,name:"small blue diamond",version:"1.0"},{emoji:"🔺",category:7,name:"red triangle pointed up",version:"1.0"},{emoji:"🔻",category:7,name:"red triangle pointed down",version:"1.0"},{emoji:"💠",category:7,name:"diamond with a dot",version:"1.0"},{emoji:"🔘",category:7,name:"radio button",version:"1.0"},{emoji:"🔳",category:7,name:"white square button",version:"1.0"},{emoji:"🔲",category:7,name:"black square button",version:"1.0"},{emoji:"🏁",category:8,name:"chequered flag",version:"1.0"},{emoji:"🚩",category:8,name:"triangular flag",version:"1.0"},{emoji:"🎌",category:8,name:"crossed flags",version:"1.0"},{emoji:"🏴",category:8,name:"black flag",version:"1.0"},{emoji:"🏳️",category:8,name:"white flag",version:"1.0"},{emoji:"🏳️‍🌈",category:8,name:"rainbow flag",version:"4.0"},{emoji:"🏳️‍⚧️",category:8,name:"transgender flag",version:"13.0"},{emoji:"🏴‍☠️",category:8,name:"pirate flag",version:"11.0"},{emoji:"🇦🇨",category:8,name:"flag: Ascension Island",version:"2.0"},{emoji:"🇦🇩",category:8,name:"flag: Andorra",version:"2.0"},{emoji:"🇦🇪",category:8,name:"flag: United Arab Emirates",version:"2.0"},{emoji:"🇦🇫",category:8,name:"flag: Afghanistan",version:"2.0"},{emoji:"🇦🇬",category:8,name:"flag: Antigua & Barbuda",version:"2.0"},{emoji:"🇦🇮",category:8,name:"flag: Anguilla",version:"2.0"},{emoji:"🇦🇱",category:8,name:"flag: Albania",version:"2.0"},{emoji:"🇦🇲",category:8,name:"flag: Armenia",version:"2.0"},{emoji:"🇦🇴",category:8,name:"flag: Angola",version:"2.0"},{emoji:"🇦🇶",category:8,name:"flag: Antarctica",version:"2.0"},{emoji:"🇦🇷",category:8,name:"flag: Argentina",version:"2.0"},{emoji:"🇦🇸",category:8,name:"flag: American Samoa",version:"2.0"},{emoji:"🇦🇹",category:8,name:"flag: Austria",version:"2.0"},{emoji:"🇦🇺",category:8,name:"flag: Australia",version:"2.0"},{emoji:"🇦🇼",category:8,name:"flag: Aruba",version:"2.0"},{emoji:"🇦🇽",category:8,name:"flag: Åland Islands",version:"2.0"},{emoji:"🇦🇿",category:8,name:"flag: Azerbaijan",version:"2.0"},{emoji:"🇧🇦",category:8,name:"flag: Bosnia & Herzegovina",version:"2.0"},{emoji:"🇧🇧",category:8,name:"flag: Barbados",version:"2.0"},{emoji:"🇧🇩",category:8,name:"flag: Bangladesh",version:"2.0"},{emoji:"🇧🇪",category:8,name:"flag: Belgium",version:"2.0"},{emoji:"🇧🇫",category:8,name:"flag: Burkina Faso",version:"2.0"},{emoji:"🇧🇬",category:8,name:"flag: Bulgaria",version:"2.0"},{emoji:"🇧🇭",category:8,name:"flag: Bahrain",version:"2.0"},{emoji:"🇧🇮",category:8,name:"flag: Burundi",version:"2.0"},{emoji:"🇧🇯",category:8,name:"flag: Benin",version:"2.0"},{emoji:"🇧🇱",category:8,name:"flag: St. Barthélemy",version:"2.0"},{emoji:"🇧🇲",category:8,name:"flag: Bermuda",version:"2.0"},{emoji:"🇧🇳",category:8,name:"flag: Brunei",version:"2.0"},{emoji:"🇧🇴",category:8,name:"flag: Bolivia",version:"2.0"},{emoji:"🇧🇶",category:8,name:"flag: Caribbean Netherlands",version:"2.0"},{emoji:"🇧🇷",category:8,name:"flag: Brazil",version:"2.0"},{emoji:"🇧🇸",category:8,name:"flag: Bahamas",version:"2.0"},{emoji:"🇧🇹",category:8,name:"flag: Bhutan",version:"2.0"},{emoji:"🇧🇻",category:8,name:"flag: Bouvet Island",version:"2.0"},{emoji:"🇧🇼",category:8,name:"flag: Botswana",version:"2.0"},{emoji:"🇧🇾",category:8,name:"flag: Belarus",version:"2.0"},{emoji:"🇧🇿",category:8,name:"flag: Belize",version:"2.0"},{emoji:"🇨🇦",category:8,name:"flag: Canada",version:"2.0"},{emoji:"🇨🇨",category:8,name:"flag: Cocos (Keeling) Islands",version:"2.0"},{emoji:"🇨🇩",category:8,name:"flag: Congo - Kinshasa",version:"2.0"},{emoji:"🇨🇫",category:8,name:"flag: Central African Republic",version:"2.0"},{emoji:"🇨🇬",category:8,name:"flag: Congo - Brazzaville",version:"2.0"},{emoji:"🇨🇭",category:8,name:"flag: Switzerland",version:"2.0"},{emoji:"🇨🇮",category:8,name:"flag: Côte d’Ivoire",version:"2.0"},{emoji:"🇨🇰",category:8,name:"flag: Cook Islands",version:"2.0"},{emoji:"🇨🇱",category:8,name:"flag: Chile",version:"2.0"},{emoji:"🇨🇲",category:8,name:"flag: Cameroon",version:"2.0"},{emoji:"🇨🇳",category:8,name:"flag: China",version:"1.0"},{emoji:"🇨🇴",category:8,name:"flag: Colombia",version:"2.0"},{emoji:"🇨🇵",category:8,name:"flag: Clipperton Island",version:"2.0"},{emoji:"🇨🇷",category:8,name:"flag: Costa Rica",version:"2.0"},{emoji:"🇨🇺",category:8,name:"flag: Cuba",version:"2.0"},{emoji:"🇨🇻",category:8,name:"flag: Cape Verde",version:"2.0"},{emoji:"🇨🇼",category:8,name:"flag: Curaçao",version:"2.0"},{emoji:"🇨🇽",category:8,name:"flag: Christmas Island",version:"2.0"},{emoji:"🇨🇾",category:8,name:"flag: Cyprus",version:"2.0"},{emoji:"🇨🇿",category:8,name:"flag: Czechia",version:"2.0"},{emoji:"🇩🇪",category:8,name:"flag: Germany",version:"1.0"},{emoji:"🇩🇬",category:8,name:"flag: Diego Garcia",version:"2.0"},{emoji:"🇩🇯",category:8,name:"flag: Djibouti",version:"2.0"},{emoji:"🇩🇰",category:8,name:"flag: Denmark",version:"2.0"},{emoji:"🇩🇲",category:8,name:"flag: Dominica",version:"2.0"},{emoji:"🇩🇴",category:8,name:"flag: Dominican Republic",version:"2.0"},{emoji:"🇩🇿",category:8,name:"flag: Algeria",version:"2.0"},{emoji:"🇪🇦",category:8,name:"flag: Ceuta & Melilla",version:"2.0"},{emoji:"🇪🇨",category:8,name:"flag: Ecuador",version:"2.0"},{emoji:"🇪🇪",category:8,name:"flag: Estonia",version:"2.0"},{emoji:"🇪🇬",category:8,name:"flag: Egypt",version:"2.0"},{emoji:"🇪🇭",category:8,name:"flag: Western Sahara",version:"2.0"},{emoji:"🇪🇷",category:8,name:"flag: Eritrea",version:"2.0"},{emoji:"🇪🇸",category:8,name:"flag: Spain",version:"1.0"},{emoji:"🇪🇹",category:8,name:"flag: Ethiopia",version:"2.0"},{emoji:"🇪🇺",category:8,name:"flag: European Union",version:"2.0"},{emoji:"🇫🇮",category:8,name:"flag: Finland",version:"2.0"},{emoji:"🇫🇯",category:8,name:"flag: Fiji",version:"2.0"},{emoji:"🇫🇰",category:8,name:"flag: Falkland Islands",version:"2.0"},{emoji:"🇫🇲",category:8,name:"flag: Micronesia",version:"2.0"},{emoji:"🇫🇴",category:8,name:"flag: Faroe Islands",version:"2.0"},{emoji:"🇫🇷",category:8,name:"flag: France",version:"1.0"},{emoji:"🇬🇦",category:8,name:"flag: Gabon",version:"2.0"},{emoji:"🇬🇧",category:8,name:"flag: United Kingdom",version:"1.0"},{emoji:"🇬🇩",category:8,name:"flag: Grenada",version:"2.0"},{emoji:"🇬🇪",category:8,name:"flag: Georgia",version:"2.0"},{emoji:"🇬🇫",category:8,name:"flag: French Guiana",version:"2.0"},{emoji:"🇬🇬",category:8,name:"flag: Guernsey",version:"2.0"},{emoji:"🇬🇭",category:8,name:"flag: Ghana",version:"2.0"},{emoji:"🇬🇮",category:8,name:"flag: Gibraltar",version:"2.0"},{emoji:"🇬🇱",category:8,name:"flag: Greenland",version:"2.0"},{emoji:"🇬🇲",category:8,name:"flag: Gambia",version:"2.0"},{emoji:"🇬🇳",category:8,name:"flag: Guinea",version:"2.0"},{emoji:"🇬🇵",category:8,name:"flag: Guadeloupe",version:"2.0"},{emoji:"🇬🇶",category:8,name:"flag: Equatorial Guinea",version:"2.0"},{emoji:"🇬🇷",category:8,name:"flag: Greece",version:"2.0"},{emoji:"🇬🇸",category:8,name:"flag: South Georgia & South Sandwich Islands",version:"2.0"},{emoji:"🇬🇹",category:8,name:"flag: Guatemala",version:"2.0"},{emoji:"🇬🇺",category:8,name:"flag: Guam",version:"2.0"},{emoji:"🇬🇼",category:8,name:"flag: Guinea-Bissau",version:"2.0"},{emoji:"🇬🇾",category:8,name:"flag: Guyana",version:"2.0"},{emoji:"🇭🇰",category:8,name:"flag: Hong Kong SAR China",version:"2.0"},{emoji:"🇭🇲",category:8,name:"flag: Heard & McDonald Islands",version:"2.0"},{emoji:"🇭🇳",category:8,name:"flag: Honduras",version:"2.0"},{emoji:"🇭🇷",category:8,name:"flag: Croatia",version:"2.0"},{emoji:"🇭🇹",category:8,name:"flag: Haiti",version:"2.0"},{emoji:"🇭🇺",category:8,name:"flag: Hungary",version:"2.0"},{emoji:"🇮🇨",category:8,name:"flag: Canary Islands",version:"2.0"},{emoji:"🇮🇩",category:8,name:"flag: Indonesia",version:"2.0"},{emoji:"🇮🇪",category:8,name:"flag: Ireland",version:"2.0"},{emoji:"🇮🇱",category:8,name:"flag: Israel",version:"2.0"},{emoji:"🇮🇲",category:8,name:"flag: Isle of Man",version:"2.0"},{emoji:"🇮🇳",category:8,name:"flag: India",version:"2.0"},{emoji:"🇮🇴",category:8,name:"flag: British Indian Ocean Territory",version:"2.0"},{emoji:"🇮🇶",category:8,name:"flag: Iraq",version:"2.0"},{emoji:"🇮🇷",category:8,name:"flag: Iran",version:"2.0"},{emoji:"🇮🇸",category:8,name:"flag: Iceland",version:"2.0"},{emoji:"🇮🇹",category:8,name:"flag: Italy",version:"1.0"},{emoji:"🇯🇪",category:8,name:"flag: Jersey",version:"2.0"},{emoji:"🇯🇲",category:8,name:"flag: Jamaica",version:"2.0"},{emoji:"🇯🇴",category:8,name:"flag: Jordan",version:"2.0"},{emoji:"🇯🇵",category:8,name:"flag: Japan",version:"1.0"},{emoji:"🇰🇪",category:8,name:"flag: Kenya",version:"2.0"},{emoji:"🇰🇬",category:8,name:"flag: Kyrgyzstan",version:"2.0"},{emoji:"🇰🇭",category:8,name:"flag: Cambodia",version:"2.0"},{emoji:"🇰🇮",category:8,name:"flag: Kiribati",version:"2.0"},{emoji:"🇰🇲",category:8,name:"flag: Comoros",version:"2.0"},{emoji:"🇰🇳",category:8,name:"flag: St. Kitts & Nevis",version:"2.0"},{emoji:"🇰🇵",category:8,name:"flag: North Korea",version:"2.0"},{emoji:"🇰🇷",category:8,name:"flag: South Korea",version:"1.0"},{emoji:"🇰🇼",category:8,name:"flag: Kuwait",version:"2.0"},{emoji:"🇰🇾",category:8,name:"flag: Cayman Islands",version:"2.0"},{emoji:"🇰🇿",category:8,name:"flag: Kazakhstan",version:"2.0"},{emoji:"🇱🇦",category:8,name:"flag: Laos",version:"2.0"},{emoji:"🇱🇧",category:8,name:"flag: Lebanon",version:"2.0"},{emoji:"🇱🇨",category:8,name:"flag: St. Lucia",version:"2.0"},{emoji:"🇱🇮",category:8,name:"flag: Liechtenstein",version:"2.0"},{emoji:"🇱🇰",category:8,name:"flag: Sri Lanka",version:"2.0"},{emoji:"🇱🇷",category:8,name:"flag: Liberia",version:"2.0"},{emoji:"🇱🇸",category:8,name:"flag: Lesotho",version:"2.0"},{emoji:"🇱🇹",category:8,name:"flag: Lithuania",version:"2.0"},{emoji:"🇱🇺",category:8,name:"flag: Luxembourg",version:"2.0"},{emoji:"🇱🇻",category:8,name:"flag: Latvia",version:"2.0"},{emoji:"🇱🇾",category:8,name:"flag: Libya",version:"2.0"},{emoji:"🇲🇦",category:8,name:"flag: Morocco",version:"2.0"},{emoji:"🇲🇨",category:8,name:"flag: Monaco",version:"2.0"},{emoji:"🇲🇩",category:8,name:"flag: Moldova",version:"2.0"},{emoji:"🇲🇪",category:8,name:"flag: Montenegro",version:"2.0"},{emoji:"🇲🇫",category:8,name:"flag: St. Martin",version:"2.0"},{emoji:"🇲🇬",category:8,name:"flag: Madagascar",version:"2.0"},{emoji:"🇲🇭",category:8,name:"flag: Marshall Islands",version:"2.0"},{emoji:"🇲🇰",category:8,name:"flag: North Macedonia",version:"2.0"},{emoji:"🇲🇱",category:8,name:"flag: Mali",version:"2.0"},{emoji:"🇲🇲",category:8,name:"flag: Myanmar (Burma)",version:"2.0"},{emoji:"🇲🇳",category:8,name:"flag: Mongolia",version:"2.0"},{emoji:"🇲🇴",category:8,name:"flag: Macao SAR China",version:"2.0"},{emoji:"🇲🇵",category:8,name:"flag: Northern Mariana Islands",version:"2.0"},{emoji:"🇲🇶",category:8,name:"flag: Martinique",version:"2.0"},{emoji:"🇲🇷",category:8,name:"flag: Mauritania",version:"2.0"},{emoji:"🇲🇸",category:8,name:"flag: Montserrat",version:"2.0"},{emoji:"🇲🇹",category:8,name:"flag: Malta",version:"2.0"},{emoji:"🇲🇺",category:8,name:"flag: Mauritius",version:"2.0"},{emoji:"🇲🇻",category:8,name:"flag: Maldives",version:"2.0"},{emoji:"🇲🇼",category:8,name:"flag: Malawi",version:"2.0"},{emoji:"🇲🇽",category:8,name:"flag: Mexico",version:"2.0"},{emoji:"🇲🇾",category:8,name:"flag: Malaysia",version:"2.0"},{emoji:"🇲🇿",category:8,name:"flag: Mozambique",version:"2.0"},{emoji:"🇳🇦",category:8,name:"flag: Namibia",version:"2.0"},{emoji:"🇳🇨",category:8,name:"flag: New Caledonia",version:"2.0"},{emoji:"🇳🇪",category:8,name:"flag: Niger",version:"2.0"},{emoji:"🇳🇫",category:8,name:"flag: Norfolk Island",version:"2.0"},{emoji:"🇳🇬",category:8,name:"flag: Nigeria",version:"2.0"},{emoji:"🇳🇮",category:8,name:"flag: Nicaragua",version:"2.0"},{emoji:"🇳🇱",category:8,name:"flag: Netherlands",version:"2.0"},{emoji:"🇳🇴",category:8,name:"flag: Norway",version:"2.0"},{emoji:"🇳🇵",category:8,name:"flag: Nepal",version:"2.0"},{emoji:"🇳🇷",category:8,name:"flag: Nauru",version:"2.0"},{emoji:"🇳🇺",category:8,name:"flag: Niue",version:"2.0"},{emoji:"🇳🇿",category:8,name:"flag: New Zealand",version:"2.0"},{emoji:"🇴🇲",category:8,name:"flag: Oman",version:"2.0"},{emoji:"🇵🇦",category:8,name:"flag: Panama",version:"2.0"},{emoji:"🇵🇪",category:8,name:"flag: Peru",version:"2.0"},{emoji:"🇵🇫",category:8,name:"flag: French Polynesia",version:"2.0"},{emoji:"🇵🇬",category:8,name:"flag: Papua New Guinea",version:"2.0"},{emoji:"🇵🇭",category:8,name:"flag: Philippines",version:"2.0"},{emoji:"🇵🇰",category:8,name:"flag: Pakistan",version:"2.0"},{emoji:"🇵🇱",category:8,name:"flag: Poland",version:"2.0"},{emoji:"🇵🇲",category:8,name:"flag: St. Pierre & Miquelon",version:"2.0"},{emoji:"🇵🇳",category:8,name:"flag: Pitcairn Islands",version:"2.0"},{emoji:"🇵🇷",category:8,name:"flag: Puerto Rico",version:"2.0"},{emoji:"🇵🇸",category:8,name:"flag: Palestinian Territories",version:"2.0"},{emoji:"🇵🇹",category:8,name:"flag: Portugal",version:"2.0"},{emoji:"🇵🇼",category:8,name:"flag: Palau",version:"2.0"},{emoji:"🇵🇾",category:8,name:"flag: Paraguay",version:"2.0"},{emoji:"🇶🇦",category:8,name:"flag: Qatar",version:"2.0"},{emoji:"🇷🇪",category:8,name:"flag: Réunion",version:"2.0"},{emoji:"🇷🇴",category:8,name:"flag: Romania",version:"2.0"},{emoji:"🇷🇸",category:8,name:"flag: Serbia",version:"2.0"},{emoji:"🇷🇺",category:8,name:"flag: Russia",version:"1.0"},{emoji:"🇷🇼",category:8,name:"flag: Rwanda",version:"2.0"},{emoji:"🇸🇦",category:8,name:"flag: Saudi Arabia",version:"2.0"},{emoji:"🇸🇧",category:8,name:"flag: Solomon Islands",version:"2.0"},{emoji:"🇸🇨",category:8,name:"flag: Seychelles",version:"2.0"},{emoji:"🇸🇩",category:8,name:"flag: Sudan",version:"2.0"},{emoji:"🇸🇪",category:8,name:"flag: Sweden",version:"2.0"},{emoji:"🇸🇬",category:8,name:"flag: Singapore",version:"2.0"},{emoji:"🇸🇭",category:8,name:"flag: St. Helena",version:"2.0"},{emoji:"🇸🇮",category:8,name:"flag: Slovenia",version:"2.0"},{emoji:"🇸🇯",category:8,name:"flag: Svalbard & Jan Mayen",version:"2.0"},{emoji:"🇸🇰",category:8,name:"flag: Slovakia",version:"2.0"},{emoji:"🇸🇱",category:8,name:"flag: Sierra Leone",version:"2.0"},{emoji:"🇸🇲",category:8,name:"flag: San Marino",version:"2.0"},{emoji:"🇸🇳",category:8,name:"flag: Senegal",version:"2.0"},{emoji:"🇸🇴",category:8,name:"flag: Somalia",version:"2.0"},{emoji:"🇸🇷",category:8,name:"flag: Suriname",version:"2.0"},{emoji:"🇸🇸",category:8,name:"flag: South Sudan",version:"2.0"},{emoji:"🇸🇹",category:8,name:"flag: São Tomé & Príncipe",version:"2.0"},{emoji:"🇸🇻",category:8,name:"flag: El Salvador",version:"2.0"},{emoji:"🇸🇽",category:8,name:"flag: Sint Maarten",version:"2.0"},{emoji:"🇸🇾",category:8,name:"flag: Syria",version:"2.0"},{emoji:"🇸🇿",category:8,name:"flag: Eswatini",version:"2.0"},{emoji:"🇹🇦",category:8,name:"flag: Tristan da Cunha",version:"2.0"},{emoji:"🇹🇨",category:8,name:"flag: Turks & Caicos Islands",version:"2.0"},{emoji:"🇹🇩",category:8,name:"flag: Chad",version:"2.0"},{emoji:"🇹🇫",category:8,name:"flag: French Southern Territories",version:"2.0"},{emoji:"🇹🇬",category:8,name:"flag: Togo",version:"2.0"},{emoji:"🇹🇭",category:8,name:"flag: Thailand",version:"2.0"},{emoji:"🇹🇯",category:8,name:"flag: Tajikistan",version:"2.0"},{emoji:"🇹🇰",category:8,name:"flag: Tokelau",version:"2.0"},{emoji:"🇹🇱",category:8,name:"flag: Timor-Leste",version:"2.0"},{emoji:"🇹🇲",category:8,name:"flag: Turkmenistan",version:"2.0"},{emoji:"🇹🇳",category:8,name:"flag: Tunisia",version:"2.0"},{emoji:"🇹🇴",category:8,name:"flag: Tonga",version:"2.0"},{emoji:"🇹🇷",category:8,name:"flag: Turkey",version:"2.0"},{emoji:"🇹🇹",category:8,name:"flag: Trinidad & Tobago",version:"2.0"},{emoji:"🇹🇻",category:8,name:"flag: Tuvalu",version:"2.0"},{emoji:"🇹🇼",category:8,name:"flag: Taiwan",version:"2.0"},{emoji:"🇹🇿",category:8,name:"flag: Tanzania",version:"2.0"},{emoji:"🇺🇦",category:8,name:"flag: Ukraine",version:"2.0"},{emoji:"🇺🇬",category:8,name:"flag: Uganda",version:"2.0"},{emoji:"🇺🇲",category:8,name:"flag: U.S. Outlying Islands",version:"2.0"},{emoji:"🇺🇳",category:8,name:"flag: United Nations",version:"4.0"},{emoji:"🇺🇸",category:8,name:"flag: United States",version:"1.0"},{emoji:"🇺🇾",category:8,name:"flag: Uruguay",version:"2.0"},{emoji:"🇺🇿",category:8,name:"flag: Uzbekistan",version:"2.0"},{emoji:"🇻🇦",category:8,name:"flag: Vatican City",version:"2.0"},{emoji:"🇻🇨",category:8,name:"flag: St. Vincent & Grenadines",version:"2.0"},{emoji:"🇻🇪",category:8,name:"flag: Venezuela",version:"2.0"},{emoji:"🇻🇬",category:8,name:"flag: British Virgin Islands",version:"2.0"},{emoji:"🇻🇮",category:8,name:"flag: U.S. Virgin Islands",version:"2.0"},{emoji:"🇻🇳",category:8,name:"flag: Vietnam",version:"2.0"},{emoji:"🇻🇺",category:8,name:"flag: Vanuatu",version:"2.0"},{emoji:"🇼🇫",category:8,name:"flag: Wallis & Futuna",version:"2.0"},{emoji:"🇼🇸",category:8,name:"flag: Samoa",version:"2.0"},{emoji:"🇽🇰",category:8,name:"flag: Kosovo",version:"2.0"},{emoji:"🇾🇪",category:8,name:"flag: Yemen",version:"2.0"},{emoji:"🇾🇹",category:8,name:"flag: Mayotte",version:"2.0"},{emoji:"🇿🇦",category:8,name:"flag: South Africa",version:"2.0"},{emoji:"🇿🇲",category:8,name:"flag: Zambia",version:"2.0"},{emoji:"🇿🇼",category:8,name:"flag: Zimbabwe",version:"2.0"},{emoji:"🏴󠁧󠁢󠁥󠁮󠁧󠁿",category:8,name:"flag: England",version:"5.0"},{emoji:"🏴󠁧󠁢󠁳󠁣󠁴󠁿",category:8,name:"flag: Scotland",version:"5.0"},{emoji:"🏴󠁧󠁢󠁷󠁬󠁳󠁿",category:8,name:"flag: Wales",version:"5.0"}]};const Ce="emoji-picker__emoji";function Ee(e,o){const n=document.createElement(e);return o&&(n.className=o),n}function _e(e){for(;e.firstChild;)e.removeChild(e.firstChild)}function ze(e,o){e.dataset.loaded||(e.dataset.custom?function(e){const o=Ee("img","emoji-picker__custom-emoji");e.dataset.emoji&&(o.src=e.dataset.emoji,e.innerText="",e.appendChild(o))}(e):"twemoji"===o.style&&function(e,o){e.dataset.emoji&&(e.innerHTML=ke.parse(e.dataset.emoji,o.twemojiOptions))}(e,o),e.dataset.loaded="true",e.style.opacity="1")}class Ie{constructor(e,o){this.events=e,this.options=o}render(){const e=Ee("div","emoji-picker__preview");return this.emoji=Ee("div","emoji-picker__preview-emoji"),e.appendChild(this.emoji),this.name=Ee("div","emoji-picker__preview-name"),e.appendChild(this.name),this.events.on("showPreview",(e=>this.showPreview(e))),this.events.on("hidePreview",(()=>this.hidePreview())),e}showPreview(e){let o=e.emoji;e.custom?o=`<img class="emoji-picker__custom-emoji" src="${e.emoji}">`:"twemoji"===this.options.style&&(o=ke.parse(e.emoji,this.options.twemojiOptions)),this.emoji.innerHTML=o,this.name.innerHTML=e.name}hidePreview(){this.emoji.innerHTML="",this.name.innerHTML=""}}function Oe(e,o){for(var n=0;n<o.length;n++){var i=o[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}function Se(e,o,n){return o in e?Object.defineProperty(e,o,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[o]=n,e}function Pe(e){for(var o=1;o<arguments.length;o++){var n=null!=arguments[o]?arguments[o]:{},i=Object.keys(n);"function"==typeof Object.getOwnPropertySymbols&&(i=i.concat(Object.getOwnPropertySymbols(n).filter((function(e){return Object.getOwnPropertyDescriptor(n,e).enumerable})))),i.forEach((function(o){Se(e,o,n[o])}))}return e}function Me(e,o){return function(e){if(Array.isArray(e))return e}(e)||function(e,o){var n=[],i=!0,a=!1,r=void 0;try{for(var t,s=e[Symbol.iterator]();!(i=(t=s.next()).done)&&(n.push(t.value),!o||n.length!==o);i=!0);}catch(e){a=!0,r=e}finally{try{i||null==s.return||s.return()}finally{if(a)throw r}}return n}(e,o)||function(){throw new TypeError("Invalid attempt to destructure non-iterable instance")}()}var Ae=function(){},Le={},Te={},Ne={mark:Ae,measure:Ae};try{"undefined"!=typeof window&&(Le=window),"undefined"!=typeof document&&(Te=document),"undefined"!=typeof MutationObserver&&MutationObserver,"undefined"!=typeof performance&&(Ne=performance)}catch(e){}var Fe=(Le.navigator||{}).userAgent,Be=void 0===Fe?"":Fe,De=Le,Re=Te,qe=Ne,Ve=(De.document,!!Re.documentElement&&!!Re.head&&"function"==typeof Re.addEventListener&&"function"==typeof Re.createElement),He=(~Be.indexOf("MSIE")||Be.indexOf("Trident/"),function(){try{}catch(e){return!1}}(),"group"),Ue="primary",We="secondary",Ke=De.FontAwesomeConfig||{};if(Re&&"function"==typeof Re.querySelector){[["data-family-prefix","familyPrefix"],["data-replacement-class","replacementClass"],["data-auto-replace-svg","autoReplaceSvg"],["data-auto-add-css","autoAddCss"],["data-auto-a11y","autoA11y"],["data-search-pseudo-elements","searchPseudoElements"],["data-observe-mutations","observeMutations"],["data-mutate-approach","mutateApproach"],["data-keep-original-source","keepOriginalSource"],["data-measure-performance","measurePerformance"],["data-show-missing-icons","showMissingIcons"]].forEach((function(e){var o=Me(e,2),n=o[0],i=o[1],a=function(e){return""===e||"false"!==e&&("true"===e||e)}(function(e){var o=Re.querySelector("script["+e+"]");if(o)return o.getAttribute(e)}(n));null!=a&&(Ke[i]=a)}))}var Je=Pe({},{familyPrefix:"fa",replacementClass:"svg-inline--fa",autoReplaceSvg:!0,autoAddCss:!0,autoA11y:!0,searchPseudoElements:!1,observeMutations:!0,mutateApproach:"async",keepOriginalSource:!0,measurePerformance:!1,showMissingIcons:!0},Ke);Je.autoReplaceSvg||(Je.observeMutations=!1);var Ge=Pe({},Je);De.FontAwesomeConfig=Ge;var Xe=De||{};Xe.___FONT_AWESOME___||(Xe.___FONT_AWESOME___={}),Xe.___FONT_AWESOME___.styles||(Xe.___FONT_AWESOME___.styles={}),Xe.___FONT_AWESOME___.hooks||(Xe.___FONT_AWESOME___.hooks={}),Xe.___FONT_AWESOME___.shims||(Xe.___FONT_AWESOME___.shims=[]);var Ye=Xe.___FONT_AWESOME___,$e=[];Ve&&((Re.documentElement.doScroll?/^loaded|^c/:/^loaded|^i|^c/).test(Re.readyState)||Re.addEventListener("DOMContentLoaded",(function e(){Re.removeEventListener("DOMContentLoaded",e),1,$e.map((function(e){return e()}))})));"undefined"!=typeof global&&void 0!==global.process&&global.process.emit,"undefined"==typeof setImmediate?setTimeout:setImmediate;var Ze={size:16,x:0,y:0,rotate:0,flipX:!1,flipY:!1};function Qe(){for(var e=12,o="";e-- >0;)o+="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"[62*Math.random()|0];return o}function eo(e){return"".concat(e).replace(/&/g,"&amp;").replace(/"/g,"&quot;").replace(/'/g,"&#39;").replace(/</g,"&lt;").replace(/>/g,"&gt;")}function oo(e){return Object.keys(e||{}).reduce((function(o,n){return o+"".concat(n,": ").concat(e[n],";")}),"")}function no(e){return e.size!==Ze.size||e.x!==Ze.x||e.y!==Ze.y||e.rotate!==Ze.rotate||e.flipX||e.flipY}function io(e){var o=e.transform,n=e.containerWidth,i=e.iconWidth,a={transform:"translate(".concat(n/2," 256)")},r="translate(".concat(32*o.x,", ").concat(32*o.y,") "),t="scale(".concat(o.size/16*(o.flipX?-1:1),", ").concat(o.size/16*(o.flipY?-1:1),") "),s="rotate(".concat(o.rotate," 0 0)");return{outer:a,inner:{transform:"".concat(r," ").concat(t," ").concat(s)},path:{transform:"translate(".concat(i/2*-1," -256)")}}}var ao={x:0,y:0,width:"100%",height:"100%"};function ro(e){var o=!(arguments.length>1&&void 0!==arguments[1])||arguments[1];return e.attributes&&(e.attributes.fill||o)&&(e.attributes.fill="black"),e}function to(e){var o=e.icons,n=o.main,i=o.mask,a=e.prefix,r=e.iconName,t=e.transform,s=e.symbol,m=e.title,c=e.maskId,d=e.titleId,g=e.extra,u=e.watchable,l=void 0!==u&&u,v=i.found?i:n,f=v.width,y=v.height,j="fa-w-".concat(Math.ceil(f/y*16)),h=[Ge.replacementClass,r?"".concat(Ge.familyPrefix,"-").concat(r):"",j].filter((function(e){return-1===g.classes.indexOf(e)})).concat(g.classes).join(" "),p={children:[],attributes:Pe({},g.attributes,{"data-prefix":a,"data-icon":r,class:h,role:g.attributes.role||"img",xmlns:"http://www.w3.org/2000/svg",viewBox:"0 0 ".concat(f," ").concat(y)})};l&&(p.attributes["data-fa-i2svg"]=""),m&&p.children.push({tag:"title",attributes:{id:p.attributes["aria-labelledby"]||"title-".concat(d||Qe())},children:[m]});var b=Pe({},p,{prefix:a,iconName:r,main:n,mask:i,maskId:c,transform:t,symbol:s,styles:g.styles}),w=i.found&&n.found?function(e){var o,n=e.children,i=e.attributes,a=e.main,r=e.mask,t=e.maskId,s=e.transform,m=a.width,c=a.icon,d=r.width,g=r.icon,u=io({transform:s,containerWidth:d,iconWidth:m}),l={tag:"rect",attributes:Pe({},ao,{fill:"white"})},v=c.children?{children:c.children.map(ro)}:{},f={tag:"g",attributes:Pe({},u.inner),children:[ro(Pe({tag:c.tag,attributes:Pe({},c.attributes,u.path)},v))]},y={tag:"g",attributes:Pe({},u.outer),children:[f]},j="mask-".concat(t||Qe()),h="clip-".concat(t||Qe()),p={tag:"mask",attributes:Pe({},ao,{id:j,maskUnits:"userSpaceOnUse",maskContentUnits:"userSpaceOnUse"}),children:[l,y]},b={tag:"defs",children:[{tag:"clipPath",attributes:{id:h},children:(o=g,"g"===o.tag?o.children:[o])},p]};return n.push(b,{tag:"rect",attributes:Pe({fill:"currentColor","clip-path":"url(#".concat(h,")"),mask:"url(#".concat(j,")")},ao)}),{children:n,attributes:i}}(b):function(e){var o=e.children,n=e.attributes,i=e.main,a=e.transform,r=oo(e.styles);if(r.length>0&&(n.style=r),no(a)){var t=io({transform:a,containerWidth:i.width,iconWidth:i.width});o.push({tag:"g",attributes:Pe({},t.outer),children:[{tag:"g",attributes:Pe({},t.inner),children:[{tag:i.icon.tag,children:i.icon.children,attributes:Pe({},i.icon.attributes,t.path)}]}]})}else o.push(i.icon);return{children:o,attributes:n}}(b),k=w.children,x=w.attributes;return b.children=k,b.attributes=x,s?function(e){var o=e.prefix,n=e.iconName,i=e.children,a=e.attributes,r=e.symbol;return[{tag:"svg",attributes:{style:"display: none;"},children:[{tag:"symbol",attributes:Pe({},a,{id:!0===r?"".concat(o,"-").concat(Ge.familyPrefix,"-").concat(n):r}),children:i}]}]}(b):function(e){var o=e.children,n=e.main,i=e.mask,a=e.attributes,r=e.styles,t=e.transform;if(no(t)&&n.found&&!i.found){var s={x:n.width/n.height/2,y:.5};a.style=oo(Pe({},r,{"transform-origin":"".concat(s.x+t.x/16,"em ").concat(s.y+t.y/16,"em")}))}return[{tag:"svg",attributes:a,children:o}]}(b)}var so=function(){},mo=(Ge.measurePerformance&&qe&&qe.mark&&qe.measure,function(e,o,n,i){var a,r,t,s=Object.keys(e),m=s.length,c=void 0!==i?function(e,o){return function(n,i,a,r){return e.call(o,n,i,a,r)}}(o,i):o;for(void 0===n?(a=1,t=e[s[0]]):(a=0,t=n);a<m;a++)t=c(t,e[r=s[a]],r,e);return t});function co(e,o){var n=arguments.length>2&&void 0!==arguments[2]?arguments[2]:{},i=n.skipHooks,a=void 0!==i&&i,r=Object.keys(o).reduce((function(e,n){var i=o[n];return!!i.icon?e[i.iconName]=i.icon:e[n]=i,e}),{});"function"!=typeof Ye.hooks.addPack||a?Ye.styles[e]=Pe({},Ye.styles[e]||{},r):Ye.hooks.addPack(e,r),"fas"===e&&co("fa",o)}var go=Ye.styles,uo=Ye.shims,lo=function(){var e=function(e){return mo(go,(function(o,n,i){return o[i]=mo(n,e,{}),o}),{})};e((function(e,o,n){return o[3]&&(e[o[3]]=n),e})),e((function(e,o,n){var i=o[2];return e[n]=n,i.forEach((function(o){e[o]=n})),e}));var o="far"in go;mo(uo,(function(e,n){var i=n[0],a=n[1],r=n[2];return"far"!==a||o||(a="fas"),e[i]={prefix:a,iconName:r},e}),{})};lo();Ye.styles;function vo(e,o,n){if(e&&e[o]&&e[o][n])return{prefix:o,iconName:n,icon:e[o][n]}}function fo(e){var o=e.tag,n=e.attributes,i=void 0===n?{}:n,a=e.children,r=void 0===a?[]:a;return"string"==typeof e?eo(e):"<".concat(o," ").concat(function(e){return Object.keys(e||{}).reduce((function(o,n){return o+"".concat(n,'="').concat(eo(e[n]),'" ')}),"").trim()}(i),">").concat(r.map(fo).join(""),"</").concat(o,">")}function yo(e){this.name="MissingIcon",this.message=e||"Icon unavailable",this.stack=(new Error).stack}yo.prototype=Object.create(Error.prototype),yo.prototype.constructor=yo;var jo={fill:"currentColor"},ho={attributeType:"XML",repeatCount:"indefinite",dur:"2s"},po=(Pe({},jo,{d:"M156.5,447.7l-12.6,29.5c-18.7-9.5-35.9-21.2-51.5-34.9l22.7-22.7C127.6,430.5,141.5,440,156.5,447.7z M40.6,272H8.5 c1.4,21.2,5.4,41.7,11.7,61.1L50,321.2C45.1,305.5,41.8,289,40.6,272z M40.6,240c1.4-18.8,5.2-37,11.1-54.1l-29.5-12.6 C14.7,194.3,10,216.7,8.5,240H40.6z M64.3,156.5c7.8-14.9,17.2-28.8,28.1-41.5L69.7,92.3c-13.7,15.6-25.5,32.8-34.9,51.5 L64.3,156.5z M397,419.6c-13.9,12-29.4,22.3-46.1,30.4l11.9,29.8c20.7-9.9,39.8-22.6,56.9-37.6L397,419.6z M115,92.4 c13.9-12,29.4-22.3,46.1-30.4l-11.9-29.8c-20.7,9.9-39.8,22.6-56.8,37.6L115,92.4z M447.7,355.5c-7.8,14.9-17.2,28.8-28.1,41.5 l22.7,22.7c13.7-15.6,25.5-32.9,34.9-51.5L447.7,355.5z M471.4,272c-1.4,18.8-5.2,37-11.1,54.1l29.5,12.6 c7.5-21.1,12.2-43.5,13.6-66.8H471.4z M321.2,462c-15.7,5-32.2,8.2-49.2,9.4v32.1c21.2-1.4,41.7-5.4,61.1-11.7L321.2,462z M240,471.4c-18.8-1.4-37-5.2-54.1-11.1l-12.6,29.5c21.1,7.5,43.5,12.2,66.8,13.6V471.4z M462,190.8c5,15.7,8.2,32.2,9.4,49.2h32.1 c-1.4-21.2-5.4-41.7-11.7-61.1L462,190.8z M92.4,397c-12-13.9-22.3-29.4-30.4-46.1l-29.8,11.9c9.9,20.7,22.6,39.8,37.6,56.9 L92.4,397z M272,40.6c18.8,1.4,36.9,5.2,54.1,11.1l12.6-29.5C317.7,14.7,295.3,10,272,8.5V40.6z M190.8,50 c15.7-5,32.2-8.2,49.2-9.4V8.5c-21.2,1.4-41.7,5.4-61.1,11.7L190.8,50z M442.3,92.3L419.6,115c12,13.9,22.3,29.4,30.5,46.1 l29.8-11.9C470,128.5,457.3,109.4,442.3,92.3z M397,92.4l22.7-22.7c-15.6-13.7-32.8-25.5-51.5-34.9l-12.6,29.5 C370.4,72.1,384.4,81.5,397,92.4z"}),Pe({},ho,{attributeName:"opacity"}));Pe({},jo,{cx:"256",cy:"364",r:"28"}),Pe({},ho,{attributeName:"r",values:"28;14;28;28;14;28;"}),Pe({},po,{values:"1;0;1;1;0;1;"}),Pe({},jo,{opacity:"1",d:"M263.7,312h-16c-6.6,0-12-5.4-12-12c0-71,77.4-63.9,77.4-107.8c0-20-17.8-40.2-57.4-40.2c-29.1,0-44.3,9.6-59.2,28.7 c-3.9,5-11.1,6-16.2,2.4l-13.1-9.2c-5.6-3.9-6.9-11.8-2.6-17.2c21.2-27.2,46.4-44.7,91.2-44.7c52.3,0,97.4,29.8,97.4,80.2 c0,67.6-77.4,63.5-77.4,107.8C275.7,306.6,270.3,312,263.7,312z"}),Pe({},po,{values:"1;0;0;0;0;1;"}),Pe({},jo,{opacity:"0",d:"M232.5,134.5l7,168c0.3,6.4,5.6,11.5,12,11.5h9c6.4,0,11.7-5.1,12-11.5l7-168c0.3-6.8-5.2-12.5-12-12.5h-23 C237.7,122,232.2,127.7,232.5,134.5z"}),Pe({},po,{values:"0;0;1;1;0;0;"}),Ye.styles;function bo(e){var o=e[0],n=e[1],i=Me(e.slice(4),1)[0];return{found:!0,width:o,height:n,icon:Array.isArray(i)?{tag:"g",attributes:{class:"".concat(Ge.familyPrefix,"-").concat(He)},children:[{tag:"path",attributes:{class:"".concat(Ge.familyPrefix,"-").concat(We),fill:"currentColor",d:i[0]}},{tag:"path",attributes:{class:"".concat(Ge.familyPrefix,"-").concat(Ue),fill:"currentColor",d:i[1]}}]}:{tag:"path",attributes:{fill:"currentColor",d:i}}}}Ye.styles;function wo(){Ge.autoAddCss&&!_o&&(!function(e){if(e&&Ve){var o=Re.createElement("style");o.setAttribute("type","text/css"),o.innerHTML=e;for(var n=Re.head.childNodes,i=null,a=n.length-1;a>-1;a--){var r=n[a],t=(r.tagName||"").toUpperCase();["STYLE","LINK"].indexOf(t)>-1&&(i=r)}Re.head.insertBefore(o,i)}}(function(){var e="fa",o="svg-inline--fa",n=Ge.familyPrefix,i=Ge.replacementClass,a='svg:not(:root).svg-inline--fa {\n  overflow: visible;\n}\n\n.svg-inline--fa {\n  display: inline-block;\n  font-size: inherit;\n  height: 1em;\n  overflow: visible;\n  vertical-align: -0.125em;\n}\n.svg-inline--fa.fa-lg {\n  vertical-align: -0.225em;\n}\n.svg-inline--fa.fa-w-1 {\n  width: 0.0625em;\n}\n.svg-inline--fa.fa-w-2 {\n  width: 0.125em;\n}\n.svg-inline--fa.fa-w-3 {\n  width: 0.1875em;\n}\n.svg-inline--fa.fa-w-4 {\n  width: 0.25em;\n}\n.svg-inline--fa.fa-w-5 {\n  width: 0.3125em;\n}\n.svg-inline--fa.fa-w-6 {\n  width: 0.375em;\n}\n.svg-inline--fa.fa-w-7 {\n  width: 0.4375em;\n}\n.svg-inline--fa.fa-w-8 {\n  width: 0.5em;\n}\n.svg-inline--fa.fa-w-9 {\n  width: 0.5625em;\n}\n.svg-inline--fa.fa-w-10 {\n  width: 0.625em;\n}\n.svg-inline--fa.fa-w-11 {\n  width: 0.6875em;\n}\n.svg-inline--fa.fa-w-12 {\n  width: 0.75em;\n}\n.svg-inline--fa.fa-w-13 {\n  width: 0.8125em;\n}\n.svg-inline--fa.fa-w-14 {\n  width: 0.875em;\n}\n.svg-inline--fa.fa-w-15 {\n  width: 0.9375em;\n}\n.svg-inline--fa.fa-w-16 {\n  width: 1em;\n}\n.svg-inline--fa.fa-w-17 {\n  width: 1.0625em;\n}\n.svg-inline--fa.fa-w-18 {\n  width: 1.125em;\n}\n.svg-inline--fa.fa-w-19 {\n  width: 1.1875em;\n}\n.svg-inline--fa.fa-w-20 {\n  width: 1.25em;\n}\n.svg-inline--fa.fa-pull-left {\n  margin-right: 0.3em;\n  width: auto;\n}\n.svg-inline--fa.fa-pull-right {\n  margin-left: 0.3em;\n  width: auto;\n}\n.svg-inline--fa.fa-border {\n  height: 1.5em;\n}\n.svg-inline--fa.fa-li {\n  width: 2em;\n}\n.svg-inline--fa.fa-fw {\n  width: 1.25em;\n}\n\n.fa-layers svg.svg-inline--fa {\n  bottom: 0;\n  left: 0;\n  margin: auto;\n  position: absolute;\n  right: 0;\n  top: 0;\n}\n\n.fa-layers {\n  display: inline-block;\n  height: 1em;\n  position: relative;\n  text-align: center;\n  vertical-align: -0.125em;\n  width: 1em;\n}\n.fa-layers svg.svg-inline--fa {\n  -webkit-transform-origin: center center;\n          transform-origin: center center;\n}\n\n.fa-layers-counter, .fa-layers-text {\n  display: inline-block;\n  position: absolute;\n  text-align: center;\n}\n\n.fa-layers-text {\n  left: 50%;\n  top: 50%;\n  -webkit-transform: translate(-50%, -50%);\n          transform: translate(-50%, -50%);\n  -webkit-transform-origin: center center;\n          transform-origin: center center;\n}\n\n.fa-layers-counter {\n  background-color: #ff253a;\n  border-radius: 1em;\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  color: #fff;\n  height: 1.5em;\n  line-height: 1;\n  max-width: 5em;\n  min-width: 1.5em;\n  overflow: hidden;\n  padding: 0.25em;\n  right: 0;\n  text-overflow: ellipsis;\n  top: 0;\n  -webkit-transform: scale(0.25);\n          transform: scale(0.25);\n  -webkit-transform-origin: top right;\n          transform-origin: top right;\n}\n\n.fa-layers-bottom-right {\n  bottom: 0;\n  right: 0;\n  top: auto;\n  -webkit-transform: scale(0.25);\n          transform: scale(0.25);\n  -webkit-transform-origin: bottom right;\n          transform-origin: bottom right;\n}\n\n.fa-layers-bottom-left {\n  bottom: 0;\n  left: 0;\n  right: auto;\n  top: auto;\n  -webkit-transform: scale(0.25);\n          transform: scale(0.25);\n  -webkit-transform-origin: bottom left;\n          transform-origin: bottom left;\n}\n\n.fa-layers-top-right {\n  right: 0;\n  top: 0;\n  -webkit-transform: scale(0.25);\n          transform: scale(0.25);\n  -webkit-transform-origin: top right;\n          transform-origin: top right;\n}\n\n.fa-layers-top-left {\n  left: 0;\n  right: auto;\n  top: 0;\n  -webkit-transform: scale(0.25);\n          transform: scale(0.25);\n  -webkit-transform-origin: top left;\n          transform-origin: top left;\n}\n\n.fa-lg {\n  font-size: 1.3333333333em;\n  line-height: 0.75em;\n  vertical-align: -0.0667em;\n}\n\n.fa-xs {\n  font-size: 0.75em;\n}\n\n.fa-sm {\n  font-size: 0.875em;\n}\n\n.fa-1x {\n  font-size: 1em;\n}\n\n.fa-2x {\n  font-size: 2em;\n}\n\n.fa-3x {\n  font-size: 3em;\n}\n\n.fa-4x {\n  font-size: 4em;\n}\n\n.fa-5x {\n  font-size: 5em;\n}\n\n.fa-6x {\n  font-size: 6em;\n}\n\n.fa-7x {\n  font-size: 7em;\n}\n\n.fa-8x {\n  font-size: 8em;\n}\n\n.fa-9x {\n  font-size: 9em;\n}\n\n.fa-10x {\n  font-size: 10em;\n}\n\n.fa-fw {\n  text-align: center;\n  width: 1.25em;\n}\n\n.fa-ul {\n  list-style-type: none;\n  margin-left: 2.5em;\n  padding-left: 0;\n}\n.fa-ul > li {\n  position: relative;\n}\n\n.fa-li {\n  left: -2em;\n  position: absolute;\n  text-align: center;\n  width: 2em;\n  line-height: inherit;\n}\n\n.fa-border {\n  border: solid 0.08em #eee;\n  border-radius: 0.1em;\n  padding: 0.2em 0.25em 0.15em;\n}\n\n.fa-pull-left {\n  float: left;\n}\n\n.fa-pull-right {\n  float: right;\n}\n\n.fa.fa-pull-left,\n.fas.fa-pull-left,\n.far.fa-pull-left,\n.fal.fa-pull-left,\n.fab.fa-pull-left {\n  margin-right: 0.3em;\n}\n.fa.fa-pull-right,\n.fas.fa-pull-right,\n.far.fa-pull-right,\n.fal.fa-pull-right,\n.fab.fa-pull-right {\n  margin-left: 0.3em;\n}\n\n.fa-spin {\n  -webkit-animation: fa-spin 2s infinite linear;\n          animation: fa-spin 2s infinite linear;\n}\n\n.fa-pulse {\n  -webkit-animation: fa-spin 1s infinite steps(8);\n          animation: fa-spin 1s infinite steps(8);\n}\n\n@-webkit-keyframes fa-spin {\n  0% {\n    -webkit-transform: rotate(0deg);\n            transform: rotate(0deg);\n  }\n  100% {\n    -webkit-transform: rotate(360deg);\n            transform: rotate(360deg);\n  }\n}\n\n@keyframes fa-spin {\n  0% {\n    -webkit-transform: rotate(0deg);\n            transform: rotate(0deg);\n  }\n  100% {\n    -webkit-transform: rotate(360deg);\n            transform: rotate(360deg);\n  }\n}\n.fa-rotate-90 {\n  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=1)";\n  -webkit-transform: rotate(90deg);\n          transform: rotate(90deg);\n}\n\n.fa-rotate-180 {\n  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2)";\n  -webkit-transform: rotate(180deg);\n          transform: rotate(180deg);\n}\n\n.fa-rotate-270 {\n  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=3)";\n  -webkit-transform: rotate(270deg);\n          transform: rotate(270deg);\n}\n\n.fa-flip-horizontal {\n  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=0, mirror=1)";\n  -webkit-transform: scale(-1, 1);\n          transform: scale(-1, 1);\n}\n\n.fa-flip-vertical {\n  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1)";\n  -webkit-transform: scale(1, -1);\n          transform: scale(1, -1);\n}\n\n.fa-flip-both, .fa-flip-horizontal.fa-flip-vertical {\n  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1)";\n  -webkit-transform: scale(-1, -1);\n          transform: scale(-1, -1);\n}\n\n:root .fa-rotate-90,\n:root .fa-rotate-180,\n:root .fa-rotate-270,\n:root .fa-flip-horizontal,\n:root .fa-flip-vertical,\n:root .fa-flip-both {\n  -webkit-filter: none;\n          filter: none;\n}\n\n.fa-stack {\n  display: inline-block;\n  height: 2em;\n  position: relative;\n  width: 2.5em;\n}\n\n.fa-stack-1x,\n.fa-stack-2x {\n  bottom: 0;\n  left: 0;\n  margin: auto;\n  position: absolute;\n  right: 0;\n  top: 0;\n}\n\n.svg-inline--fa.fa-stack-1x {\n  height: 1em;\n  width: 1.25em;\n}\n.svg-inline--fa.fa-stack-2x {\n  height: 2em;\n  width: 2.5em;\n}\n\n.fa-inverse {\n  color: #fff;\n}\n\n.sr-only {\n  border: 0;\n  clip: rect(0, 0, 0, 0);\n  height: 1px;\n  margin: -1px;\n  overflow: hidden;\n  padding: 0;\n  position: absolute;\n  width: 1px;\n}\n\n.sr-only-focusable:active, .sr-only-focusable:focus {\n  clip: auto;\n  height: auto;\n  margin: 0;\n  overflow: visible;\n  position: static;\n  width: auto;\n}\n\n.svg-inline--fa .fa-primary {\n  fill: var(--fa-primary-color, currentColor);\n  opacity: 1;\n  opacity: var(--fa-primary-opacity, 1);\n}\n\n.svg-inline--fa .fa-secondary {\n  fill: var(--fa-secondary-color, currentColor);\n  opacity: 0.4;\n  opacity: var(--fa-secondary-opacity, 0.4);\n}\n\n.svg-inline--fa.fa-swap-opacity .fa-primary {\n  opacity: 0.4;\n  opacity: var(--fa-secondary-opacity, 0.4);\n}\n\n.svg-inline--fa.fa-swap-opacity .fa-secondary {\n  opacity: 1;\n  opacity: var(--fa-primary-opacity, 1);\n}\n\n.svg-inline--fa mask .fa-primary,\n.svg-inline--fa mask .fa-secondary {\n  fill: black;\n}\n\n.fad.fa-inverse {\n  color: #fff;\n}';if(n!==e||i!==o){var r=new RegExp("\\.".concat(e,"\\-"),"g"),t=new RegExp("\\--".concat(e,"\\-"),"g"),s=new RegExp("\\.".concat(o),"g");a=a.replace(r,".".concat(n,"-")).replace(t,"--".concat(n,"-")).replace(s,".".concat(i))}return a}()),_o=!0)}function ko(e,o){return Object.defineProperty(e,"abstract",{get:o}),Object.defineProperty(e,"html",{get:function(){return e.abstract.map((function(e){return fo(e)}))}}),Object.defineProperty(e,"node",{get:function(){if(Ve){var o=Re.createElement("div");return o.innerHTML=e.html,o.children}}}),e}function xo(e){var o=e.prefix,n=void 0===o?"fa":o,i=e.iconName;if(i)return vo(Eo.definitions,n,i)||vo(Ye.styles,n,i)}var Co,Eo=new(function(){function e(){!function(e,o){if(!(e instanceof o))throw new TypeError("Cannot call a class as a function")}(this,e),this.definitions={}}var o,n,i;return o=e,(n=[{key:"add",value:function(){for(var e=this,o=arguments.length,n=new Array(o),i=0;i<o;i++)n[i]=arguments[i];var a=n.reduce(this._pullDefinitions,{});Object.keys(a).forEach((function(o){e.definitions[o]=Pe({},e.definitions[o]||{},a[o]),co(o,a[o]),lo()}))}},{key:"reset",value:function(){this.definitions={}}},{key:"_pullDefinitions",value:function(e,o){var n=o.prefix&&o.iconName&&o.icon?{0:o}:o;return Object.keys(n).map((function(o){var i=n[o],a=i.prefix,r=i.iconName,t=i.icon;e[a]||(e[a]={}),e[a][r]=t})),e}}])&&Oe(o.prototype,n),i&&Oe(o,i),e}()),_o=!1,zo=(Co=function(e){var o=arguments.length>1&&void 0!==arguments[1]?arguments[1]:{},n=o.transform,i=void 0===n?Ze:n,a=o.symbol,r=void 0!==a&&a,t=o.mask,s=void 0===t?null:t,m=o.maskId,c=void 0===m?null:m,d=o.title,g=void 0===d?null:d,u=o.titleId,l=void 0===u?null:u,v=o.classes,f=void 0===v?[]:v,y=o.attributes,j=void 0===y?{}:y,h=o.styles,p=void 0===h?{}:h;if(e){var b=e.prefix,w=e.iconName,k=e.icon;return ko(Pe({type:"icon"},e),(function(){return wo(),Ge.autoA11y&&(g?j["aria-labelledby"]="".concat(Ge.replacementClass,"-title-").concat(l||Qe()):(j["aria-hidden"]="true",j.focusable="false")),to({icons:{main:bo(k),mask:s?bo(s.icon):{found:!1,width:null,height:null,icon:{}}},prefix:b,iconName:w,transform:Pe({},Ze,i),symbol:r,title:g,maskId:c,titleId:l,extra:{attributes:j,styles:p,classes:f}})}))}},function(e){var o=arguments.length>1&&void 0!==arguments[1]?arguments[1]:{},n=(e||{}).icon?e:xo(e||{}),i=o.mask;return i&&(i=(i||{}).icon?i:xo(i||{})),Co(n,Pe({},o,{mask:i}))});Eo.add({prefix:"far",iconName:"building",icon:[448,512,[],"f1ad","M128 148v-40c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12zm140 12h40c6.6 0 12-5.4 12-12v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12zm-128 96h40c6.6 0 12-5.4 12-12v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12zm128 0h40c6.6 0 12-5.4 12-12v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12zm-76 84v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm76 12h40c6.6 0 12-5.4 12-12v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12zm180 124v36H0v-36c0-6.6 5.4-12 12-12h19.5V24c0-13.3 10.7-24 24-24h337c13.3 0 24 10.7 24 24v440H436c6.6 0 12 5.4 12 12zM79.5 463H192v-67c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v67h112.5V49L80 48l-.5 415z"]},{prefix:"fas",iconName:"cat",icon:[512,512,[],"f6be","M290.59 192c-20.18 0-106.82 1.98-162.59 85.95V192c0-52.94-43.06-96-96-96-17.67 0-32 14.33-32 32s14.33 32 32 32c17.64 0 32 14.36 32 32v256c0 35.3 28.7 64 64 64h176c8.84 0 16-7.16 16-16v-16c0-17.67-14.33-32-32-32h-32l128-96v144c0 8.84 7.16 16 16 16h32c8.84 0 16-7.16 16-16V289.86c-10.29 2.67-20.89 4.54-32 4.54-61.81 0-113.52-44.05-125.41-102.4zM448 96h-64l-64-64v134.4c0 53.02 42.98 96 96 96s96-42.98 96-96V32l-64 64zm-72 80c-8.84 0-16-7.16-16-16s7.16-16 16-16 16 7.16 16 16-7.16 16-16 16zm80 0c-8.84 0-16-7.16-16-16s7.16-16 16-16 16 7.16 16 16-7.16 16-16 16z"]},{prefix:"fas",iconName:"coffee",icon:[640,512,[],"f0f4","M192 384h192c53 0 96-43 96-96h32c70.6 0 128-57.4 128-128S582.6 32 512 32H120c-13.3 0-24 10.7-24 24v232c0 53 43 96 96 96zM512 96c35.3 0 64 28.7 64 64s-28.7 64-64 64h-32V96h32zm47.7 384H48.3c-47.6 0-61-64-36-64h583.3c25 0 11.8 64-35.9 64z"]},{prefix:"far",iconName:"flag",icon:[512,512,[],"f024","M336.174 80c-49.132 0-93.305-32-161.913-32-31.301 0-58.303 6.482-80.721 15.168a48.04 48.04 0 0 0 2.142-20.727C93.067 19.575 74.167 1.594 51.201.104 23.242-1.71 0 20.431 0 48c0 17.764 9.657 33.262 24 41.562V496c0 8.837 7.163 16 16 16h16c8.837 0 16-7.163 16-16v-83.443C109.869 395.28 143.259 384 199.826 384c49.132 0 93.305 32 161.913 32 58.479 0 101.972-22.617 128.548-39.981C503.846 367.161 512 352.051 512 335.855V95.937c0-34.459-35.264-57.768-66.904-44.117C409.193 67.309 371.641 80 336.174 80zM464 336c-21.783 15.412-60.824 32-102.261 32-59.945 0-102.002-32-161.913-32-43.361 0-96.379 9.403-127.826 24V128c21.784-15.412 60.824-32 102.261-32 59.945 0 102.002 32 161.913 32 43.271 0 96.32-17.366 127.826-32v240z"]},{prefix:"far",iconName:"frown",icon:[496,512,[],"f119","M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm0 448c-110.3 0-200-89.7-200-200S137.7 56 248 56s200 89.7 200 200-89.7 200-200 200zm-80-216c17.7 0 32-14.3 32-32s-14.3-32-32-32-32 14.3-32 32 14.3 32 32 32zm160-64c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zm-80 128c-40.2 0-78 17.7-103.8 48.6-8.5 10.2-7.1 25.3 3.1 33.8 10.2 8.4 25.3 7.1 33.8-3.1 16.6-19.9 41-31.4 66.9-31.4s50.3 11.4 66.9 31.4c8.1 9.7 23.1 11.9 33.8 3.1 10.2-8.5 11.5-23.6 3.1-33.8C326 321.7 288.2 304 248 304z"]},{prefix:"fas",iconName:"futbol",icon:[512,512,[],"f1e3","M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zm-48 0l-.003-.282-26.064 22.741-62.679-58.5 16.454-84.355 34.303 3.072c-24.889-34.216-60.004-60.089-100.709-73.141l13.651 31.939L256 139l-74.953-41.525 13.651-31.939c-40.631 13.028-75.78 38.87-100.709 73.141l34.565-3.073 16.192 84.355-62.678 58.5-26.064-22.741-.003.282c0 43.015 13.497 83.952 38.472 117.991l7.704-33.897 85.138 10.447 36.301 77.826-29.902 17.786c40.202 13.122 84.29 13.148 124.572 0l-29.902-17.786 36.301-77.826 85.138-10.447 7.704 33.897C442.503 339.952 456 299.015 456 256zm-248.102 69.571l-29.894-91.312L256 177.732l77.996 56.527-29.622 91.312h-96.476z"]},{prefix:"fas",iconName:"history",icon:[512,512,[],"f1da","M504 255.531c.253 136.64-111.18 248.372-247.82 248.468-59.015.042-113.223-20.53-155.822-54.911-11.077-8.94-11.905-25.541-1.839-35.607l11.267-11.267c8.609-8.609 22.353-9.551 31.891-1.984C173.062 425.135 212.781 440 256 440c101.705 0 184-82.311 184-184 0-101.705-82.311-184-184-184-48.814 0-93.149 18.969-126.068 49.932l50.754 50.754c10.08 10.08 2.941 27.314-11.313 27.314H24c-8.837 0-16-7.163-16-16V38.627c0-14.254 17.234-21.393 27.314-11.314l49.372 49.372C129.209 34.136 189.552 8 256 8c136.81 0 247.747 110.78 248 247.531zm-180.912 78.784l9.823-12.63c8.138-10.463 6.253-25.542-4.21-33.679L288 256.349V152c0-13.255-10.745-24-24-24h-16c-13.255 0-24 10.745-24 24v135.651l65.409 50.874c10.463 8.137 25.541 6.253 33.679-4.21z"]},{prefix:"fas",iconName:"icons",icon:[512,512,[],"f86d","M116.65 219.35a15.68 15.68 0 0 0 22.65 0l96.75-99.83c28.15-29 26.5-77.1-4.91-103.88C203.75-7.7 163-3.5 137.86 22.44L128 32.58l-9.85-10.14C93.05-3.5 52.25-7.7 24.86 15.64c-31.41 26.78-33 74.85-5 103.88zm143.92 100.49h-48l-7.08-14.24a27.39 27.39 0 0 0-25.66-17.78h-71.71a27.39 27.39 0 0 0-25.66 17.78l-7 14.24h-48A27.45 27.45 0 0 0 0 347.3v137.25A27.44 27.44 0 0 0 27.43 512h233.14A27.45 27.45 0 0 0 288 484.55V347.3a27.45 27.45 0 0 0-27.43-27.46zM144 468a52 52 0 1 1 52-52 52 52 0 0 1-52 52zm355.4-115.9h-60.58l22.36-50.75c2.1-6.65-3.93-13.21-12.18-13.21h-75.59c-6.3 0-11.66 3.9-12.5 9.1l-16.8 106.93c-1 6.3 4.88 11.89 12.5 11.89h62.31l-24.2 83c-1.89 6.65 4.2 12.9 12.23 12.9a13.26 13.26 0 0 0 10.92-5.25l92.4-138.91c4.88-6.91-1.16-15.7-10.87-15.7zM478.08.33L329.51 23.17C314.87 25.42 304 38.92 304 54.83V161.6a83.25 83.25 0 0 0-16-1.7c-35.35 0-64 21.48-64 48s28.65 48 64 48c35.2 0 63.73-21.32 64-47.66V99.66l112-17.22v47.18a83.25 83.25 0 0 0-16-1.7c-35.35 0-64 21.48-64 48s28.65 48 64 48c35.2 0 63.73-21.32 64-47.66V32c0-19.48-16-34.42-33.92-31.67z"]},{prefix:"far",iconName:"lightbulb",icon:[352,512,[],"f0eb","M176 80c-52.94 0-96 43.06-96 96 0 8.84 7.16 16 16 16s16-7.16 16-16c0-35.3 28.72-64 64-64 8.84 0 16-7.16 16-16s-7.16-16-16-16zM96.06 459.17c0 3.15.93 6.22 2.68 8.84l24.51 36.84c2.97 4.46 7.97 7.14 13.32 7.14h78.85c5.36 0 10.36-2.68 13.32-7.14l24.51-36.84c1.74-2.62 2.67-5.7 2.68-8.84l.05-43.18H96.02l.04 43.18zM176 0C73.72 0 0 82.97 0 176c0 44.37 16.45 84.85 43.56 115.78 16.64 18.99 42.74 58.8 52.42 92.16v.06h48v-.12c-.01-4.77-.72-9.51-2.15-14.07-5.59-17.81-22.82-64.77-62.17-109.67-20.54-23.43-31.52-53.15-31.61-84.14-.2-73.64 59.67-128 127.95-128 70.58 0 128 57.42 128 128 0 30.97-11.24 60.85-31.65 84.14-39.11 44.61-56.42 91.47-62.1 109.46a47.507 47.507 0 0 0-2.22 14.3v.1h48v-.05c9.68-33.37 35.78-73.18 52.42-92.16C335.55 260.85 352 220.37 352 176 352 78.8 273.2 0 176 0z"]},{prefix:"fas",iconName:"music",icon:[512,512,[],"f001","M470.38 1.51L150.41 96A32 32 0 0 0 128 126.51v261.41A139 139 0 0 0 96 384c-53 0-96 28.66-96 64s43 64 96 64 96-28.66 96-64V214.32l256-75v184.61a138.4 138.4 0 0 0-32-3.93c-53 0-96 28.66-96 64s43 64 96 64 96-28.65 96-64V32a32 32 0 0 0-41.62-30.49z"]},{prefix:"fas",iconName:"search",icon:[512,512,[],"f002","M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"]},{prefix:"far",iconName:"smile",icon:[496,512,[],"f118","M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm0 448c-110.3 0-200-89.7-200-200S137.7 56 248 56s200 89.7 200 200-89.7 200-200 200zm-80-216c17.7 0 32-14.3 32-32s-14.3-32-32-32-32 14.3-32 32 14.3 32 32 32zm160 0c17.7 0 32-14.3 32-32s-14.3-32-32-32-32 14.3-32 32 14.3 32 32 32zm4 72.6c-20.8 25-51.5 39.4-84 39.4s-63.2-14.3-84-39.4c-8.5-10.2-23.7-11.5-33.8-3.1-10.2 8.5-11.5 23.6-3.1 33.8 30 36 74.1 56.6 120.9 56.6s90.9-20.6 120.9-56.6c8.5-10.2 7.1-25.3-3.1-33.8-10.1-8.4-25.3-7.1-33.8 3.1z"]},{prefix:"fas",iconName:"times",icon:[352,512,[],"f00d","M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"]},{prefix:"fas",iconName:"user",icon:[448,512,[],"f007","M224 256c70.7 0 128-57.3 128-128S294.7 0 224 0 96 57.3 96 128s57.3 128 128 128zm89.6 32h-16.7c-22.2 10.2-46.9 16-72.9 16s-50.6-5.8-72.9-16h-16.7C60.2 288 0 348.2 0 422.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-41.6c0-74.2-60.2-134.4-134.4-134.4z"]});const Io=zo({prefix:"far",iconName:"building"}).html[0],Oo=zo({prefix:"fas",iconName:"cat"}).html[0],So=zo({prefix:"fas",iconName:"coffee"}).html[0],Po=zo({prefix:"far",iconName:"flag"}).html[0],Mo=zo({prefix:"fas",iconName:"futbol"}).html[0],Ao=zo({prefix:"far",iconName:"frown"}).html[0],Lo=zo({prefix:"fas",iconName:"history"}).html[0],To=zo({prefix:"fas",iconName:"icons"}).html[0],No=zo({prefix:"far",iconName:"lightbulb"}).html[0],Fo=zo({prefix:"fas",iconName:"music"}).html[0],Bo=zo({prefix:"fas",iconName:"search"}).html[0],Do=zo({prefix:"far",iconName:"smile"}).html[0],Ro=zo({prefix:"fas",iconName:"times"}).html[0],qo=zo({prefix:"fas",iconName:"user"}).html[0];function Vo(e){const o=document.createElement("img");return o.src=e,o}function Ho(){const e=localStorage.getItem("emojiPicker.recent");return(e?JSON.parse(e):[]).filter((e=>!!e.emoji))}class Uo{constructor(e,o,n,i,a,r=!0){this.emoji=e,this.showVariants=o,this.showPreview=n,this.events=i,this.options=a,this.lazy=r}render(){this.emojiButton=Ee("button",Ce);let e=this.emoji.emoji;return this.emoji.custom?e=this.lazy?Do:`<img class="emoji-picker__custom-emoji" src="${this.emoji.emoji}">`:"twemoji"===this.options.style&&(e=this.lazy?Do:ke.parse(this.emoji.emoji,this.options.twemojiOptions)),this.emojiButton.innerHTML=e,this.emojiButton.tabIndex=-1,this.emojiButton.dataset.emoji=this.emoji.emoji,this.emoji.custom&&(this.emojiButton.dataset.custom="true"),this.emojiButton.title=this.emoji.name,this.emojiButton.addEventListener("focus",(()=>this.onEmojiHover())),this.emojiButton.addEventListener("blur",(()=>this.onEmojiLeave())),this.emojiButton.addEventListener("click",(()=>this.onEmojiClick())),this.emojiButton.addEventListener("mouseover",(()=>this.onEmojiHover())),this.emojiButton.addEventListener("mouseout",(()=>this.onEmojiLeave())),"twemoji"===this.options.style&&this.lazy&&(this.emojiButton.style.opacity="0.25"),this.emojiButton}onEmojiClick(){this.emoji.variations&&this.showVariants&&this.options.showVariants||!this.options.showRecents||function(e,o){const n=Ho(),i={emoji:e.emoji,name:e.name,key:e.key||e.name,custom:e.custom};localStorage.setItem("emojiPicker.recent",JSON.stringify([i,...n.filter((e=>!!e.emoji&&e.key!==i.key))].slice(0,o.recentsCount)))}(this.emoji,this.options),this.events.emit("emoji",{emoji:this.emoji,showVariants:this.showVariants,button:this.emojiButton})}onEmojiHover(){this.showPreview&&this.events.emit("showPreview",this.emoji)}onEmojiLeave(){this.showPreview&&this.events.emit("hidePreview")}}class Wo{constructor(e,o,n,i,a=!0){this.showVariants=o,this.events=n,this.options=i,this.lazy=a,this.emojis=e.filter((e=>!e.version||parseFloat(e.version)<=parseFloat(i.emojiVersion)))}render(){const e=Ee("div","emoji-picker__container");return this.emojis.forEach((o=>e.appendChild(new Uo(o,this.showVariants,!0,this.events,this.options,this.lazy).render()))),e}}var Ko="undefined"!=typeof globalThis?globalThis:"undefined"!=typeof window?window:"undefined"!=typeof global?global:"undefined"!=typeof self?self:{};var Jo,Go=(function(e){var o,n;o=Ko,n=function(){var e="undefined"==typeof window,o=new Map,n=new Map,i=[];i.total=0;var a=[],r=[];function t(){o.clear(),n.clear(),a=[],r=[]}function s(e){for(var o=-9007199254740991,n=e.length-1;n>=0;--n){var i=e[n];if(null!==i){var a=i.score;a>o&&(o=a)}}return-9007199254740991===o?null:o}function m(e,o){var n=e[o];if(void 0!==n)return n;var i=o;Array.isArray(o)||(i=o.split("."));for(var a=i.length,r=-1;e&&++r<a;)e=e[i[r]];return e}function c(e){return"object"==typeof e}var d=function(){var e=[],o=0,n={};function i(){for(var n=0,i=e[n],a=1;a<o;){var r=a+1;n=a,r<o&&e[r].score<e[a].score&&(n=r),e[n-1>>1]=e[n],a=1+(n<<1)}for(var t=n-1>>1;n>0&&i.score<e[t].score;t=(n=t)-1>>1)e[n]=e[t];e[n]=i}return n.add=function(n){var i=o;e[o++]=n;for(var a=i-1>>1;i>0&&n.score<e[a].score;a=(i=a)-1>>1)e[i]=e[a];e[i]=n},n.poll=function(){if(0!==o){var n=e[0];return e[0]=e[--o],i(),n}},n.peek=function(n){if(0!==o)return e[0]},n.replaceTop=function(o){e[0]=o,i()},n},g=d();return function u(l){var v={single:function(e,o,n){return e?(c(e)||(e=v.getPreparedSearch(e)),o?(c(o)||(o=v.getPrepared(o)),((n&&void 0!==n.allowTypo?n.allowTypo:!l||void 0===l.allowTypo||l.allowTypo)?v.algorithm:v.algorithmNoTypo)(e,o,e[0])):null):null},go:function(e,o,n){if(!e)return i;var a=(e=v.prepareSearch(e))[0],r=n&&n.threshold||l&&l.threshold||-9007199254740991,t=n&&n.limit||l&&l.limit||9007199254740991,d=(n&&void 0!==n.allowTypo?n.allowTypo:!l||void 0===l.allowTypo||l.allowTypo)?v.algorithm:v.algorithmNoTypo,u=0,f=0,y=o.length;if(n&&n.keys)for(var j=n.scoreFn||s,h=n.keys,p=h.length,b=y-1;b>=0;--b){for(var w=o[b],k=new Array(p),x=p-1;x>=0;--x)(_=m(w,E=h[x]))?(c(_)||(_=v.getPrepared(_)),k[x]=d(e,_,a)):k[x]=null;k.obj=w;var C=j(k);null!==C&&(C<r||(k.score=C,u<t?(g.add(k),++u):(++f,C>g.peek().score&&g.replaceTop(k))))}else if(n&&n.key){var E=n.key;for(b=y-1;b>=0;--b)(_=m(w=o[b],E))&&(c(_)||(_=v.getPrepared(_)),null!==(z=d(e,_,a))&&(z.score<r||(z={target:z.target,_targetLowerCodes:null,_nextBeginningIndexes:null,score:z.score,indexes:z.indexes,obj:w},u<t?(g.add(z),++u):(++f,z.score>g.peek().score&&g.replaceTop(z)))))}else for(b=y-1;b>=0;--b){var _,z;(_=o[b])&&(c(_)||(_=v.getPrepared(_)),null!==(z=d(e,_,a))&&(z.score<r||(u<t?(g.add(z),++u):(++f,z.score>g.peek().score&&g.replaceTop(z)))))}if(0===u)return i;var I=new Array(u);for(b=u-1;b>=0;--b)I[b]=g.poll();return I.total=u+f,I},goAsync:function(o,n,a){var r=!1,t=new Promise((function(t,g){if(!o)return t(i);var u=(o=v.prepareSearch(o))[0],f=d(),y=n.length-1,j=a&&a.threshold||l&&l.threshold||-9007199254740991,h=a&&a.limit||l&&l.limit||9007199254740991,p=(a&&void 0!==a.allowTypo?a.allowTypo:!l||void 0===l.allowTypo||l.allowTypo)?v.algorithm:v.algorithmNoTypo,b=0,w=0;function k(){if(r)return g("canceled");var d=Date.now();if(a&&a.keys)for(var l=a.scoreFn||s,x=a.keys,C=x.length;y>=0;--y){for(var E=n[y],_=new Array(C),z=C-1;z>=0;--z)(S=m(E,O=x[z]))?(c(S)||(S=v.getPrepared(S)),_[z]=p(o,S,u)):_[z]=null;_.obj=E;var I=l(_);if(null!==I&&!(I<j)&&(_.score=I,b<h?(f.add(_),++b):(++w,I>f.peek().score&&f.replaceTop(_)),y%1e3==0&&Date.now()-d>=10))return void(e?setImmediate(k):setTimeout(k))}else if(a&&a.key){for(var O=a.key;y>=0;--y)if((S=m(E=n[y],O))&&(c(S)||(S=v.getPrepared(S)),null!==(P=p(o,S,u))&&!(P.score<j)&&(P={target:P.target,_targetLowerCodes:null,_nextBeginningIndexes:null,score:P.score,indexes:P.indexes,obj:E},b<h?(f.add(P),++b):(++w,P.score>f.peek().score&&f.replaceTop(P)),y%1e3==0&&Date.now()-d>=10)))return void(e?setImmediate(k):setTimeout(k))}else for(;y>=0;--y){var S,P;if((S=n[y])&&(c(S)||(S=v.getPrepared(S)),null!==(P=p(o,S,u))&&!(P.score<j)&&(b<h?(f.add(P),++b):(++w,P.score>f.peek().score&&f.replaceTop(P)),y%1e3==0&&Date.now()-d>=10)))return void(e?setImmediate(k):setTimeout(k))}if(0===b)return t(i);for(var M=new Array(b),A=b-1;A>=0;--A)M[A]=f.poll();M.total=b+w,t(M)}e?setImmediate(k):k()}));return t.cancel=function(){r=!0},t},highlight:function(e,o,n){if(null===e)return null;void 0===o&&(o="<b>"),void 0===n&&(n="</b>");for(var i="",a=0,r=!1,t=e.target,s=t.length,m=e.indexes,c=0;c<s;++c){var d=t[c];if(m[a]===c){if(r||(r=!0,i+=o),++a===m.length){i+=d+n+t.substr(c+1);break}}else r&&(r=!1,i+=n);i+=d}return i},prepare:function(e){if(e)return{target:e,_targetLowerCodes:v.prepareLowerCodes(e),_nextBeginningIndexes:null,score:null,indexes:null,obj:null}},prepareSlow:function(e){if(e)return{target:e,_targetLowerCodes:v.prepareLowerCodes(e),_nextBeginningIndexes:v.prepareNextBeginningIndexes(e),score:null,indexes:null,obj:null}},prepareSearch:function(e){if(e)return v.prepareLowerCodes(e)},getPrepared:function(e){if(e.length>999)return v.prepare(e);var n=o.get(e);return void 0!==n||(n=v.prepare(e),o.set(e,n)),n},getPreparedSearch:function(e){if(e.length>999)return v.prepareSearch(e);var o=n.get(e);return void 0!==o||(o=v.prepareSearch(e),n.set(e,o)),o},algorithm:function(e,o,n){for(var i=o._targetLowerCodes,t=e.length,s=i.length,m=0,c=0,d=0,g=0;;){if(n===i[c]){if(a[g++]=c,++m===t)break;n=e[0===d?m:d===m?m+1:d===m-1?m-1:m]}if(++c>=s)for(;;){if(m<=1)return null;if(0===d){if(n===e[--m])continue;d=m}else{if(1===d)return null;if((n=e[1+(m=--d)])===e[m])continue}c=a[(g=m)-1]+1;break}}m=0;var u=0,l=!1,f=0,y=o._nextBeginningIndexes;null===y&&(y=o._nextBeginningIndexes=v.prepareNextBeginningIndexes(o.target));var j=c=0===a[0]?0:y[a[0]-1];if(c!==s)for(;;)if(c>=s){if(m<=0){if(++u>t-2)break;if(e[u]===e[u+1])continue;c=j;continue}--m,c=y[r[--f]]}else if(e[0===u?m:u===m?m+1:u===m-1?m-1:m]===i[c]){if(r[f++]=c,++m===t){l=!0;break}++c}else c=y[c];if(l)var h=r,p=f;else h=a,p=g;for(var b=0,w=-1,k=0;k<t;++k)w!==(c=h[k])-1&&(b-=c),w=c;for(l?0!==u&&(b+=-20):(b*=1e3,0!==d&&(b+=-20)),b-=s-t,o.score=b,o.indexes=new Array(p),k=p-1;k>=0;--k)o.indexes[k]=h[k];return o},algorithmNoTypo:function(e,o,n){for(var i=o._targetLowerCodes,t=e.length,s=i.length,m=0,c=0,d=0;;){if(n===i[c]){if(a[d++]=c,++m===t)break;n=e[m]}if(++c>=s)return null}m=0;var g=!1,u=0,l=o._nextBeginningIndexes;if(null===l&&(l=o._nextBeginningIndexes=v.prepareNextBeginningIndexes(o.target)),(c=0===a[0]?0:l[a[0]-1])!==s)for(;;)if(c>=s){if(m<=0)break;--m,c=l[r[--u]]}else if(e[m]===i[c]){if(r[u++]=c,++m===t){g=!0;break}++c}else c=l[c];if(g)var f=r,y=u;else f=a,y=d;for(var j=0,h=-1,p=0;p<t;++p)h!==(c=f[p])-1&&(j-=c),h=c;for(g||(j*=1e3),j-=s-t,o.score=j,o.indexes=new Array(y),p=y-1;p>=0;--p)o.indexes[p]=f[p];return o},prepareLowerCodes:function(e){for(var o=e.length,n=[],i=e.toLowerCase(),a=0;a<o;++a)n[a]=i.charCodeAt(a);return n},prepareBeginningIndexes:function(e){for(var o=e.length,n=[],i=0,a=!1,r=!1,t=0;t<o;++t){var s=e.charCodeAt(t),m=s>=65&&s<=90,c=m||s>=97&&s<=122||s>=48&&s<=57,d=m&&!a||!r||!c;a=m,r=c,d&&(n[i++]=t)}return n},prepareNextBeginningIndexes:function(e){for(var o=e.length,n=v.prepareBeginningIndexes(e),i=[],a=n[0],r=0,t=0;t<o;++t)a>t?i[t]=a:(a=n[++r],i[t]=void 0===a?o:a);return i},cleanup:t,new:u};return v}()},e.exports?e.exports=n():o.fuzzysort=n()}(Jo={exports:{}},Jo.exports),Jo.exports);class Xo{constructor(e,o){this.message=e,this.iconUrl=o}render(){const e=Ee("div","emoji-picker__search-not-found"),o=Ee("div","emoji-picker__search-not-found-icon");this.iconUrl?o.appendChild(Vo(this.iconUrl)):o.innerHTML=Ao,e.appendChild(o);const n=Ee("h2");return n.innerHTML=this.message,e.appendChild(n),e}}class Yo{constructor(e,o,n,i,a){if(this.events=e,this.i18n=o,this.options=n,this.focusedEmojiIndex=0,this.emojisPerRow=this.options.emojisPerRow||8,this.emojiData=i.filter((e=>e.version&&parseFloat(e.version)<=parseFloat(n.emojiVersion)&&void 0!==e.category&&a.indexOf(e.category)>=0)),this.options.custom){const e=this.options.custom.map((e=>Object.assign(Object.assign({},e),{custom:!0})));this.emojiData=[...this.emojiData,...e]}this.events.on("hideVariantPopup",(()=>{setTimeout((()=>this.setFocusedEmoji(this.focusedEmojiIndex)))}))}render(){return this.searchContainer=Ee("div","emoji-picker__search-container"),this.searchField=Ee("input","emoji-picker__search"),this.searchField.placeholder=this.i18n.search,this.searchContainer.appendChild(this.searchField),this.searchIcon=Ee("span","emoji-picker__search-icon"),this.options.icons&&this.options.icons.search?this.searchIcon.appendChild(Vo(this.options.icons.search)):this.searchIcon.innerHTML=Bo,this.searchIcon.addEventListener("click",(e=>this.onClearSearch(e))),this.searchContainer.appendChild(this.searchIcon),this.searchField.addEventListener("keydown",(e=>this.onKeyDown(e))),this.searchField.addEventListener("keyup",(e=>this.onKeyUp(e))),this.searchContainer}clear(){this.searchField.value=""}focus(){this.searchField.focus()}onClearSearch(e){e.stopPropagation(),this.searchField.value&&(this.searchField.value="",this.resultsContainer=null,this.options.icons&&this.options.icons.search?(_e(this.searchIcon),this.searchIcon.appendChild(Vo(this.options.icons.search))):this.searchIcon.innerHTML=Bo,this.searchIcon.style.cursor="default",this.events.emit("hideSearchResults"),setTimeout((()=>this.searchField.focus())))}setFocusedEmoji(e){if(this.resultsContainer){const o=this.resultsContainer.querySelectorAll("."+Ce);o[this.focusedEmojiIndex].tabIndex=-1,this.focusedEmojiIndex=e;const n=o[this.focusedEmojiIndex];n.tabIndex=0,n.focus()}}handleResultsKeydown(e){if(this.resultsContainer){const o=this.resultsContainer.querySelectorAll("."+Ce);"ArrowRight"===e.key?this.setFocusedEmoji(Math.min(this.focusedEmojiIndex+1,o.length-1)):"ArrowLeft"===e.key?this.setFocusedEmoji(Math.max(0,this.focusedEmojiIndex-1)):"ArrowDown"===e.key?(e.preventDefault(),this.focusedEmojiIndex<o.length-this.emojisPerRow&&this.setFocusedEmoji(this.focusedEmojiIndex+this.emojisPerRow)):"ArrowUp"===e.key?(e.preventDefault(),this.focusedEmojiIndex>=this.emojisPerRow&&this.setFocusedEmoji(this.focusedEmojiIndex-this.emojisPerRow)):"Escape"===e.key&&this.onClearSearch(e)}}onKeyDown(e){"Escape"===e.key&&this.searchField.value&&this.onClearSearch(e)}onKeyUp(e){if("Tab"!==e.key&&"Shift"!==e.key)if(this.searchField.value){this.options.icons&&this.options.icons.clearSearch?(_e(this.searchIcon),this.searchIcon.appendChild(Vo(this.options.icons.clearSearch))):this.searchIcon.innerHTML=Ro,this.searchIcon.style.cursor="pointer";const e=Go.go(this.searchField.value,this.emojiData,{allowTypo:!0,limit:100,key:"name"}).map((e=>e.obj));this.events.emit("hidePreview"),e.length?(this.resultsContainer=new Wo(e,!0,this.events,this.options,!1).render(),this.resultsContainer&&(this.resultsContainer.querySelector("."+Ce).tabIndex=0,this.focusedEmojiIndex=0,this.resultsContainer.addEventListener("keydown",(e=>this.handleResultsKeydown(e))),this.events.emit("showSearchResults",this.resultsContainer))):this.events.emit("showSearchResults",new Xo(this.i18n.notFound,this.options.icons&&this.options.icons.notFound).render())}else this.options.icons&&this.options.icons.search?(_e(this.searchIcon),this.searchIcon.appendChild(Vo(this.options.icons.search))):this.searchIcon.innerHTML=Bo,this.searchIcon.style.cursor="default",this.events.emit("hideSearchResults")}}class $o{constructor(e,o,n){this.events=e,this.emoji=o,this.options=n,this.focusedEmojiIndex=0}getEmoji(e){return this.popup.querySelectorAll("."+Ce)[e]}setFocusedEmoji(e){this.getEmoji(this.focusedEmojiIndex).tabIndex=-1,this.focusedEmojiIndex=e;const o=this.getEmoji(this.focusedEmojiIndex);o.tabIndex=0,o.focus()}render(){this.popup=Ee("div","emoji-picker__variant-popup");const e=Ee("div","emoji-picker__variant-overlay");e.addEventListener("click",(e=>{e.stopPropagation(),this.popup.contains(e.target)||this.events.emit("hideVariantPopup")})),this.popup.appendChild(new Uo(this.emoji,!1,!1,this.events,this.options,!1).render()),(this.emoji.variations||[]).forEach(((e,o)=>this.popup.appendChild(new Uo({name:this.emoji.name,emoji:e,key:this.emoji.name+o},!1,!1,this.events,this.options,!1).render())));const o=this.popup.querySelector("."+Ce);return this.focusedEmojiIndex=0,o.tabIndex=0,setTimeout((()=>o.focus())),this.popup.addEventListener("keydown",(e=>{"ArrowRight"===e.key?this.setFocusedEmoji(Math.min(this.focusedEmojiIndex+1,this.popup.querySelectorAll("."+Ce).length-1)):"ArrowLeft"===e.key?this.setFocusedEmoji(Math.max(this.focusedEmojiIndex-1,0)):"Escape"===e.key&&(e.stopPropagation(),this.events.emit("hideVariantPopup"))})),e.appendChild(this.popup),e}}const Zo={search:"Search emojis...",categories:{recents:"Recent Emojis",smileys:"Smileys & Emotion",people:"People & Body",animals:"Animals & Nature",food:"Food & Drink",activities:"Activities",travel:"Travel & Places",objects:"Objects",symbols:"Symbols",flags:"Flags",custom:"Custom"},notFound:"No emojis found"},Qo={recents:Lo,smileys:Do,people:qo,animals:Oo,food:So,activities:Mo,travel:Io,objects:No,symbols:Fo,flags:Po,custom:To};class en{constructor(e,o,n){this.options=e,this.events=o,this.i18n=n,this.activeButton=0,this.buttons=[]}render(){const e=Ee("div","emoji-picker__category-buttons");let o=this.options.showRecents?["recents",...this.options.categories||xe.categories]:this.options.categories||xe.categories;return this.options.custom&&(o=[...o,"custom"]),o.forEach((o=>{const n=Ee("button","emoji-picker__category-button");this.options.icons&&this.options.icons.categories&&this.options.icons.categories[o]?n.appendChild(Vo(this.options.icons.categories[o])):n.innerHTML=Qo[o],n.tabIndex=-1,n.title=this.i18n.categories[o],e.appendChild(n),this.buttons.push(n),n.addEventListener("click",(()=>{this.events.emit("categoryClicked",o)}))})),e.addEventListener("keydown",(e=>{switch(e.key){case"ArrowRight":this.events.emit("categoryClicked",o[(this.activeButton+1)%this.buttons.length]);break;case"ArrowLeft":this.events.emit("categoryClicked",o[0===this.activeButton?this.buttons.length-1:this.activeButton-1]);break;case"ArrowUp":case"ArrowDown":e.stopPropagation(),e.preventDefault()}})),e}setActiveButton(e,o=!0){let n=this.buttons[this.activeButton];n.classList.remove("active"),n.tabIndex=-1,this.activeButton=e,n=this.buttons[this.activeButton],n.classList.add("active"),n.tabIndex=0,o&&n.focus()}}const on={};xe.emoji.forEach((e=>{let o=on[xe.categories[e.category]];o||(o=on[xe.categories[e.category]]=[]),o.push(e)}));class nn{constructor(e,o,n){this.events=e,this.i18n=o,this.options=n,this.currentCategory=0,this.headers=[],this.focusedIndex=0,this.handleKeyDown=e=>{switch(this.emojis.removeEventListener("scroll",this.highlightCategory),e.key){case"ArrowRight":this.focusedEmoji.tabIndex=-1,this.focusedIndex===this.currentEmojiCount-1&&this.currentCategory<this.categories.length-1?(this.options.showCategoryButtons&&this.categoryButtons.setActiveButton(++this.currentCategory),this.setFocusedEmoji(0)):this.focusedIndex<this.currentEmojiCount-1&&this.setFocusedEmoji(this.focusedIndex+1);break;case"ArrowLeft":this.focusedEmoji.tabIndex=-1,0===this.focusedIndex&&this.currentCategory>0?(this.options.showCategoryButtons&&this.categoryButtons.setActiveButton(--this.currentCategory),this.setFocusedEmoji(this.currentEmojiCount-1)):this.setFocusedEmoji(Math.max(0,this.focusedIndex-1));break;case"ArrowDown":e.preventDefault(),this.focusedEmoji.tabIndex=-1,this.focusedIndex+this.emojisPerRow>=this.currentEmojiCount&&this.currentCategory<this.categories.length-1?(this.currentCategory++,this.options.showCategoryButtons&&this.categoryButtons.setActiveButton(this.currentCategory),this.setFocusedEmoji(Math.min(this.focusedIndex%this.emojisPerRow,this.currentEmojiCount-1))):this.currentEmojiCount-this.focusedIndex>this.emojisPerRow&&this.setFocusedEmoji(this.focusedIndex+this.emojisPerRow);break;case"ArrowUp":if(e.preventDefault(),this.focusedEmoji.tabIndex=-1,this.focusedIndex<this.emojisPerRow&&this.currentCategory>0){const e=this.getEmojiCount(this.currentCategory-1);let o=e%this.emojisPerRow;0===o&&(o=this.emojisPerRow);const n=this.focusedIndex,i=n>o-1?e-1:e-o+n;this.currentCategory--,this.options.showCategoryButtons&&this.categoryButtons.setActiveButton(this.currentCategory),this.setFocusedEmoji(i)}else this.setFocusedEmoji(this.focusedIndex>=this.emojisPerRow?this.focusedIndex-this.emojisPerRow:this.focusedIndex)}requestAnimationFrame((()=>this.emojis.addEventListener("scroll",this.highlightCategory)))},this.addCategory=(e,o)=>{const n=Ee("h2","emoji-picker__category-name");n.innerHTML=this.i18n.categories[e]||Zo.categories[e],this.emojis.appendChild(n),this.headers.push(n),this.emojis.appendChild(new Wo(o,!0,this.events,this.options,"recents"!==e).render())},this.selectCategory=(e,o=!0)=>{this.emojis.removeEventListener("scroll",this.highlightCategory),this.focusedEmoji&&(this.focusedEmoji.tabIndex=-1);const n=this.categories.indexOf(e);this.currentCategory=n,this.setFocusedEmoji(0,!1),this.options.showCategoryButtons&&this.categoryButtons.setActiveButton(this.currentCategory,o);const i=this.headerOffsets[n];this.emojis.scrollTop=i,requestAnimationFrame((()=>this.emojis.addEventListener("scroll",this.highlightCategory)))},this.highlightCategory=()=>{if(document.activeElement&&document.activeElement.classList.contains("emoji-picker__emoji"))return;let e=this.headerOffsets.findIndex((e=>e>=Math.round(this.emojis.scrollTop)));this.emojis.scrollTop+this.emojis.offsetHeight===this.emojis.scrollHeight&&(e=-1),0===e?e=1:e<0&&(e=this.headerOffsets.length),this.headerOffsets[e]===this.emojis.scrollTop&&e++,this.currentCategory=e-1,this.options.showCategoryButtons&&this.categoryButtons.setActiveButton(this.currentCategory)},this.emojisPerRow=n.emojisPerRow||8,this.categories=n.categories||xe.categories,n.showRecents&&(this.categories=["recents",...this.categories]),n.custom&&(this.categories=[...this.categories,"custom"])}updateRecents(){if(this.options.showRecents){on.recents=Ho();const e=this.emojis.querySelector(".emoji-picker__container");e&&e.parentNode&&e.parentNode.replaceChild(new Wo(on.recents,!0,this.events,this.options,!1).render(),e)}}render(){this.container=Ee("div","emoji-picker__emoji-area"),this.options.showCategoryButtons&&(this.categoryButtons=new en(this.options,this.events,this.i18n),this.container.appendChild(this.categoryButtons.render())),this.emojis=Ee("div","emoji-picker__emojis"),this.options.showRecents&&(on.recents=Ho()),this.options.custom&&(on.custom=this.options.custom.map((e=>Object.assign(Object.assign({},e),{custom:!0})))),this.categories.forEach((e=>this.addCategory(e,on[e]))),requestAnimationFrame((()=>{setTimeout((()=>{setTimeout((()=>this.emojis.addEventListener("scroll",this.highlightCategory)))}))})),this.emojis.addEventListener("keydown",this.handleKeyDown),this.events.on("categoryClicked",this.selectCategory),this.container.appendChild(this.emojis);return this.container.querySelectorAll("."+Ce)[0].tabIndex=0,this.container}reset(){this.headerOffsets=Array.prototype.map.call(this.headers,(e=>e.offsetTop)),this.selectCategory(this.options.initialCategory||"smileys",!1),this.currentCategory=this.categories.indexOf(this.options.initialCategory||"smileys"),this.options.showCategoryButtons&&this.categoryButtons.setActiveButton(this.currentCategory,!1)}get currentCategoryEl(){return this.emojis.querySelectorAll(".emoji-picker__container")[this.currentCategory]}get focusedEmoji(){return this.currentCategoryEl.querySelectorAll("."+Ce)[this.focusedIndex]}get currentEmojiCount(){return this.currentCategoryEl.querySelectorAll("."+Ce).length}getEmojiCount(e){return this.emojis.querySelectorAll(".emoji-picker__container")[e].querySelectorAll("."+Ce).length}setFocusedEmoji(e,o=!0){this.focusedIndex=e,this.focusedEmoji&&(this.focusedEmoji.tabIndex=0,o&&this.focusedEmoji.focus())}}const an={position:"auto",autoHide:!0,autoFocusSearch:!0,showAnimation:!0,showPreview:!0,showSearch:!0,showRecents:!0,showVariants:!0,showCategoryButtons:!0,recentsCount:50,emojiVersion:"12.1",theme:"light",categories:["smileys","people","animals","food","activities","travel","objects","symbols","flags"],style:"native",twemojiOptions:{ext:".svg",folder:"svg"},emojisPerRow:8,rows:6,emojiSize:"1.8em",initialCategory:"smileys"};class rn{constructor(e={}){this.events=new b,this.publicEvents=new b,this.pickerVisible=!1,this.options=Object.assign(Object.assign({},an),e),this.options.rootElement||(this.options.rootElement=document.body),this.i18n=Object.assign(Object.assign({},Zo),e.i18n),this.onDocumentClick=this.onDocumentClick.bind(this),this.onDocumentKeydown=this.onDocumentKeydown.bind(this),this.theme=this.options.theme||"light",this.buildPicker()}on(e,o){this.publicEvents.on(e,o)}off(e,o){this.publicEvents.off(e,o)}setStyleProperties(){this.options.showAnimation||this.pickerEl.style.setProperty("--animation-duration","0s"),this.options.emojisPerRow&&this.pickerEl.style.setProperty("--emoji-per-row",this.options.emojisPerRow.toString()),this.options.rows&&this.pickerEl.style.setProperty("--row-count",this.options.rows.toString()),this.options.emojiSize&&this.pickerEl.style.setProperty("--emoji-size",this.options.emojiSize),this.options.showCategoryButtons||this.pickerEl.style.setProperty("--category-button-height","0"),this.options.styleProperties&&Object.keys(this.options.styleProperties).forEach((e=>{this.options.styleProperties&&this.pickerEl.style.setProperty(e,this.options.styleProperties[e])}))}showSearchResults(e){_e(this.pickerContent),e.classList.add("search-results"),this.pickerContent.appendChild(e)}hideSearchResults(){this.pickerContent.firstChild!==this.emojiArea.container&&(_e(this.pickerContent),this.pickerContent.appendChild(this.emojiArea.container)),this.emojiArea.reset()}emitEmoji({emoji:o,showVariants:n}){return e(this,void 0,void 0,(function*(){if(o.variations&&n&&this.options.showVariants)this.showVariantPopup(o);else{let e;setTimeout((()=>this.emojiArea.updateRecents())),e=o.custom?this.emitCustomEmoji(o):"twemoji"===this.options.style?yield this.emitTwemoji(o):this.emitNativeEmoji(o),this.publicEvents.emit("emoji",e),this.options.autoHide&&this.hidePicker()}}))}emitNativeEmoji(e){return{emoji:e.emoji,name:e.name}}emitCustomEmoji(e){return{url:e.emoji,name:e.name,custom:!0}}emitTwemoji(e){return new Promise((o=>{ke.parse(e.emoji,Object.assign(Object.assign({},this.options.twemojiOptions),{callback:(n,{base:i,size:a,ext:r})=>{const t=`${i}${a}/${n}${r}`;return o({url:t,emoji:e.emoji,name:e.name}),t}}))}))}buildSearch(){this.options.showSearch&&(this.search=new Yo(this.events,this.i18n,this.options,xe.emoji,(this.options.categories||[]).map((e=>xe.categories.indexOf(e)))),this.pickerEl.appendChild(this.search.render()))}buildPreview(){this.options.showPreview&&this.pickerEl.appendChild(new Ie(this.events,this.options).render())}initPlugins(){if(this.options.plugins){const e=Ee("div","emoji-picker__plugin-container");this.options.plugins.forEach((o=>{if(!o.render)throw new Error('Emoji Button plugins must have a "render" function.');e.appendChild(o.render(this))})),this.pickerEl.appendChild(e)}}initFocusTrap(){this.focusTrap=h(this.pickerEl,{clickOutsideDeactivates:!0,initialFocus:this.options.showSearch&&this.options.autoFocusSearch?".emoji-picker__search":'.emoji-picker__emoji[tabindex="0"]'})}buildPicker(){this.pickerEl=Ee("div","emoji-picker"),this.pickerEl.classList.add(this.theme),this.setStyleProperties(),this.initFocusTrap(),this.pickerContent=Ee("div","emoji-picker__content"),this.initPlugins(),this.buildSearch(),this.pickerEl.appendChild(this.pickerContent),this.emojiArea=new nn(this.events,this.i18n,this.options),this.pickerContent.appendChild(this.emojiArea.render()),this.events.on("showSearchResults",this.showSearchResults.bind(this)),this.events.on("hideSearchResults",this.hideSearchResults.bind(this)),this.events.on("emoji",this.emitEmoji.bind(this)),this.buildPreview(),this.wrapper=Ee("div","emoji-picker__wrapper"),this.wrapper.appendChild(this.pickerEl),this.wrapper.style.display="none",this.options.zIndex&&(this.wrapper.style.zIndex=this.options.zIndex+""),this.options.rootElement&&this.options.rootElement.appendChild(this.wrapper),this.observeForLazyLoad()}showVariantPopup(e){const o=new $o(this.events,e,this.options).render();o&&this.pickerEl.appendChild(o),this.events.on("hideVariantPopup",(()=>{o&&(o.classList.add("hiding"),setTimeout((()=>{o&&this.pickerEl.removeChild(o)}),175)),this.events.off("hideVariantPopup")}))}observeForLazyLoad(){this.observer=new IntersectionObserver(this.handleIntersectionChange.bind(this),{root:this.emojiArea.emojis}),this.emojiArea.emojis.querySelectorAll("."+Ce).forEach((e=>{this.shouldLazyLoad(e)&&this.observer.observe(e)}))}handleIntersectionChange(e){Array.prototype.filter.call(e,(e=>e.intersectionRatio>0)).map((e=>e.target)).forEach((e=>{ze(e,this.options)}))}shouldLazyLoad(e){return"twemoji"===this.options.style||"true"===e.dataset.custom}onDocumentClick(e){this.pickerEl.contains(e.target)||this.hidePicker()}destroyPicker(){this.events.off("emoji"),this.events.off("hideVariantPopup"),this.options.rootElement&&(this.options.rootElement.removeChild(this.wrapper),this.popper&&this.popper.destroy()),this.observer&&this.observer.disconnect(),this.options.plugins&&this.options.plugins.forEach((e=>{e.destroy&&e.destroy()}))}hidePicker(){this.hideInProgress=!0,this.focusTrap.deactivate(),this.pickerVisible=!1,this.overlay&&(document.body.removeChild(this.overlay),this.overlay=void 0),this.emojiArea.emojis.removeEventListener("scroll",this.emojiArea.highlightCategory),this.pickerEl.classList.add("hiding"),setTimeout((()=>{this.wrapper.style.display="none",this.pickerEl.classList.remove("hiding"),this.pickerContent.firstChild!==this.emojiArea.container&&(_e(this.pickerContent),this.pickerContent.appendChild(this.emojiArea.container)),this.search&&this.search.clear(),this.events.emit("hideVariantPopup"),this.hideInProgress=!1,this.popper&&this.popper.destroy(),this.publicEvents.emit("hidden")}),this.options.showAnimation?170:0),setTimeout((()=>{document.removeEventListener("click",this.onDocumentClick),document.removeEventListener("keydown",this.onDocumentKeydown)}))}showPicker(e){this.hideInProgress?setTimeout((()=>this.showPicker(e)),100):(this.pickerVisible=!0,this.wrapper.style.display="block",this.determineDisplay(e),this.focusTrap.activate(),setTimeout((()=>{this.addEventListeners(),this.setInitialFocus()})),this.emojiArea.reset())}determineDisplay(e){window.matchMedia("screen and (max-width: 450px)").matches?this.showMobileView():"string"==typeof this.options.position?this.setRelativePosition(e):this.setFixedPosition()}setInitialFocus(){this.pickerEl.querySelector(this.options.showSearch&&this.options.autoFocusSearch?".emoji-picker__search":`.${Ce}[tabindex="0"]`).focus()}addEventListeners(){document.addEventListener("click",this.onDocumentClick),document.addEventListener("keydown",this.onDocumentKeydown)}setRelativePosition(e){this.popper=we(e,this.wrapper,{placement:this.options.position})}setFixedPosition(){var e;if(null===(e=this.options)||void 0===e?void 0:e.position){this.wrapper.style.position="fixed";const e=this.options.position;Object.keys(e).forEach((o=>{this.wrapper.style[o]=e[o]}))}}showMobileView(){const e=window.getComputedStyle(this.pickerEl),o=document.querySelector("html"),n=o&&o.clientHeight,i=o&&o.clientWidth,a=parseInt(e.height),r=n?n/2-a/2:0,t=parseInt(e.width),s=i?i/2-t/2:0;this.wrapper.style.position="fixed",this.wrapper.style.top=r+"px",this.wrapper.style.left=s+"px",this.wrapper.style.zIndex="5000",this.overlay=Ee("div","emoji-picker__overlay"),document.body.appendChild(this.overlay)}togglePicker(e){this.pickerVisible?this.hidePicker():this.showPicker(e)}isPickerVisible(){return this.pickerVisible}onDocumentKeydown(e){"Escape"===e.key?this.hidePicker():"Tab"===e.key?this.pickerEl.classList.add("keyboard"):e.key.match(/^[\w]$/)&&this.search&&this.search.focus()}setTheme(e){e!==this.theme&&(this.pickerEl.classList.remove(this.theme),this.theme=e,this.pickerEl.classList.add(e))}}
+
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js"), __webpack_require__(/*! ./../../../timers-browserify/main.js */ "./node_modules/timers-browserify/main.js").setImmediate))
+
+/***/ }),
+
 /***/ "./node_modules/axios/index.js":
 /*!*************************************!*\
   !*** ./node_modules/axios/index.js ***!
@@ -1907,17 +1937,19 @@ module.exports = {
 /***/ (function(module, exports, __webpack_require__) {
 
 /*!
-  * Bootstrap v4.5.0 (https://getbootstrap.com/)
+  * Bootstrap v4.5.3 (https://getbootstrap.com/)
   * Copyright 2011-2020 The Bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contributors)
-  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
   */
 (function (global, factory) {
    true ? factory(exports, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js"), __webpack_require__(/*! popper.js */ "./node_modules/popper.js/dist/esm/popper.js")) :
   undefined;
 }(this, (function (exports, $, Popper) { 'use strict';
 
-  $ = $ && Object.prototype.hasOwnProperty.call($, 'default') ? $['default'] : $;
-  Popper = Popper && Object.prototype.hasOwnProperty.call(Popper, 'default') ? Popper['default'] : Popper;
+  function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
+
+  var $__default = /*#__PURE__*/_interopDefaultLegacy($);
+  var Popper__default = /*#__PURE__*/_interopDefaultLegacy(Popper);
 
   function _defineProperties(target, props) {
     for (var i = 0; i < props.length; i++) {
@@ -1935,53 +1967,22 @@ module.exports = {
     return Constructor;
   }
 
-  function _defineProperty(obj, key, value) {
-    if (key in obj) {
-      Object.defineProperty(obj, key, {
-        value: value,
-        enumerable: true,
-        configurable: true,
-        writable: true
-      });
-    } else {
-      obj[key] = value;
-    }
+  function _extends() {
+    _extends = Object.assign || function (target) {
+      for (var i = 1; i < arguments.length; i++) {
+        var source = arguments[i];
 
-    return obj;
-  }
-
-  function ownKeys(object, enumerableOnly) {
-    var keys = Object.keys(object);
-
-    if (Object.getOwnPropertySymbols) {
-      var symbols = Object.getOwnPropertySymbols(object);
-      if (enumerableOnly) symbols = symbols.filter(function (sym) {
-        return Object.getOwnPropertyDescriptor(object, sym).enumerable;
-      });
-      keys.push.apply(keys, symbols);
-    }
-
-    return keys;
-  }
-
-  function _objectSpread2(target) {
-    for (var i = 1; i < arguments.length; i++) {
-      var source = arguments[i] != null ? arguments[i] : {};
-
-      if (i % 2) {
-        ownKeys(Object(source), true).forEach(function (key) {
-          _defineProperty(target, key, source[key]);
-        });
-      } else if (Object.getOwnPropertyDescriptors) {
-        Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));
-      } else {
-        ownKeys(Object(source)).forEach(function (key) {
-          Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
-        });
+        for (var key in source) {
+          if (Object.prototype.hasOwnProperty.call(source, key)) {
+            target[key] = source[key];
+          }
+        }
       }
-    }
 
-    return target;
+      return target;
+    };
+
+    return _extends.apply(this, arguments);
   }
 
   function _inheritsLoose(subClass, superClass) {
@@ -1992,8 +1993,8 @@ module.exports = {
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v4.5.0): util.js
-   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+   * Bootstrap (v4.5.3): util.js
+   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */
   /**
@@ -2019,7 +2020,7 @@ module.exports = {
       bindType: TRANSITION_END,
       delegateType: TRANSITION_END,
       handle: function handle(event) {
-        if ($(event.target).is(this)) {
+        if ($__default['default'](event.target).is(this)) {
           return event.handleObj.handler.apply(this, arguments); // eslint-disable-line prefer-rest-params
         }
 
@@ -2032,7 +2033,7 @@ module.exports = {
     var _this = this;
 
     var called = false;
-    $(this).one(Util.TRANSITION_END, function () {
+    $__default['default'](this).one(Util.TRANSITION_END, function () {
       called = true;
     });
     setTimeout(function () {
@@ -2044,8 +2045,8 @@ module.exports = {
   }
 
   function setTransitionEndSupport() {
-    $.fn.emulateTransitionEnd = transitionEndEmulator;
-    $.event.special[Util.TRANSITION_END] = getSpecialTransitionEndEvent();
+    $__default['default'].fn.emulateTransitionEnd = transitionEndEmulator;
+    $__default['default'].event.special[Util.TRANSITION_END] = getSpecialTransitionEndEvent();
   }
   /**
    * --------------------------------------------------------------------------
@@ -2058,7 +2059,6 @@ module.exports = {
     TRANSITION_END: 'bsTransitionEnd',
     getUID: function getUID(prefix) {
       do {
-        // eslint-disable-next-line no-bitwise
         prefix += ~~(Math.random() * MAX_UID); // "~~" acts like a faster Math.floor() here
       } while (document.getElementById(prefix));
 
@@ -2074,7 +2074,7 @@ module.exports = {
 
       try {
         return document.querySelector(selector) ? selector : null;
-      } catch (err) {
+      } catch (_) {
         return null;
       }
     },
@@ -2084,8 +2084,8 @@ module.exports = {
       } // Get transition-duration of the element
 
 
-      var transitionDuration = $(element).css('transition-duration');
-      var transitionDelay = $(element).css('transition-delay');
+      var transitionDuration = $__default['default'](element).css('transition-duration');
+      var transitionDelay = $__default['default'](element).css('transition-delay');
       var floatTransitionDuration = parseFloat(transitionDuration);
       var floatTransitionDelay = parseFloat(transitionDelay); // Return 0 if element or transition duration is not found
 
@@ -2102,9 +2102,8 @@ module.exports = {
       return element.offsetHeight;
     },
     triggerTransitionEnd: function triggerTransitionEnd(element) {
-      $(element).trigger(TRANSITION_END);
+      $__default['default'](element).trigger(TRANSITION_END);
     },
-    // TODO: Remove in v5
     supportsTransitionEnd: function supportsTransitionEnd() {
       return Boolean(TRANSITION_END);
     },
@@ -2147,11 +2146,11 @@ module.exports = {
       return Util.findShadowRoot(element.parentNode);
     },
     jQueryDetection: function jQueryDetection() {
-      if (typeof $ === 'undefined') {
+      if (typeof $__default['default'] === 'undefined') {
         throw new TypeError('Bootstrap\'s JavaScript requires jQuery. jQuery must be included before Bootstrap\'s JavaScript.');
       }
 
-      var version = $.fn.jquery.split(' ')[0].split('.');
+      var version = $__default['default'].fn.jquery.split(' ')[0].split('.');
       var minMajor = 1;
       var ltMajor = 2;
       var minMinor = 9;
@@ -2173,11 +2172,11 @@ module.exports = {
    */
 
   var NAME = 'alert';
-  var VERSION = '4.5.0';
+  var VERSION = '4.5.3';
   var DATA_KEY = 'bs.alert';
   var EVENT_KEY = "." + DATA_KEY;
   var DATA_API_KEY = '.data-api';
-  var JQUERY_NO_CONFLICT = $.fn[NAME];
+  var JQUERY_NO_CONFLICT = $__default['default'].fn[NAME];
   var SELECTOR_DISMISS = '[data-dismiss="alert"]';
   var EVENT_CLOSE = "close" + EVENT_KEY;
   var EVENT_CLOSED = "closed" + EVENT_KEY;
@@ -2217,7 +2216,7 @@ module.exports = {
     };
 
     _proto.dispose = function dispose() {
-      $.removeData(this._element, DATA_KEY);
+      $__default['default'].removeData(this._element, DATA_KEY);
       this._element = null;
     } // Private
     ;
@@ -2231,43 +2230,43 @@ module.exports = {
       }
 
       if (!parent) {
-        parent = $(element).closest("." + CLASS_NAME_ALERT)[0];
+        parent = $__default['default'](element).closest("." + CLASS_NAME_ALERT)[0];
       }
 
       return parent;
     };
 
     _proto._triggerCloseEvent = function _triggerCloseEvent(element) {
-      var closeEvent = $.Event(EVENT_CLOSE);
-      $(element).trigger(closeEvent);
+      var closeEvent = $__default['default'].Event(EVENT_CLOSE);
+      $__default['default'](element).trigger(closeEvent);
       return closeEvent;
     };
 
     _proto._removeElement = function _removeElement(element) {
       var _this = this;
 
-      $(element).removeClass(CLASS_NAME_SHOW);
+      $__default['default'](element).removeClass(CLASS_NAME_SHOW);
 
-      if (!$(element).hasClass(CLASS_NAME_FADE)) {
+      if (!$__default['default'](element).hasClass(CLASS_NAME_FADE)) {
         this._destroyElement(element);
 
         return;
       }
 
       var transitionDuration = Util.getTransitionDurationFromElement(element);
-      $(element).one(Util.TRANSITION_END, function (event) {
+      $__default['default'](element).one(Util.TRANSITION_END, function (event) {
         return _this._destroyElement(element, event);
       }).emulateTransitionEnd(transitionDuration);
     };
 
     _proto._destroyElement = function _destroyElement(element) {
-      $(element).detach().trigger(EVENT_CLOSED).remove();
+      $__default['default'](element).detach().trigger(EVENT_CLOSED).remove();
     } // Static
     ;
 
     Alert._jQueryInterface = function _jQueryInterface(config) {
       return this.each(function () {
-        var $element = $(this);
+        var $element = $__default['default'](this);
         var data = $element.data(DATA_KEY);
 
         if (!data) {
@@ -2307,18 +2306,18 @@ module.exports = {
    */
 
 
-  $(document).on(EVENT_CLICK_DATA_API, SELECTOR_DISMISS, Alert._handleDismiss(new Alert()));
+  $__default['default'](document).on(EVENT_CLICK_DATA_API, SELECTOR_DISMISS, Alert._handleDismiss(new Alert()));
   /**
    * ------------------------------------------------------------------------
    * jQuery
    * ------------------------------------------------------------------------
    */
 
-  $.fn[NAME] = Alert._jQueryInterface;
-  $.fn[NAME].Constructor = Alert;
+  $__default['default'].fn[NAME] = Alert._jQueryInterface;
+  $__default['default'].fn[NAME].Constructor = Alert;
 
-  $.fn[NAME].noConflict = function () {
-    $.fn[NAME] = JQUERY_NO_CONFLICT;
+  $__default['default'].fn[NAME].noConflict = function () {
+    $__default['default'].fn[NAME] = JQUERY_NO_CONFLICT;
     return Alert._jQueryInterface;
   };
 
@@ -2329,11 +2328,11 @@ module.exports = {
    */
 
   var NAME$1 = 'button';
-  var VERSION$1 = '4.5.0';
+  var VERSION$1 = '4.5.3';
   var DATA_KEY$1 = 'bs.button';
   var EVENT_KEY$1 = "." + DATA_KEY$1;
   var DATA_API_KEY$1 = '.data-api';
-  var JQUERY_NO_CONFLICT$1 = $.fn[NAME$1];
+  var JQUERY_NO_CONFLICT$1 = $__default['default'].fn[NAME$1];
   var CLASS_NAME_ACTIVE = 'active';
   var CLASS_NAME_BUTTON = 'btn';
   var CLASS_NAME_FOCUS = 'focus';
@@ -2356,6 +2355,7 @@ module.exports = {
   var Button = /*#__PURE__*/function () {
     function Button(element) {
       this._element = element;
+      this.shouldAvoidTriggerChange = false;
     } // Getters
 
 
@@ -2365,7 +2365,7 @@ module.exports = {
     _proto.toggle = function toggle() {
       var triggerChangeEvent = true;
       var addAriaPressed = true;
-      var rootElement = $(this._element).closest(SELECTOR_DATA_TOGGLES)[0];
+      var rootElement = $__default['default'](this._element).closest(SELECTOR_DATA_TOGGLES)[0];
 
       if (rootElement) {
         var input = this._element.querySelector(SELECTOR_INPUT);
@@ -2378,7 +2378,7 @@ module.exports = {
               var activeElement = rootElement.querySelector(SELECTOR_ACTIVE);
 
               if (activeElement) {
-                $(activeElement).removeClass(CLASS_NAME_ACTIVE);
+                $__default['default'](activeElement).removeClass(CLASS_NAME_ACTIVE);
               }
             }
           }
@@ -2389,7 +2389,9 @@ module.exports = {
               input.checked = !this._element.classList.contains(CLASS_NAME_ACTIVE);
             }
 
-            $(input).trigger('change');
+            if (!this.shouldAvoidTriggerChange) {
+              $__default['default'](input).trigger('change');
+            }
           }
 
           input.focus();
@@ -2403,25 +2405,28 @@ module.exports = {
         }
 
         if (triggerChangeEvent) {
-          $(this._element).toggleClass(CLASS_NAME_ACTIVE);
+          $__default['default'](this._element).toggleClass(CLASS_NAME_ACTIVE);
         }
       }
     };
 
     _proto.dispose = function dispose() {
-      $.removeData(this._element, DATA_KEY$1);
+      $__default['default'].removeData(this._element, DATA_KEY$1);
       this._element = null;
     } // Static
     ;
 
-    Button._jQueryInterface = function _jQueryInterface(config) {
+    Button._jQueryInterface = function _jQueryInterface(config, avoidTriggerChange) {
       return this.each(function () {
-        var data = $(this).data(DATA_KEY$1);
+        var $element = $__default['default'](this);
+        var data = $element.data(DATA_KEY$1);
 
         if (!data) {
           data = new Button(this);
-          $(this).data(DATA_KEY$1, data);
+          $element.data(DATA_KEY$1, data);
         }
+
+        data.shouldAvoidTriggerChange = avoidTriggerChange;
 
         if (config === 'toggle') {
           data[config]();
@@ -2445,12 +2450,12 @@ module.exports = {
    */
 
 
-  $(document).on(EVENT_CLICK_DATA_API$1, SELECTOR_DATA_TOGGLE_CARROT, function (event) {
+  $__default['default'](document).on(EVENT_CLICK_DATA_API$1, SELECTOR_DATA_TOGGLE_CARROT, function (event) {
     var button = event.target;
     var initialButton = button;
 
-    if (!$(button).hasClass(CLASS_NAME_BUTTON)) {
-      button = $(button).closest(SELECTOR_BUTTON)[0];
+    if (!$__default['default'](button).hasClass(CLASS_NAME_BUTTON)) {
+      button = $__default['default'](button).closest(SELECTOR_BUTTON)[0];
     }
 
     if (!button || button.hasAttribute('disabled') || button.classList.contains('disabled')) {
@@ -2464,17 +2469,15 @@ module.exports = {
         return;
       }
 
-      if (initialButton.tagName === 'LABEL' && inputBtn && inputBtn.type === 'checkbox') {
-        event.preventDefault(); // work around event sent to label and input
+      if (initialButton.tagName === 'INPUT' || button.tagName !== 'LABEL') {
+        Button._jQueryInterface.call($__default['default'](button), 'toggle', initialButton.tagName === 'INPUT');
       }
-
-      Button._jQueryInterface.call($(button), 'toggle');
     }
   }).on(EVENT_FOCUS_BLUR_DATA_API, SELECTOR_DATA_TOGGLE_CARROT, function (event) {
-    var button = $(event.target).closest(SELECTOR_BUTTON)[0];
-    $(button).toggleClass(CLASS_NAME_FOCUS, /^focus(in)?$/.test(event.type));
+    var button = $__default['default'](event.target).closest(SELECTOR_BUTTON)[0];
+    $__default['default'](button).toggleClass(CLASS_NAME_FOCUS, /^focus(in)?$/.test(event.type));
   });
-  $(window).on(EVENT_LOAD_DATA_API, function () {
+  $__default['default'](window).on(EVENT_LOAD_DATA_API, function () {
     // ensure correct active class is set to match the controls' actual values/states
     // find all checkboxes/readio buttons inside data-toggle groups
     var buttons = [].slice.call(document.querySelectorAll(SELECTOR_DATA_TOGGLES_BUTTONS));
@@ -2509,11 +2512,11 @@ module.exports = {
    * ------------------------------------------------------------------------
    */
 
-  $.fn[NAME$1] = Button._jQueryInterface;
-  $.fn[NAME$1].Constructor = Button;
+  $__default['default'].fn[NAME$1] = Button._jQueryInterface;
+  $__default['default'].fn[NAME$1].Constructor = Button;
 
-  $.fn[NAME$1].noConflict = function () {
-    $.fn[NAME$1] = JQUERY_NO_CONFLICT$1;
+  $__default['default'].fn[NAME$1].noConflict = function () {
+    $__default['default'].fn[NAME$1] = JQUERY_NO_CONFLICT$1;
     return Button._jQueryInterface;
   };
 
@@ -2524,11 +2527,11 @@ module.exports = {
    */
 
   var NAME$2 = 'carousel';
-  var VERSION$2 = '4.5.0';
+  var VERSION$2 = '4.5.3';
   var DATA_KEY$2 = 'bs.carousel';
   var EVENT_KEY$2 = "." + DATA_KEY$2;
   var DATA_API_KEY$2 = '.data-api';
-  var JQUERY_NO_CONFLICT$2 = $.fn[NAME$2];
+  var JQUERY_NO_CONFLICT$2 = $__default['default'].fn[NAME$2];
   var ARROW_LEFT_KEYCODE = 37; // KeyboardEvent.which value for left arrow key
 
   var ARROW_RIGHT_KEYCODE = 39; // KeyboardEvent.which value for right arrow key
@@ -2625,9 +2628,10 @@ module.exports = {
     };
 
     _proto.nextWhenVisible = function nextWhenVisible() {
-      // Don't call next when the page isn't visible
+      var $element = $__default['default'](this._element); // Don't call next when the page isn't visible
       // or the carousel or its parent isn't visible
-      if (!document.hidden && $(this._element).is(':visible') && $(this._element).css('visibility') !== 'hidden') {
+
+      if (!document.hidden && $element.is(':visible') && $element.css('visibility') !== 'hidden') {
         this.next();
       }
     };
@@ -2679,7 +2683,7 @@ module.exports = {
       }
 
       if (this._isSliding) {
-        $(this._element).one(EVENT_SLID, function () {
+        $__default['default'](this._element).one(EVENT_SLID, function () {
           return _this.to(index);
         });
         return;
@@ -2697,8 +2701,8 @@ module.exports = {
     };
 
     _proto.dispose = function dispose() {
-      $(this._element).off(EVENT_KEY$2);
-      $.removeData(this._element, DATA_KEY$2);
+      $__default['default'](this._element).off(EVENT_KEY$2);
+      $__default['default'].removeData(this._element, DATA_KEY$2);
       this._items = null;
       this._config = null;
       this._element = null;
@@ -2711,7 +2715,7 @@ module.exports = {
     ;
 
     _proto._getConfig = function _getConfig(config) {
-      config = _objectSpread2(_objectSpread2({}, Default), config);
+      config = _extends({}, Default, config);
       Util.typeCheckConfig(NAME$2, config, DefaultType);
       return config;
     };
@@ -2740,13 +2744,13 @@ module.exports = {
       var _this2 = this;
 
       if (this._config.keyboard) {
-        $(this._element).on(EVENT_KEYDOWN, function (event) {
+        $__default['default'](this._element).on(EVENT_KEYDOWN, function (event) {
           return _this2._keydown(event);
         });
       }
 
       if (this._config.pause === 'hover') {
-        $(this._element).on(EVENT_MOUSEENTER, function (event) {
+        $__default['default'](this._element).on(EVENT_MOUSEENTER, function (event) {
           return _this2.pause(event);
         }).on(EVENT_MOUSELEAVE, function (event) {
           return _this2.cycle(event);
@@ -2809,27 +2813,27 @@ module.exports = {
         }
       };
 
-      $(this._element.querySelectorAll(SELECTOR_ITEM_IMG)).on(EVENT_DRAG_START, function (e) {
+      $__default['default'](this._element.querySelectorAll(SELECTOR_ITEM_IMG)).on(EVENT_DRAG_START, function (e) {
         return e.preventDefault();
       });
 
       if (this._pointerEvent) {
-        $(this._element).on(EVENT_POINTERDOWN, function (event) {
+        $__default['default'](this._element).on(EVENT_POINTERDOWN, function (event) {
           return start(event);
         });
-        $(this._element).on(EVENT_POINTERUP, function (event) {
+        $__default['default'](this._element).on(EVENT_POINTERUP, function (event) {
           return end(event);
         });
 
         this._element.classList.add(CLASS_NAME_POINTER_EVENT);
       } else {
-        $(this._element).on(EVENT_TOUCHSTART, function (event) {
+        $__default['default'](this._element).on(EVENT_TOUCHSTART, function (event) {
           return start(event);
         });
-        $(this._element).on(EVENT_TOUCHMOVE, function (event) {
+        $__default['default'](this._element).on(EVENT_TOUCHMOVE, function (event) {
           return move(event);
         });
-        $(this._element).on(EVENT_TOUCHEND, function (event) {
+        $__default['default'](this._element).on(EVENT_TOUCHEND, function (event) {
           return end(event);
         });
       }
@@ -2881,25 +2885,25 @@ module.exports = {
 
       var fromIndex = this._getItemIndex(this._element.querySelector(SELECTOR_ACTIVE_ITEM));
 
-      var slideEvent = $.Event(EVENT_SLIDE, {
+      var slideEvent = $__default['default'].Event(EVENT_SLIDE, {
         relatedTarget: relatedTarget,
         direction: eventDirectionName,
         from: fromIndex,
         to: targetIndex
       });
-      $(this._element).trigger(slideEvent);
+      $__default['default'](this._element).trigger(slideEvent);
       return slideEvent;
     };
 
     _proto._setActiveIndicatorElement = function _setActiveIndicatorElement(element) {
       if (this._indicatorsElement) {
         var indicators = [].slice.call(this._indicatorsElement.querySelectorAll(SELECTOR_ACTIVE$1));
-        $(indicators).removeClass(CLASS_NAME_ACTIVE$1);
+        $__default['default'](indicators).removeClass(CLASS_NAME_ACTIVE$1);
 
         var nextIndicator = this._indicatorsElement.children[this._getItemIndex(element)];
 
         if (nextIndicator) {
-          $(nextIndicator).addClass(CLASS_NAME_ACTIVE$1);
+          $__default['default'](nextIndicator).addClass(CLASS_NAME_ACTIVE$1);
         }
       }
     };
@@ -2930,7 +2934,7 @@ module.exports = {
         eventDirectionName = DIRECTION_RIGHT;
       }
 
-      if (nextElement && $(nextElement).hasClass(CLASS_NAME_ACTIVE$1)) {
+      if (nextElement && $__default['default'](nextElement).hasClass(CLASS_NAME_ACTIVE$1)) {
         this._isSliding = false;
         return;
       }
@@ -2954,18 +2958,18 @@ module.exports = {
 
       this._setActiveIndicatorElement(nextElement);
 
-      var slidEvent = $.Event(EVENT_SLID, {
+      var slidEvent = $__default['default'].Event(EVENT_SLID, {
         relatedTarget: nextElement,
         direction: eventDirectionName,
         from: activeElementIndex,
         to: nextElementIndex
       });
 
-      if ($(this._element).hasClass(CLASS_NAME_SLIDE)) {
-        $(nextElement).addClass(orderClassName);
+      if ($__default['default'](this._element).hasClass(CLASS_NAME_SLIDE)) {
+        $__default['default'](nextElement).addClass(orderClassName);
         Util.reflow(nextElement);
-        $(activeElement).addClass(directionalClassName);
-        $(nextElement).addClass(directionalClassName);
+        $__default['default'](activeElement).addClass(directionalClassName);
+        $__default['default'](nextElement).addClass(directionalClassName);
         var nextElementInterval = parseInt(nextElement.getAttribute('data-interval'), 10);
 
         if (nextElementInterval) {
@@ -2976,19 +2980,19 @@ module.exports = {
         }
 
         var transitionDuration = Util.getTransitionDurationFromElement(activeElement);
-        $(activeElement).one(Util.TRANSITION_END, function () {
-          $(nextElement).removeClass(directionalClassName + " " + orderClassName).addClass(CLASS_NAME_ACTIVE$1);
-          $(activeElement).removeClass(CLASS_NAME_ACTIVE$1 + " " + orderClassName + " " + directionalClassName);
+        $__default['default'](activeElement).one(Util.TRANSITION_END, function () {
+          $__default['default'](nextElement).removeClass(directionalClassName + " " + orderClassName).addClass(CLASS_NAME_ACTIVE$1);
+          $__default['default'](activeElement).removeClass(CLASS_NAME_ACTIVE$1 + " " + orderClassName + " " + directionalClassName);
           _this4._isSliding = false;
           setTimeout(function () {
-            return $(_this4._element).trigger(slidEvent);
+            return $__default['default'](_this4._element).trigger(slidEvent);
           }, 0);
         }).emulateTransitionEnd(transitionDuration);
       } else {
-        $(activeElement).removeClass(CLASS_NAME_ACTIVE$1);
-        $(nextElement).addClass(CLASS_NAME_ACTIVE$1);
+        $__default['default'](activeElement).removeClass(CLASS_NAME_ACTIVE$1);
+        $__default['default'](nextElement).addClass(CLASS_NAME_ACTIVE$1);
         this._isSliding = false;
-        $(this._element).trigger(slidEvent);
+        $__default['default'](this._element).trigger(slidEvent);
       }
 
       if (isCycling) {
@@ -2999,19 +3003,19 @@ module.exports = {
 
     Carousel._jQueryInterface = function _jQueryInterface(config) {
       return this.each(function () {
-        var data = $(this).data(DATA_KEY$2);
+        var data = $__default['default'](this).data(DATA_KEY$2);
 
-        var _config = _objectSpread2(_objectSpread2({}, Default), $(this).data());
+        var _config = _extends({}, Default, $__default['default'](this).data());
 
         if (typeof config === 'object') {
-          _config = _objectSpread2(_objectSpread2({}, _config), config);
+          _config = _extends({}, _config, config);
         }
 
         var action = typeof config === 'string' ? config : _config.slide;
 
         if (!data) {
           data = new Carousel(this, _config);
-          $(this).data(DATA_KEY$2, data);
+          $__default['default'](this).data(DATA_KEY$2, data);
         }
 
         if (typeof config === 'number') {
@@ -3036,13 +3040,13 @@ module.exports = {
         return;
       }
 
-      var target = $(selector)[0];
+      var target = $__default['default'](selector)[0];
 
-      if (!target || !$(target).hasClass(CLASS_NAME_CAROUSEL)) {
+      if (!target || !$__default['default'](target).hasClass(CLASS_NAME_CAROUSEL)) {
         return;
       }
 
-      var config = _objectSpread2(_objectSpread2({}, $(target).data()), $(this).data());
+      var config = _extends({}, $__default['default'](target).data(), $__default['default'](this).data());
 
       var slideIndex = this.getAttribute('data-slide-to');
 
@@ -3050,10 +3054,10 @@ module.exports = {
         config.interval = false;
       }
 
-      Carousel._jQueryInterface.call($(target), config);
+      Carousel._jQueryInterface.call($__default['default'](target), config);
 
       if (slideIndex) {
-        $(target).data(DATA_KEY$2).to(slideIndex);
+        $__default['default'](target).data(DATA_KEY$2).to(slideIndex);
       }
 
       event.preventDefault();
@@ -3080,12 +3084,12 @@ module.exports = {
    */
 
 
-  $(document).on(EVENT_CLICK_DATA_API$2, SELECTOR_DATA_SLIDE, Carousel._dataApiClickHandler);
-  $(window).on(EVENT_LOAD_DATA_API$1, function () {
+  $__default['default'](document).on(EVENT_CLICK_DATA_API$2, SELECTOR_DATA_SLIDE, Carousel._dataApiClickHandler);
+  $__default['default'](window).on(EVENT_LOAD_DATA_API$1, function () {
     var carousels = [].slice.call(document.querySelectorAll(SELECTOR_DATA_RIDE));
 
     for (var i = 0, len = carousels.length; i < len; i++) {
-      var $carousel = $(carousels[i]);
+      var $carousel = $__default['default'](carousels[i]);
 
       Carousel._jQueryInterface.call($carousel, $carousel.data());
     }
@@ -3096,11 +3100,11 @@ module.exports = {
    * ------------------------------------------------------------------------
    */
 
-  $.fn[NAME$2] = Carousel._jQueryInterface;
-  $.fn[NAME$2].Constructor = Carousel;
+  $__default['default'].fn[NAME$2] = Carousel._jQueryInterface;
+  $__default['default'].fn[NAME$2].Constructor = Carousel;
 
-  $.fn[NAME$2].noConflict = function () {
-    $.fn[NAME$2] = JQUERY_NO_CONFLICT$2;
+  $__default['default'].fn[NAME$2].noConflict = function () {
+    $__default['default'].fn[NAME$2] = JQUERY_NO_CONFLICT$2;
     return Carousel._jQueryInterface;
   };
 
@@ -3111,11 +3115,11 @@ module.exports = {
    */
 
   var NAME$3 = 'collapse';
-  var VERSION$3 = '4.5.0';
+  var VERSION$3 = '4.5.3';
   var DATA_KEY$3 = 'bs.collapse';
   var EVENT_KEY$3 = "." + DATA_KEY$3;
   var DATA_API_KEY$3 = '.data-api';
-  var JQUERY_NO_CONFLICT$3 = $.fn[NAME$3];
+  var JQUERY_NO_CONFLICT$3 = $__default['default'].fn[NAME$3];
   var Default$1 = {
     toggle: true,
     parent: ''
@@ -3181,7 +3185,7 @@ module.exports = {
 
     // Public
     _proto.toggle = function toggle() {
-      if ($(this._element).hasClass(CLASS_NAME_SHOW$1)) {
+      if ($__default['default'](this._element).hasClass(CLASS_NAME_SHOW$1)) {
         this.hide();
       } else {
         this.show();
@@ -3191,7 +3195,7 @@ module.exports = {
     _proto.show = function show() {
       var _this = this;
 
-      if (this._isTransitioning || $(this._element).hasClass(CLASS_NAME_SHOW$1)) {
+      if (this._isTransitioning || $__default['default'](this._element).hasClass(CLASS_NAME_SHOW$1)) {
         return;
       }
 
@@ -3213,64 +3217,64 @@ module.exports = {
       }
 
       if (actives) {
-        activesData = $(actives).not(this._selector).data(DATA_KEY$3);
+        activesData = $__default['default'](actives).not(this._selector).data(DATA_KEY$3);
 
         if (activesData && activesData._isTransitioning) {
           return;
         }
       }
 
-      var startEvent = $.Event(EVENT_SHOW);
-      $(this._element).trigger(startEvent);
+      var startEvent = $__default['default'].Event(EVENT_SHOW);
+      $__default['default'](this._element).trigger(startEvent);
 
       if (startEvent.isDefaultPrevented()) {
         return;
       }
 
       if (actives) {
-        Collapse._jQueryInterface.call($(actives).not(this._selector), 'hide');
+        Collapse._jQueryInterface.call($__default['default'](actives).not(this._selector), 'hide');
 
         if (!activesData) {
-          $(actives).data(DATA_KEY$3, null);
+          $__default['default'](actives).data(DATA_KEY$3, null);
         }
       }
 
       var dimension = this._getDimension();
 
-      $(this._element).removeClass(CLASS_NAME_COLLAPSE).addClass(CLASS_NAME_COLLAPSING);
+      $__default['default'](this._element).removeClass(CLASS_NAME_COLLAPSE).addClass(CLASS_NAME_COLLAPSING);
       this._element.style[dimension] = 0;
 
       if (this._triggerArray.length) {
-        $(this._triggerArray).removeClass(CLASS_NAME_COLLAPSED).attr('aria-expanded', true);
+        $__default['default'](this._triggerArray).removeClass(CLASS_NAME_COLLAPSED).attr('aria-expanded', true);
       }
 
       this.setTransitioning(true);
 
       var complete = function complete() {
-        $(_this._element).removeClass(CLASS_NAME_COLLAPSING).addClass(CLASS_NAME_COLLAPSE + " " + CLASS_NAME_SHOW$1);
+        $__default['default'](_this._element).removeClass(CLASS_NAME_COLLAPSING).addClass(CLASS_NAME_COLLAPSE + " " + CLASS_NAME_SHOW$1);
         _this._element.style[dimension] = '';
 
         _this.setTransitioning(false);
 
-        $(_this._element).trigger(EVENT_SHOWN);
+        $__default['default'](_this._element).trigger(EVENT_SHOWN);
       };
 
       var capitalizedDimension = dimension[0].toUpperCase() + dimension.slice(1);
       var scrollSize = "scroll" + capitalizedDimension;
       var transitionDuration = Util.getTransitionDurationFromElement(this._element);
-      $(this._element).one(Util.TRANSITION_END, complete).emulateTransitionEnd(transitionDuration);
+      $__default['default'](this._element).one(Util.TRANSITION_END, complete).emulateTransitionEnd(transitionDuration);
       this._element.style[dimension] = this._element[scrollSize] + "px";
     };
 
     _proto.hide = function hide() {
       var _this2 = this;
 
-      if (this._isTransitioning || !$(this._element).hasClass(CLASS_NAME_SHOW$1)) {
+      if (this._isTransitioning || !$__default['default'](this._element).hasClass(CLASS_NAME_SHOW$1)) {
         return;
       }
 
-      var startEvent = $.Event(EVENT_HIDE);
-      $(this._element).trigger(startEvent);
+      var startEvent = $__default['default'].Event(EVENT_HIDE);
+      $__default['default'](this._element).trigger(startEvent);
 
       if (startEvent.isDefaultPrevented()) {
         return;
@@ -3280,7 +3284,7 @@ module.exports = {
 
       this._element.style[dimension] = this._element.getBoundingClientRect()[dimension] + "px";
       Util.reflow(this._element);
-      $(this._element).addClass(CLASS_NAME_COLLAPSING).removeClass(CLASS_NAME_COLLAPSE + " " + CLASS_NAME_SHOW$1);
+      $__default['default'](this._element).addClass(CLASS_NAME_COLLAPSING).removeClass(CLASS_NAME_COLLAPSE + " " + CLASS_NAME_SHOW$1);
       var triggerArrayLength = this._triggerArray.length;
 
       if (triggerArrayLength > 0) {
@@ -3289,10 +3293,10 @@ module.exports = {
           var selector = Util.getSelectorFromElement(trigger);
 
           if (selector !== null) {
-            var $elem = $([].slice.call(document.querySelectorAll(selector)));
+            var $elem = $__default['default']([].slice.call(document.querySelectorAll(selector)));
 
             if (!$elem.hasClass(CLASS_NAME_SHOW$1)) {
-              $(trigger).addClass(CLASS_NAME_COLLAPSED).attr('aria-expanded', false);
+              $__default['default'](trigger).addClass(CLASS_NAME_COLLAPSED).attr('aria-expanded', false);
             }
           }
         }
@@ -3303,12 +3307,12 @@ module.exports = {
       var complete = function complete() {
         _this2.setTransitioning(false);
 
-        $(_this2._element).removeClass(CLASS_NAME_COLLAPSING).addClass(CLASS_NAME_COLLAPSE).trigger(EVENT_HIDDEN);
+        $__default['default'](_this2._element).removeClass(CLASS_NAME_COLLAPSING).addClass(CLASS_NAME_COLLAPSE).trigger(EVENT_HIDDEN);
       };
 
       this._element.style[dimension] = '';
       var transitionDuration = Util.getTransitionDurationFromElement(this._element);
-      $(this._element).one(Util.TRANSITION_END, complete).emulateTransitionEnd(transitionDuration);
+      $__default['default'](this._element).one(Util.TRANSITION_END, complete).emulateTransitionEnd(transitionDuration);
     };
 
     _proto.setTransitioning = function setTransitioning(isTransitioning) {
@@ -3316,7 +3320,7 @@ module.exports = {
     };
 
     _proto.dispose = function dispose() {
-      $.removeData(this._element, DATA_KEY$3);
+      $__default['default'].removeData(this._element, DATA_KEY$3);
       this._config = null;
       this._parent = null;
       this._element = null;
@@ -3326,7 +3330,7 @@ module.exports = {
     ;
 
     _proto._getConfig = function _getConfig(config) {
-      config = _objectSpread2(_objectSpread2({}, Default$1), config);
+      config = _extends({}, Default$1, config);
       config.toggle = Boolean(config.toggle); // Coerce string values
 
       Util.typeCheckConfig(NAME$3, config, DefaultType$1);
@@ -3334,7 +3338,7 @@ module.exports = {
     };
 
     _proto._getDimension = function _getDimension() {
-      var hasWidth = $(this._element).hasClass(DIMENSION_WIDTH);
+      var hasWidth = $__default['default'](this._element).hasClass(DIMENSION_WIDTH);
       return hasWidth ? DIMENSION_WIDTH : DIMENSION_HEIGHT;
     };
 
@@ -3355,17 +3359,17 @@ module.exports = {
 
       var selector = "[data-toggle=\"collapse\"][data-parent=\"" + this._config.parent + "\"]";
       var children = [].slice.call(parent.querySelectorAll(selector));
-      $(children).each(function (i, element) {
+      $__default['default'](children).each(function (i, element) {
         _this3._addAriaAndCollapsedClass(Collapse._getTargetFromElement(element), [element]);
       });
       return parent;
     };
 
     _proto._addAriaAndCollapsedClass = function _addAriaAndCollapsedClass(element, triggerArray) {
-      var isOpen = $(element).hasClass(CLASS_NAME_SHOW$1);
+      var isOpen = $__default['default'](element).hasClass(CLASS_NAME_SHOW$1);
 
       if (triggerArray.length) {
-        $(triggerArray).toggleClass(CLASS_NAME_COLLAPSED, !isOpen).attr('aria-expanded', isOpen);
+        $__default['default'](triggerArray).toggleClass(CLASS_NAME_COLLAPSED, !isOpen).attr('aria-expanded', isOpen);
       }
     } // Static
     ;
@@ -3377,10 +3381,10 @@ module.exports = {
 
     Collapse._jQueryInterface = function _jQueryInterface(config) {
       return this.each(function () {
-        var $this = $(this);
-        var data = $this.data(DATA_KEY$3);
+        var $element = $__default['default'](this);
+        var data = $element.data(DATA_KEY$3);
 
-        var _config = _objectSpread2(_objectSpread2(_objectSpread2({}, Default$1), $this.data()), typeof config === 'object' && config ? config : {});
+        var _config = _extends({}, Default$1, $element.data(), typeof config === 'object' && config ? config : {});
 
         if (!data && _config.toggle && typeof config === 'string' && /show|hide/.test(config)) {
           _config.toggle = false;
@@ -3388,7 +3392,7 @@ module.exports = {
 
         if (!data) {
           data = new Collapse(this, _config);
-          $this.data(DATA_KEY$3, data);
+          $element.data(DATA_KEY$3, data);
         }
 
         if (typeof config === 'string') {
@@ -3422,17 +3426,17 @@ module.exports = {
    */
 
 
-  $(document).on(EVENT_CLICK_DATA_API$3, SELECTOR_DATA_TOGGLE$1, function (event) {
+  $__default['default'](document).on(EVENT_CLICK_DATA_API$3, SELECTOR_DATA_TOGGLE$1, function (event) {
     // preventDefault only for <a> elements (which change the URL) not inside the collapsible element
     if (event.currentTarget.tagName === 'A') {
       event.preventDefault();
     }
 
-    var $trigger = $(this);
+    var $trigger = $__default['default'](this);
     var selector = Util.getSelectorFromElement(this);
     var selectors = [].slice.call(document.querySelectorAll(selector));
-    $(selectors).each(function () {
-      var $target = $(this);
+    $__default['default'](selectors).each(function () {
+      var $target = $__default['default'](this);
       var data = $target.data(DATA_KEY$3);
       var config = data ? 'toggle' : $trigger.data();
 
@@ -3445,11 +3449,11 @@ module.exports = {
    * ------------------------------------------------------------------------
    */
 
-  $.fn[NAME$3] = Collapse._jQueryInterface;
-  $.fn[NAME$3].Constructor = Collapse;
+  $__default['default'].fn[NAME$3] = Collapse._jQueryInterface;
+  $__default['default'].fn[NAME$3].Constructor = Collapse;
 
-  $.fn[NAME$3].noConflict = function () {
-    $.fn[NAME$3] = JQUERY_NO_CONFLICT$3;
+  $__default['default'].fn[NAME$3].noConflict = function () {
+    $__default['default'].fn[NAME$3] = JQUERY_NO_CONFLICT$3;
     return Collapse._jQueryInterface;
   };
 
@@ -3460,11 +3464,11 @@ module.exports = {
    */
 
   var NAME$4 = 'dropdown';
-  var VERSION$4 = '4.5.0';
+  var VERSION$4 = '4.5.3';
   var DATA_KEY$4 = 'bs.dropdown';
   var EVENT_KEY$4 = "." + DATA_KEY$4;
   var DATA_API_KEY$4 = '.data-api';
-  var JQUERY_NO_CONFLICT$4 = $.fn[NAME$4];
+  var JQUERY_NO_CONFLICT$4 = $__default['default'].fn[NAME$4];
   var ESCAPE_KEYCODE = 27; // KeyboardEvent.which value for Escape (Esc) key
 
   var SPACE_KEYCODE = 32; // KeyboardEvent.which value for space key
@@ -3542,11 +3546,11 @@ module.exports = {
 
     // Public
     _proto.toggle = function toggle() {
-      if (this._element.disabled || $(this._element).hasClass(CLASS_NAME_DISABLED)) {
+      if (this._element.disabled || $__default['default'](this._element).hasClass(CLASS_NAME_DISABLED)) {
         return;
       }
 
-      var isActive = $(this._menu).hasClass(CLASS_NAME_SHOW$2);
+      var isActive = $__default['default'](this._menu).hasClass(CLASS_NAME_SHOW$2);
 
       Dropdown._clearMenus();
 
@@ -3562,18 +3566,18 @@ module.exports = {
         usePopper = false;
       }
 
-      if (this._element.disabled || $(this._element).hasClass(CLASS_NAME_DISABLED) || $(this._menu).hasClass(CLASS_NAME_SHOW$2)) {
+      if (this._element.disabled || $__default['default'](this._element).hasClass(CLASS_NAME_DISABLED) || $__default['default'](this._menu).hasClass(CLASS_NAME_SHOW$2)) {
         return;
       }
 
       var relatedTarget = {
         relatedTarget: this._element
       };
-      var showEvent = $.Event(EVENT_SHOW$1, relatedTarget);
+      var showEvent = $__default['default'].Event(EVENT_SHOW$1, relatedTarget);
 
       var parent = Dropdown._getParentFromElement(this._element);
 
-      $(parent).trigger(showEvent);
+      $__default['default'](parent).trigger(showEvent);
 
       if (showEvent.isDefaultPrevented()) {
         return;
@@ -3585,7 +3589,7 @@ module.exports = {
          * Check for Popper dependency
          * Popper - https://popper.js.org
          */
-        if (typeof Popper === 'undefined') {
+        if (typeof Popper__default['default'] === 'undefined') {
           throw new TypeError('Bootstrap\'s dropdowns require Popper.js (https://popper.js.org/)');
         }
 
@@ -3605,41 +3609,41 @@ module.exports = {
 
 
         if (this._config.boundary !== 'scrollParent') {
-          $(parent).addClass(CLASS_NAME_POSITION_STATIC);
+          $__default['default'](parent).addClass(CLASS_NAME_POSITION_STATIC);
         }
 
-        this._popper = new Popper(referenceElement, this._menu, this._getPopperConfig());
+        this._popper = new Popper__default['default'](referenceElement, this._menu, this._getPopperConfig());
       } // If this is a touch-enabled device we add extra
       // empty mouseover listeners to the body's immediate children;
       // only needed because of broken event delegation on iOS
       // https://www.quirksmode.org/blog/archives/2014/02/mouse_event_bub.html
 
 
-      if ('ontouchstart' in document.documentElement && $(parent).closest(SELECTOR_NAVBAR_NAV).length === 0) {
-        $(document.body).children().on('mouseover', null, $.noop);
+      if ('ontouchstart' in document.documentElement && $__default['default'](parent).closest(SELECTOR_NAVBAR_NAV).length === 0) {
+        $__default['default'](document.body).children().on('mouseover', null, $__default['default'].noop);
       }
 
       this._element.focus();
 
       this._element.setAttribute('aria-expanded', true);
 
-      $(this._menu).toggleClass(CLASS_NAME_SHOW$2);
-      $(parent).toggleClass(CLASS_NAME_SHOW$2).trigger($.Event(EVENT_SHOWN$1, relatedTarget));
+      $__default['default'](this._menu).toggleClass(CLASS_NAME_SHOW$2);
+      $__default['default'](parent).toggleClass(CLASS_NAME_SHOW$2).trigger($__default['default'].Event(EVENT_SHOWN$1, relatedTarget));
     };
 
     _proto.hide = function hide() {
-      if (this._element.disabled || $(this._element).hasClass(CLASS_NAME_DISABLED) || !$(this._menu).hasClass(CLASS_NAME_SHOW$2)) {
+      if (this._element.disabled || $__default['default'](this._element).hasClass(CLASS_NAME_DISABLED) || !$__default['default'](this._menu).hasClass(CLASS_NAME_SHOW$2)) {
         return;
       }
 
       var relatedTarget = {
         relatedTarget: this._element
       };
-      var hideEvent = $.Event(EVENT_HIDE$1, relatedTarget);
+      var hideEvent = $__default['default'].Event(EVENT_HIDE$1, relatedTarget);
 
       var parent = Dropdown._getParentFromElement(this._element);
 
-      $(parent).trigger(hideEvent);
+      $__default['default'](parent).trigger(hideEvent);
 
       if (hideEvent.isDefaultPrevented()) {
         return;
@@ -3649,13 +3653,13 @@ module.exports = {
         this._popper.destroy();
       }
 
-      $(this._menu).toggleClass(CLASS_NAME_SHOW$2);
-      $(parent).toggleClass(CLASS_NAME_SHOW$2).trigger($.Event(EVENT_HIDDEN$1, relatedTarget));
+      $__default['default'](this._menu).toggleClass(CLASS_NAME_SHOW$2);
+      $__default['default'](parent).toggleClass(CLASS_NAME_SHOW$2).trigger($__default['default'].Event(EVENT_HIDDEN$1, relatedTarget));
     };
 
     _proto.dispose = function dispose() {
-      $.removeData(this._element, DATA_KEY$4);
-      $(this._element).off(EVENT_KEY$4);
+      $__default['default'].removeData(this._element, DATA_KEY$4);
+      $__default['default'](this._element).off(EVENT_KEY$4);
       this._element = null;
       this._menu = null;
 
@@ -3678,7 +3682,7 @@ module.exports = {
     _proto._addEventListeners = function _addEventListeners() {
       var _this = this;
 
-      $(this._element).on(EVENT_CLICK, function (event) {
+      $__default['default'](this._element).on(EVENT_CLICK, function (event) {
         event.preventDefault();
         event.stopPropagation();
 
@@ -3687,7 +3691,7 @@ module.exports = {
     };
 
     _proto._getConfig = function _getConfig(config) {
-      config = _objectSpread2(_objectSpread2(_objectSpread2({}, this.constructor.Default), $(this._element).data()), config);
+      config = _extends({}, this.constructor.Default, $__default['default'](this._element).data(), config);
       Util.typeCheckConfig(NAME$4, config, this.constructor.DefaultType);
       return config;
     };
@@ -3705,16 +3709,16 @@ module.exports = {
     };
 
     _proto._getPlacement = function _getPlacement() {
-      var $parentDropdown = $(this._element.parentNode);
+      var $parentDropdown = $__default['default'](this._element.parentNode);
       var placement = PLACEMENT_BOTTOM; // Handle dropup
 
       if ($parentDropdown.hasClass(CLASS_NAME_DROPUP)) {
-        placement = $(this._menu).hasClass(CLASS_NAME_MENURIGHT) ? PLACEMENT_TOPEND : PLACEMENT_TOP;
+        placement = $__default['default'](this._menu).hasClass(CLASS_NAME_MENURIGHT) ? PLACEMENT_TOPEND : PLACEMENT_TOP;
       } else if ($parentDropdown.hasClass(CLASS_NAME_DROPRIGHT)) {
         placement = PLACEMENT_RIGHT;
       } else if ($parentDropdown.hasClass(CLASS_NAME_DROPLEFT)) {
         placement = PLACEMENT_LEFT;
-      } else if ($(this._menu).hasClass(CLASS_NAME_MENURIGHT)) {
+      } else if ($__default['default'](this._menu).hasClass(CLASS_NAME_MENURIGHT)) {
         placement = PLACEMENT_BOTTOMEND;
       }
 
@@ -3722,7 +3726,7 @@ module.exports = {
     };
 
     _proto._detectNavbar = function _detectNavbar() {
-      return $(this._element).closest('.navbar').length > 0;
+      return $__default['default'](this._element).closest('.navbar').length > 0;
     };
 
     _proto._getOffset = function _getOffset() {
@@ -3732,7 +3736,7 @@ module.exports = {
 
       if (typeof this._config.offset === 'function') {
         offset.fn = function (data) {
-          data.offsets = _objectSpread2(_objectSpread2({}, data.offsets), _this2._config.offset(data.offsets, _this2._element) || {});
+          data.offsets = _extends({}, data.offsets, _this2._config.offset(data.offsets, _this2._element) || {});
           return data;
         };
       } else {
@@ -3762,19 +3766,19 @@ module.exports = {
         };
       }
 
-      return _objectSpread2(_objectSpread2({}, popperConfig), this._config.popperConfig);
+      return _extends({}, popperConfig, this._config.popperConfig);
     } // Static
     ;
 
     Dropdown._jQueryInterface = function _jQueryInterface(config) {
       return this.each(function () {
-        var data = $(this).data(DATA_KEY$4);
+        var data = $__default['default'](this).data(DATA_KEY$4);
 
         var _config = typeof config === 'object' ? config : null;
 
         if (!data) {
           data = new Dropdown(this, _config);
-          $(this).data(DATA_KEY$4, data);
+          $__default['default'](this).data(DATA_KEY$4, data);
         }
 
         if (typeof config === 'string') {
@@ -3797,7 +3801,7 @@ module.exports = {
       for (var i = 0, len = toggles.length; i < len; i++) {
         var parent = Dropdown._getParentFromElement(toggles[i]);
 
-        var context = $(toggles[i]).data(DATA_KEY$4);
+        var context = $__default['default'](toggles[i]).data(DATA_KEY$4);
         var relatedTarget = {
           relatedTarget: toggles[i]
         };
@@ -3812,16 +3816,16 @@ module.exports = {
 
         var dropdownMenu = context._menu;
 
-        if (!$(parent).hasClass(CLASS_NAME_SHOW$2)) {
+        if (!$__default['default'](parent).hasClass(CLASS_NAME_SHOW$2)) {
           continue;
         }
 
-        if (event && (event.type === 'click' && /input|textarea/i.test(event.target.tagName) || event.type === 'keyup' && event.which === TAB_KEYCODE) && $.contains(parent, event.target)) {
+        if (event && (event.type === 'click' && /input|textarea/i.test(event.target.tagName) || event.type === 'keyup' && event.which === TAB_KEYCODE) && $__default['default'].contains(parent, event.target)) {
           continue;
         }
 
-        var hideEvent = $.Event(EVENT_HIDE$1, relatedTarget);
-        $(parent).trigger(hideEvent);
+        var hideEvent = $__default['default'].Event(EVENT_HIDE$1, relatedTarget);
+        $__default['default'](parent).trigger(hideEvent);
 
         if (hideEvent.isDefaultPrevented()) {
           continue;
@@ -3830,7 +3834,7 @@ module.exports = {
 
 
         if ('ontouchstart' in document.documentElement) {
-          $(document.body).children().off('mouseover', null, $.noop);
+          $__default['default'](document.body).children().off('mouseover', null, $__default['default'].noop);
         }
 
         toggles[i].setAttribute('aria-expanded', 'false');
@@ -3839,8 +3843,8 @@ module.exports = {
           context._popper.destroy();
         }
 
-        $(dropdownMenu).removeClass(CLASS_NAME_SHOW$2);
-        $(parent).removeClass(CLASS_NAME_SHOW$2).trigger($.Event(EVENT_HIDDEN$1, relatedTarget));
+        $__default['default'](dropdownMenu).removeClass(CLASS_NAME_SHOW$2);
+        $__default['default'](parent).removeClass(CLASS_NAME_SHOW$2).trigger($__default['default'].Event(EVENT_HIDDEN$1, relatedTarget));
       }
     };
 
@@ -3864,17 +3868,17 @@ module.exports = {
       //  - If key is other than escape
       //    - If key is not up or down => not a dropdown command
       //    - If trigger inside the menu => not a dropdown command
-      if (/input|textarea/i.test(event.target.tagName) ? event.which === SPACE_KEYCODE || event.which !== ESCAPE_KEYCODE && (event.which !== ARROW_DOWN_KEYCODE && event.which !== ARROW_UP_KEYCODE || $(event.target).closest(SELECTOR_MENU).length) : !REGEXP_KEYDOWN.test(event.which)) {
+      if (/input|textarea/i.test(event.target.tagName) ? event.which === SPACE_KEYCODE || event.which !== ESCAPE_KEYCODE && (event.which !== ARROW_DOWN_KEYCODE && event.which !== ARROW_UP_KEYCODE || $__default['default'](event.target).closest(SELECTOR_MENU).length) : !REGEXP_KEYDOWN.test(event.which)) {
         return;
       }
 
-      if (this.disabled || $(this).hasClass(CLASS_NAME_DISABLED)) {
+      if (this.disabled || $__default['default'](this).hasClass(CLASS_NAME_DISABLED)) {
         return;
       }
 
       var parent = Dropdown._getParentFromElement(this);
 
-      var isActive = $(parent).hasClass(CLASS_NAME_SHOW$2);
+      var isActive = $__default['default'](parent).hasClass(CLASS_NAME_SHOW$2);
 
       if (!isActive && event.which === ESCAPE_KEYCODE) {
         return;
@@ -3883,17 +3887,17 @@ module.exports = {
       event.preventDefault();
       event.stopPropagation();
 
-      if (!isActive || isActive && (event.which === ESCAPE_KEYCODE || event.which === SPACE_KEYCODE)) {
+      if (!isActive || event.which === ESCAPE_KEYCODE || event.which === SPACE_KEYCODE) {
         if (event.which === ESCAPE_KEYCODE) {
-          $(parent.querySelector(SELECTOR_DATA_TOGGLE$2)).trigger('focus');
+          $__default['default'](parent.querySelector(SELECTOR_DATA_TOGGLE$2)).trigger('focus');
         }
 
-        $(this).trigger('click');
+        $__default['default'](this).trigger('click');
         return;
       }
 
       var items = [].slice.call(parent.querySelectorAll(SELECTOR_VISIBLE_ITEMS)).filter(function (item) {
-        return $(item).is(':visible');
+        return $__default['default'](item).is(':visible');
       });
 
       if (items.length === 0) {
@@ -3945,11 +3949,11 @@ module.exports = {
    */
 
 
-  $(document).on(EVENT_KEYDOWN_DATA_API, SELECTOR_DATA_TOGGLE$2, Dropdown._dataApiKeydownHandler).on(EVENT_KEYDOWN_DATA_API, SELECTOR_MENU, Dropdown._dataApiKeydownHandler).on(EVENT_CLICK_DATA_API$4 + " " + EVENT_KEYUP_DATA_API, Dropdown._clearMenus).on(EVENT_CLICK_DATA_API$4, SELECTOR_DATA_TOGGLE$2, function (event) {
+  $__default['default'](document).on(EVENT_KEYDOWN_DATA_API, SELECTOR_DATA_TOGGLE$2, Dropdown._dataApiKeydownHandler).on(EVENT_KEYDOWN_DATA_API, SELECTOR_MENU, Dropdown._dataApiKeydownHandler).on(EVENT_CLICK_DATA_API$4 + " " + EVENT_KEYUP_DATA_API, Dropdown._clearMenus).on(EVENT_CLICK_DATA_API$4, SELECTOR_DATA_TOGGLE$2, function (event) {
     event.preventDefault();
     event.stopPropagation();
 
-    Dropdown._jQueryInterface.call($(this), 'toggle');
+    Dropdown._jQueryInterface.call($__default['default'](this), 'toggle');
   }).on(EVENT_CLICK_DATA_API$4, SELECTOR_FORM_CHILD, function (e) {
     e.stopPropagation();
   });
@@ -3959,11 +3963,11 @@ module.exports = {
    * ------------------------------------------------------------------------
    */
 
-  $.fn[NAME$4] = Dropdown._jQueryInterface;
-  $.fn[NAME$4].Constructor = Dropdown;
+  $__default['default'].fn[NAME$4] = Dropdown._jQueryInterface;
+  $__default['default'].fn[NAME$4].Constructor = Dropdown;
 
-  $.fn[NAME$4].noConflict = function () {
-    $.fn[NAME$4] = JQUERY_NO_CONFLICT$4;
+  $__default['default'].fn[NAME$4].noConflict = function () {
+    $__default['default'].fn[NAME$4] = JQUERY_NO_CONFLICT$4;
     return Dropdown._jQueryInterface;
   };
 
@@ -3974,11 +3978,11 @@ module.exports = {
    */
 
   var NAME$5 = 'modal';
-  var VERSION$5 = '4.5.0';
+  var VERSION$5 = '4.5.3';
   var DATA_KEY$5 = 'bs.modal';
   var EVENT_KEY$5 = "." + DATA_KEY$5;
   var DATA_API_KEY$5 = '.data-api';
-  var JQUERY_NO_CONFLICT$5 = $.fn[NAME$5];
+  var JQUERY_NO_CONFLICT$5 = $__default['default'].fn[NAME$5];
   var ESCAPE_KEYCODE$1 = 27; // KeyboardEvent.which value for Escape (Esc) key
 
   var Default$3 = {
@@ -4052,14 +4056,14 @@ module.exports = {
         return;
       }
 
-      if ($(this._element).hasClass(CLASS_NAME_FADE$1)) {
+      if ($__default['default'](this._element).hasClass(CLASS_NAME_FADE$1)) {
         this._isTransitioning = true;
       }
 
-      var showEvent = $.Event(EVENT_SHOW$2, {
+      var showEvent = $__default['default'].Event(EVENT_SHOW$2, {
         relatedTarget: relatedTarget
       });
-      $(this._element).trigger(showEvent);
+      $__default['default'](this._element).trigger(showEvent);
 
       if (this._isShown || showEvent.isDefaultPrevented()) {
         return;
@@ -4077,12 +4081,12 @@ module.exports = {
 
       this._setResizeEvent();
 
-      $(this._element).on(EVENT_CLICK_DISMISS, SELECTOR_DATA_DISMISS, function (event) {
+      $__default['default'](this._element).on(EVENT_CLICK_DISMISS, SELECTOR_DATA_DISMISS, function (event) {
         return _this.hide(event);
       });
-      $(this._dialog).on(EVENT_MOUSEDOWN_DISMISS, function () {
-        $(_this._element).one(EVENT_MOUSEUP_DISMISS, function (event) {
-          if ($(event.target).is(_this._element)) {
+      $__default['default'](this._dialog).on(EVENT_MOUSEDOWN_DISMISS, function () {
+        $__default['default'](_this._element).one(EVENT_MOUSEUP_DISMISS, function (event) {
+          if ($__default['default'](event.target).is(_this._element)) {
             _this._ignoreBackdropClick = true;
           }
         });
@@ -4104,15 +4108,15 @@ module.exports = {
         return;
       }
 
-      var hideEvent = $.Event(EVENT_HIDE$2);
-      $(this._element).trigger(hideEvent);
+      var hideEvent = $__default['default'].Event(EVENT_HIDE$2);
+      $__default['default'](this._element).trigger(hideEvent);
 
       if (!this._isShown || hideEvent.isDefaultPrevented()) {
         return;
       }
 
       this._isShown = false;
-      var transition = $(this._element).hasClass(CLASS_NAME_FADE$1);
+      var transition = $__default['default'](this._element).hasClass(CLASS_NAME_FADE$1);
 
       if (transition) {
         this._isTransitioning = true;
@@ -4122,14 +4126,14 @@ module.exports = {
 
       this._setResizeEvent();
 
-      $(document).off(EVENT_FOCUSIN);
-      $(this._element).removeClass(CLASS_NAME_SHOW$3);
-      $(this._element).off(EVENT_CLICK_DISMISS);
-      $(this._dialog).off(EVENT_MOUSEDOWN_DISMISS);
+      $__default['default'](document).off(EVENT_FOCUSIN);
+      $__default['default'](this._element).removeClass(CLASS_NAME_SHOW$3);
+      $__default['default'](this._element).off(EVENT_CLICK_DISMISS);
+      $__default['default'](this._dialog).off(EVENT_MOUSEDOWN_DISMISS);
 
       if (transition) {
         var transitionDuration = Util.getTransitionDurationFromElement(this._element);
-        $(this._element).one(Util.TRANSITION_END, function (event) {
+        $__default['default'](this._element).one(Util.TRANSITION_END, function (event) {
           return _this2._hideModal(event);
         }).emulateTransitionEnd(transitionDuration);
       } else {
@@ -4139,7 +4143,7 @@ module.exports = {
 
     _proto.dispose = function dispose() {
       [window, this._element, this._dialog].forEach(function (htmlElement) {
-        return $(htmlElement).off(EVENT_KEY$5);
+        return $__default['default'](htmlElement).off(EVENT_KEY$5);
       });
       /**
        * `document` has 2 events `EVENT_FOCUSIN` and `EVENT_CLICK_DATA_API`
@@ -4147,8 +4151,8 @@ module.exports = {
        * It will remove `EVENT_CLICK_DATA_API` event that should remain
        */
 
-      $(document).off(EVENT_FOCUSIN);
-      $.removeData(this._element, DATA_KEY$5);
+      $__default['default'](document).off(EVENT_FOCUSIN);
+      $__default['default'].removeData(this._element, DATA_KEY$5);
       this._config = null;
       this._element = null;
       this._dialog = null;
@@ -4166,7 +4170,7 @@ module.exports = {
     ;
 
     _proto._getConfig = function _getConfig(config) {
-      config = _objectSpread2(_objectSpread2({}, Default$3), config);
+      config = _extends({}, Default$3, config);
       Util.typeCheckConfig(NAME$5, config, DefaultType$3);
       return config;
     };
@@ -4175,18 +4179,31 @@ module.exports = {
       var _this3 = this;
 
       if (this._config.backdrop === 'static') {
-        var hideEventPrevented = $.Event(EVENT_HIDE_PREVENTED);
-        $(this._element).trigger(hideEventPrevented);
+        var hideEventPrevented = $__default['default'].Event(EVENT_HIDE_PREVENTED);
+        $__default['default'](this._element).trigger(hideEventPrevented);
 
-        if (hideEventPrevented.defaultPrevented) {
+        if (hideEventPrevented.isDefaultPrevented()) {
           return;
+        }
+
+        var isModalOverflowing = this._element.scrollHeight > document.documentElement.clientHeight;
+
+        if (!isModalOverflowing) {
+          this._element.style.overflowY = 'hidden';
         }
 
         this._element.classList.add(CLASS_NAME_STATIC);
 
-        var modalTransitionDuration = Util.getTransitionDurationFromElement(this._element);
-        $(this._element).one(Util.TRANSITION_END, function () {
+        var modalTransitionDuration = Util.getTransitionDurationFromElement(this._dialog);
+        $__default['default'](this._element).off(Util.TRANSITION_END);
+        $__default['default'](this._element).one(Util.TRANSITION_END, function () {
           _this3._element.classList.remove(CLASS_NAME_STATIC);
+
+          if (!isModalOverflowing) {
+            $__default['default'](_this3._element).one(Util.TRANSITION_END, function () {
+              _this3._element.style.overflowY = '';
+            }).emulateTransitionEnd(_this3._element, modalTransitionDuration);
+          }
         }).emulateTransitionEnd(modalTransitionDuration);
 
         this._element.focus();
@@ -4198,7 +4215,7 @@ module.exports = {
     _proto._showElement = function _showElement(relatedTarget) {
       var _this4 = this;
 
-      var transition = $(this._element).hasClass(CLASS_NAME_FADE$1);
+      var transition = $__default['default'](this._element).hasClass(CLASS_NAME_FADE$1);
       var modalBody = this._dialog ? this._dialog.querySelector(SELECTOR_MODAL_BODY) : null;
 
       if (!this._element.parentNode || this._element.parentNode.nodeType !== Node.ELEMENT_NODE) {
@@ -4212,7 +4229,9 @@ module.exports = {
 
       this._element.setAttribute('aria-modal', true);
 
-      if ($(this._dialog).hasClass(CLASS_NAME_SCROLLABLE) && modalBody) {
+      this._element.setAttribute('role', 'dialog');
+
+      if ($__default['default'](this._dialog).hasClass(CLASS_NAME_SCROLLABLE) && modalBody) {
         modalBody.scrollTop = 0;
       } else {
         this._element.scrollTop = 0;
@@ -4222,13 +4241,13 @@ module.exports = {
         Util.reflow(this._element);
       }
 
-      $(this._element).addClass(CLASS_NAME_SHOW$3);
+      $__default['default'](this._element).addClass(CLASS_NAME_SHOW$3);
 
       if (this._config.focus) {
         this._enforceFocus();
       }
 
-      var shownEvent = $.Event(EVENT_SHOWN$2, {
+      var shownEvent = $__default['default'].Event(EVENT_SHOWN$2, {
         relatedTarget: relatedTarget
       });
 
@@ -4238,12 +4257,12 @@ module.exports = {
         }
 
         _this4._isTransitioning = false;
-        $(_this4._element).trigger(shownEvent);
+        $__default['default'](_this4._element).trigger(shownEvent);
       };
 
       if (transition) {
         var transitionDuration = Util.getTransitionDurationFromElement(this._dialog);
-        $(this._dialog).one(Util.TRANSITION_END, transitionComplete).emulateTransitionEnd(transitionDuration);
+        $__default['default'](this._dialog).one(Util.TRANSITION_END, transitionComplete).emulateTransitionEnd(transitionDuration);
       } else {
         transitionComplete();
       }
@@ -4252,9 +4271,9 @@ module.exports = {
     _proto._enforceFocus = function _enforceFocus() {
       var _this5 = this;
 
-      $(document).off(EVENT_FOCUSIN) // Guard against infinite focus loop
+      $__default['default'](document).off(EVENT_FOCUSIN) // Guard against infinite focus loop
       .on(EVENT_FOCUSIN, function (event) {
-        if (document !== event.target && _this5._element !== event.target && $(_this5._element).has(event.target).length === 0) {
+        if (document !== event.target && _this5._element !== event.target && $__default['default'](_this5._element).has(event.target).length === 0) {
           _this5._element.focus();
         }
       });
@@ -4264,7 +4283,7 @@ module.exports = {
       var _this6 = this;
 
       if (this._isShown) {
-        $(this._element).on(EVENT_KEYDOWN_DISMISS, function (event) {
+        $__default['default'](this._element).on(EVENT_KEYDOWN_DISMISS, function (event) {
           if (_this6._config.keyboard && event.which === ESCAPE_KEYCODE$1) {
             event.preventDefault();
 
@@ -4274,7 +4293,7 @@ module.exports = {
           }
         });
       } else if (!this._isShown) {
-        $(this._element).off(EVENT_KEYDOWN_DISMISS);
+        $__default['default'](this._element).off(EVENT_KEYDOWN_DISMISS);
       }
     };
 
@@ -4282,11 +4301,11 @@ module.exports = {
       var _this7 = this;
 
       if (this._isShown) {
-        $(window).on(EVENT_RESIZE, function (event) {
+        $__default['default'](window).on(EVENT_RESIZE, function (event) {
           return _this7.handleUpdate(event);
         });
       } else {
-        $(window).off(EVENT_RESIZE);
+        $__default['default'](window).off(EVENT_RESIZE);
       }
     };
 
@@ -4299,22 +4318,24 @@ module.exports = {
 
       this._element.removeAttribute('aria-modal');
 
+      this._element.removeAttribute('role');
+
       this._isTransitioning = false;
 
       this._showBackdrop(function () {
-        $(document.body).removeClass(CLASS_NAME_OPEN);
+        $__default['default'](document.body).removeClass(CLASS_NAME_OPEN);
 
         _this8._resetAdjustments();
 
         _this8._resetScrollbar();
 
-        $(_this8._element).trigger(EVENT_HIDDEN$2);
+        $__default['default'](_this8._element).trigger(EVENT_HIDDEN$2);
       });
     };
 
     _proto._removeBackdrop = function _removeBackdrop() {
       if (this._backdrop) {
-        $(this._backdrop).remove();
+        $__default['default'](this._backdrop).remove();
         this._backdrop = null;
       }
     };
@@ -4322,7 +4343,7 @@ module.exports = {
     _proto._showBackdrop = function _showBackdrop(callback) {
       var _this9 = this;
 
-      var animate = $(this._element).hasClass(CLASS_NAME_FADE$1) ? CLASS_NAME_FADE$1 : '';
+      var animate = $__default['default'](this._element).hasClass(CLASS_NAME_FADE$1) ? CLASS_NAME_FADE$1 : '';
 
       if (this._isShown && this._config.backdrop) {
         this._backdrop = document.createElement('div');
@@ -4332,8 +4353,8 @@ module.exports = {
           this._backdrop.classList.add(animate);
         }
 
-        $(this._backdrop).appendTo(document.body);
-        $(this._element).on(EVENT_CLICK_DISMISS, function (event) {
+        $__default['default'](this._backdrop).appendTo(document.body);
+        $__default['default'](this._element).on(EVENT_CLICK_DISMISS, function (event) {
           if (_this9._ignoreBackdropClick) {
             _this9._ignoreBackdropClick = false;
             return;
@@ -4350,7 +4371,7 @@ module.exports = {
           Util.reflow(this._backdrop);
         }
 
-        $(this._backdrop).addClass(CLASS_NAME_SHOW$3);
+        $__default['default'](this._backdrop).addClass(CLASS_NAME_SHOW$3);
 
         if (!callback) {
           return;
@@ -4362,9 +4383,9 @@ module.exports = {
         }
 
         var backdropTransitionDuration = Util.getTransitionDurationFromElement(this._backdrop);
-        $(this._backdrop).one(Util.TRANSITION_END, callback).emulateTransitionEnd(backdropTransitionDuration);
+        $__default['default'](this._backdrop).one(Util.TRANSITION_END, callback).emulateTransitionEnd(backdropTransitionDuration);
       } else if (!this._isShown && this._backdrop) {
-        $(this._backdrop).removeClass(CLASS_NAME_SHOW$3);
+        $__default['default'](this._backdrop).removeClass(CLASS_NAME_SHOW$3);
 
         var callbackRemove = function callbackRemove() {
           _this9._removeBackdrop();
@@ -4374,10 +4395,10 @@ module.exports = {
           }
         };
 
-        if ($(this._element).hasClass(CLASS_NAME_FADE$1)) {
+        if ($__default['default'](this._element).hasClass(CLASS_NAME_FADE$1)) {
           var _backdropTransitionDuration = Util.getTransitionDurationFromElement(this._backdrop);
 
-          $(this._backdrop).one(Util.TRANSITION_END, callbackRemove).emulateTransitionEnd(_backdropTransitionDuration);
+          $__default['default'](this._backdrop).one(Util.TRANSITION_END, callbackRemove).emulateTransitionEnd(_backdropTransitionDuration);
         } else {
           callbackRemove();
         }
@@ -4422,46 +4443,46 @@ module.exports = {
         var fixedContent = [].slice.call(document.querySelectorAll(SELECTOR_FIXED_CONTENT));
         var stickyContent = [].slice.call(document.querySelectorAll(SELECTOR_STICKY_CONTENT)); // Adjust fixed content padding
 
-        $(fixedContent).each(function (index, element) {
+        $__default['default'](fixedContent).each(function (index, element) {
           var actualPadding = element.style.paddingRight;
-          var calculatedPadding = $(element).css('padding-right');
-          $(element).data('padding-right', actualPadding).css('padding-right', parseFloat(calculatedPadding) + _this10._scrollbarWidth + "px");
+          var calculatedPadding = $__default['default'](element).css('padding-right');
+          $__default['default'](element).data('padding-right', actualPadding).css('padding-right', parseFloat(calculatedPadding) + _this10._scrollbarWidth + "px");
         }); // Adjust sticky content margin
 
-        $(stickyContent).each(function (index, element) {
+        $__default['default'](stickyContent).each(function (index, element) {
           var actualMargin = element.style.marginRight;
-          var calculatedMargin = $(element).css('margin-right');
-          $(element).data('margin-right', actualMargin).css('margin-right', parseFloat(calculatedMargin) - _this10._scrollbarWidth + "px");
+          var calculatedMargin = $__default['default'](element).css('margin-right');
+          $__default['default'](element).data('margin-right', actualMargin).css('margin-right', parseFloat(calculatedMargin) - _this10._scrollbarWidth + "px");
         }); // Adjust body padding
 
         var actualPadding = document.body.style.paddingRight;
-        var calculatedPadding = $(document.body).css('padding-right');
-        $(document.body).data('padding-right', actualPadding).css('padding-right', parseFloat(calculatedPadding) + this._scrollbarWidth + "px");
+        var calculatedPadding = $__default['default'](document.body).css('padding-right');
+        $__default['default'](document.body).data('padding-right', actualPadding).css('padding-right', parseFloat(calculatedPadding) + this._scrollbarWidth + "px");
       }
 
-      $(document.body).addClass(CLASS_NAME_OPEN);
+      $__default['default'](document.body).addClass(CLASS_NAME_OPEN);
     };
 
     _proto._resetScrollbar = function _resetScrollbar() {
       // Restore fixed content padding
       var fixedContent = [].slice.call(document.querySelectorAll(SELECTOR_FIXED_CONTENT));
-      $(fixedContent).each(function (index, element) {
-        var padding = $(element).data('padding-right');
-        $(element).removeData('padding-right');
+      $__default['default'](fixedContent).each(function (index, element) {
+        var padding = $__default['default'](element).data('padding-right');
+        $__default['default'](element).removeData('padding-right');
         element.style.paddingRight = padding ? padding : '';
       }); // Restore sticky content
 
       var elements = [].slice.call(document.querySelectorAll("" + SELECTOR_STICKY_CONTENT));
-      $(elements).each(function (index, element) {
-        var margin = $(element).data('margin-right');
+      $__default['default'](elements).each(function (index, element) {
+        var margin = $__default['default'](element).data('margin-right');
 
         if (typeof margin !== 'undefined') {
-          $(element).css('margin-right', margin).removeData('margin-right');
+          $__default['default'](element).css('margin-right', margin).removeData('margin-right');
         }
       }); // Restore body padding
 
-      var padding = $(document.body).data('padding-right');
-      $(document.body).removeData('padding-right');
+      var padding = $__default['default'](document.body).data('padding-right');
+      $__default['default'](document.body).removeData('padding-right');
       document.body.style.paddingRight = padding ? padding : '';
     };
 
@@ -4478,13 +4499,13 @@ module.exports = {
 
     Modal._jQueryInterface = function _jQueryInterface(config, relatedTarget) {
       return this.each(function () {
-        var data = $(this).data(DATA_KEY$5);
+        var data = $__default['default'](this).data(DATA_KEY$5);
 
-        var _config = _objectSpread2(_objectSpread2(_objectSpread2({}, Default$3), $(this).data()), typeof config === 'object' && config ? config : {});
+        var _config = _extends({}, Default$3, $__default['default'](this).data(), typeof config === 'object' && config ? config : {});
 
         if (!data) {
           data = new Modal(this, _config);
-          $(this).data(DATA_KEY$5, data);
+          $__default['default'](this).data(DATA_KEY$5, data);
         }
 
         if (typeof config === 'string') {
@@ -4520,7 +4541,7 @@ module.exports = {
    */
 
 
-  $(document).on(EVENT_CLICK_DATA_API$5, SELECTOR_DATA_TOGGLE$3, function (event) {
+  $__default['default'](document).on(EVENT_CLICK_DATA_API$5, SELECTOR_DATA_TOGGLE$3, function (event) {
     var _this11 = this;
 
     var target;
@@ -4530,26 +4551,26 @@ module.exports = {
       target = document.querySelector(selector);
     }
 
-    var config = $(target).data(DATA_KEY$5) ? 'toggle' : _objectSpread2(_objectSpread2({}, $(target).data()), $(this).data());
+    var config = $__default['default'](target).data(DATA_KEY$5) ? 'toggle' : _extends({}, $__default['default'](target).data(), $__default['default'](this).data());
 
     if (this.tagName === 'A' || this.tagName === 'AREA') {
       event.preventDefault();
     }
 
-    var $target = $(target).one(EVENT_SHOW$2, function (showEvent) {
+    var $target = $__default['default'](target).one(EVENT_SHOW$2, function (showEvent) {
       if (showEvent.isDefaultPrevented()) {
         // Only register focus restorer if modal will actually get shown
         return;
       }
 
       $target.one(EVENT_HIDDEN$2, function () {
-        if ($(_this11).is(':visible')) {
+        if ($__default['default'](_this11).is(':visible')) {
           _this11.focus();
         }
       });
     });
 
-    Modal._jQueryInterface.call($(target), config, this);
+    Modal._jQueryInterface.call($__default['default'](target), config, this);
   });
   /**
    * ------------------------------------------------------------------------
@@ -4557,18 +4578,18 @@ module.exports = {
    * ------------------------------------------------------------------------
    */
 
-  $.fn[NAME$5] = Modal._jQueryInterface;
-  $.fn[NAME$5].Constructor = Modal;
+  $__default['default'].fn[NAME$5] = Modal._jQueryInterface;
+  $__default['default'].fn[NAME$5].Constructor = Modal;
 
-  $.fn[NAME$5].noConflict = function () {
-    $.fn[NAME$5] = JQUERY_NO_CONFLICT$5;
+  $__default['default'].fn[NAME$5].noConflict = function () {
+    $__default['default'].fn[NAME$5] = JQUERY_NO_CONFLICT$5;
     return Modal._jQueryInterface;
   };
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v4.5.0): tools/sanitizer.js
-   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+   * Bootstrap (v4.5.3): tools/sanitizer.js
+   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */
   var uriAttrs = ['background', 'cite', 'href', 'itemtype', 'longdesc', 'poster', 'src', 'xlink:href'];
@@ -4693,10 +4714,10 @@ module.exports = {
    */
 
   var NAME$6 = 'tooltip';
-  var VERSION$6 = '4.5.0';
+  var VERSION$6 = '4.5.3';
   var DATA_KEY$6 = 'bs.tooltip';
   var EVENT_KEY$6 = "." + DATA_KEY$6;
-  var JQUERY_NO_CONFLICT$6 = $.fn[NAME$6];
+  var JQUERY_NO_CONFLICT$6 = $__default['default'].fn[NAME$6];
   var CLASS_PREFIX = 'bs-tooltip';
   var BSCLS_PREFIX_REGEX = new RegExp("(^|\\s)" + CLASS_PREFIX + "\\S+", 'g');
   var DISALLOWED_ATTRIBUTES = ['sanitize', 'whiteList', 'sanitizeFn'];
@@ -4773,7 +4794,7 @@ module.exports = {
 
   var Tooltip = /*#__PURE__*/function () {
     function Tooltip(element, config) {
-      if (typeof Popper === 'undefined') {
+      if (typeof Popper__default['default'] === 'undefined') {
         throw new TypeError('Bootstrap\'s tooltips require Popper.js (https://popper.js.org/)');
       } // private
 
@@ -4814,11 +4835,11 @@ module.exports = {
 
       if (event) {
         var dataKey = this.constructor.DATA_KEY;
-        var context = $(event.currentTarget).data(dataKey);
+        var context = $__default['default'](event.currentTarget).data(dataKey);
 
         if (!context) {
           context = new this.constructor(event.currentTarget, this._getDelegateConfig());
-          $(event.currentTarget).data(dataKey, context);
+          $__default['default'](event.currentTarget).data(dataKey, context);
         }
 
         context._activeTrigger.click = !context._activeTrigger.click;
@@ -4829,7 +4850,7 @@ module.exports = {
           context._leave(null, context);
         }
       } else {
-        if ($(this.getTipElement()).hasClass(CLASS_NAME_SHOW$4)) {
+        if ($__default['default'](this.getTipElement()).hasClass(CLASS_NAME_SHOW$4)) {
           this._leave(null, this);
 
           return;
@@ -4841,12 +4862,12 @@ module.exports = {
 
     _proto.dispose = function dispose() {
       clearTimeout(this._timeout);
-      $.removeData(this.element, this.constructor.DATA_KEY);
-      $(this.element).off(this.constructor.EVENT_KEY);
-      $(this.element).closest('.modal').off('hide.bs.modal', this._hideModalHandler);
+      $__default['default'].removeData(this.element, this.constructor.DATA_KEY);
+      $__default['default'](this.element).off(this.constructor.EVENT_KEY);
+      $__default['default'](this.element).closest('.modal').off('hide.bs.modal', this._hideModalHandler);
 
       if (this.tip) {
-        $(this.tip).remove();
+        $__default['default'](this.tip).remove();
       }
 
       this._isEnabled = null;
@@ -4867,16 +4888,16 @@ module.exports = {
     _proto.show = function show() {
       var _this = this;
 
-      if ($(this.element).css('display') === 'none') {
+      if ($__default['default'](this.element).css('display') === 'none') {
         throw new Error('Please use show on visible elements');
       }
 
-      var showEvent = $.Event(this.constructor.Event.SHOW);
+      var showEvent = $__default['default'].Event(this.constructor.Event.SHOW);
 
       if (this.isWithContent() && this._isEnabled) {
-        $(this.element).trigger(showEvent);
+        $__default['default'](this.element).trigger(showEvent);
         var shadowRoot = Util.findShadowRoot(this.element);
-        var isInTheDom = $.contains(shadowRoot !== null ? shadowRoot : this.element.ownerDocument.documentElement, this.element);
+        var isInTheDom = $__default['default'].contains(shadowRoot !== null ? shadowRoot : this.element.ownerDocument.documentElement, this.element);
 
         if (showEvent.isDefaultPrevented() || !isInTheDom) {
           return;
@@ -4889,7 +4910,7 @@ module.exports = {
         this.setContent();
 
         if (this.config.animation) {
-          $(tip).addClass(CLASS_NAME_FADE$2);
+          $__default['default'](tip).addClass(CLASS_NAME_FADE$2);
         }
 
         var placement = typeof this.config.placement === 'function' ? this.config.placement.call(this, tip, this.element) : this.config.placement;
@@ -4900,21 +4921,21 @@ module.exports = {
 
         var container = this._getContainer();
 
-        $(tip).data(this.constructor.DATA_KEY, this);
+        $__default['default'](tip).data(this.constructor.DATA_KEY, this);
 
-        if (!$.contains(this.element.ownerDocument.documentElement, this.tip)) {
-          $(tip).appendTo(container);
+        if (!$__default['default'].contains(this.element.ownerDocument.documentElement, this.tip)) {
+          $__default['default'](tip).appendTo(container);
         }
 
-        $(this.element).trigger(this.constructor.Event.INSERTED);
-        this._popper = new Popper(this.element, tip, this._getPopperConfig(attachment));
-        $(tip).addClass(CLASS_NAME_SHOW$4); // If this is a touch-enabled device we add extra
+        $__default['default'](this.element).trigger(this.constructor.Event.INSERTED);
+        this._popper = new Popper__default['default'](this.element, tip, this._getPopperConfig(attachment));
+        $__default['default'](tip).addClass(CLASS_NAME_SHOW$4); // If this is a touch-enabled device we add extra
         // empty mouseover listeners to the body's immediate children;
         // only needed because of broken event delegation on iOS
         // https://www.quirksmode.org/blog/archives/2014/02/mouse_event_bub.html
 
         if ('ontouchstart' in document.documentElement) {
-          $(document.body).children().on('mouseover', null, $.noop);
+          $__default['default'](document.body).children().on('mouseover', null, $__default['default'].noop);
         }
 
         var complete = function complete() {
@@ -4924,16 +4945,16 @@ module.exports = {
 
           var prevHoverState = _this._hoverState;
           _this._hoverState = null;
-          $(_this.element).trigger(_this.constructor.Event.SHOWN);
+          $__default['default'](_this.element).trigger(_this.constructor.Event.SHOWN);
 
           if (prevHoverState === HOVER_STATE_OUT) {
             _this._leave(null, _this);
           }
         };
 
-        if ($(this.tip).hasClass(CLASS_NAME_FADE$2)) {
+        if ($__default['default'](this.tip).hasClass(CLASS_NAME_FADE$2)) {
           var transitionDuration = Util.getTransitionDurationFromElement(this.tip);
-          $(this.tip).one(Util.TRANSITION_END, complete).emulateTransitionEnd(transitionDuration);
+          $__default['default'](this.tip).one(Util.TRANSITION_END, complete).emulateTransitionEnd(transitionDuration);
         } else {
           complete();
         }
@@ -4944,7 +4965,7 @@ module.exports = {
       var _this2 = this;
 
       var tip = this.getTipElement();
-      var hideEvent = $.Event(this.constructor.Event.HIDE);
+      var hideEvent = $__default['default'].Event(this.constructor.Event.HIDE);
 
       var complete = function complete() {
         if (_this2._hoverState !== HOVER_STATE_SHOW && tip.parentNode) {
@@ -4955,7 +4976,7 @@ module.exports = {
 
         _this2.element.removeAttribute('aria-describedby');
 
-        $(_this2.element).trigger(_this2.constructor.Event.HIDDEN);
+        $__default['default'](_this2.element).trigger(_this2.constructor.Event.HIDDEN);
 
         if (_this2._popper !== null) {
           _this2._popper.destroy();
@@ -4966,26 +4987,26 @@ module.exports = {
         }
       };
 
-      $(this.element).trigger(hideEvent);
+      $__default['default'](this.element).trigger(hideEvent);
 
       if (hideEvent.isDefaultPrevented()) {
         return;
       }
 
-      $(tip).removeClass(CLASS_NAME_SHOW$4); // If this is a touch-enabled device we remove the extra
+      $__default['default'](tip).removeClass(CLASS_NAME_SHOW$4); // If this is a touch-enabled device we remove the extra
       // empty mouseover listeners we added for iOS support
 
       if ('ontouchstart' in document.documentElement) {
-        $(document.body).children().off('mouseover', null, $.noop);
+        $__default['default'](document.body).children().off('mouseover', null, $__default['default'].noop);
       }
 
       this._activeTrigger[TRIGGER_CLICK] = false;
       this._activeTrigger[TRIGGER_FOCUS] = false;
       this._activeTrigger[TRIGGER_HOVER] = false;
 
-      if ($(this.tip).hasClass(CLASS_NAME_FADE$2)) {
+      if ($__default['default'](this.tip).hasClass(CLASS_NAME_FADE$2)) {
         var transitionDuration = Util.getTransitionDurationFromElement(tip);
-        $(tip).one(Util.TRANSITION_END, complete).emulateTransitionEnd(transitionDuration);
+        $__default['default'](tip).one(Util.TRANSITION_END, complete).emulateTransitionEnd(transitionDuration);
       } else {
         complete();
       }
@@ -5005,29 +5026,29 @@ module.exports = {
     };
 
     _proto.addAttachmentClass = function addAttachmentClass(attachment) {
-      $(this.getTipElement()).addClass(CLASS_PREFIX + "-" + attachment);
+      $__default['default'](this.getTipElement()).addClass(CLASS_PREFIX + "-" + attachment);
     };
 
     _proto.getTipElement = function getTipElement() {
-      this.tip = this.tip || $(this.config.template)[0];
+      this.tip = this.tip || $__default['default'](this.config.template)[0];
       return this.tip;
     };
 
     _proto.setContent = function setContent() {
       var tip = this.getTipElement();
-      this.setElementContent($(tip.querySelectorAll(SELECTOR_TOOLTIP_INNER)), this.getTitle());
-      $(tip).removeClass(CLASS_NAME_FADE$2 + " " + CLASS_NAME_SHOW$4);
+      this.setElementContent($__default['default'](tip.querySelectorAll(SELECTOR_TOOLTIP_INNER)), this.getTitle());
+      $__default['default'](tip).removeClass(CLASS_NAME_FADE$2 + " " + CLASS_NAME_SHOW$4);
     };
 
     _proto.setElementContent = function setElementContent($element, content) {
       if (typeof content === 'object' && (content.nodeType || content.jquery)) {
         // Content is a DOM node or a jQuery
         if (this.config.html) {
-          if (!$(content).parent().is($element)) {
+          if (!$__default['default'](content).parent().is($element)) {
             $element.empty().append(content);
           }
         } else {
-          $element.text($(content).text());
+          $element.text($__default['default'](content).text());
         }
 
         return;
@@ -5081,7 +5102,7 @@ module.exports = {
           return _this3._handlePopperPlacementChange(data);
         }
       };
-      return _objectSpread2(_objectSpread2({}, defaultBsConfig), this.config.popperConfig);
+      return _extends({}, defaultBsConfig, this.config.popperConfig);
     };
 
     _proto._getOffset = function _getOffset() {
@@ -5091,7 +5112,7 @@ module.exports = {
 
       if (typeof this.config.offset === 'function') {
         offset.fn = function (data) {
-          data.offsets = _objectSpread2(_objectSpread2({}, data.offsets), _this4.config.offset(data.offsets, _this4.element) || {});
+          data.offsets = _extends({}, data.offsets, _this4.config.offset(data.offsets, _this4.element) || {});
           return data;
         };
       } else {
@@ -5107,10 +5128,10 @@ module.exports = {
       }
 
       if (Util.isElement(this.config.container)) {
-        return $(this.config.container);
+        return $__default['default'](this.config.container);
       }
 
-      return $(document).find(this.config.container);
+      return $__default['default'](document).find(this.config.container);
     };
 
     _proto._getAttachment = function _getAttachment(placement) {
@@ -5123,13 +5144,13 @@ module.exports = {
       var triggers = this.config.trigger.split(' ');
       triggers.forEach(function (trigger) {
         if (trigger === 'click') {
-          $(_this5.element).on(_this5.constructor.Event.CLICK, _this5.config.selector, function (event) {
+          $__default['default'](_this5.element).on(_this5.constructor.Event.CLICK, _this5.config.selector, function (event) {
             return _this5.toggle(event);
           });
         } else if (trigger !== TRIGGER_MANUAL) {
           var eventIn = trigger === TRIGGER_HOVER ? _this5.constructor.Event.MOUSEENTER : _this5.constructor.Event.FOCUSIN;
           var eventOut = trigger === TRIGGER_HOVER ? _this5.constructor.Event.MOUSELEAVE : _this5.constructor.Event.FOCUSOUT;
-          $(_this5.element).on(eventIn, _this5.config.selector, function (event) {
+          $__default['default'](_this5.element).on(eventIn, _this5.config.selector, function (event) {
             return _this5._enter(event);
           }).on(eventOut, _this5.config.selector, function (event) {
             return _this5._leave(event);
@@ -5143,10 +5164,10 @@ module.exports = {
         }
       };
 
-      $(this.element).closest('.modal').on('hide.bs.modal', this._hideModalHandler);
+      $__default['default'](this.element).closest('.modal').on('hide.bs.modal', this._hideModalHandler);
 
       if (this.config.selector) {
-        this.config = _objectSpread2(_objectSpread2({}, this.config), {}, {
+        this.config = _extends({}, this.config, {
           trigger: 'manual',
           selector: ''
         });
@@ -5166,18 +5187,18 @@ module.exports = {
 
     _proto._enter = function _enter(event, context) {
       var dataKey = this.constructor.DATA_KEY;
-      context = context || $(event.currentTarget).data(dataKey);
+      context = context || $__default['default'](event.currentTarget).data(dataKey);
 
       if (!context) {
         context = new this.constructor(event.currentTarget, this._getDelegateConfig());
-        $(event.currentTarget).data(dataKey, context);
+        $__default['default'](event.currentTarget).data(dataKey, context);
       }
 
       if (event) {
         context._activeTrigger[event.type === 'focusin' ? TRIGGER_FOCUS : TRIGGER_HOVER] = true;
       }
 
-      if ($(context.getTipElement()).hasClass(CLASS_NAME_SHOW$4) || context._hoverState === HOVER_STATE_SHOW) {
+      if ($__default['default'](context.getTipElement()).hasClass(CLASS_NAME_SHOW$4) || context._hoverState === HOVER_STATE_SHOW) {
         context._hoverState = HOVER_STATE_SHOW;
         return;
       }
@@ -5199,11 +5220,11 @@ module.exports = {
 
     _proto._leave = function _leave(event, context) {
       var dataKey = this.constructor.DATA_KEY;
-      context = context || $(event.currentTarget).data(dataKey);
+      context = context || $__default['default'](event.currentTarget).data(dataKey);
 
       if (!context) {
         context = new this.constructor(event.currentTarget, this._getDelegateConfig());
-        $(event.currentTarget).data(dataKey, context);
+        $__default['default'](event.currentTarget).data(dataKey, context);
       }
 
       if (event) {
@@ -5240,13 +5261,13 @@ module.exports = {
     };
 
     _proto._getConfig = function _getConfig(config) {
-      var dataAttributes = $(this.element).data();
+      var dataAttributes = $__default['default'](this.element).data();
       Object.keys(dataAttributes).forEach(function (dataAttr) {
         if (DISALLOWED_ATTRIBUTES.indexOf(dataAttr) !== -1) {
           delete dataAttributes[dataAttr];
         }
       });
-      config = _objectSpread2(_objectSpread2(_objectSpread2({}, this.constructor.Default), dataAttributes), typeof config === 'object' && config ? config : {});
+      config = _extends({}, this.constructor.Default, dataAttributes, typeof config === 'object' && config ? config : {});
 
       if (typeof config.delay === 'number') {
         config.delay = {
@@ -5287,7 +5308,7 @@ module.exports = {
     };
 
     _proto._cleanTipClass = function _cleanTipClass() {
-      var $tip = $(this.getTipElement());
+      var $tip = $__default['default'](this.getTipElement());
       var tabClass = $tip.attr('class').match(BSCLS_PREFIX_REGEX);
 
       if (tabClass !== null && tabClass.length) {
@@ -5311,7 +5332,7 @@ module.exports = {
         return;
       }
 
-      $(tip).removeClass(CLASS_NAME_FADE$2);
+      $__default['default'](tip).removeClass(CLASS_NAME_FADE$2);
       this.config.animation = false;
       this.hide();
       this.show();
@@ -5321,7 +5342,8 @@ module.exports = {
 
     Tooltip._jQueryInterface = function _jQueryInterface(config) {
       return this.each(function () {
-        var data = $(this).data(DATA_KEY$6);
+        var $element = $__default['default'](this);
+        var data = $element.data(DATA_KEY$6);
 
         var _config = typeof config === 'object' && config;
 
@@ -5331,7 +5353,7 @@ module.exports = {
 
         if (!data) {
           data = new Tooltip(this, _config);
-          $(this).data(DATA_KEY$6, data);
+          $element.data(DATA_KEY$6, data);
         }
 
         if (typeof config === 'string') {
@@ -5390,11 +5412,11 @@ module.exports = {
    */
 
 
-  $.fn[NAME$6] = Tooltip._jQueryInterface;
-  $.fn[NAME$6].Constructor = Tooltip;
+  $__default['default'].fn[NAME$6] = Tooltip._jQueryInterface;
+  $__default['default'].fn[NAME$6].Constructor = Tooltip;
 
-  $.fn[NAME$6].noConflict = function () {
-    $.fn[NAME$6] = JQUERY_NO_CONFLICT$6;
+  $__default['default'].fn[NAME$6].noConflict = function () {
+    $__default['default'].fn[NAME$6] = JQUERY_NO_CONFLICT$6;
     return Tooltip._jQueryInterface;
   };
 
@@ -5405,21 +5427,21 @@ module.exports = {
    */
 
   var NAME$7 = 'popover';
-  var VERSION$7 = '4.5.0';
+  var VERSION$7 = '4.5.3';
   var DATA_KEY$7 = 'bs.popover';
   var EVENT_KEY$7 = "." + DATA_KEY$7;
-  var JQUERY_NO_CONFLICT$7 = $.fn[NAME$7];
+  var JQUERY_NO_CONFLICT$7 = $__default['default'].fn[NAME$7];
   var CLASS_PREFIX$1 = 'bs-popover';
   var BSCLS_PREFIX_REGEX$1 = new RegExp("(^|\\s)" + CLASS_PREFIX$1 + "\\S+", 'g');
 
-  var Default$5 = _objectSpread2(_objectSpread2({}, Tooltip.Default), {}, {
+  var Default$5 = _extends({}, Tooltip.Default, {
     placement: 'right',
     trigger: 'click',
     content: '',
     template: '<div class="popover" role="tooltip">' + '<div class="arrow"></div>' + '<h3 class="popover-header"></h3>' + '<div class="popover-body"></div></div>'
   });
 
-  var DefaultType$5 = _objectSpread2(_objectSpread2({}, Tooltip.DefaultType), {}, {
+  var DefaultType$5 = _extends({}, Tooltip.DefaultType, {
     content: '(string|element|function)'
   });
 
@@ -5460,16 +5482,16 @@ module.exports = {
     };
 
     _proto.addAttachmentClass = function addAttachmentClass(attachment) {
-      $(this.getTipElement()).addClass(CLASS_PREFIX$1 + "-" + attachment);
+      $__default['default'](this.getTipElement()).addClass(CLASS_PREFIX$1 + "-" + attachment);
     };
 
     _proto.getTipElement = function getTipElement() {
-      this.tip = this.tip || $(this.config.template)[0];
+      this.tip = this.tip || $__default['default'](this.config.template)[0];
       return this.tip;
     };
 
     _proto.setContent = function setContent() {
-      var $tip = $(this.getTipElement()); // We use append for html objects to maintain js events
+      var $tip = $__default['default'](this.getTipElement()); // We use append for html objects to maintain js events
 
       this.setElementContent($tip.find(SELECTOR_TITLE), this.getTitle());
 
@@ -5489,7 +5511,7 @@ module.exports = {
     };
 
     _proto._cleanTipClass = function _cleanTipClass() {
-      var $tip = $(this.getTipElement());
+      var $tip = $__default['default'](this.getTipElement());
       var tabClass = $tip.attr('class').match(BSCLS_PREFIX_REGEX$1);
 
       if (tabClass !== null && tabClass.length > 0) {
@@ -5500,7 +5522,7 @@ module.exports = {
 
     Popover._jQueryInterface = function _jQueryInterface(config) {
       return this.each(function () {
-        var data = $(this).data(DATA_KEY$7);
+        var data = $__default['default'](this).data(DATA_KEY$7);
 
         var _config = typeof config === 'object' ? config : null;
 
@@ -5510,7 +5532,7 @@ module.exports = {
 
         if (!data) {
           data = new Popover(this, _config);
-          $(this).data(DATA_KEY$7, data);
+          $__default['default'](this).data(DATA_KEY$7, data);
         }
 
         if (typeof config === 'string') {
@@ -5570,11 +5592,11 @@ module.exports = {
    */
 
 
-  $.fn[NAME$7] = Popover._jQueryInterface;
-  $.fn[NAME$7].Constructor = Popover;
+  $__default['default'].fn[NAME$7] = Popover._jQueryInterface;
+  $__default['default'].fn[NAME$7].Constructor = Popover;
 
-  $.fn[NAME$7].noConflict = function () {
-    $.fn[NAME$7] = JQUERY_NO_CONFLICT$7;
+  $__default['default'].fn[NAME$7].noConflict = function () {
+    $__default['default'].fn[NAME$7] = JQUERY_NO_CONFLICT$7;
     return Popover._jQueryInterface;
   };
 
@@ -5585,11 +5607,11 @@ module.exports = {
    */
 
   var NAME$8 = 'scrollspy';
-  var VERSION$8 = '4.5.0';
+  var VERSION$8 = '4.5.3';
   var DATA_KEY$8 = 'bs.scrollspy';
   var EVENT_KEY$8 = "." + DATA_KEY$8;
   var DATA_API_KEY$6 = '.data-api';
-  var JQUERY_NO_CONFLICT$8 = $.fn[NAME$8];
+  var JQUERY_NO_CONFLICT$8 = $__default['default'].fn[NAME$8];
   var Default$6 = {
     offset: 10,
     method: 'auto',
@@ -5633,7 +5655,7 @@ module.exports = {
       this._targets = [];
       this._activeTarget = null;
       this._scrollHeight = 0;
-      $(this._scrollElement).on(EVENT_SCROLL, function (event) {
+      $__default['default'](this._scrollElement).on(EVENT_SCROLL, function (event) {
         return _this._process(event);
       });
       this.refresh();
@@ -5668,7 +5690,7 @@ module.exports = {
 
           if (targetBCR.width || targetBCR.height) {
             // TODO (fat): remove sketch reliance on jQuery position/offset
-            return [$(target)[offsetMethod]().top + offsetBase, targetSelector];
+            return [$__default['default'](target)[offsetMethod]().top + offsetBase, targetSelector];
           }
         }
 
@@ -5685,8 +5707,8 @@ module.exports = {
     };
 
     _proto.dispose = function dispose() {
-      $.removeData(this._element, DATA_KEY$8);
-      $(this._scrollElement).off(EVENT_KEY$8);
+      $__default['default'].removeData(this._element, DATA_KEY$8);
+      $__default['default'](this._scrollElement).off(EVENT_KEY$8);
       this._element = null;
       this._scrollElement = null;
       this._config = null;
@@ -5699,14 +5721,14 @@ module.exports = {
     ;
 
     _proto._getConfig = function _getConfig(config) {
-      config = _objectSpread2(_objectSpread2({}, Default$6), typeof config === 'object' && config ? config : {});
+      config = _extends({}, Default$6, typeof config === 'object' && config ? config : {});
 
       if (typeof config.target !== 'string' && Util.isElement(config.target)) {
-        var id = $(config.target).attr('id');
+        var id = $__default['default'](config.target).attr('id');
 
         if (!id) {
           id = Util.getUID(NAME$8);
-          $(config.target).attr('id', id);
+          $__default['default'](config.target).attr('id', id);
         }
 
         config.target = "#" + id;
@@ -5775,7 +5797,7 @@ module.exports = {
         return selector + "[data-target=\"" + target + "\"]," + selector + "[href=\"" + target + "\"]";
       });
 
-      var $link = $([].slice.call(document.querySelectorAll(queries.join(','))));
+      var $link = $__default['default']([].slice.call(document.querySelectorAll(queries.join(','))));
 
       if ($link.hasClass(CLASS_NAME_DROPDOWN_ITEM)) {
         $link.closest(SELECTOR_DROPDOWN).find(SELECTOR_DROPDOWN_TOGGLE).addClass(CLASS_NAME_ACTIVE$2);
@@ -5790,7 +5812,7 @@ module.exports = {
         $link.parents(SELECTOR_NAV_LIST_GROUP).prev(SELECTOR_NAV_ITEMS).children(SELECTOR_NAV_LINKS).addClass(CLASS_NAME_ACTIVE$2);
       }
 
-      $(this._scrollElement).trigger(EVENT_ACTIVATE, {
+      $__default['default'](this._scrollElement).trigger(EVENT_ACTIVATE, {
         relatedTarget: target
       });
     };
@@ -5806,13 +5828,13 @@ module.exports = {
 
     ScrollSpy._jQueryInterface = function _jQueryInterface(config) {
       return this.each(function () {
-        var data = $(this).data(DATA_KEY$8);
+        var data = $__default['default'](this).data(DATA_KEY$8);
 
         var _config = typeof config === 'object' && config;
 
         if (!data) {
           data = new ScrollSpy(this, _config);
-          $(this).data(DATA_KEY$8, data);
+          $__default['default'](this).data(DATA_KEY$8, data);
         }
 
         if (typeof config === 'string') {
@@ -5846,12 +5868,12 @@ module.exports = {
    */
 
 
-  $(window).on(EVENT_LOAD_DATA_API$2, function () {
+  $__default['default'](window).on(EVENT_LOAD_DATA_API$2, function () {
     var scrollSpys = [].slice.call(document.querySelectorAll(SELECTOR_DATA_SPY));
     var scrollSpysLength = scrollSpys.length;
 
     for (var i = scrollSpysLength; i--;) {
-      var $spy = $(scrollSpys[i]);
+      var $spy = $__default['default'](scrollSpys[i]);
 
       ScrollSpy._jQueryInterface.call($spy, $spy.data());
     }
@@ -5862,11 +5884,11 @@ module.exports = {
    * ------------------------------------------------------------------------
    */
 
-  $.fn[NAME$8] = ScrollSpy._jQueryInterface;
-  $.fn[NAME$8].Constructor = ScrollSpy;
+  $__default['default'].fn[NAME$8] = ScrollSpy._jQueryInterface;
+  $__default['default'].fn[NAME$8].Constructor = ScrollSpy;
 
-  $.fn[NAME$8].noConflict = function () {
-    $.fn[NAME$8] = JQUERY_NO_CONFLICT$8;
+  $__default['default'].fn[NAME$8].noConflict = function () {
+    $__default['default'].fn[NAME$8] = JQUERY_NO_CONFLICT$8;
     return ScrollSpy._jQueryInterface;
   };
 
@@ -5877,11 +5899,11 @@ module.exports = {
    */
 
   var NAME$9 = 'tab';
-  var VERSION$9 = '4.5.0';
+  var VERSION$9 = '4.5.3';
   var DATA_KEY$9 = 'bs.tab';
   var EVENT_KEY$9 = "." + DATA_KEY$9;
   var DATA_API_KEY$7 = '.data-api';
-  var JQUERY_NO_CONFLICT$9 = $.fn[NAME$9];
+  var JQUERY_NO_CONFLICT$9 = $__default['default'].fn[NAME$9];
   var EVENT_HIDE$3 = "hide" + EVENT_KEY$9;
   var EVENT_HIDDEN$3 = "hidden" + EVENT_KEY$9;
   var EVENT_SHOW$3 = "show" + EVENT_KEY$9;
@@ -5917,33 +5939,33 @@ module.exports = {
     _proto.show = function show() {
       var _this = this;
 
-      if (this._element.parentNode && this._element.parentNode.nodeType === Node.ELEMENT_NODE && $(this._element).hasClass(CLASS_NAME_ACTIVE$3) || $(this._element).hasClass(CLASS_NAME_DISABLED$1)) {
+      if (this._element.parentNode && this._element.parentNode.nodeType === Node.ELEMENT_NODE && $__default['default'](this._element).hasClass(CLASS_NAME_ACTIVE$3) || $__default['default'](this._element).hasClass(CLASS_NAME_DISABLED$1)) {
         return;
       }
 
       var target;
       var previous;
-      var listElement = $(this._element).closest(SELECTOR_NAV_LIST_GROUP$1)[0];
+      var listElement = $__default['default'](this._element).closest(SELECTOR_NAV_LIST_GROUP$1)[0];
       var selector = Util.getSelectorFromElement(this._element);
 
       if (listElement) {
         var itemSelector = listElement.nodeName === 'UL' || listElement.nodeName === 'OL' ? SELECTOR_ACTIVE_UL : SELECTOR_ACTIVE$2;
-        previous = $.makeArray($(listElement).find(itemSelector));
+        previous = $__default['default'].makeArray($__default['default'](listElement).find(itemSelector));
         previous = previous[previous.length - 1];
       }
 
-      var hideEvent = $.Event(EVENT_HIDE$3, {
+      var hideEvent = $__default['default'].Event(EVENT_HIDE$3, {
         relatedTarget: this._element
       });
-      var showEvent = $.Event(EVENT_SHOW$3, {
+      var showEvent = $__default['default'].Event(EVENT_SHOW$3, {
         relatedTarget: previous
       });
 
       if (previous) {
-        $(previous).trigger(hideEvent);
+        $__default['default'](previous).trigger(hideEvent);
       }
 
-      $(this._element).trigger(showEvent);
+      $__default['default'](this._element).trigger(showEvent);
 
       if (showEvent.isDefaultPrevented() || hideEvent.isDefaultPrevented()) {
         return;
@@ -5956,14 +5978,14 @@ module.exports = {
       this._activate(this._element, listElement);
 
       var complete = function complete() {
-        var hiddenEvent = $.Event(EVENT_HIDDEN$3, {
+        var hiddenEvent = $__default['default'].Event(EVENT_HIDDEN$3, {
           relatedTarget: _this._element
         });
-        var shownEvent = $.Event(EVENT_SHOWN$3, {
+        var shownEvent = $__default['default'].Event(EVENT_SHOWN$3, {
           relatedTarget: previous
         });
-        $(previous).trigger(hiddenEvent);
-        $(_this._element).trigger(shownEvent);
+        $__default['default'](previous).trigger(hiddenEvent);
+        $__default['default'](_this._element).trigger(shownEvent);
       };
 
       if (target) {
@@ -5974,7 +5996,7 @@ module.exports = {
     };
 
     _proto.dispose = function dispose() {
-      $.removeData(this._element, DATA_KEY$9);
+      $__default['default'].removeData(this._element, DATA_KEY$9);
       this._element = null;
     } // Private
     ;
@@ -5982,9 +6004,9 @@ module.exports = {
     _proto._activate = function _activate(element, container, callback) {
       var _this2 = this;
 
-      var activeElements = container && (container.nodeName === 'UL' || container.nodeName === 'OL') ? $(container).find(SELECTOR_ACTIVE_UL) : $(container).children(SELECTOR_ACTIVE$2);
+      var activeElements = container && (container.nodeName === 'UL' || container.nodeName === 'OL') ? $__default['default'](container).find(SELECTOR_ACTIVE_UL) : $__default['default'](container).children(SELECTOR_ACTIVE$2);
       var active = activeElements[0];
-      var isTransitioning = callback && active && $(active).hasClass(CLASS_NAME_FADE$4);
+      var isTransitioning = callback && active && $__default['default'](active).hasClass(CLASS_NAME_FADE$4);
 
       var complete = function complete() {
         return _this2._transitionComplete(element, active, callback);
@@ -5992,7 +6014,7 @@ module.exports = {
 
       if (active && isTransitioning) {
         var transitionDuration = Util.getTransitionDurationFromElement(active);
-        $(active).removeClass(CLASS_NAME_SHOW$6).one(Util.TRANSITION_END, complete).emulateTransitionEnd(transitionDuration);
+        $__default['default'](active).removeClass(CLASS_NAME_SHOW$6).one(Util.TRANSITION_END, complete).emulateTransitionEnd(transitionDuration);
       } else {
         complete();
       }
@@ -6000,11 +6022,11 @@ module.exports = {
 
     _proto._transitionComplete = function _transitionComplete(element, active, callback) {
       if (active) {
-        $(active).removeClass(CLASS_NAME_ACTIVE$3);
-        var dropdownChild = $(active.parentNode).find(SELECTOR_DROPDOWN_ACTIVE_CHILD)[0];
+        $__default['default'](active).removeClass(CLASS_NAME_ACTIVE$3);
+        var dropdownChild = $__default['default'](active.parentNode).find(SELECTOR_DROPDOWN_ACTIVE_CHILD)[0];
 
         if (dropdownChild) {
-          $(dropdownChild).removeClass(CLASS_NAME_ACTIVE$3);
+          $__default['default'](dropdownChild).removeClass(CLASS_NAME_ACTIVE$3);
         }
 
         if (active.getAttribute('role') === 'tab') {
@@ -6012,7 +6034,7 @@ module.exports = {
         }
       }
 
-      $(element).addClass(CLASS_NAME_ACTIVE$3);
+      $__default['default'](element).addClass(CLASS_NAME_ACTIVE$3);
 
       if (element.getAttribute('role') === 'tab') {
         element.setAttribute('aria-selected', true);
@@ -6024,12 +6046,12 @@ module.exports = {
         element.classList.add(CLASS_NAME_SHOW$6);
       }
 
-      if (element.parentNode && $(element.parentNode).hasClass(CLASS_NAME_DROPDOWN_MENU)) {
-        var dropdownElement = $(element).closest(SELECTOR_DROPDOWN$1)[0];
+      if (element.parentNode && $__default['default'](element.parentNode).hasClass(CLASS_NAME_DROPDOWN_MENU)) {
+        var dropdownElement = $__default['default'](element).closest(SELECTOR_DROPDOWN$1)[0];
 
         if (dropdownElement) {
           var dropdownToggleList = [].slice.call(dropdownElement.querySelectorAll(SELECTOR_DROPDOWN_TOGGLE$1));
-          $(dropdownToggleList).addClass(CLASS_NAME_ACTIVE$3);
+          $__default['default'](dropdownToggleList).addClass(CLASS_NAME_ACTIVE$3);
         }
 
         element.setAttribute('aria-expanded', true);
@@ -6043,7 +6065,7 @@ module.exports = {
 
     Tab._jQueryInterface = function _jQueryInterface(config) {
       return this.each(function () {
-        var $this = $(this);
+        var $this = $__default['default'](this);
         var data = $this.data(DATA_KEY$9);
 
         if (!data) {
@@ -6077,10 +6099,10 @@ module.exports = {
    */
 
 
-  $(document).on(EVENT_CLICK_DATA_API$6, SELECTOR_DATA_TOGGLE$4, function (event) {
+  $__default['default'](document).on(EVENT_CLICK_DATA_API$6, SELECTOR_DATA_TOGGLE$4, function (event) {
     event.preventDefault();
 
-    Tab._jQueryInterface.call($(this), 'show');
+    Tab._jQueryInterface.call($__default['default'](this), 'show');
   });
   /**
    * ------------------------------------------------------------------------
@@ -6088,11 +6110,11 @@ module.exports = {
    * ------------------------------------------------------------------------
    */
 
-  $.fn[NAME$9] = Tab._jQueryInterface;
-  $.fn[NAME$9].Constructor = Tab;
+  $__default['default'].fn[NAME$9] = Tab._jQueryInterface;
+  $__default['default'].fn[NAME$9].Constructor = Tab;
 
-  $.fn[NAME$9].noConflict = function () {
-    $.fn[NAME$9] = JQUERY_NO_CONFLICT$9;
+  $__default['default'].fn[NAME$9].noConflict = function () {
+    $__default['default'].fn[NAME$9] = JQUERY_NO_CONFLICT$9;
     return Tab._jQueryInterface;
   };
 
@@ -6103,10 +6125,10 @@ module.exports = {
    */
 
   var NAME$a = 'toast';
-  var VERSION$a = '4.5.0';
+  var VERSION$a = '4.5.3';
   var DATA_KEY$a = 'bs.toast';
   var EVENT_KEY$a = "." + DATA_KEY$a;
-  var JQUERY_NO_CONFLICT$a = $.fn[NAME$a];
+  var JQUERY_NO_CONFLICT$a = $__default['default'].fn[NAME$a];
   var EVENT_CLICK_DISMISS$1 = "click.dismiss" + EVENT_KEY$a;
   var EVENT_HIDE$4 = "hide" + EVENT_KEY$a;
   var EVENT_HIDDEN$4 = "hidden" + EVENT_KEY$a;
@@ -6149,12 +6171,14 @@ module.exports = {
     _proto.show = function show() {
       var _this = this;
 
-      var showEvent = $.Event(EVENT_SHOW$4);
-      $(this._element).trigger(showEvent);
+      var showEvent = $__default['default'].Event(EVENT_SHOW$4);
+      $__default['default'](this._element).trigger(showEvent);
 
       if (showEvent.isDefaultPrevented()) {
         return;
       }
+
+      this._clearTimeout();
 
       if (this._config.animation) {
         this._element.classList.add(CLASS_NAME_FADE$5);
@@ -6165,7 +6189,7 @@ module.exports = {
 
         _this._element.classList.add(CLASS_NAME_SHOW$7);
 
-        $(_this._element).trigger(EVENT_SHOWN$4);
+        $__default['default'](_this._element).trigger(EVENT_SHOWN$4);
 
         if (_this._config.autohide) {
           _this._timeout = setTimeout(function () {
@@ -6182,7 +6206,7 @@ module.exports = {
 
       if (this._config.animation) {
         var transitionDuration = Util.getTransitionDurationFromElement(this._element);
-        $(this._element).one(Util.TRANSITION_END, complete).emulateTransitionEnd(transitionDuration);
+        $__default['default'](this._element).one(Util.TRANSITION_END, complete).emulateTransitionEnd(transitionDuration);
       } else {
         complete();
       }
@@ -6193,8 +6217,8 @@ module.exports = {
         return;
       }
 
-      var hideEvent = $.Event(EVENT_HIDE$4);
-      $(this._element).trigger(hideEvent);
+      var hideEvent = $__default['default'].Event(EVENT_HIDE$4);
+      $__default['default'](this._element).trigger(hideEvent);
 
       if (hideEvent.isDefaultPrevented()) {
         return;
@@ -6204,22 +6228,21 @@ module.exports = {
     };
 
     _proto.dispose = function dispose() {
-      clearTimeout(this._timeout);
-      this._timeout = null;
+      this._clearTimeout();
 
       if (this._element.classList.contains(CLASS_NAME_SHOW$7)) {
         this._element.classList.remove(CLASS_NAME_SHOW$7);
       }
 
-      $(this._element).off(EVENT_CLICK_DISMISS$1);
-      $.removeData(this._element, DATA_KEY$a);
+      $__default['default'](this._element).off(EVENT_CLICK_DISMISS$1);
+      $__default['default'].removeData(this._element, DATA_KEY$a);
       this._element = null;
       this._config = null;
     } // Private
     ;
 
     _proto._getConfig = function _getConfig(config) {
-      config = _objectSpread2(_objectSpread2(_objectSpread2({}, Default$7), $(this._element).data()), typeof config === 'object' && config ? config : {});
+      config = _extends({}, Default$7, $__default['default'](this._element).data(), typeof config === 'object' && config ? config : {});
       Util.typeCheckConfig(NAME$a, config, this.constructor.DefaultType);
       return config;
     };
@@ -6227,7 +6250,7 @@ module.exports = {
     _proto._setListeners = function _setListeners() {
       var _this2 = this;
 
-      $(this._element).on(EVENT_CLICK_DISMISS$1, SELECTOR_DATA_DISMISS$1, function () {
+      $__default['default'](this._element).on(EVENT_CLICK_DISMISS$1, SELECTOR_DATA_DISMISS$1, function () {
         return _this2.hide();
       });
     };
@@ -6238,23 +6261,28 @@ module.exports = {
       var complete = function complete() {
         _this3._element.classList.add(CLASS_NAME_HIDE);
 
-        $(_this3._element).trigger(EVENT_HIDDEN$4);
+        $__default['default'](_this3._element).trigger(EVENT_HIDDEN$4);
       };
 
       this._element.classList.remove(CLASS_NAME_SHOW$7);
 
       if (this._config.animation) {
         var transitionDuration = Util.getTransitionDurationFromElement(this._element);
-        $(this._element).one(Util.TRANSITION_END, complete).emulateTransitionEnd(transitionDuration);
+        $__default['default'](this._element).one(Util.TRANSITION_END, complete).emulateTransitionEnd(transitionDuration);
       } else {
         complete();
       }
+    };
+
+    _proto._clearTimeout = function _clearTimeout() {
+      clearTimeout(this._timeout);
+      this._timeout = null;
     } // Static
     ;
 
     Toast._jQueryInterface = function _jQueryInterface(config) {
       return this.each(function () {
-        var $element = $(this);
+        var $element = $__default['default'](this);
         var data = $element.data(DATA_KEY$a);
 
         var _config = typeof config === 'object' && config;
@@ -6300,11 +6328,11 @@ module.exports = {
    */
 
 
-  $.fn[NAME$a] = Toast._jQueryInterface;
-  $.fn[NAME$a].Constructor = Toast;
+  $__default['default'].fn[NAME$a] = Toast._jQueryInterface;
+  $__default['default'].fn[NAME$a].Constructor = Toast;
 
-  $.fn[NAME$a].noConflict = function () {
-    $.fn[NAME$a] = JQUERY_NO_CONFLICT$a;
+  $__default['default'].fn[NAME$a].noConflict = function () {
+    $__default['default'].fn[NAME$a] = JQUERY_NO_CONFLICT$a;
     return Toast._jQueryInterface;
   };
 
@@ -6341,7 +6369,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".list_style{\r\n    list-style-type: none;\r\n    margin:0;\r\n    padding:14px;\r\n    background-color: wheat;\r\n    height:300px;\r\n    width:300px;\r\n    overflow-y: scroll;\r\n}\r\n.list_style li{\r\n    display: table;\r\n    width:100%;\r\n    height: auto;\r\n    padding:10px 5px;\r\n    margin: 2px;\r\n    background-color: rgb(198, 250, 182);\r\n}\r\n\r\n.user_list, .chat_list{\r\n    background-color:transparent;\r\n    height:500px;\r\n    overflow-y:scroll;\r\n}\r\n\r\n::-webkit-scrollbar {\r\n    width: 10px;\r\n  }\r\n  \r\n  /* Track */\r\n  ::-webkit-scrollbar-track {\r\n    background: #f1f1f1;\r\n  }\r\n  \r\n  /* Handle */\r\n  ::-webkit-scrollbar-thumb {\r\n    background: #888;\r\n  }\r\n  \r\n  /* Handle on hover */\r\n  ::-webkit-scrollbar-thumb:hover {\r\n    background: #555;\r\n  }", ""]);
+exports.push([module.i, ".list_style{\n    list-style-type: none;\n    margin:0;\n    padding:14px;\n    background-color: wheat;\n    height:300px;\n    width:300px;\n    overflow-y: scroll;\n}\n.list_style li{\n    display: table;\n    width:100%;\n    height: auto;\n    padding:10px 5px;\n    margin: 2px;\n    background-color: rgb(198, 250, 182);\n}\n\n.user_list, .chat_list{\n    background-color:transparent;\n    height:500px;\n    overflow-y:scroll;\n}\n\n::-webkit-scrollbar {\n    width: 10px;\n  }\n  \n  /* Track */\n  ::-webkit-scrollbar-track {\n    background: #f1f1f1;\n  }\n  \n  /* Handle */\n  ::-webkit-scrollbar-thumb {\n    background: #888;\n  }\n  \n  /* Handle on hover */\n  ::-webkit-scrollbar-thumb:hover {\n    background: #555;\n  }\n  /* for react-emoji-picker */\n  /* .card-footer-emoji {\n    position: absolute;\n    top: 40%;\n    left: 3%;\n  } */\n  .card-footer-emoji {\n    position: absolute;\n    top: 20%;\n    /* bottom: 40; */\n    left: 3%;\n  }\n  .inputimage {\n    background:#FFFFFF no-repeat 4px 4px;\n    padding:4px 4px 4px 22px;\n    height:18px;\n  }", ""]);
 
 // exports
 
@@ -17340,7 +17368,7 @@ return jQuery;
   var undefined;
 
   /** Used as the semantic version number. */
-  var VERSION = '4.17.15';
+  var VERSION = '4.17.20';
 
   /** Used as the size to enable large array optimizations. */
   var LARGE_ARRAY_SIZE = 200;
@@ -21047,8 +21075,21 @@ return jQuery;
      * @returns {Array} Returns the new sorted array.
      */
     function baseOrderBy(collection, iteratees, orders) {
+      if (iteratees.length) {
+        iteratees = arrayMap(iteratees, function(iteratee) {
+          if (isArray(iteratee)) {
+            return function(value) {
+              return baseGet(value, iteratee.length === 1 ? iteratee[0] : iteratee);
+            }
+          }
+          return iteratee;
+        });
+      } else {
+        iteratees = [identity];
+      }
+
       var index = -1;
-      iteratees = arrayMap(iteratees.length ? iteratees : [identity], baseUnary(getIteratee()));
+      iteratees = arrayMap(iteratees, baseUnary(getIteratee()));
 
       var result = baseMap(collection, function(value, key, collection) {
         var criteria = arrayMap(iteratees, function(iteratee) {
@@ -21305,6 +21346,10 @@ return jQuery;
         var key = toKey(path[index]),
             newValue = value;
 
+        if (key === '__proto__' || key === 'constructor' || key === 'prototype') {
+          return object;
+        }
+
         if (index != lastIndex) {
           var objValue = nested[key];
           newValue = customizer ? customizer(objValue, key, nested) : undefined;
@@ -21457,11 +21502,14 @@ return jQuery;
      *  into `array`.
      */
     function baseSortedIndexBy(array, value, iteratee, retHighest) {
-      value = iteratee(value);
-
       var low = 0,
-          high = array == null ? 0 : array.length,
-          valIsNaN = value !== value,
+          high = array == null ? 0 : array.length;
+      if (high === 0) {
+        return 0;
+      }
+
+      value = iteratee(value);
+      var valIsNaN = value !== value,
           valIsNull = value === null,
           valIsSymbol = isSymbol(value),
           valIsUndefined = value === undefined;
@@ -22946,10 +22994,11 @@ return jQuery;
       if (arrLength != othLength && !(isPartial && othLength > arrLength)) {
         return false;
       }
-      // Assume cyclic values are equal.
-      var stacked = stack.get(array);
-      if (stacked && stack.get(other)) {
-        return stacked == other;
+      // Check that cyclic values are equal.
+      var arrStacked = stack.get(array);
+      var othStacked = stack.get(other);
+      if (arrStacked && othStacked) {
+        return arrStacked == other && othStacked == array;
       }
       var index = -1,
           result = true,
@@ -23111,10 +23160,11 @@ return jQuery;
           return false;
         }
       }
-      // Assume cyclic values are equal.
-      var stacked = stack.get(object);
-      if (stacked && stack.get(other)) {
-        return stacked == other;
+      // Check that cyclic values are equal.
+      var objStacked = stack.get(object);
+      var othStacked = stack.get(other);
+      if (objStacked && othStacked) {
+        return objStacked == other && othStacked == object;
       }
       var result = true;
       stack.set(object, other);
@@ -26495,6 +26545,10 @@ return jQuery;
      * // The `_.property` iteratee shorthand.
      * _.filter(users, 'active');
      * // => objects for ['barney']
+     *
+     * // Combining several predicates using `_.overEvery` or `_.overSome`.
+     * _.filter(users, _.overSome([{ 'age': 36 }, ['age', 40]]));
+     * // => objects for ['fred', 'barney']
      */
     function filter(collection, predicate) {
       var func = isArray(collection) ? arrayFilter : baseFilter;
@@ -27244,15 +27298,15 @@ return jQuery;
      * var users = [
      *   { 'user': 'fred',   'age': 48 },
      *   { 'user': 'barney', 'age': 36 },
-     *   { 'user': 'fred',   'age': 40 },
+     *   { 'user': 'fred',   'age': 30 },
      *   { 'user': 'barney', 'age': 34 }
      * ];
      *
      * _.sortBy(users, [function(o) { return o.user; }]);
-     * // => objects for [['barney', 36], ['barney', 34], ['fred', 48], ['fred', 40]]
+     * // => objects for [['barney', 36], ['barney', 34], ['fred', 48], ['fred', 30]]
      *
      * _.sortBy(users, ['user', 'age']);
-     * // => objects for [['barney', 34], ['barney', 36], ['fred', 40], ['fred', 48]]
+     * // => objects for [['barney', 34], ['barney', 36], ['fred', 30], ['fred', 48]]
      */
     var sortBy = baseRest(function(collection, iteratees) {
       if (collection == null) {
@@ -32127,11 +32181,11 @@ return jQuery;
 
       // Use a sourceURL for easier debugging.
       // The sourceURL gets injected into the source that's eval-ed, so be careful
-      // with lookup (in case of e.g. prototype pollution), and strip newlines if any.
-      // A newline wouldn't be a valid sourceURL anyway, and it'd enable code injection.
+      // to normalize all kinds of whitespace, so e.g. newlines (and unicode versions of it) can't sneak in
+      // and escape the comment, thus injecting code that gets evaled.
       var sourceURL = '//# sourceURL=' +
         (hasOwnProperty.call(options, 'sourceURL')
-          ? (options.sourceURL + '').replace(/[\r\n]/g, ' ')
+          ? (options.sourceURL + '').replace(/\s/g, ' ')
           : ('lodash.templateSources[' + (++templateCounter) + ']')
         ) + '\n';
 
@@ -32164,8 +32218,6 @@ return jQuery;
 
       // If `variable` is not specified wrap a with-statement around the generated
       // code to add the data object to the top of the scope chain.
-      // Like with sourceURL, we take care to not check the option's prototype,
-      // as this configuration is a code injection vector.
       var variable = hasOwnProperty.call(options, 'variable') && options.variable;
       if (!variable) {
         source = 'with (obj) {\n' + source + '\n}\n';
@@ -32872,6 +32924,9 @@ return jQuery;
      * values against any array or object value, respectively. See `_.isEqual`
      * for a list of supported value comparisons.
      *
+     * **Note:** Multiple values can be checked by combining several matchers
+     * using `_.overSome`
+     *
      * @static
      * @memberOf _
      * @since 3.0.0
@@ -32887,6 +32942,10 @@ return jQuery;
      *
      * _.filter(objects, _.matches({ 'a': 4, 'c': 6 }));
      * // => [{ 'a': 4, 'b': 5, 'c': 6 }]
+     *
+     * // Checking for several possible values
+     * _.filter(objects, _.overSome([_.matches({ 'a': 1 }), _.matches({ 'a': 4 })]));
+     * // => [{ 'a': 1, 'b': 2, 'c': 3 }, { 'a': 4, 'b': 5, 'c': 6 }]
      */
     function matches(source) {
       return baseMatches(baseClone(source, CLONE_DEEP_FLAG));
@@ -32900,6 +32959,9 @@ return jQuery;
      * **Note:** Partial comparisons will match empty array and empty object
      * `srcValue` values against any array or object value, respectively. See
      * `_.isEqual` for a list of supported value comparisons.
+     *
+     * **Note:** Multiple values can be checked by combining several matchers
+     * using `_.overSome`
      *
      * @static
      * @memberOf _
@@ -32917,6 +32979,10 @@ return jQuery;
      *
      * _.find(objects, _.matchesProperty('a', 4));
      * // => { 'a': 4, 'b': 5, 'c': 6 }
+     *
+     * // Checking for several possible values
+     * _.filter(objects, _.overSome([_.matchesProperty('a', 1), _.matchesProperty('a', 4)]));
+     * // => [{ 'a': 1, 'b': 2, 'c': 3 }, { 'a': 4, 'b': 5, 'c': 6 }]
      */
     function matchesProperty(path, srcValue) {
       return baseMatchesProperty(path, baseClone(srcValue, CLONE_DEEP_FLAG));
@@ -33140,6 +33206,10 @@ return jQuery;
      * Creates a function that checks if **all** of the `predicates` return
      * truthy when invoked with the arguments it receives.
      *
+     * Following shorthands are possible for providing predicates.
+     * Pass an `Object` and it will be used as an parameter for `_.matches` to create the predicate.
+     * Pass an `Array` of parameters for `_.matchesProperty` and the predicate will be created using them.
+     *
      * @static
      * @memberOf _
      * @since 4.0.0
@@ -33166,6 +33236,10 @@ return jQuery;
      * Creates a function that checks if **any** of the `predicates` return
      * truthy when invoked with the arguments it receives.
      *
+     * Following shorthands are possible for providing predicates.
+     * Pass an `Object` and it will be used as an parameter for `_.matches` to create the predicate.
+     * Pass an `Array` of parameters for `_.matchesProperty` and the predicate will be created using them.
+     *
      * @static
      * @memberOf _
      * @since 4.0.0
@@ -33185,6 +33259,9 @@ return jQuery;
      *
      * func(NaN);
      * // => false
+     *
+     * var matchesFunc = _.overSome([{ 'a': 1 }, { 'a': 2 }])
+     * var matchesPropertyFunc = _.overSome([['a', 1], ['a', 2]])
      */
     var overSome = createOver(arraySome);
 
@@ -37508,7 +37585,7 @@ module.exports = ReactPropTypesSecret;
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/** @license React v16.13.1
+/** @license React v16.14.0
  * react-dom.development.js
  *
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -62078,7 +62155,7 @@ function injectIntoDevTools(devToolsConfig) {
     // Enables DevTools to append owner stacks to error messages in DEV mode.
     getCurrentFiber:  function () {
       return current;
-    } 
+    }
   }));
 }
 var IsSomeRendererActing$1 = ReactSharedInternals.IsSomeRendererActing;
@@ -62430,7 +62507,7 @@ implementation) {
   };
 }
 
-var ReactVersion = '16.13.1';
+var ReactVersion = '16.14.0';
 
 setAttemptUserBlockingHydration(attemptUserBlockingHydration$1);
 setAttemptContinuousHydration(attemptContinuousHydration$1);
@@ -62577,7 +62654,7 @@ if (false) {} else {
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/** @license React v16.13.1
+/** @license React v16.14.0
  * react.development.js
  *
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -62597,7 +62674,7 @@ if (true) {
 var _assign = __webpack_require__(/*! object-assign */ "./node_modules/object-assign/index.js");
 var checkPropTypes = __webpack_require__(/*! prop-types/checkPropTypes */ "./node_modules/prop-types/checkPropTypes.js");
 
-var ReactVersion = '16.13.1';
+var ReactVersion = '16.14.0';
 
 // The Symbol used to tag the ReactElement-like types. If there is no native Symbol
 // nor polyfill, then a plain number is used for performance.
@@ -65775,6 +65852,204 @@ if (false) {} else {
 
 /***/ }),
 
+/***/ "./node_modules/setimmediate/setImmediate.js":
+/*!***************************************************!*\
+  !*** ./node_modules/setimmediate/setImmediate.js ***!
+  \***************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function(global, process) {(function (global, undefined) {
+    "use strict";
+
+    if (global.setImmediate) {
+        return;
+    }
+
+    var nextHandle = 1; // Spec says greater than zero
+    var tasksByHandle = {};
+    var currentlyRunningATask = false;
+    var doc = global.document;
+    var registerImmediate;
+
+    function setImmediate(callback) {
+      // Callback can either be a function or a string
+      if (typeof callback !== "function") {
+        callback = new Function("" + callback);
+      }
+      // Copy function arguments
+      var args = new Array(arguments.length - 1);
+      for (var i = 0; i < args.length; i++) {
+          args[i] = arguments[i + 1];
+      }
+      // Store and register the task
+      var task = { callback: callback, args: args };
+      tasksByHandle[nextHandle] = task;
+      registerImmediate(nextHandle);
+      return nextHandle++;
+    }
+
+    function clearImmediate(handle) {
+        delete tasksByHandle[handle];
+    }
+
+    function run(task) {
+        var callback = task.callback;
+        var args = task.args;
+        switch (args.length) {
+        case 0:
+            callback();
+            break;
+        case 1:
+            callback(args[0]);
+            break;
+        case 2:
+            callback(args[0], args[1]);
+            break;
+        case 3:
+            callback(args[0], args[1], args[2]);
+            break;
+        default:
+            callback.apply(undefined, args);
+            break;
+        }
+    }
+
+    function runIfPresent(handle) {
+        // From the spec: "Wait until any invocations of this algorithm started before this one have completed."
+        // So if we're currently running a task, we'll need to delay this invocation.
+        if (currentlyRunningATask) {
+            // Delay by doing a setTimeout. setImmediate was tried instead, but in Firefox 7 it generated a
+            // "too much recursion" error.
+            setTimeout(runIfPresent, 0, handle);
+        } else {
+            var task = tasksByHandle[handle];
+            if (task) {
+                currentlyRunningATask = true;
+                try {
+                    run(task);
+                } finally {
+                    clearImmediate(handle);
+                    currentlyRunningATask = false;
+                }
+            }
+        }
+    }
+
+    function installNextTickImplementation() {
+        registerImmediate = function(handle) {
+            process.nextTick(function () { runIfPresent(handle); });
+        };
+    }
+
+    function canUsePostMessage() {
+        // The test against `importScripts` prevents this implementation from being installed inside a web worker,
+        // where `global.postMessage` means something completely different and can't be used for this purpose.
+        if (global.postMessage && !global.importScripts) {
+            var postMessageIsAsynchronous = true;
+            var oldOnMessage = global.onmessage;
+            global.onmessage = function() {
+                postMessageIsAsynchronous = false;
+            };
+            global.postMessage("", "*");
+            global.onmessage = oldOnMessage;
+            return postMessageIsAsynchronous;
+        }
+    }
+
+    function installPostMessageImplementation() {
+        // Installs an event handler on `global` for the `message` event: see
+        // * https://developer.mozilla.org/en/DOM/window.postMessage
+        // * http://www.whatwg.org/specs/web-apps/current-work/multipage/comms.html#crossDocumentMessages
+
+        var messagePrefix = "setImmediate$" + Math.random() + "$";
+        var onGlobalMessage = function(event) {
+            if (event.source === global &&
+                typeof event.data === "string" &&
+                event.data.indexOf(messagePrefix) === 0) {
+                runIfPresent(+event.data.slice(messagePrefix.length));
+            }
+        };
+
+        if (global.addEventListener) {
+            global.addEventListener("message", onGlobalMessage, false);
+        } else {
+            global.attachEvent("onmessage", onGlobalMessage);
+        }
+
+        registerImmediate = function(handle) {
+            global.postMessage(messagePrefix + handle, "*");
+        };
+    }
+
+    function installMessageChannelImplementation() {
+        var channel = new MessageChannel();
+        channel.port1.onmessage = function(event) {
+            var handle = event.data;
+            runIfPresent(handle);
+        };
+
+        registerImmediate = function(handle) {
+            channel.port2.postMessage(handle);
+        };
+    }
+
+    function installReadyStateChangeImplementation() {
+        var html = doc.documentElement;
+        registerImmediate = function(handle) {
+            // Create a <script> element; its readystatechange event will be fired asynchronously once it is inserted
+            // into the document. Do so, thus queuing up the task. Remember to clean up once it's been called.
+            var script = doc.createElement("script");
+            script.onreadystatechange = function () {
+                runIfPresent(handle);
+                script.onreadystatechange = null;
+                html.removeChild(script);
+                script = null;
+            };
+            html.appendChild(script);
+        };
+    }
+
+    function installSetTimeoutImplementation() {
+        registerImmediate = function(handle) {
+            setTimeout(runIfPresent, 0, handle);
+        };
+    }
+
+    // If supported, we should attach to the prototype of global, since that is where setTimeout et al. live.
+    var attachTo = Object.getPrototypeOf && Object.getPrototypeOf(global);
+    attachTo = attachTo && attachTo.setTimeout ? attachTo : global;
+
+    // Don't get fooled by e.g. browserify environments.
+    if ({}.toString.call(global.process) === "[object process]") {
+        // For Node.js before 0.9
+        installNextTickImplementation();
+
+    } else if (canUsePostMessage()) {
+        // For non-IE10 modern browsers
+        installPostMessageImplementation();
+
+    } else if (global.MessageChannel) {
+        // For web workers, where supported
+        installMessageChannelImplementation();
+
+    } else if (doc && "onreadystatechange" in doc.createElement("script")) {
+        // For IE 6–8
+        installReadyStateChangeImplementation();
+
+    } else {
+        // For older browsers
+        installSetTimeoutImplementation();
+    }
+
+    attachTo.setImmediate = setImmediate;
+    attachTo.clearImmediate = clearImmediate;
+}(typeof self === "undefined" ? typeof global === "undefined" ? this : global : self));
+
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js"), __webpack_require__(/*! ./../process/browser.js */ "./node_modules/process/browser.js")))
+
+/***/ }),
+
 /***/ "./node_modules/style-loader/lib/addStyles.js":
 /*!****************************************************!*\
   !*** ./node_modules/style-loader/lib/addStyles.js ***!
@@ -66284,6 +66559,81 @@ module.exports = function (css) {
 
 /***/ }),
 
+/***/ "./node_modules/timers-browserify/main.js":
+/*!************************************************!*\
+  !*** ./node_modules/timers-browserify/main.js ***!
+  \************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function(global) {var scope = (typeof global !== "undefined" && global) ||
+            (typeof self !== "undefined" && self) ||
+            window;
+var apply = Function.prototype.apply;
+
+// DOM APIs, for completeness
+
+exports.setTimeout = function() {
+  return new Timeout(apply.call(setTimeout, scope, arguments), clearTimeout);
+};
+exports.setInterval = function() {
+  return new Timeout(apply.call(setInterval, scope, arguments), clearInterval);
+};
+exports.clearTimeout =
+exports.clearInterval = function(timeout) {
+  if (timeout) {
+    timeout.close();
+  }
+};
+
+function Timeout(id, clearFn) {
+  this._id = id;
+  this._clearFn = clearFn;
+}
+Timeout.prototype.unref = Timeout.prototype.ref = function() {};
+Timeout.prototype.close = function() {
+  this._clearFn.call(scope, this._id);
+};
+
+// Does not start the time, just sets up the members needed.
+exports.enroll = function(item, msecs) {
+  clearTimeout(item._idleTimeoutId);
+  item._idleTimeout = msecs;
+};
+
+exports.unenroll = function(item) {
+  clearTimeout(item._idleTimeoutId);
+  item._idleTimeout = -1;
+};
+
+exports._unrefActive = exports.active = function(item) {
+  clearTimeout(item._idleTimeoutId);
+
+  var msecs = item._idleTimeout;
+  if (msecs >= 0) {
+    item._idleTimeoutId = setTimeout(function onTimeout() {
+      if (item._onTimeout)
+        item._onTimeout();
+    }, msecs);
+  }
+};
+
+// setimmediate attaches itself to the global object
+__webpack_require__(/*! setimmediate */ "./node_modules/setimmediate/setImmediate.js");
+// On some exotic environments, it's not clear which object `setimmediate` was
+// able to install onto.  Search each possibility in the same order as the
+// `setimmediate` library.
+exports.setImmediate = (typeof self !== "undefined" && self.setImmediate) ||
+                       (typeof global !== "undefined" && global.setImmediate) ||
+                       (this && this.setImmediate);
+exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
+                         (typeof global !== "undefined" && global.clearImmediate) ||
+                         (this && this.clearImmediate);
+
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js")))
+
+/***/ }),
+
 /***/ "./node_modules/webpack/buildin/global.js":
 /*!***********************************!*\
   !*** (webpack)/buildin/global.js ***!
@@ -66357,8 +66707,8 @@ module.exports = function(module) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _components_Chatpanel__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/Chatpanel */ "./resources/js/components/Chatpanel.js");
-/* harmony import */ var _components_Chatsubmit__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/Chatsubmit */ "./resources/js/components/Chatsubmit.js");
+/* harmony import */ var _components_chatpanel__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/chatpanel */ "./resources/js/components/chatpanel.js");
+/* harmony import */ var _components_chatsubmit__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/chatsubmit */ "./resources/js/components/chatsubmit.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
@@ -66381,8 +66731,8 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
  //if (document.getElementById('chat_panel_container')) {
 
-react_dom__WEBPACK_IMPORTED_MODULE_3___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_components_Chatpanel__WEBPACK_IMPORTED_MODULE_0__["default"], null), document.getElementById('chat_panel_container'));
-react_dom__WEBPACK_IMPORTED_MODULE_3___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_components_Chatsubmit__WEBPACK_IMPORTED_MODULE_1__["default"], null), document.getElementById('chat_submit_container')); //}
+react_dom__WEBPACK_IMPORTED_MODULE_3___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_components_chatpanel__WEBPACK_IMPORTED_MODULE_0__["default"], null), document.getElementById('chat_panel_container'));
+react_dom__WEBPACK_IMPORTED_MODULE_3___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_components_chatsubmit__WEBPACK_IMPORTED_MODULE_1__["default"], null), document.getElementById('chat_submit_container')); //}
 
 /***/ }),
 
@@ -66431,9 +66781,9 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /***/ }),
 
-/***/ "./resources/js/components/Chatpanel.js":
+/***/ "./resources/js/components/chatpanel.js":
 /*!**********************************************!*\
-  !*** ./resources/js/components/Chatpanel.js ***!
+  !*** ./resources/js/components/chatpanel.js ***!
   \**********************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -66444,6 +66794,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _styles_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./styles.css */ "./resources/js/components/styles.css");
 /* harmony import */ var _styles_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_styles_css__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _joeattardi_emoji_button__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @joeattardi/emoji-button */ "./node_modules/@joeattardi/emoji-button/dist/index.js");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -66466,6 +66817,9 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
 
 
 
@@ -66480,21 +66834,59 @@ var Chatpanel = /*#__PURE__*/function (_React$Component) {
     _classCallCheck(this, Chatpanel);
 
     _this = _super.call(this, props);
+
+    _defineProperty(_assertThisInitialized(_this), "handleChange", function (e) {
+      _this.setState({
+        text: e.target.value
+      });
+
+      console.log('in handle ', _this.state.text);
+      console.log(e);
+    });
+
     _this.state = {
       msg_list: [],
       user_list: [],
-      active_user: []
-    }; //alert(user.id);
+      active_user: [],
+      current_usr: 0,
+      messageList: [],
+      chosenEmoji: {},
+      clicked: false,
+      childVisible: false,
+      text: ""
+    }; // alert(user.id);
 
     _this.handleEve = _this.handleEve.bind(_assertThisInitialized(_this));
-    _this.renderList = _this.renderList.bind(_assertThisInitialized(_this));
     _this.subscribeToPusher = _this.subscribeToPusher.bind(_assertThisInitialized(_this));
     _this.loadUsers = _this.loadUsers.bind(_assertThisInitialized(_this));
     _this.loadChats = _this.loadChats.bind(_assertThisInitialized(_this));
+    _this.onEmojiClick = _this.onEmojiClick.bind(_assertThisInitialized(_this));
+    _this.handleClick = _this.handleClick.bind(_assertThisInitialized(_this));
+    _this.window = _this.window.bind(_assertThisInitialized(_this));
     return _this;
   }
 
   _createClass(Chatpanel, [{
+    key: "handleClick",
+    value: function handleClick(e) {
+      this.setState({
+        childVisible: !this.state.childVisible
+      });
+    }
+  }, {
+    key: "onEmojiClick",
+    value: function onEmojiClick(event, emojiObject) {
+      var _this2 = this;
+
+      console.log('the event is ', event);
+      console.log("eo", emojiObject);
+      this.setState({
+        chosenEmoji: emojiObject
+      }, function () {
+        console.log(_this2.state.chosenEmoji, "chosenEmoji()");
+      });
+    }
+  }, {
     key: "componentDidMount",
     value: function componentDidMount() {
       this.loadUsers(); //this.subscribeToPusher();    
@@ -66502,10 +66894,10 @@ var Chatpanel = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "loadUsers",
     value: function loadUsers() {
-      var _this2 = this;
+      var _this3 = this;
 
       var tok = document.querySelector('meta[name="csrf-token"]').content;
-      fetch('http://127.0.0.1:8000/fetchUsers', {
+      fetch('fetchusers', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -66521,9 +66913,13 @@ var Chatpanel = /*#__PURE__*/function (_React$Component) {
           arr.push(dat[x]);
         }
 
-        _this2.setState({
-          user_list: _this2.state.user_list.concat(arr)
+        _this3.setState({
+          user_list: _this3.state.user_list.concat(arr)
         });
+
+        console.log('this beauty ', arr.find(function (obj) {
+          return obj.id;
+        }));
       })["catch"](function (error) {
         console.error(error);
       });
@@ -66531,9 +66927,15 @@ var Chatpanel = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "loadChats",
     value: function loadChats(el_id) {
-      var _this3 = this;
+      var _this4 = this;
 
-      var clicked_user_id = el_id.target.id;
+      var clicked_user_id = Number(el_id.target.id);
+      console.log('asdfg', clicked_user_id);
+      this.setState({
+        current_usr: clicked_user_id
+      }, function () {
+        console.log(_this4.state.current_usr, 'current user');
+      });
 
       for (var eu = 0; eu < this.state.user_list.length; eu++) {
         if (this.state.user_list[eu].id == clicked_user_id) {
@@ -66547,9 +66949,8 @@ var Chatpanel = /*#__PURE__*/function (_React$Component) {
         }
       }
 
-      var tok = document.querySelector('meta[name="csrf-token"]').content; // alert(el_id.target.id);
-
-      fetch('http://127.0.0.1:8000/fetchmessages?rec_id=' + clicked_user_id, {
+      var tok = document.querySelector('meta[name="csrf-token"]').content;
+      fetch('fetchmessages?rec_id=' + clicked_user_id, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -66559,8 +66960,7 @@ var Chatpanel = /*#__PURE__*/function (_React$Component) {
       }).then(function (response) {
         return response.json();
       }).then(function (dat) {
-        _this3.setState({//activeUser:this.state.activeUser.push(this.state.user_list[clicked_user_id
-        });
+        _this4.setState({});
 
         console.log(JSON.stringify(dat));
         var arr = [];
@@ -66570,33 +66970,33 @@ var Chatpanel = /*#__PURE__*/function (_React$Component) {
           arr.push(dat[x]);
         }
 
-        _this3.setState({
+        _this4.setState({
           msg_list: []
         });
 
-        _this3.setState({
-          msg_list: _this3.state.msg_list.concat(arr)
+        _this4.setState({
+          msg_list: _this4.state.msg_list.concat(arr)
         });
+
+        console.log('messsages', _this4.state.msg_list);
       })["catch"](function (error) {
         console.error(error);
       });
     }
   }, {
-    key: "renderList",
-    value: function renderList(dataToRender) {
-      var list = document.getElementById('chat_list');
-      var list_item = document.createElement('li');
-      list_item.innerHTML = dataToRender;
-      list.appendChild(list_item);
-    }
-  }, {
     key: "handleEve",
     value: function handleEve(e) {
-      var msg = document.getElementById('chat_tbox').value;
+      console.log('wiwi', e.target.value);
+      console.log('wiwii', this.state.text);
+      var msg = this.state.text;
+      console.log('message ', msg);
       var tok = document.querySelector('meta[name="csrf-token"]').content;
+      var user_id = this.state.current_usr;
+      console.log('comeon', user_id); // console.log(this.current_usr, el_id, e);
+
       var data = new FormData();
       data.append('message', 'msg');
-      fetch('http://127.0.0.1:8000/messages?message=' + msg + '&rec_id=2', {
+      fetch('messages?message=' + msg + '&rec_id=' + user_id, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -66636,9 +67036,30 @@ var Chatpanel = /*#__PURE__*/function (_React$Component) {
       });
     }
   }, {
+    key: "window",
+    value: function window(e) {
+      var _this5 = this;
+
+      console.log('lissst', this.state.text);
+      var button = document.querySelector('#emoji-button');
+      var picker = new _joeattardi_emoji_button__WEBPACK_IMPORTED_MODULE_2__["EmojiButton"]();
+      picker.on('emoji', function (emoji) {
+        document.querySelector('input').value += emoji.emoji; //   e.target.value += emoji.emoji;
+
+        _this5.state.text += emoji.emoji;
+        console.log(emoji.emoji, 'emoji');
+        console.log('text', _this5.state.text);
+      });
+      console.log('wiiwii', e.target.value);
+      console.log('praise ', this.state.text);
+      button.addEventListener('click', function () {
+        picker.pickerVisible ? picker.hidePicker() : picker.showPicker(button);
+      });
+    }
+  }, {
     key: "render",
     value: function render() {
-      var _this4 = this;
+      var _this6 = this;
 
       var isAnyUserActive = false;
 
@@ -66666,7 +67087,7 @@ var Chatpanel = /*#__PURE__*/function (_React$Component) {
           href: "#"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
           id: number.id,
-          onClick: _this4.loadChats,
+          onClick: _this6.loadChats,
           className: "list-group-item list-group-item-action",
           key: number.id
         }, number.name));
@@ -66689,15 +67110,17 @@ var Chatpanel = /*#__PURE__*/function (_React$Component) {
         }, msgs.message);
       }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "card-footer"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }, this.state.text, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "text",
-        id: "chat_tbox",
-        className: "form-control",
-        placeholder: "Enter message..."
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        value: this.state.text,
+        onChange: this.handleChange
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        id: "emoji-button",
+        onClick: this.window
+      }, "?"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "submit",
         className: "btn btn-primary btn-sm",
-        value: "GO",
+        value: "Send",
         onClick: this.handleEve
       }))))));
     }
@@ -66710,9 +67133,9 @@ var Chatpanel = /*#__PURE__*/function (_React$Component) {
 
 /***/ }),
 
-/***/ "./resources/js/components/Chatsubmit.js":
+/***/ "./resources/js/components/chatsubmit.js":
 /*!***********************************************!*\
-  !*** ./resources/js/components/Chatsubmit.js ***!
+  !*** ./resources/js/components/chatsubmit.js ***!
   \***********************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -66823,8 +67246,8 @@ if(false) {}
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\laravel_projects\laravel-chat\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\laravel_projects\laravel-chat\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /home/meba/Music/laravel-chat/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /home/meba/Music/laravel-chat/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
