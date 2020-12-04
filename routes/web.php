@@ -16,7 +16,8 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
-Route::post('fetchUsers','ChatsController@fetchUsers');
+// Route::post('fetchUsers','ChatsController@fetchUsers');
+Route::post('fetchusers','ChatsController@fetchUsers');
 
 Route::get('/', 'ChatsController@index');
 Route::post('fetchmessages', 'ChatsController@fetchMessages');

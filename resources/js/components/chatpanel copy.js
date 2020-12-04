@@ -1,6 +1,97 @@
 import React from 'react';
+// import { render } from 'react-dom';
+// import Picker, { SKIN_TONE_MEDIUM_DARK } from 'emoji-picker-react';
+import { Launcher } from 'rc-chat-view';
 import './styles.css';
-import { EmojiButton } from '@joeattardi/emoji-button';
+import { Picker } from 'emoji-mart';
+
+
+// import moment from 'moment';
+
+class NewComponent extends React.Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            chosenEmoji: {},
+            childVisible: false,
+            emoji: "",
+            text: ""
+        }        
+        // this.onEmojiClick = this.onEmojiClick.bind(this);
+        // this.onEmojiClick = this.onEmojiClick.bind(this);
+        this.handleChange = this.handleChange.bind(this);
+        this.addEmoji = this.addEmoji.bind(this);
+        // console.log('users',this.state.user_list)
+        
+    }
+
+
+    handleChange = (e) => {
+        this.setState({ text: e.emoticons.native });
+        console.log(e)
+    }
+
+    onEmojiClick(event, emojiObject) {
+        console.log('the event is ',event)
+        console.log("eo", emojiObject);
+        this.setState({ chosenEmoji: emojiObject }, () => {
+          console.log(this.state.chosenEmoji, "chosenEmoji()");
+        });
+    }
+
+    addEmoji = (e) => {
+        console.log('eeeeeh', e.native)
+        console.log('current ',this.state.text)
+        // let emoji = e.native;
+        // this.setState({ text:  this.state.text + e.native }, () => {
+        //     console.log(this.state.text, "chosenEmoji()");
+        // });
+        this.state.text = this.props.elementValue;
+        // this.props.elementValue = this.state.text;
+        console.log(this.state.text, 'after parent')
+        this.setState({ text:  this.props.elementValue + e.native }, () => {
+            console.log(this.state.text, "chosenEmoji()");
+        });
+        // this.setState({
+        //     text:  this.state.text + e.native
+        // });
+    };
+
+    render() {
+      const {text, onChangeText} = this.props;
+      return (
+        <div {...this.props}>
+          {/* <Picker
+            onEmojiClick={this.onEmojiClick}
+            disableAutoFocus={true}
+            skinTone={SKIN_TONE_MEDIUM_DARK}
+            groupNames={{ smileys_people: "PEOPLE" }}
+        /> */}
+        <Picker onSelect={this.addEmoji} value={text} onClick={onChangeText} />
+        {this.state.text}
+        {/* <br />
+        <strong>Unified:</strong> {this.state.chosenEmoji.unified}
+        <br />
+        <strong>Names:</strong> {this.state.chosenEmoji.names}
+        <br />
+        <strong>Symbol:</strong> {this.state.chosenEmoji.emoji}
+        <br />
+        <strong>ActiveSkinTone:</strong> {this.state.chosenEmoji.activeSkinTone} 
+        */}
+        </div>
+      );
+    }  
+}
+  
+  class Button extends React.Component {
+    render() {
+      return (
+        <button {...this.props}>
+          click
+        </button>
+      );
+    }  
+  }
 
 class Chatpanel extends React.Component {
     constructor(props){
@@ -14,21 +105,31 @@ class Chatpanel extends React.Component {
             chosenEmoji: {},
             clicked: false,
             childVisible: false,
+            emoji: "",
             text: ""
         }        
         // alert(user.id);
         this.handleEve = this.handleEve.bind(this);
+        // this.renderList = this.renderList.bind(this);
         this.subscribeToPusher = this.subscribeToPusher.bind(this);
         this.loadUsers = this.loadUsers.bind(this);
         this.loadChats = this.loadChats.bind(this);
         this.onEmojiClick = this.onEmojiClick.bind(this);
+        // this.picker = this.picker.bind(this);
         this.handleClick = this.handleClick.bind(this);
-        this.window = this.window.bind(this);
+        // console.log('users',this.state.user_list)
         
     }
 
+    // const [chosenEmoji, setChosenEmoji] = useState(null);
+
+
     handleClick(e) {
+        // this.setState({
+        //   clicked: true
+        // });
         this.setState({childVisible: !this.state.childVisible});
+  
     }
 
     onEmojiClick(event, emojiObject) {
@@ -46,7 +147,7 @@ class Chatpanel extends React.Component {
 
     loadUsers(){
         let tok = document.querySelector('meta[name="csrf-token"]').content;
-        fetch('http://localhost:8000/api/fetchusers',{
+        fetch('fetchusers',{
             method:'POST',
             headers:{
                 'Content-Type':'application/json',
@@ -72,11 +173,15 @@ class Chatpanel extends React.Component {
     loadChats(el_id){
         let clicked_user_id = Number(el_id.target.id);
         console.log('asdfg',clicked_user_id);
-        
+        // this.setState({current_usr:clicked_user_id})
+        // this.setState({current_usr:this.state.current_usr+clicked_user_id})
         this.setState({ current_usr: clicked_user_id }, () => {
             console.log(this.state.current_usr, 'current user');
         }); 
-        
+        // console.log('types ',typeof(this.state.current_usr),typeof(clicked_user_id))
+        // this.state.current_usr = this.state.current_usr+clicked_user_id
+        // console.log('asdfgb',this.state.current_usr);
+
         for(var eu=0;eu<this.state.user_list.length;eu++){
             if(this.state.user_list[eu].id == clicked_user_id){
                 this.setState({active_user:this.state.active_user.splice(0,this.state.active_user.length)});
@@ -84,9 +189,10 @@ class Chatpanel extends React.Component {
                 break;
             }
         }
+        // console.log('active user', this.state.active_user)
         let tok = document.querySelector('meta[name="csrf-token"]').content;
-
-        fetch('http://localhost:8000/api/fetchmessages?receiver_id='+clicked_user_id,{
+        // alert(el_id.target.id);
+        fetch('fetchmessages?rec_id='+clicked_user_id,{
             method:'POST',
             headers:{
                 'Content-Type':'application/json',
@@ -97,6 +203,7 @@ class Chatpanel extends React.Component {
         .then(response => response.json())
         .then(dat => {
             this.setState({
+                //activeUser:this.state.activeUser.push(this.state.user_list[clicked_user_id
             });
             console.log(JSON.stringify(dat));
             let arr = [];
@@ -118,11 +225,12 @@ class Chatpanel extends React.Component {
     handleEve(e){
         console.log('wiwi', e.target.value)
         console.log('wiwii',this.state.text)
-        
+        // console.log('this beautyin hand ', this.loadUsers(arr.find(obj => { return obj.id})));
+        // let msg = document.getElementById('chat_tbox').value + this.state.text;
         let msg = this.state.text;
         console.log('message ', msg)
-        
         let tok = document.querySelector('meta[name="csrf-token"]').content;
+        // console.log('asdfg',this.state.current_usr);
         let user_id = this.state.current_usr;
         console.log('comeon', user_id)
         // console.log(this.current_usr, el_id, e);
@@ -154,8 +262,8 @@ class Chatpanel extends React.Component {
         let a_tok = document.querySelector('meta[name="csrf-token"]').content;
         //suscribing to pusher channel
         Pusher.logToConsole = true;
-        var pusher = new Pusher('86fa8a8b897d23aae21b', {
-            cluster: 'eu',
+        var pusher = new Pusher('649f5ddeef4b7a77a1f3', {
+            cluster: 'ap2',
             authEndpoint:'/broadcasting/auth',
             auth:{
                 headers:{
@@ -164,8 +272,8 @@ class Chatpanel extends React.Component {
             }
         });
         var new_msg = [];
-        var channel = pusher.subscribe('private-spark1-'+user.id);
-        channel.bind('message.chats', function(d) {
+        var channel = pusher.subscribe('private-chat-'+user.id);
+        channel.bind('App\\Events\\MessageEvent', function(d) {
             console.log("you have a new message:"+JSON.stringify(d));
             alert(d.msg);
             //new_msg.push(d.message.message);
@@ -173,31 +281,31 @@ class Chatpanel extends React.Component {
         });        
     }
 
+    // picker() {
+    //     // console.log('this is piacker',this.state.chosenEmoji.emoji)
+    //     <div>
+    //         <Picker
+    //         onEmojiClick={this.onEmojiClick}
+    //         disableAutoFocus={true}
+    //         skinTone={SKIN_TONE_MEDIUM_DARK}
+    //         groupNames={{ smileys_people: "PEOPLE" }}
+    //     />
+    //     <br />
+    //     <strong>Unified:</strong> {this.state.chosenEmoji.unified}
+    //     <br />
+    //     <strong>Names:</strong> {this.state.chosenEmoji.names}
+    //     <br />
+    //     <strong>Symbol:</strong> {this.state.chosenEmoji.emoji}
+    //     <br />
+    //     <strong>ActiveSkinTone:</strong> {this.state.chosenEmoji.activeSkinTone}
+                             
+    //     </div>
+    // }
+
     handleChange = (e) => {
-       this.setState({ text: e.target.value });
-        console.log('in handle ', this.state.text)
+        this.setState({ text: e.target.value });
         console.log(e)
     }
-
-    window(e){
-        console.log('lissst',this.state.text)
-        const button = document.querySelector('#emoji-button');
-        const picker = new EmojiButton();
-
-        picker.on('emoji', emoji => {
-          document.querySelector('input').value += emoji.emoji;
-        //   e.target.value += emoji.emoji;
-          this.state.text += emoji.emoji;
-          console.log(emoji.emoji,'emoji')
-          console.log('text', this.state.text)
-        });
-        console.log('wiiwii', e.target.value)
-        console.log('praise ', this.state.text)
-      
-        button.addEventListener('click', () => {
-          picker.pickerVisible ? picker.hidePicker() : picker.showPicker(button);
-        });
-    };
 
     render(){
         let isAnyUserActive=false;
@@ -229,11 +337,22 @@ class Chatpanel extends React.Component {
                             </div>
                             <div className="card-footer">
                             
-                                
+                                {/* <button type="button" onClick={this.picker}>Emoji</button> */}
+                                <Button onClick={this.handleClick} />
+                                {this.state.childVisible ? <NewComponent  className="card-footer-emoji" elementValue={this.state.text} /> : null}
+                                {/* {this.state.childVisible} */}
+                                {/* {this.state.chosenEmoji.emoji} */}
                                 {this.state.text}
-                                
-                                <input type="text" value={this.state.text} onChange={this.handleChange} />
-                                <button id="emoji-button" onClick={this.window}>?</button>
+                                <input type="text" 
+                                    //    id="chat_tbox" 
+                                       className="form-control" 
+                                       placeholder="Enter message..." 
+                                       value={this.state.text}
+                                       onChange={this.handleChange}
+                                       required />
+                                {/* <NewComponent elementValue={this.state.text} /> */}
+                                {/* <input onClick={this.picker} value=":" /> */}
+                                {/* <input type="submit" className="btn btn-primary btn-sm" value=":)" onEmojiClick={onEmojiClick} onClick={this.handleEve} /> */}
                                 <input type="submit" className="btn btn-primary btn-sm" value="Send" onClick={this.handleEve} />
                             </div>
                         </div>

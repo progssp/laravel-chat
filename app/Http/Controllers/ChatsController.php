@@ -47,7 +47,8 @@ public function fetchMessages(Request $req)
 {
   $sender_id = Auth::user()->id;
   $rec_id = $req->input('rec_id');
-  $msg_list = DB::select('select * from messages where sender_id = '.$sender_id.' and rec_id = '.$rec_id);
+  // $msg_list = DB::select('select * from messages where sender_id = '.$sender_id.' and rec_id = '.$rec_id);
+  $msg_list = DB::select('select * from messages where sender_id = '.$rec_id.' and rec_id = '.$sender_id);
   //$msg_list = Message::where('sender_id',$sender_id)->first();
   return json_encode($msg_list);
 }

@@ -15,9 +15,9 @@ require('./bootstrap');
 
 
 
-import Chatpanel from './components/Chatpanel';
+import Chatpanel from './components/chatpanel';
 
-import Chatsubmit from './components/Chatsubmit';
+import Chatsubmit from './components/chatsubmit';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
