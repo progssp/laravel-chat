@@ -2,6 +2,7 @@ import React from 'react';
 import './styles.css';
 
 class Chatpanel extends React.Component {
+
     constructor(props){
         super(props);
         this.state = {
@@ -11,16 +12,25 @@ class Chatpanel extends React.Component {
         }        
         //alert(user.id);
         this.handleEve = this.handleEve.bind(this);
-        this.renderList = this.renderList.bind(this);
         this.subscribeToPusher = this.subscribeToPusher.bind(this);
         this.loadUsers = this.loadUsers.bind(this);
         this.loadChats = this.loadChats.bind(this);
+        this.getActiveUser = this.getActiveUser.bind(this);
         
     }
 
     componentDidMount(){
         this.loadUsers();
-        //this.subscribeToPusher();    
+        this.subscribeToPusher();    
+    }
+
+    getActiveUser(){
+        if(this.state.active_user.length == 0){
+            return;
+        }
+        else{
+            return this.state.active_user[0];
+        }
     }
 
     loadUsers(){
@@ -48,6 +58,8 @@ class Chatpanel extends React.Component {
 
     loadChats(el_id){
         let clicked_user_id = el_id.target.id;
+        clicked_user_id = clicked_user_id.substr(5,clicked_user_id.length);
+        
         
         for(var eu=0;eu<this.state.user_list.length;eu++){
             if(this.state.user_list[eu].id == clicked_user_id){
@@ -88,22 +100,15 @@ class Chatpanel extends React.Component {
     }
     
 
-    renderList(dataToRender){
-        let list = document.getElementById('chat_list');
-        let list_item = document.createElement('li');
-        list_item.innerHTML = dataToRender;
-        list.appendChild(list_item);
-    }
-
     handleEve(e){
         let msg = document.getElementById('chat_tbox').value;
         
         let tok = document.querySelector('meta[name="csrf-token"]').content;
         
-        
-        let data = new FormData();
-        data.append('message','msg');
-        fetch('http://127.0.0.1:8000/messages?message='+msg+'&rec_id=2',{
+        let activeUserId = this.state.active_user[0].id;
+    
+
+        fetch('http://127.0.0.1:8000/messages?message='+msg+'&rec_id='+activeUserId,{
             method:'POST',
             headers:{
                 'Content-Type':'application/json',
@@ -126,25 +131,47 @@ class Chatpanel extends React.Component {
     }
 
     subscribeToPusher(){
-        let a_tok = document.querySelector('meta[name="csrf-token"]').content;
-        //suscribing to pusher channel
-        Pusher.logToConsole = true;
-        var pusher = new Pusher('649f5ddeef4b7a77a1f3', {
-            cluster: 'ap2',
-            authEndpoint:'/broadcasting/auth',
-            auth:{
-                headers:{
-                    'X-CSRF-TOKEN':a_tok
-                }
-            }
-        });
+        // let a_tok = document.querySelector('meta[name="csrf-token"]').content;
+        
+        // //suscribing to pusher channel
+        // Pusher.logToConsole = true;
+        // var pusher = new Pusher('649f5ddeef4b7a77a1f3', {
+        //     cluster: 'ap2',
+        //     authEndpoint:'/broadcasting/auth',
+        //     auth:{
+        //         headers:{
+        //             'X-CSRF-TOKEN':a_tok
+        //         }
+        //     }
+        // });
         var new_msg = [];
         var channel = pusher.subscribe('private-chat-'+user.id);
-        channel.bind('App\\Events\\MessageEvent', function(d) {
-            console.log("you have a new message:"+JSON.stringify(d));
-            alert(d.msg);
-            //new_msg.push(d.message.message);
-            //console.log(JSON.stringify(new_msg));            
+        channel.bind('App\\Events\\MessageEvent',(d) => {
+            
+            //checking sent message from sender side
+            if(d.sender_id == user.id){
+                if(this.state.active_user[0].id == d.rec_id){
+                    //alert('you have sent message to this user.');
+                    this.setState({msg_list:this.state.msg_list.concat(d)});
+                }
+            }
+            
+            //checking message has been received or not
+            if(d.sender_id != user.id){
+                if(this.state.active_user.length != 0){
+                    if(this.state.active_user[0].id == d.sender_id){
+                        //alert('you have sent message to this user.');
+                        this.setState({msg_list:this.state.msg_list.concat(d)});
+                    }
+                    else{
+                        var id_to_notify = document.getElementById('user_'+d.sender_id);
+                    }
+                }
+                else{
+                    alert('no active user, you got a new message : '+d.message);
+                }
+            }
+
         });        
     }
 
@@ -156,7 +183,8 @@ class Chatpanel extends React.Component {
             isAnyUserActive=true;
         }
         return (
-            <div className="container">                
+            <div className="container">     
+                          
                 <div className="row no-gutters">
                     <div className="col-3">
                         <div className="card">
@@ -164,7 +192,12 @@ class Chatpanel extends React.Component {
                             <div className="card-body">
                                 <ul id="user_list" className="user_list list-group">
                                     {this.state.user_list.map((number) =>
-                                    <a href="#"><li id={number.id} onClick={this.loadChats} className="list-group-item list-group-item-action" key={number.id}>{number.name}</li></a>  )}
+                                    <a href="#">
+                                        <li id={"user_"+number.id} onClick={this.loadChats} className="list-group-item d-flex justify-content-between align-items-center" key={'user_'+number.id}>
+                                            {number.name}
+                                            <span className="badge badge-primary badge-pill">14</span>
+                                        </li>
+                                    </a>  )}
                                 </ul>
                             </div>                            
                         </div>
@@ -173,9 +206,14 @@ class Chatpanel extends React.Component {
                         <div className="card">
                             <div className="card-header">{isAnyUserActive?this.state.active_user[0].name:'no active'}</div>
                             <div className="card-body">
-                                <ul id="chat_list" className="chat_list list-group">
-                                    {this.state.msg_list.map((msgs) =>
-                                    <li className="list-group-item" id={msgs.id} key={msgs.id}>{msgs.message}</li>  )}
+                                <ul id="chat_list" className="chat_list">
+                                    {this.state.msg_list.map((msgs) => 
+                                        (msgs.sender_id==user.id)?    
+                                        <div className="sent" id={msgs.id} key={msgs.id}>{msgs.message}</div>                                
+                                        :
+                                        <div className="replies" id={msgs.id} key={msgs.id}>{msgs.message}</div>
+                                    
+                                    )}
                                 </ul>
                             </div>
                             <div className="card-footer">

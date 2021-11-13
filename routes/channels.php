@@ -15,5 +15,9 @@ use Illuminate\Support\Facades\Auth;
 */
 
 Broadcast::channel('chat-{user_id}', function ($user, $user_id) {
-    return $user_id == Auth::user()->id;
+    return response()->json([
+        'user' => $user,
+        'user_id' => $user_id,
+        'auth_user' => Auth::user()
+    ]);
 });

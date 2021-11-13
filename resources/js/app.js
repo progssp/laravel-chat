@@ -15,14 +15,11 @@ require('./bootstrap');
 
 
 
-import Chatpanel from './components/Chatpanel';
-
-import Chatsubmit from './components/Chatsubmit';
+import Chatpanel from './components/chatpanel';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
 
 //if (document.getElementById('chat_panel_container')) {
 ReactDOM.render(<Chatpanel />, document.getElementById('chat_panel_container'));
-ReactDOM.render(<Chatsubmit />, document.getElementById('chat_submit_container'));
 //}

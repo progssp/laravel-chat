@@ -6341,7 +6341,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".list_style{\r\n    list-style-type: none;\r\n    margin:0;\r\n    padding:14px;\r\n    background-color: wheat;\r\n    height:300px;\r\n    width:300px;\r\n    overflow-y: scroll;\r\n}\r\n.list_style li{\r\n    display: table;\r\n    width:100%;\r\n    height: auto;\r\n    padding:10px 5px;\r\n    margin: 2px;\r\n    background-color: rgb(198, 250, 182);\r\n}\r\n\r\n.user_list, .chat_list{\r\n    background-color:transparent;\r\n    height:500px;\r\n    overflow-y:scroll;\r\n}\r\n\r\n::-webkit-scrollbar {\r\n    width: 10px;\r\n  }\r\n  \r\n  /* Track */\r\n  ::-webkit-scrollbar-track {\r\n    background: #f1f1f1;\r\n  }\r\n  \r\n  /* Handle */\r\n  ::-webkit-scrollbar-thumb {\r\n    background: #888;\r\n  }\r\n  \r\n  /* Handle on hover */\r\n  ::-webkit-scrollbar-thumb:hover {\r\n    background: #555;\r\n  }", ""]);
+exports.push([module.i, ".user_list, .chat_list{\n  padding:0;\n  height:500px;\n  overflow-y:scroll;\n  overflow-x: hidden;\n  list-style-type: none;\n}\n\n::-webkit-scrollbar {\n  width: 10px;\n}\n  \n/* Track */\n::-webkit-scrollbar-track {\n  background: #f1f1f1;\n}\n\n/* Handle */\n::-webkit-scrollbar-thumb {\n  background: #888;\n}\n\n/* Handle on hover */\n::-webkit-scrollbar-thumb:hover {\n  background: #555;\n}\n\n.sent{\n  position: relative;\n  background-color: rgb(2, 133, 173);\n  color: #f1f1f1;\n  left:0;\n  margin:10px;\n  width:300px;\n  border-radius: 10px;\n}\n.replies{  \n  width:300px;\n  background-color: #f1f1f196;\n  color: rgb(2, 133, 173);\n  position: relative;\n  right:0;\n  margin: 10px 10px 10px 60%;\n  border-radius: 10px;\n}\n", ""]);
 
 // exports
 
@@ -66357,12 +66357,11 @@ module.exports = function(module) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _components_Chatpanel__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/Chatpanel */ "./resources/js/components/Chatpanel.js");
-/* harmony import */ var _components_Chatsubmit__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/Chatsubmit */ "./resources/js/components/Chatsubmit.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
-/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _components_chatpanel__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/chatpanel */ "./resources/js/components/chatpanel.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_2__);
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes React and other helpers. It's a great starting point while
@@ -66378,11 +66377,9 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 
 
-
  //if (document.getElementById('chat_panel_container')) {
 
-react_dom__WEBPACK_IMPORTED_MODULE_3___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_components_Chatpanel__WEBPACK_IMPORTED_MODULE_0__["default"], null), document.getElementById('chat_panel_container'));
-react_dom__WEBPACK_IMPORTED_MODULE_3___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_components_Chatsubmit__WEBPACK_IMPORTED_MODULE_1__["default"], null), document.getElementById('chat_submit_container')); //}
+react_dom__WEBPACK_IMPORTED_MODULE_2___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_components_chatpanel__WEBPACK_IMPORTED_MODULE_0__["default"], null), document.getElementById('chat_panel_container')); //}
 
 /***/ }),
 
@@ -66420,7 +66417,7 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
  * for events that are broadcast by Laravel. Echo and event broadcasting
  * allows your team to easily build robust real-time web applications.
  */
-// import Echo from 'laravel-echo';
+//  import Echo from 'laravel-echo';
 // window.Pusher = require('pusher-js');
 // window.Echo = new Echo({
 //     broadcaster: 'pusher',
@@ -66431,9 +66428,9 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /***/ }),
 
-/***/ "./resources/js/components/Chatpanel.js":
+/***/ "./resources/js/components/chatpanel.js":
 /*!**********************************************!*\
-  !*** ./resources/js/components/Chatpanel.js ***!
+  !*** ./resources/js/components/chatpanel.js ***!
   \**********************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -66487,17 +66484,27 @@ var Chatpanel = /*#__PURE__*/function (_React$Component) {
     }; //alert(user.id);
 
     _this.handleEve = _this.handleEve.bind(_assertThisInitialized(_this));
-    _this.renderList = _this.renderList.bind(_assertThisInitialized(_this));
     _this.subscribeToPusher = _this.subscribeToPusher.bind(_assertThisInitialized(_this));
     _this.loadUsers = _this.loadUsers.bind(_assertThisInitialized(_this));
     _this.loadChats = _this.loadChats.bind(_assertThisInitialized(_this));
+    _this.getActiveUser = _this.getActiveUser.bind(_assertThisInitialized(_this));
     return _this;
   }
 
   _createClass(Chatpanel, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      this.loadUsers(); //this.subscribeToPusher();    
+      this.loadUsers();
+      this.subscribeToPusher();
+    }
+  }, {
+    key: "getActiveUser",
+    value: function getActiveUser() {
+      if (this.state.active_user.length == 0) {
+        return;
+      } else {
+        return this.state.active_user[0];
+      }
     }
   }, {
     key: "loadUsers",
@@ -66534,6 +66541,7 @@ var Chatpanel = /*#__PURE__*/function (_React$Component) {
       var _this3 = this;
 
       var clicked_user_id = el_id.target.id;
+      clicked_user_id = clicked_user_id.substr(5, clicked_user_id.length);
 
       for (var eu = 0; eu < this.state.user_list.length; eu++) {
         if (this.state.user_list[eu].id == clicked_user_id) {
@@ -66582,21 +66590,12 @@ var Chatpanel = /*#__PURE__*/function (_React$Component) {
       });
     }
   }, {
-    key: "renderList",
-    value: function renderList(dataToRender) {
-      var list = document.getElementById('chat_list');
-      var list_item = document.createElement('li');
-      list_item.innerHTML = dataToRender;
-      list.appendChild(list_item);
-    }
-  }, {
     key: "handleEve",
     value: function handleEve(e) {
       var msg = document.getElementById('chat_tbox').value;
       var tok = document.querySelector('meta[name="csrf-token"]').content;
-      var data = new FormData();
-      data.append('message', 'msg');
-      fetch('http://127.0.0.1:8000/messages?message=' + msg + '&rec_id=2', {
+      var activeUserId = this.state.active_user[0].id;
+      fetch('http://127.0.0.1:8000/messages?message=' + msg + '&rec_id=' + activeUserId, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -66615,30 +66614,54 @@ var Chatpanel = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "subscribeToPusher",
     value: function subscribeToPusher() {
-      var a_tok = document.querySelector('meta[name="csrf-token"]').content; //suscribing to pusher channel
+      var _this4 = this;
 
-      Pusher.logToConsole = true;
-      var pusher = new Pusher('649f5ddeef4b7a77a1f3', {
-        cluster: 'ap2',
-        authEndpoint: '/broadcasting/auth',
-        auth: {
-          headers: {
-            'X-CSRF-TOKEN': a_tok
-          }
-        }
-      });
+      // let a_tok = document.querySelector('meta[name="csrf-token"]').content;
+      // //suscribing to pusher channel
+      // Pusher.logToConsole = true;
+      // var pusher = new Pusher('649f5ddeef4b7a77a1f3', {
+      //     cluster: 'ap2',
+      //     authEndpoint:'/broadcasting/auth',
+      //     auth:{
+      //         headers:{
+      //             'X-CSRF-TOKEN':a_tok
+      //         }
+      //     }
+      // });
       var new_msg = [];
       var channel = pusher.subscribe('private-chat-' + user.id);
       channel.bind('App\\Events\\MessageEvent', function (d) {
-        console.log("you have a new message:" + JSON.stringify(d));
-        alert(d.msg); //new_msg.push(d.message.message);
-        //console.log(JSON.stringify(new_msg));            
+        //checking sent message from sender side
+        if (d.sender_id == user.id) {
+          if (_this4.state.active_user[0].id == d.rec_id) {
+            //alert('you have sent message to this user.');
+            _this4.setState({
+              msg_list: _this4.state.msg_list.concat(d)
+            });
+          }
+        } //checking message has been received or not
+
+
+        if (d.sender_id != user.id) {
+          if (_this4.state.active_user.length != 0) {
+            if (_this4.state.active_user[0].id == d.sender_id) {
+              //alert('you have sent message to this user.');
+              _this4.setState({
+                msg_list: _this4.state.msg_list.concat(d)
+              });
+            } else {
+              var id_to_notify = document.getElementById('user_' + d.sender_id);
+            }
+          } else {
+            alert('no active user, you got a new message : ' + d.message);
+          }
+        }
       });
     }
   }, {
     key: "render",
     value: function render() {
-      var _this4 = this;
+      var _this5 = this;
 
       var isAnyUserActive = false;
 
@@ -66665,11 +66688,13 @@ var Chatpanel = /*#__PURE__*/function (_React$Component) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
           href: "#"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-          id: number.id,
-          onClick: _this4.loadChats,
-          className: "list-group-item list-group-item-action",
-          key: number.id
-        }, number.name));
+          id: "user_" + number.id,
+          onClick: _this5.loadChats,
+          className: "list-group-item d-flex justify-content-between align-items-center",
+          key: 'user_' + number.id
+        }, number.name, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+          className: "badge badge-primary badge-pill"
+        }, "14")));
       }))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "col"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -66680,10 +66705,14 @@ var Chatpanel = /*#__PURE__*/function (_React$Component) {
         className: "card-body"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
         id: "chat_list",
-        className: "chat_list list-group"
+        className: "chat_list"
       }, this.state.msg_list.map(function (msgs) {
-        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-          className: "list-group-item",
+        return msgs.sender_id == user.id ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "sent",
+          id: msgs.id,
+          key: msgs.id
+        }, msgs.message) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "replies",
           id: msgs.id,
           key: msgs.id
         }, msgs.message);
@@ -66707,71 +66736,6 @@ var Chatpanel = /*#__PURE__*/function (_React$Component) {
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
 /* harmony default export */ __webpack_exports__["default"] = (Chatpanel);
-
-/***/ }),
-
-/***/ "./resources/js/components/Chatsubmit.js":
-/*!***********************************************!*\
-  !*** ./resources/js/components/Chatsubmit.js ***!
-  \***********************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
-/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
-function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
-
-
-
-var Chatsubmit = /*#__PURE__*/function (_React$Component) {
-  _inherits(Chatsubmit, _React$Component);
-
-  var _super = _createSuper(Chatsubmit);
-
-  function Chatsubmit(props) {
-    _classCallCheck(this, Chatsubmit);
-
-    return _super.call(this, props);
-  }
-
-  _createClass(Chatsubmit, [{
-    key: "render",
-    value: function render() {
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "container"
-      });
-    }
-  }]);
-
-  return Chatsubmit;
-}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
-
-/* harmony default export */ __webpack_exports__["default"] = (Chatsubmit);
 
 /***/ }),
 

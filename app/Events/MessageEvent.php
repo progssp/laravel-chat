@@ -18,7 +18,7 @@ class MessageEvent implements ShouldBroadcast
 
     public $sender_id;
     public $rec_id;
-    public $msg;
+    public $message;
 
     /**
      * Create a new event instance.
@@ -29,7 +29,7 @@ class MessageEvent implements ShouldBroadcast
     {
         $this->sender_id = $sender_id;
         $this->rec_id = $rec_id;
-        $this->msg = $msg;
+        $this->message = $msg;
     }
 
     /**

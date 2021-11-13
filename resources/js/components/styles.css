@@ -1,42 +1,45 @@
-.list_style{
-    list-style-type: none;
-    margin:0;
-    padding:14px;
-    background-color: wheat;
-    height:300px;
-    width:300px;
-    overflow-y: scroll;
-}
-.list_style li{
-    display: table;
-    width:100%;
-    height: auto;
-    padding:10px 5px;
-    margin: 2px;
-    background-color: rgb(198, 250, 182);
-}
-
 .user_list, .chat_list{
-    background-color:transparent;
-    height:500px;
-    overflow-y:scroll;
+  padding:0;
+  height:500px;
+  overflow-y:scroll;
+  overflow-x: hidden;
+  list-style-type: none;
 }
 
 ::-webkit-scrollbar {
-    width: 10px;
-  }
+  width: 10px;
+}
   
-  /* Track */
-  ::-webkit-scrollbar-track {
-    background: #f1f1f1;
-  }
-  
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    background: #888;
-  }
-  
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
-    background: #555;
-  }
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.sent{
+  position: relative;
+  background-color: rgb(2, 133, 173);
+  color: #f1f1f1;
+  left:0;
+  margin:10px;
+  width:300px;
+  border-radius: 10px;
+}
+.replies{  
+  width:300px;
+  background-color: #f1f1f196;
+  color: rgb(2, 133, 173);
+  position: relative;
+  right:0;
+  margin: 10px 10px 10px 60%;
+  border-radius: 10px;
+}
